@@ -1,11 +1,11 @@
 git status === review changed files - unstaged (red) - staged (green)
+git add .
 git commit -m "message"
 git push
 git pull
-git branch === current local branch
-git stash === save local changes
-git stash list === list saved changes
-git stash apply === apply saved changes
+git log === reviews history of commits - to close history press 'q'
+git diff === to review local changes
+
 
 git fetch === fetch all remote branches
 
@@ -17,6 +17,11 @@ git branch -d branch-name === delete branch locally
 
 git pull origin master === merge master remote changes to your current local branch
 
-git log === reviews history of commits - to close history press 'q'
+git branch === current local branch
 
-git diff === to review local changes
+git stash === save local changes
+
+git stash list === list saved changes
+
+git stash apply === apply saved changes
+
