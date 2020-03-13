@@ -1,0 +1,16 @@
+git status === review changed files - unstaged (red) - staged (green)
+git commit -m "message"
+git push
+git pull
+git branch === current local branch
+git stash
+git stash list
+git stash apply
+
+git fetch === fetch all remote branches
+
+git checkout -b branch-name === create new local branch
+
+git checkout branch-name === switch to another local branch
+
+git branch -d branch-name === delete branch locally
