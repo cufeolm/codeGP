@@ -14,3 +14,7 @@ git checkout -b branch-name === create new local branch
 git checkout branch-name === switch to another local branch
 
 git branch -d branch-name === delete branch locally
+
+git pull origin master === merge master remote changes to your current local branch
+
+git log === reviews history of commits - to close history press 'q'
