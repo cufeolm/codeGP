@@ -1,4 +1,3 @@
-kjgkug
 interface GUVM_interface;
     import iface::*;
     // import GUVM_classes_pkg::*;
