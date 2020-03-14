@@ -1,5 +1,4 @@
 git status === review changed files - unstaged (red) - staged (green)
-<<<<<<< Updated upstream
 git add .
 git commit -m "message"
 git push
@@ -26,12 +25,3 @@ git stash list === list saved changes
 
 git stash apply === apply saved changes
 
-=======
-git commit -m "message"
-git push
-git pull
-git branch === current local branch
-git stash
-git stash list
-git stash apply
->>>>>>> Stashed changes
