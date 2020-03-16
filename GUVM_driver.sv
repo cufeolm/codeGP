@@ -1,7 +1,7 @@
 class driver extends uvm_driver #(sequence_item);
    `uvm_component_utils(driver)
    import GUVM_classes_pkg::*; //has GUVM_sequence
-   // 
+   
    virtual GUVM_interface bfm;
 
    uvm_analysis_port #(sequence_item) Drv2Sb_port;
@@ -16,8 +16,8 @@ class driver extends uvm_driver #(sequence_item);
       bfm.reset();
       forever begin : cmd_loop
          seq_item_port.get_next_item(cmd);
-         bfm.input_inst(cmd);
-         Drv2Sb_port.write(cmd);
+         bfm.input_inst(cmd.instrn);
+         Drv2Sb_port.write(cmd.instrn);
          seq_item_port.item_done();
       end : cmd_loop
    endtask : run_phase
