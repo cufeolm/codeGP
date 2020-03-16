@@ -1,5 +1,5 @@
 interface GUVM_interface;
-    import iface::*;
+    import leon_pkg::*;
     // import GUVM_classes_pkg::*;
     logic       clk;
     logic       rst;
