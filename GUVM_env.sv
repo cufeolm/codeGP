@@ -27,6 +27,4 @@ class GUVM_env extends uvm_env;
       // implementation port
       mon.Mon2Sb_port.connect(sb.Mon2Sb_port);
    endfunction: connect_phase
-
-
 endclass

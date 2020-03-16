@@ -2,7 +2,7 @@ class driver extends uvm_driver #(sequence_item);
    `uvm_component_utils(driver)
    import GUVM_classes_pkg::*; //has GUVM_sequence
    // 
-   virtual GUVM_bfm bfm;
+   virtual GUVM_interface bfm;
 
    uvm_analysis_port #(sequence_item) Drv2Sb_port;
  
