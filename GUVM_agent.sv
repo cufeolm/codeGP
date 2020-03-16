@@ -9,7 +9,7 @@ class processor_agent extends uvm_agent;
     endfunction
     
     function void build_phase(uvm_phase phase);
-      driver = processor_driver::type_id::create("driver", this);
+      driver = GUVM_driver::type_id::create("driver", this);
       sequencer = uvm_sequencer#(processor_transaction)::type_id::create("sequencer", this);
     endfunction    
     
