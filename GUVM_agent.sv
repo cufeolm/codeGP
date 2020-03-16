@@ -1,4 +1,6 @@
-class processor_agent extends uvm_agent;
+import uvm_pkg::*;
+`include "uvm_macros.svh"
+class GUVM_agent extends uvm_agent;
   `uvm_component_utils(GUVM_agent)
     
     GUVM_driver driver;
