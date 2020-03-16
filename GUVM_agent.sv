@@ -4,7 +4,7 @@ class GUVM_agent extends uvm_agent;
   `uvm_component_utils(GUVM_agent)
     
     GUVM_driver driver;
-    uvm_sequencer#(sequence_item) sequencer;
+  uvm_sequencer#(GUVM_sequence_item) sequencer;
     
     function new(string name, uvm_component parent);
       super.new(name, parent);
@@ -12,7 +12,7 @@ class GUVM_agent extends uvm_agent;
     
     function void build_phase(uvm_phase phase);
       driver = GUVM_driver::type_id::create("driver", this);
-      sequencer = uvm_sequencer#(sequence_item)::type_id::create("sequencer", this);
+      sequencer = uvm_sequencer#(GUVM_sequence_item)::type_id::create("sequencer", this);
     endfunction    
     
     // In UVM connect phase, we connect the sequencer to the driver.
