@@ -1,6 +1,6 @@
 
 interface GUVM_interface;
-//	import GUVM_classes_pkg::*;
+	import riscy_pkg::*;
     parameter N_EXT_PERF_COUNTERS =  0;
     parameter INSTR_RDATA_WIDTH   = 32;
     parameter PULP_SECURE         =  0;
