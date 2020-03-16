@@ -23,4 +23,4 @@ class driver extends uvm_driver #(sequence_item);
       super.new(name, parent);
    endfunction : new
    
-endclass : driver
+endclass : drive
