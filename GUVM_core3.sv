@@ -1,5 +1,5 @@
 interface GUVM_interface;
-//	import GUVM_classes_pkg::*;
+  import amber_pkg::*;
 
 bit i_clk;
 bit i_irq;
