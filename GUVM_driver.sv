@@ -3,6 +3,8 @@ class driver extends uvm_driver #(sequence_item);
    import GUVM_classes_pkg::*; //has GUVM_sequence
    // 
    virtual GUVM_bfm bfm;
+
+   uvm_analysis_port #(sequence_item) Drv2Sb_port;
  
    function void build_phase(uvm_phase phase);
       if(!uvm_config_db #(virtual tinyalu_bfm)::get(null, "*","bfm", bfm))
@@ -15,6 +17,7 @@ class driver extends uvm_driver #(sequence_item);
       forever begin : cmd_loop
          seq_item_port.get_next_item(cmd);
          bfm.input_inst(cmd);
+         Drv2Sb_port.write(cmd);
          seq_item_port.item_done();
       end : cmd_loop
    endtask : run_phase
