@@ -1,6 +1,5 @@
 interface GUVM_interface;
-    import iface::*;
-    // import GUVM_classes_pkg::*;
+    import leon_pkg::*;
     bit       clk;
     bit       rst;
     bit       pciclk;
