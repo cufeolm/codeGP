@@ -2,7 +2,27 @@ class cmd_sequence_item extends uvm_sequence_item;
 
   `uvm_object_utils(cmd_sequence_item)
    rand logic [31:0] inst;
-	
+
+   function logic [31:0] generate_instruction(opcode target_instruction );
+		//logic [31:0] rand_inst;
+		//rand_inst = $random();
+		for (integer i =0;i<32;i++)
+		begin 
+			if ((target_instruction[i]===1 )||(target_instruction[i]===0 )) 
+			inst[i]=target_instruction[i];
+		end
+		return inst;
+	endfunction 
+
+	function void ran();
+		//randomize();
+		integer i = $urandom() % supported_instructions;
+		opcode con = si_a[i]; // con is a constraint
+		inst = $random();
+		inst = generate_instruction(con);
+	endfunction
+
+
   function new (string name = "");
     super.new(name);
   endfunction
