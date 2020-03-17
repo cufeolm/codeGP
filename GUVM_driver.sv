@@ -9,6 +9,7 @@ class driver extends uvm_driver #(sequence_item);
    function void build_phase(uvm_phase phase);
       if(!uvm_config_db #(virtual tinyalu_bfm)::get(null, "*","bfm", bfm))
         `uvm_fatal("DRIVER", "Failed to get BFM")
+      // Drv2Sb_port = new("Drv2Sb",this);
    endfunction : build_phase
 
    task run_phase(uvm_phase phase);
