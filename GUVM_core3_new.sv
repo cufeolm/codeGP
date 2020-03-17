@@ -1,26 +1,28 @@
 interface GUVM_interface(input clk);
 	
-	// import GUVM_classes_pkg::*;
+	import GUVM_classes_pkg::*;
+
 	logic i_clk;
-	logic i_irq; //= 1'b0
-	logic i_firq; //= 1'b0
-	logic i_system_rdy; //= 1'b1
+	logic i_irq = 1'b0;
+	logic i_firq = 1'b0;
+	logic i_system_rdy = 1'b1;
 	//Wishbone Interface
 	logic [31:0] o_wb_adr;
 	logic [15:0] o_wb_sel;
 	logic o_wb_we;
 	logic [127:0] i_wb_dat;
 	logic [127:0] o_wb_dat;
-	logic o_Wb_cyc; //= 1'b1
+	logic o_Wb_cyc = 1'b1;
 	logic o_wb_stb;
 	logic i_wb_ack;
-	logic i_wb_err; //= 1'b0
+	logic i_wb_err = 1'b0;
+	logic [31:0] inst;
 
 	clocking driver_cb @ (negedge clk);
-	    output inst;
+	    i_wb_data = inst;
+	    // i_wb_data = {96'hF0081003F0081003F0081003, inst};
+	    output i_wb_data;
 	endclocking : driver_cb
-
-	i_wb_data = {96'hF0081003F0081003F0081003, inst};
     
     clocking monitor_cb @ (negedge clk);
         input o_wb_dat;

@@ -1,10 +1,10 @@
-class driver extends uvm_driver #(sequence_item);
+class driver extends uvm_driver #(processor_transaction);
    `uvm_component_utils(driver)
    import GUVM_classes_pkg::*; // has GUVM_sequence
 
    virtual GUVM_interface bfm;
    
-   // uvm_analysis_port #(sequence_item) Drv2Sb_port;
+   // uvm_analysis_port #(processor_transaction) Drv2Sb_port;
 
    function new (string name, uvm_component parent);
       super.new(name, parent);
@@ -22,13 +22,15 @@ class driver extends uvm_driver #(sequence_item);
    endfunction
 
    task run_phase(uvm_phase phase);
+      processor_transaction cmd;
       bfm.reset_dut();
       forever begin
          @(bfm.driver_if_mp.driver_cb)
          begin 
-            seq_item_port.get_next_item(req);
-            bfm.driver_if_mp.driver_cb.inst <= req.instrn;
-            Drv2Sb_port.write(req);
+            seq_item_port.get_next_item(cmd);
+            
+            bfm.driver_if_mp.driver_cb.instr_rdata_i <= cmd.instrn;
+            // Drv2Sb_port.write(cmd);
             seq_item_port.item_done();
          end
       end

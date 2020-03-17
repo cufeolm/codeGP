@@ -1,10 +1,10 @@
-interface GUVM_interface;
-    import leon_pkg::*;
+interface GUVM_interface(input clk);
+    import iface::*;
     // import GUVM_classes_pkg::*;
     logic       clk;
     logic       rst;
-    logic       pciclk;
-    logic       pcirst;
+    logic       pciclk = 1'b0;
+    logic       pcirst = 1'b0;
     iu_in_type integer_unit_input; // to the core
     iu_out_type integer_unit_output; // from the core
     icache_out_type icache_output; // to the core
@@ -12,8 +12,8 @@ interface GUVM_interface;
     icdiag_in_type dcache_output_inside; // inside dcache_out_type package
 
     ////////////// da mkan elsetup function //////////////////
-    pciclk = 1'b0;
-    pcirst = 1'b0;
+    // pciclk = 1'b0;
+    // pcirst = 1'b0;
 
     // iui
     integer_unit_input.irl = 4'b0000;
@@ -40,13 +40,15 @@ interface GUVM_interface;
     dcache_output_inside.flush = 1'b0;
 
     clocking driver_cb @ (negedge clk);
-        output inst_in;
+        icache_output.data = inst;
+        output icache_output.data;
+        // output inst;
     endclocking : driver_cb
 
     icache_output.data = inst_in;
     
     clocking monitor_cb @ (negedge clk);
-        input icache_output.data;
+        input icache_output.dat;
         // lessa b2eet el7agat 
     endclocking : monitor_cb
 
@@ -77,52 +79,5 @@ interface GUVM_interface;
     task input_inst (logic [31:0] inst);
         icache_output.data = inst;
     endtask : input_inst
-
-    /*
-    function automatic logic [31:0] OUTPUT_DATA(
-        ref logic [31:0] idata,
-        ref logic [31:0] wdata,
-        ref logic [31:0] instr,
-        ref logic [31:0] addr);  
-
-        idata = data_rdata_i;
-        wdata = data_wdata_o;
-        instr = icache_output.data;
-        addr = data_addr_o;
-        
-    endfunction : OUTPUT_DATA 
-    */
-   
-    /*
-    function void setup_data();
-        pciclk = 1'b0;
-        pcirst = 1'b0;
-
-        // iui
-        integer_unit_input.irl = 4'b0000;
-
-        // ico
-        // icache_output.data = 32'h8E00C002;
-        icache_output.exception = 1'b0;
-        icache_output.hold = 1'b1;
-        icache_output.flush = 1'b0; 
-        icache_output.diagrdy = 1'b0;
-        icache_output.diagdata = 32'h00000000; 
-        icache_output.mds = 1'b0;
-
-        // dco
-        dcache_output.data = 32'h13; // Data bus address
-        dcache_output.mexc = 1'b0; // memory exception
-        dcache_output.hold = 1'b1;
-        dcache_output.mds = 1'b0;
-        dcache_output.werr = 1'b0; // memory write error
-        dcache_output_inside.enable = 32'h0;
-        dcache_output_inside.enable = 1'b0;
-        dcache_output_inside.read = 1'b0;
-        dcache_output_inside.tag = 1'b0;
-        dcache_output_inside.flush = 1'b0;
-
-    endfunction: setup_data
-    */
    
 endinterface: GUVM_interface
