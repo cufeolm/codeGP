@@ -15,6 +15,7 @@ class driver extends uvm_driver #(sequence_item);
    task run_phase(uvm_phase phase);
       sequence_item cmd;
       bfm.reset();
+      bfm.setup_data();
       forever begin : cmd_loop
          seq_item_port.get_next_item(cmd);
          bfm.input_inst(cmd.instrn);
