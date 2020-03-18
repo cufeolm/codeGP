@@ -1,6 +1,6 @@
 interface GUVM_interface(input clk);
 	
-	import GUVM_classes_pkg::*;
+	// import GUVM_classes_pkg::*;
 
 	logic i_clk;
 	logic i_irq = 1'b0;
@@ -16,18 +16,21 @@ interface GUVM_interface(input clk);
 	logic o_wb_stb;
 	logic i_wb_ack;
 	logic i_wb_err = 1'b0;
+	
 	logic [31:0] inst;
+	logic [31:0] out;
 
 	clocking driver_cb @ (negedge clk);
 	    output inst;
 	endclocking : driver_cb
 
 	always @ (negedge clk) begin
-        i_wb_dat = {96'hF0081003F0081003F0081003, inst_in};
+        i_wb_dat = {96'hF0081003F0081003F0081003, inst};
+        out = o_wb_dat;
     end
     
     clocking monitor_cb @ (negedge clk);
-        input o_wb_dat;
+        input out;
         // lessa b2eet el7agat 
     endclocking : monitor_cb
 

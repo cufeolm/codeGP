@@ -34,7 +34,7 @@ class GUVM_monitor extends uvm_monitor;
                     end
                     else begin
                         //Set transaction from interface data                    
-                        pros_trans.output_reg = processor_vif.monitor_if_mp.monitor_cb.data_out;            
+                        pros_trans.output_reg = processor_vif.monitor_if_mp.monitor_cb.out;            
                         //Send transaction to Scoreboard
                         Mon2Sb_port.write(pros_trans);    
                         count = 0;             
