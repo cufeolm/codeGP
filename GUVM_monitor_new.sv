@@ -26,7 +26,7 @@ class GUVM_monitor extends uvm_monitor;
         count = 0;
         fork
             forever begin
-                @(processor_vif.monitor_if_mp.monitor_cb.data_out) // data out de heya eldata elly mn elregister
+                @(processor_vif.monitor_if_mp.monitor_cb.out) // data out de heya eldata elly mn elregister
                 begin
                     if(count<32)
                     begin
