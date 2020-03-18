@@ -1,4 +1,7 @@
-interface GUVM_interface(input clk);
+interface GUVM_interface(
+	logic [31:0] i_reg //used in a hierarchy to access register file
+	);
+
 //	  import amber_pkg::*;
 	// import GUVM_classes_pkg::*;
 bit i_clk;
@@ -12,13 +15,18 @@ bit o_wb_we;
 reg [127:0] i_wb_dat;
 reg [127:0] o_wb_dat;
 
+//added signals to generalize
 wire [31:0] inst_in;
-reg [31:0] wdata;
+reg [31:0] wdata;  
+
+/////////
 
 bit o_Wb_cyc;
 bit o_wb_stb;
 bit i_wb_ack;
 bit i_wb_err;
+
+
 
 initial begin
     i_clk = 0;
