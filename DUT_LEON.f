@@ -16,7 +16,7 @@ leon/fpulib.vhd
 leon/macro.vhd
 
 
-leon/tech_generic.vhd tech_atc35.vhd tech_atc25.vhd tech_umc18.vhd
+leon/tech_generic.vhd leon/tech_atc35.vhd leon/tech_atc25.vhd leon/tech_umc18.vhd
 leon/tech_fs90.vhd 
 
 leon/tech_virtex.vhd
