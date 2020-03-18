@@ -31,7 +31,8 @@ module top;
 	);  
   
   	initial begin
-   	// Place the interface into the UVM configuration database
+	   // Place the interface into the UVM configuration database
+		fill_si_array( );
    	uvm_config_db#(virtual GUVM_interface)::set(null, "*", "processor_vif", processor_if);
     	// Start the test
     	run_test();
