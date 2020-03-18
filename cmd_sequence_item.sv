@@ -2,6 +2,7 @@ class cmd_sequence_item extends uvm_sequence_item;
 
   `uvm_object_utils(cmd_sequence_item)
    rand logic [31:0] inst;
+   rand logic [31:0] oprand1,oprand2;
 
    function logic [31:0] generate_instruction(opcode target_instruction );
 		//logic [31:0] rand_inst;
@@ -19,6 +20,8 @@ class cmd_sequence_item extends uvm_sequence_item;
 		integer i = $urandom() % supported_instructions;
 		opcode con = si_a[i]; // con is a constraint
 		inst = $random();
+		oprand2 = $random();
+		oprand1 = $random();
 		inst = generate_instruction(con);
 	endfunction
 
@@ -49,7 +52,7 @@ class cmd_sequence_item extends uvm_sequence_item;
 	  $fatal(1,"Tried to copy null transaction");
 	super.do_copy(rhs);
 	assert($cast(RHS,rhs)) else
-	  $fatal(1,"Faied cast in do_copy");
+	  $fatal(1,"Faied cast in do_copy");:
 	inst = RHS.inst;
  endfunction : do_copy
 

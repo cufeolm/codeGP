@@ -1,3 +1,4 @@
+`timescale 10ns/1ns
 interface GUVM_interface;
 //	import riscy_pkg::*;
     parameter N_EXT_PERF_COUNTERS =  0;
@@ -75,6 +76,11 @@ bit       fetch_enable_i;
 bit       core_rbusy_o;
 reg [N_EXT_PERF_COUNTERS-1:0] ext_perf_counters_i;
 
+
+
+reg [31:0] wdata;
+wire [31:0] inst_in;
+
 initial
 begin
   clk_i = 0;
@@ -99,7 +105,6 @@ function void setup_data();
     cluster_id_i          = 6'h0;
     instr_gnt_i           = 1'b1;
     instr_rvalid_i        = 1'b1;
-    instr_rdata_i         = 32'h002180B3;
     data_gnt_i            = 1'b0;
     data_rvalid_i         = 1'b1;
     irq_i                 = 1'h0;
@@ -110,12 +115,24 @@ function void setup_data();
  endfunction: setup_data
 
 clocking driver_cb @ (posedge clk_i);
-   output instr_rdata_i;
+   output inst_in;
 endclocking : driver_cb
 
-clocking monitor_cb @ (posedge clk_i);
-   input data_wdata_o;
+always @ (inst_in)
+begin
+  instr_rdata_i = inst_in;
+end
+
+always @ (inst_in) begin
+  #110
+wdata=data_wdata_o;
+end
+
+clocking monitor_cb @ (posedge clk_i && wdata);
+   input wdata;
 endclocking : monitor_cb
+
+
 
 
 modport driver_if_mp (clocking driver_cb);

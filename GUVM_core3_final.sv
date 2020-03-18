@@ -11,7 +11,10 @@ reg [15:0] o_wb_sel;
 bit o_wb_we;
 reg [127:0] i_wb_dat;
 reg [127:0] o_wb_dat;
+
 wire [31:0] inst_in;
+reg [31:0] wdata;
+
 bit o_Wb_cyc;
 bit o_wb_stb;
 bit i_wb_ack;
@@ -46,9 +49,15 @@ always @ (inst_in)
 begin
 	i_wb_dat = {96'hF0081003F0081003F0081003, inst_in};
 end
+
+always @ (inst_in)
+begin
+	 #110
+	wdata=o_wb_dat[31:0];
+end
     
-clocking monitor_cb @ (posedge i_clk);
-        input o_wb_dat;
+clocking monitor_cb @ (posedge i_clk && wdata);
+        input wdata;
 endclocking : monitor_cb
 
 modport driver_if_mp (clocking driver_cb);
