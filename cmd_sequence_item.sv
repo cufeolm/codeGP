@@ -20,6 +20,8 @@ class cmd_sequence_item extends uvm_sequence_item;
 		integer i = $urandom() % supported_instructions;
 		opcode con = si_a[i]; // con is a constraint
 		inst = $random();
+		oprand2 = $random();
+		oprand1 = $random();
 		inst = generate_instruction(con);
 	endfunction
 
