@@ -1,4 +1,4 @@
-`include "processor_sequence.sv"
+`include "GUVM_sequence.sv"
 `include "uvm_macros.svh"
 
 

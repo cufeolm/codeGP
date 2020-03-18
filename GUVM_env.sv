@@ -1,5 +1,5 @@
 class GUVM_env extends uvm_env;
-  `uvm_component_utils(GUVM_env)
+    `uvm_component_utils(GUVM_env)
     
     GUVM_agent agent;
     GUVM_monitor mon;
@@ -16,7 +16,7 @@ class GUVM_env extends uvm_env;
     endfunction
   
     // connect ports of various TB components here
-   function void connect_phase(uvm_phase phase);
+    function void connect_phase(uvm_phase phase);
       `uvm_info("", "Called env::connect_phase", UVM_NONE);
       
       // connect driver's analysis port to scoreboard's analysis

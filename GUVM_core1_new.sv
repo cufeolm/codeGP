@@ -107,7 +107,7 @@ interface GUVM_interface(input clk);
     end
 
     clocking monitor_cb @ (negedge clk);
-        // default input #1step output negedge;
+        default input #50 output negedge;
         input out;
         // input output_elregister_file 
     endclocking : monitor_cb

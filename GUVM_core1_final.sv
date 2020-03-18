@@ -90,8 +90,6 @@ repeat (10) begin @(negedge clk_i); end
   rst_ni = 1'b1;
 endtask : reset_dut
 
-
-
 function void setup_data();
     clock_en_i            = 1'b1;
     test_en_i             = 1'b0;
