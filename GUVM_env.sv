@@ -20,7 +20,7 @@ class GUVM_env extends uvm_env;
       `uvm_info("", "Called env::connect_phase", UVM_NONE);
       
       // connect driver's analysis port to scoreboard's analysis
-      // implementation por
+      // implementation port
       agent.driver.Drv2Sb_port.connect(sb.Drv2Sb_port);
       
       // connect monitor's analysis port to scoreboard's analysis

@@ -28,7 +28,7 @@ class driver extends uvm_driver #(processor_transaction);
          @(bfm.driver_if_mp.driver_cb)
          begin 
             seq_item_port.get_next_item(cmd);
-            bfm.driver_if_mp.driver_cb.inst <= cmd.instrn;
+            bfm.driver_if_mp.driver_cb.inst_in <= cmd.instrn;
             // Drv2Sb_port.write(cmd);
             seq_item_port.item_done();
          end

@@ -1,27 +1,22 @@
-`include "GUVM_sequence.sv"
-`include "uvm_macros.svh"
-
-
 class GUVM_test extends uvm_test;
- `uvm_component_utils(GUVM_test)
+   `uvm_component_utils(GUVM_test)
    
    GUVM_env env;
-   //GUVM_sequence GUVM_seq;
+   GUVM_sequence processor_seq;
 
    function new(string name, uvm_component parent);
-     super.new(name, parent);
+      super.new(name, parent);
    endfunction
    
    function void build_phase(uvm_phase phase);
-     env = GUVM_env::type_id::create("env", this);
-     GUVM_seq = GUVM_sequence::type_id::create("GUVM_seq");
-	endfunction
+      env = processor_env::type_id::create("env", this);
+      processor_seq = processor_sequence::type_id::create("processor_seq");
+   endfunction
 
    function void end_of_elaboration_phase(uvm_phase phase);
-     print();
+      print();
    endfunction
-   
-   
+
    task run_phase(uvm_phase phase);
      
      // We raise objection to keep the test from completing
@@ -29,7 +24,7 @@ class GUVM_test extends uvm_test;
      `uvm_warning("", "processor test!")
      #10;
     
-     GUVM_seq.start(env.agent.sequencer);
+     processor_seq.start(env.agent.sequencer);
      
      #1000;
      // We drop objection to allow the test to complete
@@ -37,3 +32,4 @@ class GUVM_test extends uvm_test;
    endtask
 
 endclass
+ 
