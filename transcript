@@ -126,3 +126,784 @@
 # D:/installedPrograms/MentorGraphics/questasim64_10.4e/win64/vcom failed.
 #     while executing
 # "vcom -f DUT_LEON.f "
+# QuestaSim-64 vcom 10.4e Compiler 2016.04 Apr  9 2016
+# Start time: 22:22:08 on Mar 18,2020
+# vcom -f DUT_LEON.f 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package AMBA
+# -- Compiling package target
+# -- Loading package target
+# -- Compiling package device
+# -- Loading package std_logic_arith
+# -- Loading package device
+# -- Compiling package config
+# -- Loading package config
+# -- Compiling package sparcv8
+# -- Loading package sparcv8
+# -- Compiling package iface
+# -- Loading package iface
+# -- Compiling package fpulib
+# -- Compiling package macro
+# -- Compiling package body macro
+# -- Loading package macro
+# -- Compiling package tech_generic
+# -- Compiling entity generic_syncram
+# -- Compiling architecture behavioral of generic_syncram
+# -- Compiling entity generic_dpram_ss
+# -- Compiling architecture behav of generic_dpram_ss
+# -- Compiling entity generic_dpram_as
+# -- Compiling architecture behav of generic_dpram_as
+# -- Compiling entity rfbypass
+# -- Compiling architecture rtl of rfbypass
+# -- Compiling entity generic_regfile_iu
+# -- Compiling architecture rtl of generic_regfile_iu
+# -- Compiling entity generic_regfile_cp
+# -- Compiling architecture rtl of generic_regfile_cp
+# -- Compiling entity generic_smult
+# -- Compiling architecture rtl of generic_smult
+# -- Compiling entity geninpad
+# -- Compiling architecture rtl of geninpad
+# -- Compiling entity gensmpad
+# -- Compiling architecture rtl of gensmpad
+# -- Compiling entity genoutpad
+# -- Compiling architecture rtl of genoutpad
+# -- Compiling entity gentoutpadu
+# -- Compiling architecture rtl of gentoutpadu
+# -- Compiling entity geniopad
+# -- Compiling architecture rtl of geniopad
+# -- Compiling entity geniodpad
+# -- Compiling architecture rtl of geniodpad
+# -- Compiling entity genodpad
+# -- Compiling architecture rtl of genodpad
+# -- Compiling package tech_atc35
+# -- Compiling entity pc3d01
+# -- Compiling architecture rtl of pc3d01
+# -- Compiling entity pc3d21
+# -- Compiling architecture rtl of pc3d21
+# -- Compiling entity pt3o01
+# -- Compiling architecture rtl of pt3o01
+# -- Compiling entity pt3o02
+# -- Compiling architecture rtl of pt3o02
+# -- Compiling entity pt3o03
+# -- Compiling architecture rtl of pt3o03
+# -- Compiling entity pc3t01u
+# -- Compiling architecture rtl of pc3t01u
+# -- Compiling entity pc3t02u
+# -- Compiling architecture rtl of pc3t02u
+# -- Compiling entity pc3t03u
+# -- Compiling architecture rtl of pc3t03u
+# -- Compiling entity pt3b01
+# -- Compiling architecture rtl of pt3b01
+# -- Compiling entity pt3b02
+# -- Compiling architecture rtl of pt3b02
+# -- Compiling entity pt3b03
+# -- Compiling architecture rtl of pt3b03
+# -- Compiling entity atc35_dpram_ss_dn
+# -- Compiling architecture behav of atc35_dpram_ss_dn
+# -- Compiling package tech_atc35_sim
+# -- Loading package tech_generic
+# -- Compiling entity ATC35_RAM_256x26
+# -- Compiling architecture behavioral of ATC35_RAM_256x26
+# -- Compiling entity ATC35_RAM_1024x32
+# -- Compiling architecture behavioral of ATC35_RAM_1024x32
+# -- Compiling entity ATC35_RAM_2048x32
+# -- Compiling architecture behavioral of ATC35_RAM_2048x32
+# -- Compiling entity ATC35_RAM_256x28
+# -- Compiling architecture behavioral of ATC35_RAM_256x28
+# -- Compiling entity ATC35_RAM_1024x34
+# -- Compiling architecture behavioral of ATC35_RAM_1024x34
+# -- Compiling entity ATC35_RAM_2048x34
+# -- Compiling architecture behavioral of ATC35_RAM_2048x34
+# -- Loading package tech_atc35_sim
+# -- Compiling entity DPRAMRWRW_16X32
+# -- Compiling architecture behav of DPRAMRWRW_16X32
+# -- Compiling entity DPRAMRWRW_136X32
+# -- Compiling architecture behav of DPRAMRWRW_136X32
+# -- Compiling entity DPRAMRWRW_168X32
+# -- Compiling architecture behav of DPRAMRWRW_168X32
+# -- Compiling package tech_atc35_syn
+# -- Loading package tech_atc35_syn
+# -- Compiling entity atc35_syncram
+# -- Compiling architecture rtl of atc35_syncram
+# -- Compiling entity atc35_regfile
+# -- Compiling architecture rtl of atc35_regfile
+# -- Compiling entity atc35_regfile_cp
+# -- Compiling architecture rtl of atc35_regfile_cp
+# -- Compiling entity atc35_inpad
+# -- Compiling architecture syn of atc35_inpad
+# -- Compiling entity atc35_smpad
+# -- Compiling architecture syn of atc35_smpad
+# -- Compiling entity atc35_outpad
+# -- Compiling architecture syn of atc35_outpad
+# -- Compiling entity atc35_toutpadu
+# -- Compiling architecture syn of atc35_toutpadu
+# -- Compiling entity atc35_iopad
+# -- Compiling architecture syn of atc35_iopad
+# -- Compiling entity atc35_iodpad
+# -- Compiling architecture syn of atc35_iodpad
+# -- Compiling entity atc35_odpad
+# -- Compiling architecture syn of atc35_odpad
+# -- Compiling package tech_atc25
+# -- Compiling entity pt33d00
+# -- Compiling architecture rtl of pt33d00
+# -- Compiling entity pt33d00u
+# -- Compiling architecture rtl of pt33d00u
+# -- Compiling entity pt33d20
+# -- Compiling architecture rtl of pt33d20
+# -- Compiling entity pt33d20u
+# -- Compiling architecture rtl of pt33d20u
+# -- Compiling entity pt33o01
+# -- Compiling architecture rtl of pt33o01
+# -- Compiling entity pt33o02
+# -- Compiling architecture rtl of pt33o02
+# -- Compiling entity pt33o03
+# -- Compiling architecture rtl of pt33o03
+# -- Compiling entity pt33o04
+# -- Compiling architecture rtl of pt33o04
+# -- Compiling entity pt33t01u
+# -- Compiling architecture rtl of pt33t01u
+# -- Compiling entity pt33t02u
+# -- Compiling architecture rtl of pt33t02u
+# -- Compiling entity pt33t03u
+# -- Compiling architecture rtl of pt33t03u
+# -- Compiling entity pt33b01
+# -- Compiling architecture rtl of pt33b01
+# -- Compiling entity pt33b02
+# -- Compiling architecture rtl of pt33b02
+# -- Compiling entity pt33b03
+# -- Compiling architecture rtl of pt33b03
+# -- Compiling entity pt33b04
+# -- Compiling architecture rtl of pt33b04
+# -- Compiling entity pt33b01u
+# -- Compiling architecture rtl of pt33b01u
+# -- Compiling entity pt33b02u
+# -- Compiling architecture rtl of pt33b02u
+# -- Compiling entity pt33b03u
+# -- Compiling architecture rtl of pt33b03u
+# -- Compiling entity pt33b04u
+# -- Compiling architecture rtl of pt33b04u
+# -- Compiling entity pp33o01
+# -- Compiling architecture rtl of pp33o01
+# -- Compiling entity pp33b015vt
+# -- Compiling architecture rtl of pp33b015vt
+# -- Compiling entity pp33t015vt
+# -- Compiling architecture rtl of pp33t015vt
+# -- Compiling entity atc25_syncram_sim
+# -- Compiling architecture behavioral of atc25_syncram_sim
+# -- Compiling entity atc25_2pram
+# -- Compiling architecture behav of atc25_2pram
+# -- Compiling package tech_atc25_sim
+# -- Loading package tech_atc25_sim
+# -- Compiling entity RAM_256x26
+# -- Compiling architecture behavioral of RAM_256x26
+# -- Compiling entity RAM_256x28
+# -- Compiling architecture behavioral of RAM_256x28
+# -- Compiling entity RAM_256x30
+# -- Compiling architecture behavioral of RAM_256x30
+# -- Compiling entity RAM_512x28
+# -- Compiling architecture behavioral of RAM_512x28
+# -- Compiling entity RAM_512x30
+# -- Compiling architecture behavioral of RAM_512x30
+# -- Compiling entity RAM_1024x32
+# -- Compiling architecture behavioral of RAM_1024x32
+# -- Compiling entity RAM_2048x32
+# -- Compiling architecture behavioral of RAM_2048x32
+# -- Compiling entity RAM2P_16X32
+# -- Compiling architecture behav of RAM2P_16X32
+# -- Compiling entity RAM2P_136X32
+# -- Compiling architecture behav of RAM2P_136X32
+# -- Compiling entity RAM2P_168X32
+# -- Compiling architecture behav of RAM2P_168X32
+# -- Compiling package tech_atc25_syn
+# -- Loading package tech_atc25_syn
+# -- Compiling entity atc25_syncram
+# -- Compiling architecture rtl of atc25_syncram
+# -- Compiling entity atc25_regfile_iu
+# -- Compiling architecture rtl of atc25_regfile_iu
+# -- Compiling entity atc25_regfile_cp
+# -- Compiling architecture rtl of atc25_regfile_cp
+# -- Compiling entity atc25_inpad
+# -- Compiling architecture syn of atc25_inpad
+# -- Compiling entity atc25_smpad
+# -- Compiling architecture syn of atc25_smpad
+# -- Compiling entity atc25_outpad
+# -- Compiling architecture syn of atc25_outpad
+# -- Compiling entity atc25_toutpadu
+# -- Compiling architecture syn of atc25_toutpadu
+# -- Compiling entity atc25_iopad
+# -- Compiling architecture syn of atc25_iopad
+# -- Compiling entity atc25_iopadu
+# -- Compiling architecture syn of atc25_iopadu
+# -- Compiling entity atc25_iodpad
+# -- Compiling architecture syn of atc25_iodpad
+# -- Compiling entity atc25_odpad
+# -- Compiling architecture syn of atc25_odpad
+# -- Compiling entity atc25_pcioutpad
+# -- Compiling architecture syn of atc25_pcioutpad
+# -- Compiling entity atc25_pcitoutpad
+# -- Compiling architecture syn of atc25_pcitoutpad
+# -- Compiling entity atc25_pciiopad
+# -- Compiling architecture syn of atc25_pciiopad
+# -- Compiling entity atc25_pciiodpad
+# -- Compiling architecture syn of atc25_pciiodpad
+# -- Compiling package tech_umc18
+# -- Compiling entity C3I40
+# -- Compiling architecture rtl of C3I40
+# -- Compiling entity C3I42
+# -- Compiling architecture rtl of C3I42
+# -- Compiling entity C3O10
+# -- Compiling architecture rtl of C3O10
+# -- Compiling entity C3O20
+# -- Compiling architecture rtl of C3O20
+# -- Compiling entity C3O40
+# -- Compiling architecture rtl of C3O40
+# -- Compiling entity C3B10U
+# -- Compiling architecture rtl of C3B10U
+# -- Compiling entity C3B20U
+# -- Compiling architecture rtl of C3B20U
+# -- Compiling entity C3B40U
+# -- Compiling architecture rtl of C3B40U
+# -- Compiling entity C3B10
+# -- Compiling architecture rtl of C3B10
+# -- Compiling entity C3B20
+# -- Compiling architecture rtl of C3B20
+# -- Compiling entity C3B40
+# -- Compiling architecture rtl of C3B40
+# -- Compiling entity CD3B10T
+# -- Compiling architecture rtl of CD3B10T
+# -- Compiling entity CD3B20T
+# -- Compiling architecture rtl of CD3B20T
+# -- Compiling entity CD3B40T
+# -- Compiling architecture rtl of CD3B40T
+# -- Compiling entity CD3O10T
+# -- Compiling architecture rtl of CD3O10T
+# -- Compiling entity CD3O20T
+# -- Compiling architecture rtl of CD3O20T
+# -- Compiling entity CD3O40T
+# -- Compiling architecture rtl of CD3O40T
+# -- Compiling entity C3B42
+# -- Compiling architecture rtl of C3B42
+# -- Compiling entity umc18_dpram_ss
+# -- Compiling architecture behav of umc18_dpram_ss
+# -- Compiling entity umc18_syncram_ss
+# -- Compiling architecture behavioral of umc18_syncram_ss
+# -- Compiling package tech_umc18_sim
+# -- Loading package tech_umc18_sim
+# -- Compiling entity R256X24M4
+# -- Compiling architecture behavioral of R256X24M4
+# -- Compiling entity R256X25M4
+# -- Compiling architecture behavioral of R256X25M4
+# -- Compiling entity R256X26M4
+# -- Compiling architecture behavioral of R256X26M4
+# -- Compiling entity R1024X32M4
+# -- Compiling architecture behavioral of R1024X32M4
+# -- Compiling entity R1024X33M4
+# -- Compiling architecture behavioral of R1024X33M4
+# -- Compiling entity R2048X32M8
+# -- Compiling architecture behavioral of R2048X32M8
+# -- Compiling entity R256X28M4
+# -- Compiling architecture behavioral of R256X28M4
+# -- Compiling entity R1024X34M4
+# -- Compiling architecture behavioral of R1024X34M4
+# -- Compiling entity R2048x34M8
+# -- Compiling architecture behavioral of R2048x34M8
+# -- Compiling entity RF68X32M1
+# -- Compiling architecture behav of RF68X32M1
+# -- Compiling entity RF68X33M1
+# -- Compiling architecture behav of RF68X33M1
+# -- Compiling entity RF136X32M1
+# -- Compiling architecture behav of RF136X32M1
+# -- Compiling entity RF136X33M1
+# -- Compiling architecture behav of RF136X33M1
+# -- Compiling entity INVDL
+# -- Compiling architecture rtl of INVDL
+# -- Compiling entity AND2DL
+# -- Compiling architecture rtl of AND2DL
+# -- Compiling entity OR2DL
+# -- Compiling architecture rtl of OR2DL
+# -- Compiling entity EXOR2DL
+# -- Compiling architecture rtl of EXOR2DL
+# -- Compiling package tech_umc18_syn
+# -- Loading package tech_umc18_syn
+# -- Compiling entity umc18_syncram
+# -- Compiling architecture rtl of umc18_syncram
+# -- Compiling entity umc18_regfile
+# -- Compiling architecture rtl of umc18_regfile
+# -- Compiling entity umc18_inpad
+# -- Compiling architecture syn of umc18_inpad
+# -- Compiling entity umc18_smpad
+# -- Compiling architecture syn of umc18_smpad
+# -- Compiling entity umc18_outpad
+# -- Compiling architecture syn of umc18_outpad
+# -- Compiling entity umc18_toutpadu
+# -- Compiling architecture syn of umc18_toutpadu
+# -- Compiling entity umc18_iopad
+# -- Compiling architecture syn of umc18_iopad
+# -- Compiling entity umc18_iodpad
+# -- Compiling architecture syn of umc18_iodpad
+# -- Compiling entity umc18_odpad
+# -- Compiling architecture syn of umc18_odpad
+# -- Compiling entity umc18_smiopad
+# -- Compiling architecture syn of umc18_smiopad
+# -- Compiling package tech_fs90
+# -- Compiling entity uyfaa
+# -- Compiling architecture rtl of uyfaa
+# -- Compiling entity vyfa2gsa
+# -- Compiling architecture rtl of vyfa2gsa
+# -- Compiling entity wyfa2gsa
+# -- Compiling architecture rtl of wyfa2gsa
+# -- Compiling entity fs90_syncram_sim
+# -- Compiling architecture behavioral of fs90_syncram_sim
+# -- Compiling entity fs90_dpram_ss
+# -- Compiling architecture behav of fs90_dpram_ss
+# -- Compiling package tech_fs90_sim
+# -- Loading package tech_fs90_sim
+# -- Compiling entity SA108019
+# -- Compiling architecture behavioral of SA108019
+# -- Compiling entity SU004020
+# -- Compiling architecture behavioral of SU004020
+# -- Compiling entity SW204420
+# -- Compiling architecture behavioral of SW204420
+# -- Compiling package tech_fs90_syn
+# -- Loading package tech_fs90_syn
+# -- Compiling entity fs90_syncram
+# -- Compiling architecture rtl of fs90_syncram
+# -- Compiling entity fs90_regfile
+# -- Compiling architecture rtl of fs90_regfile
+# -- Compiling entity fs90_inpad
+# -- Compiling architecture syn of fs90_inpad
+# -- Compiling entity fs90_smpad
+# -- Compiling architecture syn of fs90_smpad
+# -- Compiling entity fs90_outpad
+# -- Compiling architecture syn of fs90_outpad
+# -- Compiling entity fs90_toutpadu
+# -- Compiling architecture syn of fs90_toutpadu
+# -- Compiling entity fs90_iopad
+# -- Compiling architecture syn of fs90_iopad
+# -- Compiling entity fs90_smiopad
+# -- Compiling architecture syn of fs90_smiopad
+# -- Compiling entity fs90_iodpad
+# -- Compiling architecture syn of fs90_iodpad
+# -- Compiling entity fs90_odpad
+# -- Compiling architecture syn of fs90_odpad
+# -- Compiling package tech_virtex
+# -- Compiling entity virtex_prom256
+# -- Compiling entity virtex_prom512
+# -- Compiling entity virtex_prom1024
+# -- Compiling entity virtex_prom2048
+# -- Compiling entity virtex_bprom
+# -- Compiling architecture rtl of virtex_bprom
+# -- Compiling entity RAMB4_S16
+# -- Compiling architecture behav of RAMB4_S16
+# -- Compiling entity RAMB4_S8
+# -- Compiling architecture behav of RAMB4_S8
+# -- Compiling entity RAMB4_S4
+# -- Compiling architecture behav of RAMB4_S4
+# -- Compiling entity RAMB4_S2
+# -- Compiling architecture behav of RAMB4_S2
+# -- Compiling entity RAMB4_S1
+# -- Compiling architecture behav of RAMB4_S1
+# -- Compiling entity RAMB4_S16_S16
+# -- Compiling architecture behav of RAMB4_S16_S16
+# -- Compiling package virtex_complib
+# -- Loading package virtex_complib
+# -- Compiling entity virtex_syncram
+# -- Compiling architecture behav of virtex_syncram
+# -- Compiling entity virtex_regfile
+# -- Compiling architecture behav of virtex_regfile
+# -- Compiling entity virtex_regfile_cp
+# -- Compiling architecture behav of virtex_regfile_cp
+# -- Compiling package multlib
+# -- Compiling package mulgates
+# -- Compiling entity GEN_NOT
+# -- Compiling architecture rtl of GEN_NOT
+# -- Compiling entity GEN_AND2
+# -- Compiling architecture rtl of GEN_AND2
+# -- Compiling entity GEN_OR2
+# -- Compiling architecture rtl of GEN_OR2
+# -- Compiling entity GEN_XOR2
+# -- Compiling architecture rtl of GEN_XOR2
+# -- Loading package mulgates
+# -- Compiling entity mul_17_17
+# -- Compiling architecture struct of mul_17_17
+# -- Compiling entity mul_33_33
+# -- Compiling architecture struct of mul_33_33
+# -- Compiling entity mul_33_17
+# -- Compiling architecture struct of mul_33_17
+# -- Compiling entity mul_33_9
+# -- Compiling architecture struct of mul_33_9
+# -- Compiling package tech_map
+# -- Loading package tech_atc25
+# -- Loading package tech_atc35
+# -- Loading package tech_fs90
+# -- Loading package tech_umc18
+# -- Loading package tech_virtex
+# -- Compiling entity syncram
+# -- Compiling architecture behav of syncram
+# -- Compiling entity regfile_iu
+# -- Compiling architecture rtl of regfile_iu
+# -- Compiling entity regfile_cp
+# -- Compiling architecture rtl of regfile_cp
+# -- Compiling entity bprom
+# -- Compiling architecture rtl of bprom
+# -- Loading package multlib
+# -- Compiling entity hw_smult
+# -- Compiling architecture rtl of hw_smult
+# -- Compiling entity inpad
+# -- Compiling architecture rtl of inpad
+# -- Compiling entity smpad
+# -- Compiling architecture rtl of smpad
+# -- Compiling entity outpad
+# -- Compiling architecture rtl of outpad
+# -- Compiling entity toutpadu
+# -- Compiling architecture rtl of toutpadu
+# -- Compiling entity iopad
+# -- Compiling architecture rtl of iopad
+# -- Compiling entity smiopad
+# -- Compiling architecture rtl of smiopad
+# -- Compiling entity odpad
+# -- Compiling architecture rtl of odpad
+# -- Compiling entity iodpad
+# -- Compiling architecture rtl of iodpad
+# -- Compiling entity pcioutpad
+# -- Compiling architecture rtl of pcioutpad
+# -- Compiling entity pcitoutpad
+# -- Compiling architecture rtl of pcitoutpad
+# -- Compiling entity pciiopad
+# -- Compiling architecture rtl of pciiopad
+# -- Compiling entity pciiodpad
+# -- Compiling architecture rtl of pciiodpad
+# -- Compiling entity clkgen
+# -- Compiling architecture rtl of clkgen
+# -- Compiling entity rstgen
+# -- Compiling architecture rtl of rstgen
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package macro
+# -- Compiling entity iu
+# -- Compiling architecture rtl of iu
+# -- Loading package AMBA
+# -- Loading package fpulib
+# -- Loading package tech_map
+# -- Compiling entity proc
+# -- Compiling architecture rtl of proc
+# End time: 22:22:10 on Mar 18,2020, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.4e Compiler 2016.04 Apr  9 2016
+# Start time: 22:22:10 on Mar 18,2020
+# vlog -f GUVM_tb.f 
+# -- Compiling package GUVM_testbench_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) Using implicit +incdir+D:/installedPrograms/MentorGraphics/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(12)
+# ** at GUVM/GUVM_sequence.sv(1): (vlog-2730) Undefined variable: 'GUVM_sequence_item'.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(12)
+# ** while parsing macro expansion: 'uvm_object_utils' starting at GUVM/GUVM_sequence.sv(3)
+# ** at GUVM/GUVM_sequence.sv(3): (vlog-2730) Undefined variable: 'generic_sequence'.
+# 
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(12)
+# ** while parsing macro expansion: 'uvm_object_utils' starting at GUVM/GUVM_sequence.sv(3)
+# ** at GUVM/GUVM_sequence.sv(3): near ";": syntax error, unexpected ';', expecting '('.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(12)
+# ** while parsing macro expansion: 'uvm_object_utils' starting at GUVM/GUVM_sequence.sv(3)
+# ** at GUVM/GUVM_sequence.sv(3): (vlog-2730) Undefined variable: 'tmp'.
+# 
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(12)
+# ** while parsing macro expansion: 'uvm_object_utils' starting at GUVM/GUVM_sequence.sv(3)
+# ** at GUVM/GUVM_sequence.sv(3): near ";": syntax error, unexpected ';', expecting '('.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(12)
+# ** while parsing macro expansion: 'uvm_object_utils' starting at GUVM/GUVM_sequence.sv(3)
+# ** at GUVM/GUVM_sequence.sv(3): Illegal declaration after the statement near line '3'. Declarations must precede statements. Look for stray semicolons.
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(12)
+# ** while parsing macro expansion: 'uvm_object_utils' starting at GUVM/GUVM_sequence.sv(3)
+# ** at GUVM/GUVM_sequence.sv(3): near "end": syntax error, unexpected end.
+# 
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(12)
+# ** at GUVM/GUVM_sequence.sv(4): near ";": syntax error, unexpected ';', expecting '('.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(12)
+# ** at GUVM/GUVM_sequence.sv(7): 'super.new()' call can only be made from within a class constructor.
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(12)
+# ** at GUVM/GUVM_sequence.sv(8): near "new": syntax error, unexpected new, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(12)
+# ** at GUVM/GUVM_sequence.sv(11): (vlog-2730) Undefined variable: 'command'.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(12)
+# ** at GUVM/GUVM_sequence.sv(11): (vlog-2164) Class or package 'GUVM_sequence_item' not found.
+# 
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(12)
+# ** at GUVM/GUVM_sequence.sv(11): near "::": syntax error, unexpected ::, expecting ';'.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(12)
+# ** at GUVM/GUVM_sequence.sv(17): (vlog-2164) Class or package 'GUVM_sequence_item' not found.
+# 
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(12)
+# ** at GUVM/GUVM_sequence.sv(17): near "::": syntax error, unexpected ::, expecting ';'.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(13)
+# ** while parsing macro expansion: 'uvm_object_utils' starting at GUVM/GUVM_sequence_item.sv(3)
+# ** at GUVM/GUVM_sequence_item.sv(3): Typedef 'type_id' multiply defined.
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(13)
+# ** while parsing macro expansion: 'uvm_object_utils' starting at GUVM/GUVM_sequence_item.sv(3)
+# ** at GUVM/GUVM_sequence_item.sv(3): 'get_type' already exists; must not be redefined as a function.
+# ** Warning: ** while parsing file included at GUVM_testbench_pkg.sv(13)
+# ** while parsing macro expansion: 'uvm_object_utils' starting at GUVM/GUVM_sequence_item.sv(3)
+# ** at GUVM/GUVM_sequence_item.sv(3): (vlog-2953) Incorrect usage of keyword 'static'.
+# 
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(13)
+# ** while parsing macro expansion: 'uvm_object_utils' starting at GUVM/GUVM_sequence_item.sv(3)
+# ** at GUVM/GUVM_sequence_item.sv(3): near "function": syntax error, unexpected function, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
+# 
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(13)
+# ** while parsing macro expansion: 'uvm_object_utils' starting at GUVM/GUVM_sequence_item.sv(3)
+# ** at GUVM/GUVM_sequence_item.sv(3): near ";": syntax error, unexpected ';', expecting '('.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(13)
+# ** while parsing macro expansion: 'uvm_object_utils' starting at GUVM/GUVM_sequence_item.sv(3)
+# ** at GUVM/GUVM_sequence_item.sv(3): (vlog-2730) Undefined variable: 'tmp'.
+# 
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(13)
+# ** while parsing macro expansion: 'uvm_object_utils' starting at GUVM/GUVM_sequence_item.sv(3)
+# ** at GUVM/GUVM_sequence_item.sv(3): near ";": syntax error, unexpected ';', expecting '('.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(13)
+# ** while parsing macro expansion: 'uvm_object_utils' starting at GUVM/GUVM_sequence_item.sv(3)
+# ** at GUVM/GUVM_sequence_item.sv(3): The typedef type, 'GUVM_sequence_item', is not a known type.
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(13)
+# ** while parsing macro expansion: 'uvm_object_utils' starting at GUVM/GUVM_sequence_item.sv(3)
+# ** at GUVM/GUVM_sequence_item.sv(3): Illegal declaration after the statement near line '3'. Declarations must precede statements. Look for stray semicolons.
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(13)
+# ** while parsing macro expansion: 'uvm_object_utils' starting at GUVM/GUVM_sequence_item.sv(3)
+# ** at GUVM/GUVM_sequence_item.sv(3): near "end": syntax error, unexpected end.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(13)
+# ** at GUVM/GUVM_sequence_item.sv(12): (vlog-2730) Undefined variable: 'target_instruction'.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(13)
+# ** at GUVM/GUVM_sequence_item.sv(13): (vlog-2730) Undefined variable: 'inst'.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(13)
+# ** at GUVM/GUVM_sequence_item.sv(15): (vlog-2730) Undefined variable: 'inst'.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(13)
+# ** at GUVM/GUVM_sequence_item.sv(22): (vlog-2730) Undefined variable: 'inst'.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(13)
+# ** at GUVM/GUVM_sequence_item.sv(23): (vlog-2730) Undefined variable: 'oprand2'.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(13)
+# ** at GUVM/GUVM_sequence_item.sv(24): (vlog-2730) Undefined variable: 'oprand1'.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(13)
+# ** at GUVM/GUVM_sequence_item.sv(29): Function 'new' is allowed only in context of class constructor.
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(13)
+# ** at GUVM/GUVM_sequence_item.sv(30): 'super.new()' call can only be made from within a class constructor.
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(13)
+# ** at GUVM/GUVM_sequence_item.sv(35): near ";": syntax error, unexpected ';', expecting '('.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(13)
+# ** at GUVM/GUVM_sequence_item.sv(38): Illegal declaration after the statement near line '35'. Declarations must precede statements. Look for stray semicolons.
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(13)
+# ** at GUVM/GUVM_sequence_item.sv(45): (vlog-2730) Undefined variable: 'inst'.
+# 
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(13)
+# ** at GUVM/GUVM_sequence_item.sv(50): near ";": syntax error, unexpected ';', expecting '('.
+# 
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(13)
+# ** at GUVM/GUVM_sequence_item.sv(55): near ":": syntax error, unexpected ':'.
+# 
+# ** Error (suppressible): ** while parsing file included at GUVM_testbench_pkg.sv(13)
+# ** at GUVM/GUVM_sequence_item.sv(76): (vlog-13163) End label 'GUVM_sequence_item' does not match class name on line 1.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(14)
+# ** at GUVM/GUVM_driver.sv(1): (vlog-2730) Undefined variable: 'GUVM_sequence_item'.
+# 
+# ** Error (suppressible): ** while parsing file included at GUVM_testbench_pkg.sv(14)
+# ** at GUVM/GUVM_driver.sv(3): (vlog-2744) An import statement is illegal when directly within a class scope.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(14)
+# ** at GUVM/GUVM_driver.sv(3): (vlog-13006) Could not find the package (GUVM_classes_pkg).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+# 
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(14)
+# ** at GUVM/GUVM_driver.sv(25): near ";": syntax error, unexpected ';', expecting '('.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(15)
+# ** at GUVM/GUVM_monitor.sv(9): (vlog-2730) Undefined variable: 'GUVM_sequence_item'.
+# 
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(15)
+# ** at GUVM/GUVM_monitor.sv(24): near ";": syntax error, unexpected ';', expecting '('.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(15)
+# ** at GUVM/GUVM_monitor.sv(25): (vlog-2730) Undefined variable: 'pros_trans'.
+# 
+# ** Error (suppressible): ** while parsing file included at GUVM_testbench_pkg.sv(15)
+# ** at GUVM/GUVM_monitor.sv(47): (vlog-13163) End label 'processor_monitor' does not match class name on line 1.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(16)
+# ** at GUVM/GUVM_scoreboard.sv(16): (vlog-2730) Undefined variable: 'GUVM_sequence_item'.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(16)
+# ** at GUVM/GUVM_scoreboard.sv(38): (vlog-2400) Identifier ('GUVM_sequence_item') found where a type or type identifier is required.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(16)
+# ** at GUVM/GUVM_scoreboard.sv(44): (vlog-2400) Identifier ('GUVM_sequence_item') found where a type or type identifier is required.
+# 
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(16)
+# ** at GUVM/GUVM_scoreboard.sv(49): near ",": syntax error, unexpected ',', expecting '('.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(16)
+# ** at GUVM/GUVM_scoreboard.sv(52): Illegal declaration after the statement near line '49'. Declarations must precede statements. Look for stray semicolons.
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(16)
+# ** at GUVM/GUVM_scoreboard.sv(95): near "end": syntax error, unexpected end.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(17)
+# ** while parsing macro expansion: 'uvm_component_utils' starting at GUVM/GUVM_agent.sv(2)
+# ** at GUVM/GUVM_agent.sv(2): (vlog-2730) Undefined variable: 'GUVM_agent'.
+# 
+# ** Warning: ** while parsing file included at GUVM_testbench_pkg.sv(17)
+# ** while parsing macro expansion: 'uvm_component_utils' starting at GUVM/GUVM_agent.sv(2)
+# ** at GUVM/GUVM_agent.sv(2): (vlog-2953) Incorrect usage of keyword 'static'.
+# 
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(17)
+# ** while parsing macro expansion: 'uvm_component_utils' starting at GUVM/GUVM_agent.sv(2)
+# ** at GUVM/GUVM_agent.sv(2): near "function": syntax error, unexpected function, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
+# 
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(17)
+# ** while parsing macro expansion: 'uvm_component_utils' starting at GUVM/GUVM_agent.sv(2)
+# ** at GUVM/GUVM_agent.sv(2): near "endfunction": syntax error, unexpected endfunction, expecting endtask.
+# 
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(17)
+# ** while parsing macro expansion: 'uvm_component_utils' starting at GUVM/GUVM_agent.sv(2)
+# ** at GUVM/GUVM_agent.sv(2): near "endfunction": syntax error, unexpected endfunction, expecting endtask.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(17)
+# ** at GUVM/GUVM_agent.sv(7): Illegal declaration after the statement near line '4'. Declarations must precede statements. Look for stray semicolons.
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(17)
+# ** at GUVM/GUVM_agent.sv(8): 'super.new()' call can only be made from within a class constructor.
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(17)
+# ** at GUVM/GUVM_agent.sv(9): near "endfunction": syntax error, unexpected endfunction, expecting endtask.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(17)
+# ** at GUVM/GUVM_agent.sv(12): (vlog-2164) Class or package 'GUVM_driver' not found.
+# 
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(17)
+# ** at GUVM/GUVM_agent.sv(12): near "GUVM_driver": syntax error, unexpected IDENTIFIER, expecting new.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(17)
+# ** at GUVM/GUVM_agent.sv(13): Illegal declaration after the statement near line '11'. Declarations must precede statements. Look for stray semicolons.
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(17)
+# ** at GUVM/GUVM_agent.sv(19): Illegal declaration after the statement near line '17'. Declarations must precede statements. Look for stray semicolons.
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(18)
+# ** while parsing macro expansion: 'uvm_component_utils' starting at GUVM/GUVM_env.sv(2)
+# ** at GUVM/GUVM_env.sv(2): (vlog-2730) Undefined variable: 'GUVM_env'.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(18)
+# ** while parsing macro expansion: 'uvm_component_utils' starting at GUVM/GUVM_env.sv(2)
+# ** at GUVM/GUVM_env.sv(2): Typedef 'type_id' multiply defined.
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(18)
+# ** while parsing macro expansion: 'uvm_component_utils' starting at GUVM/GUVM_env.sv(2)
+# ** at GUVM/GUVM_env.sv(2): 'get_type' already exists; must not be redefined as a function.
+# ** Warning: ** while parsing file included at GUVM_testbench_pkg.sv(18)
+# ** while parsing macro expansion: 'uvm_component_utils' starting at GUVM/GUVM_env.sv(2)
+# ** at GUVM/GUVM_env.sv(2): (vlog-2953) Incorrect usage of keyword 'static'.
+# 
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(18)
+# ** while parsing macro expansion: 'uvm_component_utils' starting at GUVM/GUVM_env.sv(2)
+# ** at GUVM/GUVM_env.sv(2): near "function": syntax error, unexpected function, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
+# 
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(18)
+# ** while parsing macro expansion: 'uvm_component_utils' starting at GUVM/GUVM_env.sv(2)
+# ** at GUVM/GUVM_env.sv(2): near "endfunction": syntax error, unexpected endfunction, expecting endtask.
+# 
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(18)
+# ** while parsing macro expansion: 'uvm_component_utils' starting at GUVM/GUVM_env.sv(2)
+# ** at GUVM/GUVM_env.sv(2): near "endfunction": syntax error, unexpected endfunction, expecting endtask.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(18)
+# ** at GUVM/GUVM_env.sv(8): Illegal declaration after the statement near line '4'. Declarations must precede statements. Look for stray semicolons.
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(18)
+# ** at GUVM/GUVM_env.sv(9): 'super.new()' call can only be made from within a class constructor.
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(18)
+# ** at GUVM/GUVM_env.sv(10): near "endfunction": syntax error, unexpected endfunction, expecting endtask.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(18)
+# ** at GUVM/GUVM_env.sv(13): (vlog-2730) Undefined variable: 'agent'.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(18)
+# ** at GUVM/GUVM_env.sv(13): (vlog-2164) Class or package 'GUVM_agent' not found.
+# 
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(18)
+# ** at GUVM/GUVM_env.sv(13): near "::": syntax error, unexpected ::, expecting ';'.
+# 
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(18)
+# ** at GUVM/GUVM_env.sv(16): near "endfunction": syntax error, unexpected endfunction, expecting endtask.
+# 
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(18)
+# ** at GUVM/GUVM_env.sv(29): near "endfunction": syntax error, unexpected endfunction, expecting endtask.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(19)
+# ** while parsing macro expansion: 'uvm_component_utils' starting at GUVM/GUVM_test.sv(2)
+# ** at GUVM/GUVM_test.sv(2): (vlog-2730) Undefined variable: 'GUVM_test'.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(19)
+# ** while parsing macro expansion: 'uvm_component_utils' starting at GUVM/GUVM_test.sv(2)
+# ** at GUVM/GUVM_test.sv(2): Typedef 'type_id' multiply defined.
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(19)
+# ** while parsing macro expansion: 'uvm_component_utils' starting at GUVM/GUVM_test.sv(2)
+# ** at GUVM/GUVM_test.sv(2): 'get_type' already exists; must not be redefined as a function.
+# ** Warning: ** while parsing file included at GUVM_testbench_pkg.sv(19)
+# ** while parsing macro expansion: 'uvm_component_utils' starting at GUVM/GUVM_test.sv(2)
+# ** at GUVM/GUVM_test.sv(2): (vlog-2953) Incorrect usage of keyword 'static'.
+# 
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(19)
+# ** while parsing macro expansion: 'uvm_component_utils' starting at GUVM/GUVM_test.sv(2)
+# ** at GUVM/GUVM_test.sv(2): near "function": syntax error, unexpected function, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
+# 
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(19)
+# ** while parsing macro expansion: 'uvm_component_utils' starting at GUVM/GUVM_test.sv(2)
+# ** at GUVM/GUVM_test.sv(2): near "endfunction": syntax error, unexpected endfunction, expecting endtask.
+# 
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(19)
+# ** while parsing macro expansion: 'uvm_component_utils' starting at GUVM/GUVM_test.sv(2)
+# ** at GUVM/GUVM_test.sv(2): near "endfunction": syntax error, unexpected endfunction, expecting endtask.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(19)
+# ** at GUVM/GUVM_test.sv(7): Illegal declaration after the statement near line '4'. Declarations must precede statements. Look for stray semicolons.
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(19)
+# ** at GUVM/GUVM_test.sv(8): 'super.new()' call can only be made from within a class constructor.
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(19)
+# ** at GUVM/GUVM_test.sv(9): near "endfunction": syntax error, unexpected endfunction, expecting endtask.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(19)
+# ** at GUVM/GUVM_test.sv(12): (vlog-2730) Undefined variable: 'env'.
+# 
+# ** Error: ** while parsing file included at GUVM_testbench_pkg.sv(19)
+# ** at GUVM/GUVM_test.sv(12): (vlog-2164) Class or package 'GUVM_env' not found.
+# 
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(19)
+# ** at GUVM/GUVM_test.sv(12): near "::": syntax error, unexpected ::, expecting ';'.
+# 
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(19)
+# ** at GUVM/GUVM_test.sv(14): near "endfunction": syntax error, unexpected endfunction, expecting endtask.
+# 
+# ** Error: (vlog-13069) ** while parsing file included at GUVM_testbench_pkg.sv(19)
+# ** at GUVM/GUVM_test.sv(18): near "endfunction": syntax error, unexpected endfunction, expecting endtask.
+# 
+# ** Error: (vlog-7) Failed to open design unit file "GUVM_top.sv.sv" in read mode.
+# 
+# No such file or directory. (errno = ENOENT)
+# End time: 22:22:10 on Mar 18,2020, Elapsed time: 0:00:00
+# Errors: 92, Warnings: 4
+# ** Error: D:/installedPrograms/MentorGraphics/questasim64_10.4e/win64/vlog failed.
+# Error in macro ./run_leon.do line 5
+# D:/installedPrograms/MentorGraphics/questasim64_10.4e/win64/vlog failed.
+#     while executing
+# "vlog -f GUVM_tb.f "
+# invalid command name "69GA"
+# invalid command name "qqyut"
