@@ -1,6 +1,6 @@
-class cmd_sequence_item extends uvm_sequence_item;
+class GUVM_sequence_item extends uvm_sequence_item;
 
-  `uvm_object_utils(cmd_sequence_item)
+  `uvm_object_utils(GUVM_sequence_item)
    rand logic [31:0] inst;
    rand logic [31:0] oprand1,oprand2;
 
@@ -32,7 +32,7 @@ class cmd_sequence_item extends uvm_sequence_item;
 
   //copied and edited portion of code 
   function bit do_compare(uvm_object rhs, uvm_comparer comparer);
-	cmd_sequence_item tested;
+	GUVM_sequence_item tested;
 	bit               same;
 	
 	if (rhs==null) `uvm_fatal(get_type_name(), 
@@ -47,7 +47,7 @@ class cmd_sequence_item extends uvm_sequence_item;
  endfunction : do_compare
 
  function void do_copy(uvm_object rhs);
-	cmd_sequence_item RHS;
+	GUVM_sequence_item RHS;
 	assert(rhs != null) else
 	  $fatal(1,"Tried to copy null transaction");
 	super.do_copy(rhs);
@@ -73,4 +73,4 @@ class cmd_sequence_item extends uvm_sequence_item;
 		end
 	end
 	*/
-endclass: cmd_sequence_item
+endclass: GUVM_sequence_item

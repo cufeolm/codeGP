@@ -9,8 +9,8 @@ class GUVM_test extends uvm_test;
    endfunction
    
    function void build_phase(uvm_phase phase);
-      env = processor_env::type_id::create("env", this);
-      processor_seq = processor_sequence::type_id::create("processor_seq");
+      env = GUVM_env::type_id::create("env", this);
+      processor_seq = GUVM_sequence::type_id::create("processor_seq");
    endfunction
 
    function void end_of_elaboration_phase(uvm_phase phase);

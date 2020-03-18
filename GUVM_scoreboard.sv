@@ -1,6 +1,6 @@
 
 `include "uvm_macros.svh"
-//`include "processor_sequence.sv"
+//`include "GUVM_sequence.sv"
 import uvm_pkg::*;
 `uvm_analysis_imp_decl(_mon_trans)
 `uvm_analysis_imp_decl(_drv_trans)
@@ -10,15 +10,15 @@ class GUVM_scoreboard extends uvm_scoreboard;
     // register the scoreboard in the UVM factory
     `uvm_component_utils(GUVM_scoreboard);
 
-    //processor_transaction trans, input_trans;
+    //GUVM_sequence_item trans, input_trans;
 
     // analysis implementation ports
-    uvm_analysis_imp_mon_trans #(processor_transaction,GUVM_scoreboard) Mon2Sb_port;
-    uvm_analysis_imp_drv_trans #(processor_transaction,GUVM_scoreboard) Drv2Sb_port;
+    uvm_analysis_imp_mon_trans #(GUVM_sequence_item,GUVM_scoreboard) Mon2Sb_port;
+    uvm_analysis_imp_drv_trans #(GUVM_sequence_item,GUVM_scoreboard) Drv2Sb_port;
 
     // TLM FIFOs to store the actual and expected transaction values
-    uvm_tlm_fifo #(processor_transaction)  drv_fifo;
-    uvm_tlm_fifo #(processor_transaction)  mon_fifo;
+    uvm_tlm_fifo #(GUVM_sequence_item)  drv_fifo;
+    uvm_tlm_fifo #(GUVM_sequence_item)  mon_fifo;
 
    function new (string name, uvm_component parent);
       super.new(name, parent);
@@ -35,18 +35,18 @@ class GUVM_scoreboard extends uvm_scoreboard;
 
    // write_drv_trans will be called when the driver broadcasts a transaction
    // to the scoreboard
-   function void write_drv_trans (processor_transaction input_trans);
+   function void write_drv_trans (GUVM_sequence_item input_trans);
         void'(drv_fifo.try_put(input_trans));
    endfunction : write_drv_trans
 
    // write_mon_trans will be called when the monitor broadcasts the DUT results
    // to the scoreboard 
-   function void write_mon_trans (processor_transaction trans);
+   function void write_mon_trans (GUVM_sequence_item trans);
         void'(mon_fifo.try_put(trans));
    endfunction : write_mon_trans
 
    task run_phase(uvm_phase phase);
-      processor_transaction exp_trans, out_trans;
+      GUVM_sequence_item exp_trans, out_trans;
       bit [31:0] h1,i1,i2,imm;
 	  //bit [19:0] sign;
       forever begin
