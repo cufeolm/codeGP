@@ -52,9 +52,9 @@ class GUVM_scoreboard extends uvm_scoreboard;
       forever begin
 			drv_fifo.get(exp_trans);
 			mon_fifo.get(out_trans);
-			i1=exp_trans.RS1_data;
-			i2=exp_trans.RS2_data;
-			imm={{20{exp_trans.immediate_data[11]}}, exp_trans.immediate_data};  //IMMEDIATE VALUE SIGN EXTENSION
+			i1=exp_trans.operand1;
+			i2=exp_trans.operand2;
+			//imm={{20{exp_trans.immediate_data[11]}}, exp_trans.immediate_data};  //IMMEDIATE VALUE SIGN EXTENSION
 			
 			
  if((exp_trans.instrn[31:30]==2'b10 && exp_trans.instrn[24:19]==6'b000000 && exp_trans.instrn[13:5]==9'b000000000) ||(exp_trans.instrn[6:0]==7'b0110011 && exp_trans.instrn[14:12]==3'b000 && exp_trans.instrn[31:25]==7'b0000000 ) || (exp_trans.instrn[24:21]==4'h4 && exp_trans.instrn[27:26]==2'b00)) //LEON/RISCY/AMBER //ADD common 
