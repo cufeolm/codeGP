@@ -1,0 +1,128 @@
+# do run_leon.do
+# QuestaSim-64 vlog 10.4e Compiler 2016.04 Apr  9 2016
+# Start time: 22:16:14 on Mar 18,2020
+# vlog DUT_LEON.f 
+# ** Error: (vlog-13069) DUT_LEON.f(3): near "/": syntax error, unexpected '/'.
+# 
+# ** Error: DUT_LEON.f(3): (vlog-13205) Syntax error found in the scope following 'leon'. Is there a missing '::'?
+# 
+# End time: 22:16:14 on Mar 18,2020, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: D:/installedPrograms/MentorGraphics/questasim64_10.4e/win64/vlog failed.
+# Error in macro ./run_leon.do line 3
+# D:/installedPrograms/MentorGraphics/questasim64_10.4e/win64/vlog failed.
+#     while executing
+# "vlog DUT_LEON.f "
+# QuestaSim-64 vlog 10.4e Compiler 2016.04 Apr  9 2016
+# Start time: 22:17:32 on Mar 18,2020
+# vlog -f DUT_LEON.f 
+# ** Error: (vlog-13036) leon/amba.vhd(1): near "--": Operator only allowed in SystemVerilog.
+# 
+# ** Error: (vlog-13069) leon/amba.vhd(1): near "--": syntax error, unexpected --, expecting class.
+# 
+# ** Error: (vlog-13036) leon/target.vhd(2): near "--": Operator only allowed in SystemVerilog.
+# 
+# ** Error: (vlog-13069) leon/target.vhd(2): near "--": syntax error, unexpected --, expecting class.
+# 
+# ** Error: (vlog-13036) leon/device.vhd(2): near "--": Operator only allowed in SystemVerilog.
+# 
+# ** Error: (vlog-13069) leon/device.vhd(2): near "--": syntax error, unexpected --, expecting class.
+# 
+# ** Error: (vlog-13036) leon/config.vhd(2): near "--": Operator only allowed in SystemVerilog.
+# 
+# ** Error: (vlog-13069) leon/config.vhd(2): near "--": syntax error, unexpected --, expecting class.
+# 
+# ** Error: (vlog-13036) leon/sparcv8.vhd(2): near "--": Operator only allowed in SystemVerilog.
+# 
+# ** Error: (vlog-13069) leon/sparcv8.vhd(2): near "--": syntax error, unexpected --, expecting class.
+# 
+# ** Error: (vlog-13036) leon/iface.vhd(2): near "--": Operator only allowed in SystemVerilog.
+# 
+# ** Error: (vlog-13069) leon/iface.vhd(2): near "--": syntax error, unexpected --, expecting class.
+# 
+# ** Error: (vlog-13036) leon/fpulib.vhd(2): near "--": Operator only allowed in SystemVerilog.
+# 
+# ** Error: (vlog-13069) leon/fpulib.vhd(2): near "--": syntax error, unexpected --, expecting class.
+# 
+# ** Error: (vlog-13036) leon/macro.vhd(2): near "--": Operator only allowed in SystemVerilog.
+# 
+# ** Error: (vlog-13069) leon/macro.vhd(2): near "--": syntax error, unexpected --, expecting class.
+# 
+# ** Error: (vlog-13036) leon/tech_generic.vhd(2): near "--": Operator only allowed in SystemVerilog.
+# 
+# ** Error: (vlog-13069) leon/tech_generic.vhd(2): near "--": syntax error, unexpected --, expecting class.
+# 
+# ** Error: (vlog-7) Failed to open design unit file "tech_atc35.vhd" in read mode.
+# 
+# No such file or directory. (errno = ENOENT)
+# End time: 22:17:32 on Mar 18,2020, Elapsed time: 0:00:00
+# Errors: 19, Warnings: 0
+# ** Error: D:/installedPrograms/MentorGraphics/questasim64_10.4e/win64/vlog failed.
+# Error in macro ./run_leon.do line 3
+# D:/installedPrograms/MentorGraphics/questasim64_10.4e/win64/vlog failed.
+#     while executing
+# "vlog -f DUT_LEON.f "
+# QuestaSim-64 vcom 10.4e Compiler 2016.04 Apr  9 2016
+# Start time: 22:17:55 on Mar 18,2020
+# vcom -f DUT_LEON.f 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package AMBA
+# -- Compiling package target
+# -- Loading package target
+# -- Compiling package device
+# -- Loading package std_logic_arith
+# -- Loading package device
+# -- Compiling package config
+# -- Loading package config
+# -- Compiling package sparcv8
+# -- Loading package sparcv8
+# -- Compiling package iface
+# -- Loading package iface
+# -- Compiling package fpulib
+# -- Compiling package macro
+# -- Compiling package body macro
+# -- Loading package macro
+# -- Compiling package tech_generic
+# -- Compiling entity generic_syncram
+# -- Compiling architecture behavioral of generic_syncram
+# -- Compiling entity generic_dpram_ss
+# -- Compiling architecture behav of generic_dpram_ss
+# -- Compiling entity generic_dpram_as
+# -- Compiling architecture behav of generic_dpram_as
+# -- Compiling entity rfbypass
+# -- Compiling architecture rtl of rfbypass
+# -- Compiling entity generic_regfile_iu
+# -- Compiling architecture rtl of generic_regfile_iu
+# -- Compiling entity generic_regfile_cp
+# -- Compiling architecture rtl of generic_regfile_cp
+# -- Compiling entity generic_smult
+# -- Compiling architecture rtl of generic_smult
+# -- Compiling entity geninpad
+# -- Compiling architecture rtl of geninpad
+# -- Compiling entity gensmpad
+# -- Compiling architecture rtl of gensmpad
+# -- Compiling entity genoutpad
+# -- Compiling architecture rtl of genoutpad
+# -- Compiling entity gentoutpadu
+# -- Compiling architecture rtl of gentoutpadu
+# -- Compiling entity geniopad
+# -- Compiling architecture rtl of geniopad
+# -- Compiling entity geniodpad
+# -- Compiling architecture rtl of geniodpad
+# -- Compiling entity genodpad
+# -- Compiling architecture rtl of genodpad
+# ** Error: (vcom-7) Failed to open design unit file "tech_atc35.vhd" in read mode.
+# 
+# No such file or directory. (errno = ENOENT)
+# ** Error: (vcom-7) Failed to open design unit file "tech_atc25.vhd" in read mode.
+# 
+# No such file or directory. (errno = ENOENT)
+# End time: 22:17:55 on Mar 18,2020, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: D:/installedPrograms/MentorGraphics/questasim64_10.4e/win64/vcom failed.
+# Error in macro ./run_leon.do line 3
+# D:/installedPrograms/MentorGraphics/questasim64_10.4e/win64/vcom failed.
+#     while executing
+# "vcom -f DUT_LEON.f "
