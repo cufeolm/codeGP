@@ -45,8 +45,10 @@ interface GUVM_interface(input clk);
         // output inst;
     endclocking : driver_cb
 
-    icache_output.data = inst_in;
-    
+    always @ (negedge clk) begin
+        icache_output.data = inst;
+    end
+
     clocking monitor_cb @ (negedge clk);
         input icache_output.dat;
         // lessa b2eet el7agat 
@@ -61,12 +63,14 @@ interface GUVM_interface(input clk);
     //     clk = 0;
     // end
 
+    /*
     initial begin
         clk = 0;
         #10;
         clk = 1;
         #10;
     end
+    */
 
     task reset_dut();
         rst = 1'b0;
@@ -76,8 +80,4 @@ interface GUVM_interface(input clk);
             rst = 1'b1;
     endtask : reset_dut
 
-    task input_inst (logic [31:0] inst);
-        icache_output.data = inst;
-    endtask : input_inst
-   
 endinterface: GUVM_interface

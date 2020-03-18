@@ -77,11 +77,16 @@ interface GUVM_interface(input clk);
 
     clocking driver_cb @ (negedge clk);
         // default input #1step output negedge;
-        output instr_rdata_i;
+        output inst;
     endclocking : driver_cb
+
+    always @ (negedge clk) begin
+        instr_rdata_i = inst_in;
+    end
 
     clocking monitor_cb @ (negedge clk);
         // default input #1step output negedge;
+        input data_wdata_o
         // input output_elregister_file 
     endclocking : monitor_cb
 
@@ -97,7 +102,6 @@ interface GUVM_interface(input clk);
     end
     */
 
-
     task reset_dut();
         rst_ni = 1'b0;
         repeat (10) begin
@@ -105,9 +109,5 @@ interface GUVM_interface(input clk);
         end
         rst_ni = 1'b1;
     endtask : reset_dut
-
-    task input_inst (logic [31:0] inst);
-        instr_rdata_i=inst;
-    endtask : input_inst
 
 endinterface: GUVM_interface

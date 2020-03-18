@@ -19,10 +19,12 @@ interface GUVM_interface(input clk);
 	logic [31:0] inst;
 
 	clocking driver_cb @ (negedge clk);
-	    i_wb_data = inst;
-	    // i_wb_data = {96'hF0081003F0081003F0081003, inst};
-	    output i_wb_data;
+	    output inst;
 	endclocking : driver_cb
+
+	always @ (negedge clk) begin
+        i_wb_dat = {96'hF0081003F0081003F0081003, inst_in};
+    end
     
     clocking monitor_cb @ (negedge clk);
         input o_wb_dat;
@@ -39,12 +41,14 @@ interface GUVM_interface(input clk);
     // end
     ////////////////////////////////////////////////////////////////////// 
    
+    /*
 	initial begin
 	    i_clk = 0;
 	    #10;
 	    i_clk = 1;
 	    #10;
 	end
+	*/
 
 	task reset_dut();	
 		repeat (10) begin
