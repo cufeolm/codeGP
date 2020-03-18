@@ -18,6 +18,4 @@ class GUVM_sequence extends uvm_sequence #(GUVM_sequence_item);
       end
    endtask : body
 
- endclass : GUVM_sequence
-
-      
+ endclass : GUVM_sequence   

@@ -1,3 +1,4 @@
+`timescale 10ns/1ns
 `include "uvm_macros.svh"
 `include "GUVM_testbench_pkg.sv"
  
@@ -8,7 +9,7 @@ module top;
   	bit clk;
   
   	//clock generation
-  	always #5 clk = ~clk;
+  	always #10 clk = ~clk;
   
   	initial begin
     	clk = 0;

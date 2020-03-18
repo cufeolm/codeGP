@@ -56,5 +56,3 @@ task run_phase(uvm_phase phase);
   //join
   endtask:run_phase
   endclass: GUVM_monitor
-  
-  
