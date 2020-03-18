@@ -1,0 +1,34 @@
+#add rg 2 rg3 to rg 7
+force -freeze sim:/proc/ico.data(31) 1 0
+force -freeze sim:/proc/ico.data(30) 0 0
+force -freeze sim:/proc/ico.data(29) 0 0
+force -freeze sim:/proc/ico.data(28) 0 0
+force -freeze sim:/proc/ico.data(27) 1 0
+force -freeze sim:/proc/ico.data(26) 1 0
+force -freeze sim:/proc/ico.data(25) 1 0
+force -freeze sim:/proc/ico.data(24) 0 0
+force -freeze sim:/proc/ico.data(23) 0 0
+force -freeze sim:/proc/ico.data(22) 0 0
+force -freeze sim:/proc/ico.data(21) 0 0
+force -freeze sim:/proc/ico.data(20) 0 0
+force -freeze sim:/proc/ico.data(19) 0 0
+force -freeze sim:/proc/ico.data(18) 0 0
+force -freeze sim:/proc/ico.data(17) 0 0
+force -freeze sim:/proc/ico.data(16) 0 0
+force -freeze sim:/proc/ico.data(15) 1 0
+force -freeze sim:/proc/ico.data(14) 1 0
+force -freeze sim:/proc/ico.data(13) 0 0
+force -freeze sim:/proc/ico.data(12) 0 0
+force -freeze sim:/proc/ico.data(11) 0 0
+force -freeze sim:/proc/ico.data(10) 0 0
+force -freeze sim:/proc/ico.data(9) 0 0
+force -freeze sim:/proc/ico.data(8) 0 0
+force -freeze sim:/proc/ico.data(7) 0 0
+force -freeze sim:/proc/ico.data(6) 0 0
+force -freeze sim:/proc/ico.data(5) 0 0
+force -freeze sim:/proc/ico.data(4) 0 0
+force -freeze sim:/proc/ico.data(3) 0 0
+force -freeze sim:/proc/ico.data(2) 0 0
+force -freeze sim:/proc/ico.data(1) 1 0
+force -freeze sim:/proc/ico.data(0) 0 0
+

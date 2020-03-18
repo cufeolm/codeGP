@@ -1,9 +1,2 @@
 work/
-work/_vmake
-work/_lock
-*.qtl
-work/_lock
-*.qpg
-*.qdb
-*.qdb
-work/_info
+leon/work/
