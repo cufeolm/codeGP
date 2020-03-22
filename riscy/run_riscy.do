@@ -1,5 +1,5 @@
 # change directory
-#cd D:/Projects/GP/developing_codes/riscv-master/rtl
+cd D:/Projects/GP/developing_codes/riscv-master/rtl
 
 vlib work
 
@@ -35,18 +35,16 @@ force -freeze sim:/riscv_core/cluster_id_i 6'h0 0
 # forcing Instruction memory interface
 force -freeze sim:/riscv_core/instr_gnt_i 1 0us   
 force -freeze sim:/riscv_core/instr_rvalid_i 1 0
-
-#load 32'h00000001 in reg[2]
+#load 32'h00000003 in reg[2]
 force -freeze sim:/riscv_core/instr_rdata_i 32'h000Fa103 5us
-force -freeze sim:/riscv_core/data_rdata_i 32'h0000000A 5us
-#load 32'h00000001 in reg[3]
+force -freeze sim:/riscv_core/data_rdata_i 32'h00000003 5us
+#load 32'h00000005 in reg[3]
 force -freeze sim:/riscv_core/instr_rdata_i 32'h000Fa183 20us
-force -freeze sim:/riscv_core/data_rdata_i 32'h00000001 25us
+force -freeze sim:/riscv_core/data_rdata_i 32'h00000005 25us
 #add reg[2]+reg[3] => reg[1]
 force -freeze sim:/riscv_core/instr_rdata_i 32'h002180B3 35us
 #store reg[1] => M(reg[3])
 force -freeze sim:/riscv_core/instr_rdata_i 32'h001Fa023 50us
-
 # forcing Data memory interface
 force -freeze sim:/riscv_core/data_gnt_i 1 0
 force -freeze sim:/riscv_core/data_rvalid_i 1 0
