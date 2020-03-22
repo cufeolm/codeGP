@@ -16,7 +16,7 @@ vlog *.sv
 vsim -novopt riscv_core
 
 add wave -r /*
-add wave -position insertpoint sim:/riscv_core/id_stage_i/registers_i/*
+add wave -position insertpoint sim:/riscv_core/id_stage_i/registers_i/riscv_register_file_i/mem/*
 
 
 ####################### forcing values ##################
@@ -38,10 +38,10 @@ force -freeze sim:/riscv_core/instr_rvalid_i 1 0
 
 #load 32'h00000001 in reg[2]
 force -freeze sim:/riscv_core/instr_rdata_i 32'h000Fa103 5us
-force -freeze sim:/riscv_core/data_rdata_i 32'h0000000A 5us
+force -freeze sim:/riscv_core/data_rdata_i 32'h00000003 5us
 #load 32'h00000001 in reg[3]
 force -freeze sim:/riscv_core/instr_rdata_i 32'h000Fa183 20us
-force -freeze sim:/riscv_core/data_rdata_i 32'h00000001 25us
+force -freeze sim:/riscv_core/data_rdata_i 32'h00000005 25us
 #add reg[2]+reg[3] => reg[1]
 force -freeze sim:/riscv_core/instr_rdata_i 32'h002180B3 35us
 #store reg[1] => M(reg[3])
