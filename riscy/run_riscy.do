@@ -1,5 +1,5 @@
 # change directory
-cd D:/Projects/GP/developing_codes/riscv-master/rtl
+# cd D:/Projects/GP/developing_codes/riscv-master/rtl
 
 vlib work
 
