@@ -8,7 +8,7 @@ module top;
         .rst_ni(bfm.rst_ni),
         .clock_en_i(bfm.clock_en_i),
         .test_en_i(bfm.test_en_i),
-        .flogicfile_disable_i(bfm.flogicfile_disable_i),
+        .fregfile_disable_i(bfm.fregfile_disable_i),
         .boot_addr_i(bfm.boot_addr_i),
         .core_id_i(bfm.core_id_i),
         .cluster_id_i(bfm.cluster_id_i),
@@ -35,7 +35,7 @@ module top;
         .apu_master_valid_i(bfm.apu_master_valid_i),
         .apu_master_result_i(bfm.apu_master_result_i),
         .apu_master_flags_i(bfm.apu_master_flags_i),
-        .irq_i(bfm.irq),    
+        .irq_i(bfm.irq_i),    
         .irq_id_i(bfm.irq_id_i),
         .irq_ack_o(bfm.irq_ack_o),
         .irq_id_o(bfm.irq_id_o),
@@ -43,25 +43,34 @@ module top;
         .sec_lvl_o(bfm.sec_lvl_o),
         .debug_req_i(bfm.debug_req_i),
         .fetch_enable_i(bfm.fetch_enable_i),
-        .core_rbusy_o(bfm.core_rbusy_o),
+        .core_busy_o(bfm.core_busy_o),
         .ext_perf_counters_i(bfm.ext_perf_counters_i)
     );
 
     initial begin
+        bfm.reset_dut(clk_i);
         bfm.setup_data();
-        bfm.reset_dut();
-        bfm.setup_data();
-        #50
         bfm.send_inst(32'h000Fa103);
-        bfm.send_data(32'h00000001);
-        #150
-        bfm.send_inst(32'h000Fa183);
-        #50
-        bfm.send_data(32'h00000001);
+        bfm.send_data(32'h0000000A);
         #100
         bfm.send_inst(32'h000Fa183);
+        bfm.send_data(32'h00000001);
+        #100
+        bfm.send_inst(32'h002180B3);
+        // #50
+        // bfm.send_data(32'h00000001);
+        // bfm.send_inst(32'h000Fa103);
+        // #150
+        // bfm.send_inst(32'h000Fa183);
+        // #50
+        // bfm.send_data(32'h00000001);
+        // #100
+        // bfm.send_inst(32'h002180B3);
+        // #250
+        // bfm.send_inst(32'h001Fa023);
+
         
-        // repeat(100) @(posedge clk_i) begin
+        // repeat(500) @(posedge clk_i) begin
         //     bfm.receive_data();
         //     //$display("is this data ? :%b",bfm.recive_data());
         // end

@@ -1,4 +1,4 @@
-interface GUVM_interface(input logic i_clk);
+interface GUVM_interface(input logic clk_i);
 
     parameter N_EXT_PERF_COUNTERS =  0;
     parameter INSTR_RDATA_WIDTH   = 32;
@@ -22,11 +22,11 @@ interface GUVM_interface(input logic i_clk);
     parameter DM_HaltAddress      = 32'h1A110800;
 
       // Clock and Reset
-    logic       clk_i;
+    // logic       clk_i;
     logic       rst_ni;
     logic       clock_en_i;    // enable clock, otherwise it is gated
     logic       test_en_i;    // enable all clock gates for testing
-    logic       flogicfile_disable_i;  // disable the fp logicfile, using int logicfile instead
+    logic       fregfile_disable_i;  // disable the fp logicfile, using int logicfile instead
       // Core ID, Cluster ID and boot address are considered more or less static
     logic [31:0] boot_addr_i;
     logic [ 3:0] core_id_i;
@@ -71,7 +71,7 @@ interface GUVM_interface(input logic i_clk);
     logic       debug_req_i;
       // CPU Control Signals
     logic       fetch_enable_i;
-    logic       core_rbusy_o;
+    logic       core_busy_o;
     logic [N_EXT_PERF_COUNTERS-1:0] ext_perf_counters_i;
 
     function void send_data(logic [31:0] data);
@@ -89,7 +89,7 @@ interface GUVM_interface(input logic i_clk);
     function void setup_data();
         clock_en_i            = 1'b1;
         test_en_i             = 1'b0;
-        flogicfile_disable_i    = 1'b1;
+        fregfile_disable_i    = 1'b1;
 
         core_id_i             = 4'h0;
         cluster_id_i          = 6'h0;
@@ -106,11 +106,18 @@ interface GUVM_interface(input logic i_clk);
     endfunction: setup_data
 
     task reset_dut(clk_i);
-        rst_ni = 1'b0;
+        
+        /*rst_ni = 1'b1;
         repeat (10) begin
             @(negedge clk_i);
         end
-        rst_ni = 1'b1;
+        rst_ni = 1'b0;*/
+        
+       rst_ni = 1'b1;
+       #10
+       rst_ni = 1'b0;
+       #30
+       rst_ni = 1'b1;
     endtask : reset_dut
 
 endinterface: GUVM_interface
