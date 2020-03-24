@@ -7,6 +7,7 @@ git log === reviews history of commits - to close history press 'q'
 git diff === to review local changes
 
 
+
 git fetch === fetch all remote branches
 
 git checkout -b branch-name === create new local branch
