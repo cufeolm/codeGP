@@ -14,16 +14,16 @@
 # //
 # do tb.do
 # QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 20:51:30 on Mar 22,2020
+# Start time: 20:16:42 on Mar 23,2020
 # vlog -reportprogress 300 fpnew_pkg.sv 
 # -- Compiling package fpnew_pkg
 # 
 # Top level modules:
 # 	--none--
-# End time: 20:51:30 on Mar 22,2020, Elapsed time: 0:00:00
+# End time: 20:16:43 on Mar 23,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 20:51:30 on Mar 22,2020
+# Start time: 20:16:43 on Mar 23,2020
 # vlog -reportprogress 300 riscv_defines.sv 
 # -- Compiling package riscv_defines_sv_unit
 # -- Importing package fpnew_pkg
@@ -31,15 +31,15 @@
 # 
 # Top level modules:
 # 	--none--
-# End time: 20:51:30 on Mar 22,2020, Elapsed time: 0:00:00
+# End time: 20:16:43 on Mar 23,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 20:51:30 on Mar 22,2020
+# Start time: 20:16:43 on Mar 23,2020
 # vlog -reportprogress 300 riscv_config.sv 
-# End time: 20:51:30 on Mar 22,2020, Elapsed time: 0:00:00
+# End time: 20:16:43 on Mar 23,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 20:51:30 on Mar 22,2020
+# Start time: 20:16:43 on Mar 23,2020
 # vlog -reportprogress 300 riscv_tracer_defines.sv 
 # -- Compiling package riscv_tracer_defines
 # -- Importing package riscv_defines
@@ -47,27 +47,27 @@
 # 
 # Top level modules:
 # 	--none--
-# End time: 20:51:30 on Mar 22,2020, Elapsed time: 0:00:00
+# End time: 20:16:43 on Mar 23,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 20:51:30 on Mar 22,2020
+# Start time: 20:16:44 on Mar 23,2020
 # vlog -reportprogress 300 apu_core_package.sv 
 # -- Compiling package apu_core_package
 # 
 # Top level modules:
 # 	--none--
-# End time: 20:51:30 on Mar 22,2020, Elapsed time: 0:00:00
+# End time: 20:16:44 on Mar 23,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 20:51:30 on Mar 22,2020
+# Start time: 20:16:44 on Mar 23,2020
 # vlog -reportprogress 300 apu_macros.sv 
 # 
 # Top level modules:
 # 	--none--
-# End time: 20:51:30 on Mar 22,2020, Elapsed time: 0:00:00
+# End time: 20:16:44 on Mar 23,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 20:51:30 on Mar 22,2020
+# Start time: 20:16:44 on Mar 23,2020
 # vlog -reportprogress 300 GUVM_bfm_riscy.sv apu_core_package.sv apu_macros.sv cluster_clock_gating.sv fpnew_pkg.sv fpnew_top.sv register_file_test_wrap.sv riscv_L0_buffer.sv riscv_alu.sv riscv_alu_basic.sv riscv_alu_div.sv riscv_apu_disp.sv riscv_compressed_decoder.sv riscv_config.sv riscv_controller.sv riscv_core.sv riscv_cs_registers.sv riscv_decoder.sv riscv_defines.sv riscv_ex_stage.sv riscv_fetch_fifo.sv riscv_hwloop_controller.sv riscv_hwloop_regs.sv riscv_id_stage.sv riscv_if_stage.sv riscv_int_controller.sv riscv_load_store_unit.sv riscv_mult.sv riscv_pmp.sv riscv_prefetch_L0_buffer.sv riscv_prefetch_buffer.sv riscv_register_file.sv riscv_tracer.sv riscv_tracer_defines.sv top.sv 
 # -- Compiling interface GUVM_interface
 # -- Compiling package apu_core_package
@@ -575,28 +575,28 @@
 # Top level modules:
 # 	riscv_alu_basic
 # 	top
-# End time: 20:51:32 on Mar 22,2020, Elapsed time: 0:00:02
+# End time: 20:16:47 on Mar 23,2020, Elapsed time: 0:00:03
 # Errors: 0, Warnings: 415
 # QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 20:51:32 on Mar 22,2020
+# Start time: 20:16:47 on Mar 23,2020
 # vlog -reportprogress 300 GUVM_bfm_riscy.sv 
 # -- Compiling interface GUVM_interface
 # 
 # Top level modules:
 # 	--none--
-# End time: 20:51:32 on Mar 22,2020, Elapsed time: 0:00:00
+# End time: 20:16:47 on Mar 23,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 20:51:32 on Mar 22,2020
+# Start time: 20:16:47 on Mar 23,2020
 # vlog -reportprogress 300 top.sv 
 # -- Compiling module top
 # 
 # Top level modules:
 # 	top
-# End time: 20:51:32 on Mar 22,2020, Elapsed time: 0:00:00
+# End time: 20:16:47 on Mar 23,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -novopt top 
-# Start time: 20:51:32 on Mar 22,2020
+# Start time: 20:16:47 on Mar 23,2020
 # ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
 # Refreshing C:/Users/walee/Documents/GitHub/codeGP/riscy/work.top
 # Loading sv_std.std
@@ -692,8 +692,7 @@
 # (vish-4014) No objects found matching 'sim:/top/dut/id_stage_i/registers_i/riscv_register_file_i/mem/*'.
 #     while executing
 # "add wave -position insertpoint sim:/top/bfm/send_inst/*"
-add wave -position insertpoint  \
-sim:/top/dut/id_stage_i/registers_i/riscv_register_file_i/mem
+add dataflow sim:/top/dut/*
 run
 # [CORE] Core settings: PULP_SECURE =           0, N_PMP_ENTRIES =          16, N_PMP_CFG           4
 # There should be no rvalid when we the LSU is IDLE                   30
@@ -714,3 +713,5 @@ run
 # There should be no rvalid when we the LSU is IDLE                  210
 run
 run
+# End time: 20:20:14 on Mar 23,2020, Elapsed time: 0:03:27
+# Errors: 3, Warnings: 5
