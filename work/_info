@@ -1,0 +1,83 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/walee/Documents/GitHub/codeGP
+vamber_iram
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+!s110 1584673513
+!i10b 1
+!s100 _:8G2W@=D_H>K[PfoO;GX1
+IHE8l_3z=KURW3LiChdT]X0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s105 tmpcj61i1_sv_unit
+S1
+R0
+w1584673513
+8c:\users\walee\appdata\local\temp\tmpcj61i1.sv
+Fc:\users\walee\appdata\local\temp\tmpcj61i1.sv
+L0 1
+Z3 OL;L;10.6c;65
+r1
+!s85 0
+31
+!s108 1584673513.000000
+!s107 c:\users\walee\appdata\local\temp\tmpcj61i1.sv|
+!s90 c:\users\walee\appdata\local\temp\tmpcj61i1.sv|
+!i113 0
+Z4 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z5 tCvgOpt 0
+YGUVM_interface
+R1
+!s110 1584848280
+!i10b 1
+!s100 mZ7PD4>d7HkZ2:`iHj3DV3
+IN>agh3=PGO?]8E`KYVkT?2
+R2
+!s105 tmpmc_jwl_sv_unit
+S1
+R0
+w1584848280
+8c:\users\walee\appdata\local\temp\tmpmc_jwl.sv
+Fc:\users\walee\appdata\local\temp\tmpmc_jwl.sv
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1584848280.000000
+!s107 c:\users\walee\appdata\local\temp\tmpmc_jwl.sv|
+!s90 c:\users\walee\appdata\local\temp\tmpmc_jwl.sv|
+!i113 0
+R4
+R5
+n@g@u@v@m_interface
+vtop
+R1
+!s110 1584903066
+!i10b 1
+!s100 cRPIVAfJII?F5T@>1aLnE2
+IBH[Cjb7851XK@J6eP@^E51
+R2
+!s105 tmp1vmgdu_sv_unit
+S1
+R0
+w1584903066
+8c:\users\walee\appdata\local\temp\tmp1vmgdu.sv
+Fc:\users\walee\appdata\local\temp\tmp1vmgdu.sv
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1584903066.000000
+!s107 c:\users\walee\appdata\local\temp\tmp1vmgdu.sv|
+!s90 c:\users\walee\appdata\local\temp\tmp1vmgdu.sv|
+!i113 0
+R4
+R5
