@@ -1,0 +1,223 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/walee/Desktop/vlog
+va25_core
+!s110 1584809402
+!i10b 1
+!s100 djZFjjhdaS]02dP1WOM<:0
+Iodf8TVQBSjJ^kQ?[@clK41
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1584809401
+8c:\users\walee\appdata\local\temp\tmpmv7qdy.v
+Fc:\users\walee\appdata\local\temp\tmpmv7qdy.v
+Z2 L0 45
+Z3 OL;L;10.6c;65
+r1
+!s85 0
+31
+!s108 1584809401.000000
+!s107 c:\users\walee\appdata\local\temp\tmpmv7qdy.v|
+!s90 c:\users\walee\appdata\local\temp\tmpmv7qdy.v|
+!i113 0
+Z4 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z5 tCvgOpt 0
+va25_multiply
+!s110 1584809435
+!i10b 1
+!s100 J8_Ke9dWiKBD;LUj3a2173
+I8QZ<RCT6G@N[@U81RLiX@0
+R1
+R0
+w1584809434
+8c:\users\walee\appdata\local\temp\tmpe9_nuc.v
+Fc:\users\walee\appdata\local\temp\tmpe9_nuc.v
+L0 56
+R3
+r1
+!s85 0
+31
+!s108 1584809435.000000
+!s107 c:\users\walee\appdata\local\temp\tmpe9_nuc.v|
+!s90 c:\users\walee\appdata\local\temp\tmpe9_nuc.v|
+!i113 0
+R4
+R5
+va25_wishbone
+!s110 1584811957
+!i10b 1
+!s100 G[CJ0ASI[E;S7Ooj54=R^1
+ISeFK?XdJ^6Gd8JIU_<^R83
+R1
+R0
+w1584811957
+8c:\users\walee\appdata\local\temp\tmppqceom.v
+Fc:\users\walee\appdata\local\temp\tmppqceom.v
+L0 60
+R3
+r1
+!s85 0
+31
+!s108 1584811957.000000
+!s107 c:\users\walee\appdata\local\temp\tmppqceom.v|
+!s90 c:\users\walee\appdata\local\temp\tmppqceom.v|
+!i113 0
+R4
+R5
+va25_wishbone_buf
+!s110 1584829652
+!i10b 1
+!s100 lOBbNA`ReRVDT2AXzFLiL3
+IWzI>hUkSQR;6XmIKB0F@H2
+R1
+R0
+w1584829652
+8c:\users\walee\appdata\local\temp\tmp9wg359.v
+Fc:\users\walee\appdata\local\temp\tmp9wg359.v
+L0 52
+R3
+r1
+!s85 0
+31
+!s108 1584829652.000000
+!s107 c:\users\walee\appdata\local\temp\tmp9wg359.v|
+!s90 c:\users\walee\appdata\local\temp\tmp9wg359.v|
+!i113 0
+R4
+R5
+va25_write_back
+!s110 1584811776
+!i10b 1
+!s100 U@:O?SE?Q[:MOK=[Mo4:`0
+ILmflA`Tn:82kl_E5^cBGZ0
+R1
+R0
+w1584811776
+8c:\users\walee\appdata\local\temp\tmpjk3xoc.v
+Fc:\users\walee\appdata\local\temp\tmpjk3xoc.v
+Z6 L0 42
+R3
+r1
+!s85 0
+31
+!s108 1584811776.000000
+!s107 c:\users\walee\appdata\local\temp\tmpjk3xoc.v|
+!s90 c:\users\walee\appdata\local\temp\tmpjk3xoc.v|
+!i113 0
+R4
+R5
+vboot_mem128
+!s110 1584812523
+!i10b 1
+!s100 l[Rj1M[WW7kN^i3M096L50
+IfMGWB=`j0Y65[ldPj8G3I3
+R1
+R0
+Z7 w1584812523
+8c:\users\walee\appdata\local\temp\tmpimqenu.v
+Fc:\users\walee\appdata\local\temp\tmpimqenu.v
+R2
+R3
+r1
+!s85 0
+31
+!s108 1584812523.000000
+!s107 c:\users\walee\appdata\local\temp\tmpimqenu.v|
+!s90 c:\users\walee\appdata\local\temp\tmpimqenu.v|
+!i113 0
+R4
+R5
+vboot_mem32
+!s110 1584812524
+!i10b 1
+!s100 gX1aJM?gjnnPPNd@ESBMS1
+Ie_kWdc?=jA=05?LW@T0Ci0
+R1
+R0
+R7
+8c:\users\walee\appdata\local\temp\tmp9t47pr.v
+Fc:\users\walee\appdata\local\temp\tmp9t47pr.v
+R2
+R3
+r1
+!s85 0
+31
+!s108 1584812524.000000
+!s107 c:\users\walee\appdata\local\temp\tmp9t47pr.v|
+!s90 c:\users\walee\appdata\local\temp\tmp9t47pr.v|
+!i113 0
+R4
+R5
+vgeneric_sram_byte_en
+!s110 1584833148
+!i10b 1
+!s100 6C=:<[DdGHHl5I[<j2?D31
+Id?kjN8HNRN1RRA]<YjZ;U2
+R1
+R0
+w1584833147
+8c:\users\walee\appdata\local\temp\tmp2y828d.v
+Fc:\users\walee\appdata\local\temp\tmp2y828d.v
+L0 43
+R3
+r1
+!s85 0
+31
+!s108 1584833147.000000
+!s107 c:\users\walee\appdata\local\temp\tmp2y828d.v|
+!s90 c:\users\walee\appdata\local\temp\tmp2y828d.v|
+!i113 0
+R4
+R5
+vgeneric_sram_line_en
+!s110 1584669593
+!i10b 1
+!s100 h@;]VUJ=YKEVUKQ2Eg`ic0
+IWGGk>hz?AT1F]:<PXz9k13
+R1
+R0
+w1584669592
+8c:\users\walee\appdata\local\temp\tmp2fpodb.v
+Fc:\users\walee\appdata\local\temp\tmp2fpodb.v
+R6
+R3
+r1
+!s85 0
+31
+!s108 1584669593.000000
+!s107 c:\users\walee\appdata\local\temp\tmp2fpodb.v|
+!s90 c:\users\walee\appdata\local\temp\tmp2fpodb.v|
+!i113 0
+R4
+R5
+vtop
+DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+!s110 1584833020
+!i10b 1
+!s100 N`KJ@d0oV63Abe]AEhi2?0
+I;AR?jlC8j<5cT[z75naI02
+R1
+!s105 tmpuv7wjb_sv_unit
+S1
+R0
+w1584833020
+8c:\users\walee\appdata\local\temp\tmpuv7wjb.sv
+Fc:\users\walee\appdata\local\temp\tmpuv7wjb.sv
+L0 2
+R3
+r1
+!s85 0
+31
+!s108 1584833020.000000
+!s107 c:\users\walee\appdata\local\temp\tmpuv7wjb.sv|
+!s90 c:\users\walee\appdata\local\temp\tmpuv7wjb.sv|
+!i113 0
+R4
+R5
