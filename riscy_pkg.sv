@@ -201,4 +201,104 @@ Fim=32'b00000000000000000000000000010011
 
                             } opcode;
   
+  function GUVM_sequence_item get_format (logic [31:0] inst);
+	riscy_transaction ay;
+	GUVM_sequence_item k;
+	k = new("k");
+   ay = new("ay");
+	ay.opcode = inst[6:0];
+		case (ay.opcode)
+			7'b0110111,7'b0010111 :
+					begin 
+						//U-type
+						ay.immb31_12 = inst[31:12];
+						ay.rd = kinst[11:7];
+					end
+			7'b1101111 :
+					begin 
+						//J-type
+						ay.immb20 = inst[31];
+						ay.immb10_1 = inst[30:21];
+						ay.immb11 = inst[20];
+						ay.immb19_12 = inst[19:12];
+						ay.rd = inst[11:7];
+					end
+			7'b1100111,7'b0000011 :
+					begin
+						//I-type
+						ay.immb11_0 = inst[31:20];
+						ay.rs1 = inst[19:15];
+						ay.funct3 = inst[14:12];
+						ay.rd = inst[11:7];
+					end
+			7'b0010011:
+					begin
+						if ( (inst[14:12] == 3'b001) || (inst[14:12] == 3'b101))
+							begin
+								//I-type-shift
+								ay.funct7 = inst[31:25];
+								ay.shamt = inst[24:20];
+								ay.rs1 = inst[19:15];
+								ay.funct3 = inst[14:12];
+								ay.rd = inst[11:7];
+							end
+						else
+							begin
+								//I-type
+								ay.immb11_0 = inst[31:20];
+								ay.rs1 = inst[19:15];
+								ay.funct3 = inst[14:12];
+								ay.rd = inst[11:7];
+							end
+					end
+			7'b0001111:
+					begin
+						//I-type-fence
+						ay.pred = inst[27:24];
+						ay.succ = inst[23:20];
+					end
+			7'b1110011 :
+					begin
+						//I-type-csr
+						ay.csr = inst[31:20];
+						ay.rs1 = inst[19:15];
+						ay.funct3 = inst[14:12];
+						ay.rd = inst[11:7];
+					end
+			7'b1100011 :
+					begin
+						//B-type
+						ay.rs1 = inst[19:15];
+						ay.funct3 = inst[14:12];
+						ay.immb12 = inst[31];
+						ay.immb10_5 = inst[30:25];
+						ay.rs2 = inst[24:20];
+						ay.immb4_1 = inst[11:8];
+						ay.immb11 = inst[7];
+					end
+			7'b0100011 :
+					begin
+						//S-type
+						ay.immb11_5 = inst[31:25];
+						ay.rs2 = inst[24:20];
+						ay.rs1 = inst[19:15];
+						ay.funct3 = inst[14:12];
+						ay.immb4_0 = inst[11:7];
+
+					end
+			7'b0110011 :
+					begin
+						//R-type
+						ay.funct7 = inst[31:25];
+						ay.rs2 = inst[24:20];
+						ay.rs1 = inst[19:15];
+						ay.funct3 = inst[14:12];
+						ay.rd = inst[11:7];
+					end
+			end		
+		if (!($cast(ay,k))) 
+			$fatal(1,"failed to cast transaction to leon's transaction"); 
+		return k;
+	endfunction 
+	
 endpackage
