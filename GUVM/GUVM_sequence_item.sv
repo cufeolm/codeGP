@@ -2,9 +2,10 @@ class GUVM_sequence_item extends uvm_sequence_item;
 
   `uvm_object_utils(GUVM_sequence_item)
    rand logic [31:0] inst;
-   rand logic [31:0] oprand1,oprand2;
+   rand logic [31:0] data;// the effective data that should be stored inside memory 
+   logic [31:0] op1,op2;// the 2 operands that shoould be at the registers 
 
-   function logic [31:0] generate_instruction(opcode target_instruction );
+   protected function logic [31:0] generate_instruction(opcode target_instruction );
 		//logic [31:0] rand_inst;
 		//rand_inst = $random();
 		for (integer i =0;i<32;i++)
@@ -15,13 +16,20 @@ class GUVM_sequence_item extends uvm_sequence_item;
 		return inst;
 	endfunction 
 
+	function void rf_load();
+		inst=0;
+	endfunction
+
+	function void ran_constrained(opcode con);//resiricted randomization 
+		inst = $random();
+		inst = generate_instruction(con);
+	endfunction 
+
 	function void ran();
 		//randomize();
 		integer i = $urandom() % supported_instructions;
 		opcode con = si_a[i]; // con is a constraint
 		inst = $random();
-		oprand2 = $random();
-		oprand1 = $random();
 		inst = generate_instruction(con);
 	endfunction
 
@@ -52,13 +60,13 @@ class GUVM_sequence_item extends uvm_sequence_item;
 	  $fatal(1,"Tried to copy null transaction");
 	super.do_copy(rhs);
 	assert($cast(RHS,rhs)) else
-	  $fatal(1,"Faied cast in do_copy");:
+	  $fatal(1,"Faied cast in do_copy");
 	inst = RHS.inst;
  endfunction : do_copy
 
  function string convert2string();
 	string            s;
-	s = $sformatf("command sequence : inst =%d",
+	s = $sformatf("command sequence : inst =%b",
 				  inst);
 	return s;
  endfunction : convert2string
