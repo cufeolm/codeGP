@@ -345,7 +345,7 @@ ToCCGtoEU=32'b11110000100000000001000000000010, //nop
 					end
 			end		
 		if (!($cast(ay,k))) 
-			$fatal(1,"failed to cast transaction to leon's transaction"); 
+			$fatal(1,"failed to cast transaction to amber's transaction"); 
 		return k;
 	endfunction 
 	
