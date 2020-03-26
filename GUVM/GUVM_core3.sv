@@ -1,9 +1,9 @@
 interface GUVM_interface(
-	// logic clk;
-	logic [31:0] i_reg //used in a hierarchy to access register file
+		// logic clk;
+		logic [31:0] i_reg //used in a hierarchy to access register file
 	);
 
-    // import amber_pkg::*;
+	// import amber_pkg::*;
 	// import GUVM_classes_pkg::*;
 	bit i_clk;
 	bit i_irq;
@@ -18,7 +18,7 @@ interface GUVM_interface(
 
 	//added signals to generalize
 	wire [31:0] inst_in;
-	reg [31:0] wdata;  
+	reg [31:0] wdata;
 
 	/////////
 
@@ -38,25 +38,25 @@ interface GUVM_interface(
 
 	/*
 	initial begin
-		clk = 0;
-		#10;
-		clk = 1;
-		#10;
+	clk = 0;
+	#10;
+	clk = 1;
+	#10;
 	end
 	*/
 
-	task reset_dut();	
-	repeat (10) begin
+	task reset_dut();
+		repeat (10) begin
 			@(negedge i_clk);
 		end
 	endtask : reset_dut
 
 	/*
-	task reset_dut();	
-		repeat (10) begin
-				@(negedge clk);
-			end
-		endtask : reset_dut
+	task reset_dut();
+	repeat (10) begin
+	@(negedge clk);
+	end
+	endtask : reset_dut
 	*/
 
 	function void setup_data();
@@ -68,25 +68,25 @@ interface GUVM_interface(
 	endfunction: setup_data
 
 	clocking driver_cb @ (posedge i_clk);
-		output inst_in;
+	output inst_in;
 	endclocking : driver_cb
 
-	always @ (inst_in)
-	begin
-		i_wb_dat = {96'hF0081003F0081003F0081003, inst_in};
-	end
+		always @ (inst_in)
+			begin
+				i_wb_dat = {96'hF0081003F0081003F0081003, inst_in};
+			end
 
 	always @ (inst_in)
-	begin
-		#110
-		wdata=o_wb_dat[31:0];
-	end
-		
+		begin
+			#110
+				wdata=o_wb_dat[31:0];
+		end
+
 	clocking monitor_cb @ (posedge i_clk && wdata);
-		input wdata;
+	input wdata;
 	endclocking : monitor_cb
 
-	modport driver_if_mp (clocking driver_cb);
+		modport driver_if_mp (clocking driver_cb);
 	modport monitor_if_mp (clocking monitor_cb);
 
 endinterface: GUVM_interface

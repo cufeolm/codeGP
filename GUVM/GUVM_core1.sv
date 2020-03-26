@@ -1,28 +1,28 @@
 `timescale 10ns/1ns
 interface GUVM_interface(
-    //logic clk
+		//logic clk
 	);
-	   
-    parameter N_EXT_PERF_COUNTERS =  0;
-    parameter INSTR_RDATA_WIDTH   = 32;
-    parameter PULP_SECURE         =  0;
-    parameter N_PMP_ENTRIES       = 16;
-    parameter USE_PMP             =  1; //if PULP_SECURE is 1, you can still not use the PMP
-    parameter PULP_CLUSTER        =  1;
-    parameter FPU                 =  0;
-    parameter Zfinx               =  0;
-    parameter FP_DIVSQRT          =  0;
-    parameter SHARED_FP           =  0;
-    parameter SHARED_DSP_MULT     =  0;
-    parameter SHARED_INT_MULT     =  0;
-    parameter SHARED_INT_DIV      =  0;
-    parameter SHARED_FP_DIVSQRT   =  0;
-    parameter WAPUTYPE            =  0;
-    parameter APU_NARGS_CPU       =  3;
-    parameter APU_WOP_CPU         =  6;
-    parameter APU_NDSFLAGS_CPU    = 15;
-    parameter APU_NUSFLAGS_CPU    =  5;
-    parameter DM_HaltAddress      = 32'h1A110800;
+
+	parameter N_EXT_PERF_COUNTERS =  0;
+	parameter INSTR_RDATA_WIDTH   = 32;
+	parameter PULP_SECURE         =  0;
+	parameter N_PMP_ENTRIES       = 16;
+	parameter USE_PMP             =  1; //if PULP_SECURE is 1, you can still not use the PMP
+	parameter PULP_CLUSTER        =  1;
+	parameter FPU                 =  0;
+	parameter Zfinx               =  0;
+	parameter FP_DIVSQRT          =  0;
+	parameter SHARED_FP           =  0;
+	parameter SHARED_DSP_MULT     =  0;
+	parameter SHARED_INT_MULT     =  0;
+	parameter SHARED_INT_DIV      =  0;
+	parameter SHARED_FP_DIVSQRT   =  0;
+	parameter WAPUTYPE            =  0;
+	parameter APU_NARGS_CPU       =  3;
+	parameter APU_WOP_CPU         =  6;
+	parameter APU_NDSFLAGS_CPU    = 15;
+	parameter APU_NUSFLAGS_CPU    =  5;
+	parameter DM_HaltAddress      = 32'h1A110800;
 
 	// Clock and Reset
 	bit       clk_i;
@@ -89,10 +89,10 @@ interface GUVM_interface(
 
 	/*
 	initial begin
-		clk = 0;
-		#10;
-		clk = 1;
-		#10;
+	clk = 0;
+	#10;
+	clk = 1;
+	#10;
 	end
 	*/
 
@@ -100,13 +100,13 @@ interface GUVM_interface(
 		rst_ni = 1'b0;
 		repeat (10) begin @(negedge clk_i); end
 		rst_ni = 1'b1;
-	endtask : 
-	
+	endtask :
+
 	/*
-	task reset_dut();	
-		repeat (10) begin
-			@(negedge clk);
-		end
+	task reset_dut();
+	repeat (10) begin
+	@(negedge clk);
+	end
 	endtask : reset_dut
 	*/
 
@@ -125,27 +125,27 @@ interface GUVM_interface(
 		irq_sec_i             = 1'h0;
 		debug_req_i           = 1'h0;
 		fetch_enable_i        = 1'h1;
-		
+
 	endfunction: setup_data
 
 	clocking driver_cb @ (posedge clk_i);
-		output inst_in;
+	output inst_in;
 	endclocking : driver_cb
 
-	always @ (inst_in) begin
-		instr_rdata_i = inst_in;
-	end
+		always @ (inst_in) begin
+			instr_rdata_i = inst_in;
+		end
 
 	always @ (inst_in) begin
 		#110
-		wdata=data_wdata_o;
+			wdata=data_wdata_o;
 	end
 
 	clocking monitor_cb @ (posedge clk_i && wdata);
-		input wdata;
+	input wdata;
 	endclocking : monitor_cb
 
-	modport driver_if_mp (clocking driver_cb);
+		modport driver_if_mp (clocking driver_cb);
 	modport monitor_if_mp (clocking monitor_cb);
 
 endinterface: GUVM_interface

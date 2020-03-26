@@ -1,11 +1,10 @@
-
-
-class generic_sequence extends uvm_sequence #(GUVM_sequence_item);
-    `uvm_object_utils(generic_sequence);
-    target_seq_item command,load1,load2,store ;
+class GUVM_sequence extends uvm_sequence #(GUVM_sequence_item);
+    `uvm_object_utils(GUVM_sequence);
+    target_seq_item command, load1, load2, store;
     target_seq_item c;
-    function new(string name = "generic_sequence");
-       super.new(name);
+
+    function new(string name = "GUVM_sequence");
+        super.new(name);
     endfunction : new
  
     task body();
@@ -76,6 +75,6 @@ class generic_sequence extends uvm_sequence #(GUVM_sequence_item);
     endtask : body
 
     
- endclass : generic_sequence
+ endclass : GUVM_sequence
 
       
