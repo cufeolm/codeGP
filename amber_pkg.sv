@@ -201,11 +201,11 @@ ToCCGtoEU=32'b11110000100000000001000000000010, //nop
 	             } opcode;
    
    function GUVM_sequence_item get_format (logic [31:0] inst);
-	amber_seq_item ay;
-	GUVM_sequence_item k ;
-	k = new("k");
-   ay = new("ay");
-	ay.cond = inst[31:28];
+	    amber_seq_item ay;
+	    GUVM_sequence_item k ;
+	    k = new("k");
+        ay = new("ay");
+	    ay.cond = inst[31:28];
 		case (inst[27:25])
 			3'b000 :
 					begin 
