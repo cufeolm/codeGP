@@ -18,7 +18,7 @@ class GUVM_scoreboard extends uvm_scoreboard;
     //GUVM_sequence_item trans, input_trans;
 
     // analysis implementation ports
-    uvm_analysis_imp_mon_trans #(GUVM_sequence_item,GUVM_scoreboard) Mon2Sb_port;
+	uvm_analysis_imp_mon_trans #(GUVM_result_transaction,GUVM_scoreboard) Mon2Sb_port;
     uvm_analysis_imp_drv_trans #(GUVM_sequence_item,GUVM_scoreboard) Drv2Sb_port;
 
     // TLM FIFOs to store the actual and expected transaction values
