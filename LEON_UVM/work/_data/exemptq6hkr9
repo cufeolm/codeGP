@@ -1,0 +1,391 @@
+package sparcv8__mti__sv__equiv__implct__pack;
+
+    localparam logic [3:1] rstcwp = '{1'b0, 1'b0, 1'b0};
+
+    localparam logic [3:0] grfill = '{1'b0, 1'b0, 1'b0, 1'b0};
+
+    localparam logic [4:3] cwpfill = '{1'b0, 1'b0};
+
+    localparam logic [31:8] wimfill = '{1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0};
+
+    localparam logic [2:0] cwpmin = '{1'b0, 1'b0, 1'b0};
+
+    localparam logic [2:0] cwpmax = '{1'b1, 1'b1, 1'b1};
+
+    localparam logic [3:0] r0addr = '{1'b1, 1'b0, 1'b0, 1'b0};
+
+    localparam logic [3:0] f0addr = '{1'b1, 1'b0, 1'b0, 1'b0};
+
+    localparam logic [1:0] call = '{1'b0, 1'b1};
+
+    localparam logic [1:0] fmt2 = '{1'b0, 1'b0};
+
+    localparam logic [1:0] fmt3 = '{1'b1, 1'b0};
+
+    localparam logic [1:0] ldst = '{1'b1, 1'b1};
+
+    localparam logic [2:0] unimp = '{1'b0, 1'b0, 1'b0};
+
+    localparam logic [2:0] bicc = '{1'b0, 1'b1, 1'b0};
+
+    localparam logic [2:0] sethi = '{1'b1, 1'b0, 1'b0};
+
+    localparam logic [2:0] fbfcc = '{1'b1, 1'b1, 1'b0};
+
+    localparam logic [2:0] cbccc = '{1'b1, 1'b1, 1'b1};
+
+    localparam logic [5:0] iadd = '{1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0};
+
+    localparam logic [5:0] iand = '{1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1};
+
+    localparam logic [5:0] ior = '{1'b0, 1'b0, 1'b0, 1'b0, 1'b1, 1'b0};
+
+    localparam logic [5:0] ixor = '{1'b0, 1'b0, 1'b0, 1'b0, 1'b1, 1'b1};
+
+    localparam logic [5:0] isub = '{1'b0, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0};
+
+    localparam logic [5:0] andn = '{1'b0, 1'b0, 1'b0, 1'b1, 1'b0, 1'b1};
+
+    localparam logic [5:0] orn = '{1'b0, 1'b0, 1'b0, 1'b1, 1'b1, 1'b0};
+
+    localparam logic [5:0] ixnor = '{1'b0, 1'b0, 1'b0, 1'b1, 1'b1, 1'b1};
+
+    localparam logic [5:0] addx = '{1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b0};
+
+    localparam logic [5:0] umul = '{1'b0, 1'b0, 1'b1, 1'b0, 1'b1, 1'b0};
+
+    localparam logic [5:0] smul = '{1'b0, 1'b0, 1'b1, 1'b0, 1'b1, 1'b1};
+
+    localparam logic [5:0] subx = '{1'b0, 1'b0, 1'b1, 1'b1, 1'b0, 1'b0};
+
+    localparam logic [5:0] udiv = '{1'b0, 1'b0, 1'b1, 1'b1, 1'b1, 1'b0};
+
+    localparam logic [5:0] sdiv = '{1'b0, 1'b0, 1'b1, 1'b1, 1'b1, 1'b1};
+
+    localparam logic [5:0] addcc = '{1'b0, 1'b1, 1'b0, 1'b0, 1'b0, 1'b0};
+
+    localparam logic [5:0] andcc = '{1'b0, 1'b1, 1'b0, 1'b0, 1'b0, 1'b1};
+
+    localparam logic [5:0] orcc = '{1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0};
+
+    localparam logic [5:0] xorcc = '{1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b1};
+
+    localparam logic [5:0] subcc = '{1'b0, 1'b1, 1'b0, 1'b1, 1'b0, 1'b0};
+
+    localparam logic [5:0] andncc = '{1'b0, 1'b1, 1'b0, 1'b1, 1'b0, 1'b1};
+
+    localparam logic [5:0] orncc = '{1'b0, 1'b1, 1'b0, 1'b1, 1'b1, 1'b0};
+
+    localparam logic [5:0] xnorcc = '{1'b0, 1'b1, 1'b0, 1'b1, 1'b1, 1'b1};
+
+    localparam logic [5:0] addxcc = '{1'b0, 1'b1, 1'b1, 1'b0, 1'b0, 1'b0};
+
+    localparam logic [5:0] umulcc = '{1'b0, 1'b1, 1'b1, 1'b0, 1'b1, 1'b0};
+
+    localparam logic [5:0] smulcc = '{1'b0, 1'b1, 1'b1, 1'b0, 1'b1, 1'b1};
+
+    localparam logic [5:0] subxcc = '{1'b0, 1'b1, 1'b1, 1'b1, 1'b0, 1'b0};
+
+    localparam logic [5:0] udivcc = '{1'b0, 1'b1, 1'b1, 1'b1, 1'b1, 1'b0};
+
+    localparam logic [5:0] sdivcc = '{1'b0, 1'b1, 1'b1, 1'b1, 1'b1, 1'b1};
+
+    localparam logic [5:0] taddcc = '{1'b1, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0};
+
+    localparam logic [5:0] tsubcc = '{1'b1, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1};
+
+    localparam logic [5:0] taddcctv = '{1'b1, 1'b0, 1'b0, 1'b0, 1'b1, 1'b0};
+
+    localparam logic [5:0] tsubcctv = '{1'b1, 1'b0, 1'b0, 1'b0, 1'b1, 1'b1};
+
+    localparam logic [5:0] mulscc = '{1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0};
+
+    localparam logic [5:0] isll = '{1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 1'b1};
+
+    localparam logic [5:0] isrl = '{1'b1, 1'b0, 1'b0, 1'b1, 1'b1, 1'b0};
+
+    localparam logic [5:0] isra = '{1'b1, 1'b0, 1'b0, 1'b1, 1'b1, 1'b1};
+
+    localparam logic [5:0] rdy = '{1'b1, 1'b0, 1'b1, 1'b0, 1'b0, 1'b0};
+
+    localparam logic [5:0] rdpsr = '{1'b1, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1};
+
+    localparam logic [5:0] rdwim = '{1'b1, 1'b0, 1'b1, 1'b0, 1'b1, 1'b0};
+
+    localparam logic [5:0] rdtbr = '{1'b1, 1'b0, 1'b1, 1'b0, 1'b1, 1'b1};
+
+    localparam logic [5:0] wry = '{1'b1, 1'b1, 1'b0, 1'b0, 1'b0, 1'b0};
+
+    localparam logic [5:0] wrpsr = '{1'b1, 1'b1, 1'b0, 1'b0, 1'b0, 1'b1};
+
+    localparam logic [5:0] wrwim = '{1'b1, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0};
+
+    localparam logic [5:0] wrtbr = '{1'b1, 1'b1, 1'b0, 1'b0, 1'b1, 1'b1};
+
+    localparam logic [5:0] fpop1 = '{1'b1, 1'b1, 1'b0, 1'b1, 1'b0, 1'b0};
+
+    localparam logic [5:0] fpop2 = '{1'b1, 1'b1, 1'b0, 1'b1, 1'b0, 1'b1};
+
+    localparam logic [5:0] cpop1 = '{1'b1, 1'b1, 1'b0, 1'b1, 1'b1, 1'b0};
+
+    localparam logic [5:0] cpop2 = '{1'b1, 1'b1, 1'b0, 1'b1, 1'b1, 1'b1};
+
+    localparam logic [5:0] jmpl = '{1'b1, 1'b1, 1'b1, 1'b0, 1'b0, 1'b0};
+
+    localparam logic [5:0] ticc = '{1'b1, 1'b1, 1'b1, 1'b0, 1'b1, 1'b0};
+
+    localparam logic [5:0] flush = '{1'b1, 1'b1, 1'b1, 1'b0, 1'b1, 1'b1};
+
+    localparam logic [5:0] rett = '{1'b1, 1'b1, 1'b1, 1'b0, 1'b0, 1'b1};
+
+    localparam logic [5:0] save = '{1'b1, 1'b1, 1'b1, 1'b1, 1'b0, 1'b0};
+
+    localparam logic [5:0] restore = '{1'b1, 1'b1, 1'b1, 1'b1, 1'b0, 1'b1};
+
+    localparam logic [5:0] umac = '{1'b1, 1'b1, 1'b1, 1'b1, 1'b1, 1'b0};
+
+    localparam logic [5:0] smac = '{1'b1, 1'b1, 1'b1, 1'b1, 1'b1, 1'b1};
+
+    localparam logic [5:0] ld = '{1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0};
+
+    localparam logic [5:0] ldub = '{1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1};
+
+    localparam logic [5:0] lduh = '{1'b0, 1'b0, 1'b0, 1'b0, 1'b1, 1'b0};
+
+    localparam logic [5:0] ldd = '{1'b0, 1'b0, 1'b0, 1'b0, 1'b1, 1'b1};
+
+    localparam logic [5:0] ldsb = '{1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1};
+
+    localparam logic [5:0] ldsh = '{1'b0, 1'b0, 1'b1, 1'b0, 1'b1, 1'b0};
+
+    localparam logic [5:0] ldstub = '{1'b0, 1'b0, 1'b1, 1'b1, 1'b0, 1'b1};
+
+    localparam logic [5:0] swap = '{1'b0, 1'b0, 1'b1, 1'b1, 1'b1, 1'b1};
+
+    localparam logic [5:0] lda = '{1'b0, 1'b1, 1'b0, 1'b0, 1'b0, 1'b0};
+
+    localparam logic [5:0] lduba = '{1'b0, 1'b1, 1'b0, 1'b0, 1'b0, 1'b1};
+
+    localparam logic [5:0] lduha = '{1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0};
+
+    localparam logic [5:0] ldda = '{1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b1};
+
+    localparam logic [5:0] ldsba = '{1'b0, 1'b1, 1'b1, 1'b0, 1'b0, 1'b1};
+
+    localparam logic [5:0] ldsha = '{1'b0, 1'b1, 1'b1, 1'b0, 1'b1, 1'b0};
+
+    localparam logic [5:0] ldstuba = '{1'b0, 1'b1, 1'b1, 1'b1, 1'b0, 1'b1};
+
+    localparam logic [5:0] swapa = '{1'b0, 1'b1, 1'b1, 1'b1, 1'b1, 1'b1};
+
+    localparam logic [5:0] ldf = '{1'b1, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0};
+
+    localparam logic [5:0] ldfsr = '{1'b1, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1};
+
+    localparam logic [5:0] lddf = '{1'b1, 1'b0, 1'b0, 1'b0, 1'b1, 1'b1};
+
+    localparam logic [5:0] ldc = '{1'b1, 1'b1, 1'b0, 1'b0, 1'b0, 1'b0};
+
+    localparam logic [5:0] ldcsr = '{1'b1, 1'b1, 1'b0, 1'b0, 1'b0, 1'b1};
+
+    localparam logic [5:0] lddc = '{1'b1, 1'b1, 1'b0, 1'b0, 1'b1, 1'b1};
+
+    localparam logic [5:0] st = '{1'b0, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0};
+
+    localparam logic [5:0] stb = '{1'b0, 1'b0, 1'b0, 1'b1, 1'b0, 1'b1};
+
+    localparam logic [5:0] sth = '{1'b0, 1'b0, 1'b0, 1'b1, 1'b1, 1'b0};
+
+    localparam logic [5:0] istd = '{1'b0, 1'b0, 1'b0, 1'b1, 1'b1, 1'b1};
+
+    localparam logic [5:0] sta = '{1'b0, 1'b1, 1'b0, 1'b1, 1'b0, 1'b0};
+
+    localparam logic [5:0] stba = '{1'b0, 1'b1, 1'b0, 1'b1, 1'b0, 1'b1};
+
+    localparam logic [5:0] stha = '{1'b0, 1'b1, 1'b0, 1'b1, 1'b1, 1'b0};
+
+    localparam logic [5:0] stda = '{1'b0, 1'b1, 1'b0, 1'b1, 1'b1, 1'b1};
+
+    localparam logic [5:0] stf = '{1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0};
+
+    localparam logic [5:0] stfsr = '{1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 1'b1};
+
+    localparam logic [5:0] stdfq = '{1'b1, 1'b0, 1'b0, 1'b1, 1'b1, 1'b0};
+
+    localparam logic [5:0] stdf = '{1'b1, 1'b0, 1'b0, 1'b1, 1'b1, 1'b1};
+
+    localparam logic [5:0] stc = '{1'b1, 1'b1, 1'b0, 1'b1, 1'b0, 1'b0};
+
+    localparam logic [5:0] stcsr = '{1'b1, 1'b1, 1'b0, 1'b1, 1'b0, 1'b1};
+
+    localparam logic [5:0] stdcq = '{1'b1, 1'b1, 1'b0, 1'b1, 1'b1, 1'b0};
+
+    localparam logic [5:0] stdc = '{1'b1, 1'b1, 1'b0, 1'b1, 1'b1, 1'b1};
+
+    localparam logic [3:0] ba = '{1'b1, 1'b0, 1'b0, 1'b0};
+
+    localparam logic [8:0] fitos = '{1'b0, 1'b1, 1'b1, 1'b0, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0};
+
+    localparam logic [8:0] fitod = '{1'b0, 1'b1, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b0};
+
+    localparam logic [8:0] fstoi = '{1'b0, 1'b1, 1'b1, 1'b0, 1'b1, 1'b0, 1'b0, 1'b0, 1'b1};
+
+    localparam logic [8:0] fdtoi = '{1'b0, 1'b1, 1'b1, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0};
+
+    localparam logic [8:0] fstod = '{1'b0, 1'b1, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1};
+
+    localparam logic [8:0] fdtos = '{1'b0, 1'b1, 1'b1, 1'b0, 1'b0, 1'b0, 1'b1, 1'b1, 1'b0};
+
+    localparam logic [8:0] fmovs = '{1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1};
+
+    localparam logic [8:0] fnegs = '{1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1, 1'b0, 1'b1};
+
+    localparam logic [8:0] fabss = '{1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1};
+
+    localparam logic [8:0] fsqrts = '{1'b0, 1'b0, 1'b0, 1'b1, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1};
+
+    localparam logic [8:0] fsqrtd = '{1'b0, 1'b0, 1'b0, 1'b1, 1'b0, 1'b1, 1'b0, 1'b1, 1'b0};
+
+    localparam logic [8:0] fadds = '{1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1};
+
+    localparam logic [8:0] faddd = '{1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1, 1'b0};
+
+    localparam logic [8:0] fsubs = '{1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b0, 1'b1, 1'b0, 1'b1};
+
+    localparam logic [8:0] fsubd = '{1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b0, 1'b1, 1'b1, 1'b0};
+
+    localparam logic [8:0] fmuls = '{1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1};
+
+    localparam logic [8:0] fmuld = '{1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 1'b1, 1'b0};
+
+    localparam logic [8:0] fsmuld = '{1'b0, 1'b0, 1'b1, 1'b1, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1};
+
+    localparam logic [8:0] fdivs = '{1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b1, 1'b0, 1'b1};
+
+    localparam logic [8:0] fdivd = '{1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b1, 1'b1, 1'b0};
+
+    localparam logic [8:0] fcmps = '{1'b0, 1'b0, 1'b1, 1'b0, 1'b1, 1'b0, 1'b0, 1'b0, 1'b1};
+
+    localparam logic [8:0] fcmpd = '{1'b0, 1'b0, 1'b1, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1, 1'b0};
+
+    localparam logic [8:0] fcmpes = '{1'b0, 1'b0, 1'b1, 1'b0, 1'b1, 1'b0, 1'b1, 1'b0, 1'b1};
+
+    localparam logic [8:0] fcmped = '{1'b0, 1'b0, 1'b1, 1'b0, 1'b1, 1'b0, 1'b1, 1'b1, 1'b0};
+
+    localparam logic [2:0] alu_and = '{1'b0, 1'b0, 1'b0};
+
+    localparam logic [2:0] alu_xor = '{1'b0, 1'b0, 1'b1};
+
+    localparam logic [2:0] alu_or = '{1'b0, 1'b1, 1'b0};
+
+    localparam logic [2:0] alu_xnor = '{1'b0, 1'b1, 1'b1};
+
+    localparam logic [2:0] alu_andn = '{1'b1, 1'b0, 1'b0};
+
+    localparam logic [2:0] alu_orn = '{1'b1, 1'b0, 1'b1};
+
+    localparam logic [2:0] alu_div = '{1'b1, 1'b1, 1'b0};
+
+    localparam logic [2:0] alu_pass1 = '{1'b0, 1'b0, 1'b0};
+
+    localparam logic [2:0] alu_pass2 = '{1'b0, 1'b0, 1'b1};
+
+    localparam logic [2:0] alu_stb = '{1'b0, 1'b1, 1'b0};
+
+    localparam logic [2:0] alu_sth = '{1'b0, 1'b1, 1'b1};
+
+    localparam logic [2:0] alu_ones = '{1'b1, 1'b0, 1'b0};
+
+    localparam logic [2:0] alu_rdy = '{1'b1, 1'b0, 1'b1};
+
+    localparam logic [2:0] alu_fsr = '{1'b1, 1'b1, 1'b0};
+
+    localparam logic [2:0] alu_fop = '{1'b1, 1'b1, 1'b1};
+
+    localparam logic [2:0] alu_sll = '{1'b0, 1'b0, 1'b1};
+
+    localparam logic [2:0] alu_srl = '{1'b0, 1'b1, 1'b0};
+
+    localparam logic [2:0] alu_sra = '{1'b1, 1'b0, 1'b0};
+
+    localparam logic [2:0] alu_nop = '{1'b0, 1'b0, 1'b0};
+
+    localparam logic [1:0] alu_res_add = '{1'b0, 1'b0};
+
+    localparam logic [1:0] alu_res_shift = '{1'b0, 1'b1};
+
+    localparam logic [1:0] alu_res_logic = '{1'b1, 1'b0};
+
+    localparam logic [1:0] alu_res_misc = '{1'b1, 1'b1};
+
+    localparam logic alu_rs2 = 1'b0;
+
+    localparam logic alu_simm = 1'b1;
+
+    localparam logic [1:0] ldbyte = '{1'b0, 1'b0};
+
+    localparam logic [1:0] ldhalf = '{1'b0, 1'b1};
+
+    localparam logic [1:0] ldword = '{1'b1, 1'b0};
+
+    localparam logic [1:0] lddbl = '{1'b1, 1'b1};
+
+    localparam logic [5:0] iaex_tt = '{1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1};
+
+    localparam logic [5:0] iinst_tt = '{1'b0, 1'b0, 1'b0, 1'b0, 1'b1, 1'b0};
+
+    localparam logic [5:0] priv_tt = '{1'b0, 1'b0, 1'b0, 1'b0, 1'b1, 1'b1};
+
+    localparam logic [5:0] fpdis_tt = '{1'b0, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0};
+
+    localparam logic [5:0] winof_tt = '{1'b0, 1'b0, 1'b0, 1'b1, 1'b0, 1'b1};
+
+    localparam logic [5:0] winuf_tt = '{1'b0, 1'b0, 1'b0, 1'b1, 1'b1, 1'b0};
+
+    localparam logic [5:0] unala_tt = '{1'b0, 1'b0, 1'b0, 1'b1, 1'b1, 1'b1};
+
+    localparam logic [5:0] fpexc_tt = '{1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b0};
+
+    localparam logic [5:0] daex_tt = '{1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b1};
+
+    localparam logic [5:0] tag_tt = '{1'b0, 1'b0, 1'b1, 1'b0, 1'b1, 1'b0};
+
+    localparam logic [5:0] watch_tt = '{1'b0, 1'b0, 1'b1, 1'b0, 1'b1, 1'b1};
+
+    localparam logic [5:0] cpdis_tt = '{1'b1, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0};
+
+    localparam logic [5:0] cpexc_tt = '{1'b1, 1'b0, 1'b1, 1'b0, 1'b0, 1'b0};
+
+    localparam logic [5:0] div_tt = '{1'b1, 1'b0, 1'b1, 1'b0, 1'b1, 1'b0};
+
+    localparam logic [5:0] dsex_tt = '{1'b1, 1'b0, 1'b1, 1'b0, 1'b1, 1'b1};
+
+    localparam logic [5:0] ticc_tt = '{1'b1, 1'b1, 1'b1, 1'b1, 1'b1, 1'b1};
+
+    localparam logic [3:0] asi_pci = '{1'b0, 1'b1, 1'b0, 1'b0};
+
+    localparam logic [3:0] asi_iflush = '{1'b0, 1'b1, 1'b0, 1'b1};
+
+    localparam logic [3:0] asi_dflush = '{1'b0, 1'b1, 1'b1, 1'b0};
+
+    localparam logic [3:0] asi_uinst = '{1'b1, 1'b0, 1'b0, 1'b0};
+
+    localparam logic [3:0] asi_sinst = '{1'b1, 1'b0, 1'b0, 1'b1};
+
+    localparam logic [3:0] asi_udata = '{1'b1, 1'b0, 1'b1, 1'b0};
+
+    localparam logic [3:0] asi_sdata = '{1'b1, 1'b0, 1'b1, 1'b1};
+
+    localparam logic [3:0] asi_itag = '{1'b1, 1'b1, 1'b0, 1'b0};
+
+    localparam logic [3:0] asi_idata = '{1'b1, 1'b1, 1'b0, 1'b1};
+
+    localparam logic [3:0] asi_dtag = '{1'b1, 1'b1, 1'b1, 1'b0};
+
+    localparam logic [3:0] asi_ddata = '{1'b1, 1'b1, 1'b1, 1'b1};
+
+    localparam logic [2:0] fpieee_err = '{1'b0, 1'b0, 1'b1};
+
+    localparam logic [2:0] fpseq_err = '{1'b1, 1'b0, 1'b0};
+
+endpackage
