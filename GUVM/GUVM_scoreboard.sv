@@ -1,7 +1,7 @@
 
 `include "uvm_macros.svh"
 `include "GUVM_sequence.sv"
-`include "leon_pkg.sv"
+import "leon_pkg.sv"
 //`include "riscy_pkg.sv"
 //`include "amber_pkg.sv"
 import uvm_pkg::*;
@@ -50,6 +50,7 @@ class GUVM_scoreboard extends uvm_scoreboard;
 
    task run_phase(uvm_phase phase);
       GUVM_sequence_item exp_trans, out_trans;
+	  opcode instruction;
       bit [31:0] h1,i1,i2,imm;
 	  //bit [19:0] sign;
       forever begin
