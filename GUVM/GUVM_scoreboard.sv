@@ -98,7 +98,7 @@ begin
 	  
 	  
 	  
-	  if((exp_trans.inst==A)) //LEON/RISCY/AMBER //ADD common 
+	  if((exp_trans.inst==A)) //LEON only
 begin 
 `uvm_info ("ADD_INSTRUCTION_PASS ", $sformatf("Actual Instruction=%h Expected Instruction=%h \n",out_trans.inst_out, exp_trans.instrn), UVM_LOW)
 	h1=i1+i2;				
