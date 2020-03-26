@@ -1,10 +1,12 @@
 
+
 `include "uvm_macros.svh"
-`include "GUVM_sequence.sv"
-import "leon_pkg.sv"
+//`include "GUVM_sequence.sv"
+//`include "leon_pkg.sv"
 //`include "riscy_pkg.sv"
 //`include "amber_pkg.sv"
 import uvm_pkg::*;
+import leon_package::*;
 `uvm_analysis_imp_decl(_mon_trans)
 `uvm_analysis_imp_decl(_drv_trans)
 
@@ -50,7 +52,6 @@ class GUVM_scoreboard extends uvm_scoreboard;
 
    task run_phase(uvm_phase phase);
       GUVM_sequence_item exp_trans, out_trans;
-	  opcode instruction;
       bit [31:0] h1,i1,i2,imm;
 	  //bit [19:0] sign;
       forever begin
@@ -101,20 +102,20 @@ begin
 	  
 	  if((exp_trans.inst==A)) //LEON only
 begin 
-`uvm_info ("ADD_INSTRUCTION_PASS ", $sformatf("Actual Instruction=%h Expected Instruction=%h \n",out_trans.inst_out, exp_trans.instrn), UVM_LOW)
+`uvm_info ("ADD_INSTRUCTION_PASS ", $sformatf("Expected Instruction=%h \n", exp_trans.inst), UVM_LOW)
 	h1=i1+i2;				
 						if((h1)==(out_trans.data))
 						begin
-						`uvm_info ("ADDITION_PASS ", $sformatf("Actual Calculation=%d Expected Calculation=%d \n",out_trans.reg_data, h1), UVM_LOW)
+						`uvm_info ("ADDITION_PASS ", $sformatf("Actual Calculation=%d Expected Calculation=%d \n",out_trans.data, h1), UVM_LOW)
 						end
 						else
 						begin
-						`uvm_error("ADDITION_FAIL", $sformatf("Actual Calculation=%d Expected Calculation=%d \n",out_trans.reg_data, h1))
+						`uvm_error("ADDITION_FAIL", $sformatf("Actual Calculation=%d Expected Calculation=%d \n",out_trans.data, h1))
 						end
 
 
 	  end
-	  else if((exp_trans.inst==AI) //ADD IMMEDIATE INSTRUCTION
+	 /* else if((exp_trans.inst==AI) //ADD IMMEDIATE INSTRUCTION
 	  begin 
       `uvm_info ("ADD_IMMEDIATE_INSTRUCTION_PASS ", $sformatf("Actual Instruction=%h Expected Instruction=%h \n",out_trans.inst_out, exp_trans.instrn), UVM_LOW)
 	   h1=i1+i2;				
@@ -128,10 +129,10 @@ begin
 						end
 
 
-	  end
+	  end*/
 	  else
 	  begin
-	  `uvm_error("INSTRUCTION_ERROR", $sformatf("Actual=%d Expected=%d \n",out_trans.inst_out, exp_trans.instrn))
+	  `uvm_error("INSTRUCTION_ERROR", $sformatf("Expected=%d \n", exp_trans.inst))
 	  end 
 	  end
    endtask
