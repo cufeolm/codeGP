@@ -2,6 +2,7 @@
 `include "uvm_macros.svh"
 //`include "GUVM_sequence.sv"
 import uvm_pkg::*;
+import leon_pkg::*;
 `uvm_analysis_imp_decl(_mon_trans)
 `uvm_analysis_imp_decl(_drv_trans)
 
