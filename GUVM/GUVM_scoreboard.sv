@@ -18,12 +18,12 @@ class GUVM_scoreboard extends uvm_scoreboard;
     //GUVM_sequence_item trans, input_trans;
 
     // analysis implementation ports
-	uvm_analysis_imp_mon_trans #(GUVM_result_transaction,GUVM_scoreboard) Mon2Sb_port;
+    uvm_analysis_imp_mon_trans #(GUVM_result_transaction,GUVM_scoreboard) Mon2Sb_port;
     uvm_analysis_imp_drv_trans #(GUVM_sequence_item,GUVM_scoreboard) Drv2Sb_port;
 
     // TLM FIFOs to store the actual and expected transaction values
     uvm_tlm_fifo #(GUVM_sequence_item)  drv_fifo;
-    uvm_tlm_fifo #(GUVM_sequence_item)  mon_fifo;
+    uvm_tlm_fifo #(GUVM_result_transaction)  mon_fifo;
 
    function new (string name, uvm_component parent);
       super.new(name, parent);
@@ -46,12 +46,13 @@ class GUVM_scoreboard extends uvm_scoreboard;
 
    // write_mon_trans will be called when the monitor broadcasts the DUT results
    // to the scoreboard 
-   function void write_mon_trans (GUVM_sequence_item trans);
+   function void write_mon_trans (GUVM_result_transaction trans);
         void'(mon_fifo.try_put(trans));
    endfunction : write_mon_trans
 
    task run_phase(uvm_phase phase);
-      GUVM_sequence_item exp_trans, out_trans;
+      GUVM_sequence_item exp_trans;
+     GUVM_result_transaction out_trans;
       bit [31:0] h1,i1,i2,imm;
 	  //bit [19:0] sign;
       forever begin
@@ -104,13 +105,13 @@ begin
 begin 
 `uvm_info ("ADD_INSTRUCTION_PASS ", $sformatf("Expected Instruction=%h \n", exp_trans.inst), UVM_LOW)
 	h1=i1+i2;				
-						if((h1)==(out_trans.data))
+						if((h1)==(out_trans.output_data))
 						begin
-						`uvm_info ("ADDITION_PASS ", $sformatf("Actual Calculation=%d Expected Calculation=%d \n",out_trans.data, h1), UVM_LOW)
+						`uvm_info ("ADDITION_PASS ", $sformatf("Actual Calculation=%d Expected Calculation=%d \n",out_trans.output_data, h1), UVM_LOW)
 						end
 						else
 						begin
-						`uvm_error("ADDITION_FAIL", $sformatf("Actual Calculation=%d Expected Calculation=%d \n",out_trans.data, h1))
+						`uvm_error("ADDITION_FAIL", $sformatf("Actual Calculation=%d Expected Calculation=%d \n",out_trans.output_data, h1))
 						end
 
 
