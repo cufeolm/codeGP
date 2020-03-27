@@ -23,6 +23,7 @@ class GUVM_monitor extends uvm_monitor;
          $display("monitor has started");
         #10000 // ay time 3la 7asab elcritical path llduts
         result.output_data = bfm.receive_data();
+         $display("MONITOR OUTPUT IS %b",bfm.receive_data());
          Mon2Sb_port.write(result); 
     endtask : run_phase
 
