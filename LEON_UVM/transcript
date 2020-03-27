@@ -1,6 +1,6 @@
 # do run.do
 # QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 12:53:07 on Mar 27,2020
+# Start time: 13:26:35 on Mar 27,2020
 # vlog "+incdir+format" leon_pkg.sv 
 # -- Compiling package leon_package
 # -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -15,10 +15,10 @@
 # 
 # Top level modules:
 # 	--none--
-# End time: 12:53:07 on Mar 27,2020, Elapsed time: 0:00:00
+# End time: 13:26:35 on Mar 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 5
 # QuestaSim-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 12:53:07 on Mar 27,2020
+# Start time: 13:26:35 on Mar 27,2020
 # vcom -f DUT_LEON.f 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -479,10 +479,10 @@
 # -- Loading package tech_map
 # -- Compiling entity proc
 # -- Compiling architecture rtl of proc
-# End time: 12:53:15 on Mar 27,2020, Elapsed time: 0:00:08
+# End time: 13:26:43 on Mar 27,2020, Elapsed time: 0:00:08
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 12:53:15 on Mar 27,2020
+# Start time: 13:26:43 on Mar 27,2020
 # vcom -mixedsvvh leon/iface.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -493,20 +493,20 @@
 # -- Loading package config
 # -- Loading package sparcv8
 # -- Compiling package iface
-# End time: 12:53:15 on Mar 27,2020, Elapsed time: 0:00:00
+# End time: 13:26:43 on Mar 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 12:53:16 on Mar 27,2020
+# Start time: 13:26:43 on Mar 27,2020
 # vlog GUVM_interface.sv 
 # -- Compiling interface GUVM_interface
 # -- Importing package iface__mti__sv__equiv__implct__pack
 # 
 # Top level modules:
 # 	--none--
-# End time: 12:53:16 on Mar 27,2020, Elapsed time: 0:00:00
+# End time: 13:26:44 on Mar 27,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 12:53:16 on Mar 27,2020
+# Start time: 13:26:44 on Mar 27,2020
 # vlog top.sv 
 # -- Compiling module top
 # -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -516,11 +516,11 @@
 # 
 # Top level modules:
 # 	top
-# End time: 12:53:16 on Mar 27,2020, Elapsed time: 0:00:00
+# End time: 13:26:44 on Mar 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 1
 # vsim top 
-# Start time: 12:53:16 on Mar 27,2020
+# Start time: 13:26:44 on Mar 27,2020
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Warning: leon/iu.vhd(2425): (vopt-8617) Possible component instance "/top/dut/iu0/mul0/u0 : mul" is not bound.
 # ** Warning: leon/iu.vhd(2431): (vopt-8617) Possible component instance "/top/dut/iu0/div0/u0 : div" is not bound.
@@ -748,5 +748,5 @@
 # 112: XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX
 # 120: B2A72665 1D06333A EC4B34D8 150FDD2A 47B9A18F XXXXXXXX XXXXXXXX 1E8DCD3D
 # 128: XXXXXXXX 27B07E4F DBCD60B7 XXXXXXXX 46DF998D 0AAA4B15 XXXXXXXX XXXXXXXX
-# End time: 12:53:21 on Mar 27,2020, Elapsed time: 0:00:05
+# End time: 13:26:49 on Mar 27,2020, Elapsed time: 0:00:05
 # Errors: 0, Warnings: 23
