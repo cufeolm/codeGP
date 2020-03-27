@@ -1,5 +1,3 @@
-
-
 `include "uvm_macros.svh"
 //`include "GUVM_sequence.sv"
 //`include "leon_pkg.sv"
@@ -50,15 +48,33 @@ class GUVM_scoreboard extends uvm_scoreboard;
         void'(mon_fifo.try_put(trans));
    endfunction : write_mon_trans
 
-   task run_phase(uvm_phase phase);
-      GUVM_sequence_item exp_trans, out_trans;
-      bit [31:0] h1,i1,i2,imm;
-	  //bit [19:0] sign;
-      forever begin
-			drv_fifo.get(exp_trans);
-			mon_fifo.get(out_trans);
-			i1=exp_trans.op1;
-			i2=exp_trans.op2;
+	   task run_phase(uvm_phase phase);
+		  GUVM_sequence_item exp_trans, out_trans;
+		  bit [31:0] h1,i1,i2,imm,registered_inst;
+		  //bit [19:0] sign;
+		  forever begin
+		  $display("RANDA SCOREBOARD have started");
+				drv_fifo.get(exp_trans);
+				mon_fifo.get(out_trans);
+				i1=exp_trans.op1;
+				i2=exp_trans.op2;
+				
+				`uvm_info ("SCOREBOARD ENTERED ",$sformatf("HELLO IN SCOREBOARD"), UVM_LOW);
+				//si_a []
+					for (int i = 0; i < $size(si_a); i++)
+					begin
+					if(exp_trans.inst==si_a[i])
+					begin
+					registered_inst=si_a[i];
+					$display("resulted_inst is si_a[%0d] = %s", i, si_a[i]);
+					end
+					else
+					begin
+					$display("instruction is not in the enum si_a[%0d] = %s",i, si_a[i]);
+					end
+		  $display("element si_a[%0d] = %s", i, si_a[i]);
+		  end
+			
 			//imm={{20{exp_trans.immediate_data[11]}}, exp_trans.immediate_data};  //IMMEDIATE VALUE SIGN EXTENSION
 			// rand logic [31:0] inst;
                          //rand logic [31:0] oprand1,oprand2;
@@ -100,17 +116,17 @@ begin
 	  
 	  
 	  
-	  if((exp_trans.inst==A)) //LEON only
+	  if((registered_inst==A)) //LEON only
 begin 
 `uvm_info ("ADD_INSTRUCTION_PASS ", $sformatf("Expected Instruction=%h \n", exp_trans.inst), UVM_LOW)
 	h1=i1+i2;				
-						if((h1)==(out_trans.data))
+						if((h1)==(out_trans.receivedDATA))
 						begin
-						`uvm_info ("ADDITION_PASS ", $sformatf("Actual Calculation=%d Expected Calculation=%d \n",out_trans.data, h1), UVM_LOW)
+						`uvm_info ("ADDITION_PASS ", $sformatf("Actual Calculation=%d Expected Calculation=%d \n",out_trans.receivedDATA, h1), UVM_LOW)
 						end
 						else
 						begin
-						`uvm_error("ADDITION_FAIL", $sformatf("Actual Calculation=%d Expected Calculation=%d \n",out_trans.data, h1))
+						`uvm_error("ADDITION_FAIL", $sformatf("Actual Calculation=%d Expected Calculation=%d \n",out_trans.receivedDATA, h1))
 						end
 
 

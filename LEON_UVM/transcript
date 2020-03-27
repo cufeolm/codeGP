@@ -1,7 +1,21 @@
+# //  Questa Sim-64
+# //  Version 10.6c win64 Jul 26 2017
+# //
+# //  Copyright 1991-2017 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
 # do run.do
 # QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 13:00:53 on Mar 26,2020
-# vlog "+incdir+format" leon_pkg.sv 
+# Start time: 08:54:04 on Mar 27,2020
+# vlog -reportprogress 300 "+incdir+format" leon_pkg.sv 
 # -- Compiling package leon_package
 # -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
 # ** Note: (vlog-2286) leon_pkg.sv(3): Using implicit +incdir+C:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
@@ -15,11 +29,11 @@
 # 
 # Top level modules:
 # 	--none--
-# End time: 13:00:54 on Mar 26,2020, Elapsed time: 0:00:01
+# End time: 08:54:05 on Mar 27,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 5
 # QuestaSim-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 13:00:54 on Mar 26,2020
-# vcom -f DUT_LEON.f 
+# Start time: 08:54:05 on Mar 27,2020
+# vcom -reportprogress 300 -f DUT_LEON.f 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -479,11 +493,11 @@
 # -- Loading package tech_map
 # -- Compiling entity proc
 # -- Compiling architecture rtl of proc
-# End time: 13:01:03 on Mar 26,2020, Elapsed time: 0:00:09
+# End time: 08:54:12 on Mar 27,2020, Elapsed time: 0:00:07
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 13:01:03 on Mar 26,2020
-# vcom -mixedsvvh leon/iface.vhd 
+# Start time: 08:54:12 on Mar 27,2020
+# vcom -reportprogress 300 -mixedsvvh leon/iface.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -493,21 +507,21 @@
 # -- Loading package config
 # -- Loading package sparcv8
 # -- Compiling package iface
-# End time: 13:01:03 on Mar 26,2020, Elapsed time: 0:00:00
+# End time: 08:54:12 on Mar 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 13:01:03 on Mar 26,2020
-# vlog GUVM_interface.sv 
+# Start time: 08:54:12 on Mar 27,2020
+# vlog -reportprogress 300 GUVM_interface.sv 
 # -- Compiling interface GUVM_interface
 # -- Importing package iface__mti__sv__equiv__implct__pack
 # 
 # Top level modules:
 # 	--none--
-# End time: 13:01:03 on Mar 26,2020, Elapsed time: 0:00:00
+# End time: 08:54:12 on Mar 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 13:01:03 on Mar 26,2020
-# vlog top.sv 
+# Start time: 08:54:12 on Mar 27,2020
+# vlog -reportprogress 300 top.sv 
 # -- Compiling module top
 # -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
 # -- Importing package leon_package
@@ -516,11 +530,11 @@
 # 
 # Top level modules:
 # 	top
-# End time: 13:01:04 on Mar 26,2020, Elapsed time: 0:00:01
+# End time: 08:54:13 on Mar 27,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 1
 # vsim top 
-# Start time: 13:01:04 on Mar 26,2020
+# Start time: 08:54:13 on Mar 27,2020
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Warning: leon/iu.vhd(2425): (vopt-8617) Possible component instance "/top/dut/iu0/mul0/u0 : mul" is not bound.
 # ** Warning: leon/iu.vhd(2431): (vopt-8617) Possible component instance "/top/dut/iu0/div0/u0 : div" is not bound.
@@ -529,20 +543,6 @@
 # ** Warning: GUVM_sequence.sv(23): (vopt-2240) Treating stand-alone use of function 'setup' as an implicit VOID cast.
 # ** Warning: GUVM_sequence.sv(24): (vopt-2240) Treating stand-alone use of function 'setup' as an implicit VOID cast.
 # ** Warning: leon_seq_item.sv(27): (vopt-2250) Function "setup" has no return value assignment.
-# //  Questa Sim-64
-# //  Version 10.6c win64 Jul 26 2017
-# //
-# //  Copyright 1991-2017 Mentor Graphics Corporation
-# //  All Rights Reserved.
-# //
-# //  QuestaSim and its associated documentation contain trade
-# //  secrets and commercial or financial information that are the property of
-# //  Mentor Graphics Corporation and are privileged, confidential,
-# //  and exempt from disclosure under the Freedom of Information Act,
-# //  5 U.S.C. Section 552. Furthermore, this information
-# //  is prohibited from disclosure under the Trade Secrets Act,
-# //  18 U.S.C. Section 1905.
-# //
 # Loading sv_std.std
 # Loading work.iface__mti__sv__equiv__implct__pack(fast)
 # Loading work.GUVM_interface(fast)
@@ -648,181 +648,56 @@
 # UVM_INFO @ 0: reporter [RNTST] Running test GUVM_test...
 # UVM_INFO GUVM_env.sv(20) @ 0: uvm_test_top.env_h [] Called env::connect_phase
 # test have started 
+# RANDA SCOREBOARD have started
 # driver have started
-# driver starting fetching
-# driver first load fetch
-# inst is 1110 1000 0000 0000 0010 0000 0000 0000
-# rs1 address = 20 and data=2985317987
-# driver second load fetch
-# inst is 1100 1000 0000 0000 0010 0000 0000 0000
-# rs2 address = 4 and data=1189058957
-# driver instruction fetch
-# inst is 1001 0010 0000 0101 0000 0000 0000 0100
-# rs1 address = 20 and rs2 address = 4 and rd address = 9
-# is immediate ?? 0
-# driver store fetch
-# inst is 1101 0010 0010 0000 0010 0000 0000 0000
-# rd address = 9
 # madd : 00000000000000000000000000000000
 # result = 4174376944
 # driver have started
 # command sequence : inst =10010010000001010000000000000100/n op=10,op2=101,op3=000000,rd=01001,rs1=10100,rs2=00100,i=0,a=x /n
 # 
 # 				imm13=xxxx,imm22=xxxxxx 
-# driver starting fetching
-# driver first load fetch
-# inst is 1101 1110 0000 0000 0010 0000 0000 0000
-# rs1 address = 15 and data=512609597
-# driver second load fetch
-# inst is 1100 0010 0000 0000 0010 0000 0000 0000
-# rs2 address = 1 and data=1177417612
-# driver instruction fetch
-# inst is 1000 0000 0000 0011 1100 0000 0000 0001
-# rs1 address = 15 and rs2 address = 1 and rd address = 0
-# is immediate ?? 0
-# driver store fetch
-# inst is 1100 0000 0010 0000 0010 0000 0000 0000
-# rd address = 0
 # madd : 00000000000000000000000000000000
 # result = 0
 # driver have started
 # command sequence : inst =10000000000000111100000000000001/n op=10,op2=100,op3=000000,rd=00000,rs1=01111,rs2=00001,i=0,a=x /n
 # 
 # 				imm13=xxxx,imm22=xxxxxx 
-# driver starting fetching
-# driver first load fetch
-# inst is 1111 1100 0000 0000 0010 0000 0000 0000
-# rs1 address = 30 and data=3151131255
-# driver second load fetch
-# inst is 1100 1010 0000 0000 0010 0000 0000 0000
-# rs2 address = 5 and data=1206705039
-# driver instruction fetch
-# inst is 1010 0010 0000 0111 1000 0000 0000 0101
-# rs1 address = 30 and rs2 address = 5 and rd address = 17
-# is immediate ?? 0
-# driver store fetch
-# inst is 1110 0010 0010 0000 0010 0000 0000 0000
-# rd address = 17
 # madd : 00000000000000000000000000000000
 # result = 62868998
 # driver have started
 # command sequence : inst =10100010000001111000000000000101/n op=10,op2=111,op3=000000,rd=10001,rs1=11110,rs2=00101,i=0,a=x /n
 # 
 # 				imm13=xxxx,imm22=xxxxxx 
-# driver starting fetching
-# driver first load fetch
-# inst is 1100 0010 0000 0000 0010 0000 0000 0000
-# rs1 address = 1 and data=3733858493
-# driver second load fetch
-# inst is 1101 0000 0000 0000 0010 0000 0000 0000
-# rs2 address = 8 and data=2997298789
-# driver instruction fetch
-# inst is 1011 0100 0000 0000 0100 0000 0000 1000
-# rs1 address = 1 and rs2 address = 8 and rd address = 26
-# is immediate ?? 0
-# driver store fetch
-# inst is 1111 0100 0010 0000 0010 0000 0000 0000
-# rd address = 26
 # madd : 00000000000000000000000000000000
 # result = 2436189986
 # driver have started
 # command sequence : inst =10110100000000000100000000001000/n op=10,op2=101,op3=000000,rd=11010,rs1=00001,rs2=01000,i=0,a=x /n
 # 
 # 				imm13=xxxx,imm22=xxxxxx 
-# driver starting fetching
-# driver first load fetch
-# inst is 1101 1000 0000 0000 0010 0000 0000 0000
-# rs1 address = 12 and data=3469528221
-# driver second load fetch
-# inst is 1100 0000 0000 0000 0010 0000 0000 0000
-# rs2 address = 0 and data=2307110931
-# driver instruction fetch
-# inst is 1000 0000 0000 0011 0000 0000 0000 0000
-# rs1 address = 12 and rs2 address = 0 and rd address = 0
-# is immediate ?? 0
-# driver store fetch
-# inst is 1100 0000 0010 0000 0010 0000 0000 0000
-# rd address = 0
 # madd : 00000000000000000000000000000000
 # result = 0
 # driver have started
 # command sequence : inst =10000000000000110000000000000000/n op=10,op2=011,op3=000000,rd=00000,rs1=01100,rs2=00000,i=0,a=x /n
 # 
 # 				imm13=xxxx,imm22=xxxxxx 
-# driver starting fetching
-# driver first load fetch
-# inst is 1111 1110 0000 0000 0010 0000 0000 0000
-# rs1 address = 31 and data=3612753582
-# driver second load fetch
-# inst is 1101 0110 0000 0000 0010 0000 0000 0000
-# rs2 address = 11 and data=3888476879
-# driver instruction fetch
-# inst is 1011 0100 0000 0111 1100 0000 0000 1011
-# rs1 address = 31 and rs2 address = 11 and rd address = 26
-# is immediate ?? 0
-# driver store fetch
-# inst is 1111 0100 0010 0000 0010 0000 0000 0000
-# rd address = 26
 # madd : 00000000000000000000000000000000
 # result = 3206263165
 # driver have started
 # command sequence : inst =10110100000001111100000000001011/n op=10,op2=111,op3=000000,rd=11010,rs1=11111,rs2=01011,i=0,a=x /n
 # 
 # 				imm13=xxxx,imm22=xxxxxx 
-# driver starting fetching
-# driver first load fetch
-# inst is 1101 1000 0000 0000 0010 0000 0000 0000
-# rs1 address = 12 and data=1160667530
-# driver second load fetch
-# inst is 1101 0100 0000 0000 0010 0000 0000 0000
-# rs2 address = 10 and data=3964351704
-# driver instruction fetch
-# inst is 1010 0100 0000 0011 0000 0000 0000 1010
-# rs1 address = 12 and rs2 address = 10 and rd address = 18
-# is immediate ?? 0
-# driver store fetch
-# inst is 1110 0100 0010 0000 0010 0000 0000 0000
-# rd address = 18
 # madd : 00000000000000000000000000000000
 # result = 830051938
 # driver have started
 # command sequence : inst =10100100000000110000000000001010/n op=10,op2=000,op3=000000,rd=10010,rs1=01100,rs2=01010,i=0,a=x /n
 # 
 # 				imm13=xxxx,imm22=xxxxxx 
-# driver starting fetching
-# driver first load fetch
-# inst is 1110 1000 0000 0000 0010 0000 0000 0000
-# rs1 address = 20 and data=1460999086
-# driver second load fetch
-# inst is 1101 0110 0000 0000 0010 0000 0000 0000
-# rs2 address = 11 and data=353361194
-# driver instruction fetch
-# inst is 1011 0100 0000 0101 0000 0000 0000 1011
-# rs1 address = 20 and rs2 address = 11 and rd address = 26
-# is immediate ?? 0
-# driver store fetch
-# inst is 1111 0100 0010 0000 0010 0000 0000 0000
-# rd address = 26
 # madd : 00000000000000000000000000000000
 # result = 1814360280
 # driver have started
 # command sequence : inst =10110100000001010000000000001011/n op=10,op2=010,op3=000000,rd=11010,rs1=10100,rs2=01011,i=0,a=x /n
 # 
 # 				imm13=xxxx,imm22=xxxxxx 
-# driver starting fetching
-# driver first load fetch
-# inst is 1101 0010 0000 0000 0010 0000 0000 0000
-# rs1 address = 9 and data=486945594
-# driver second load fetch
-# inst is 1100 1010 0000 0000 0010 0000 0000 0000
-# rs2 address = 5 and data=178932501
-# driver instruction fetch
-# inst is 1000 0010 0000 0010 0100 0000 0000 0101
-# rs1 address = 9 and rs2 address = 5 and rd address = 1
-# is immediate ?? 0
-# driver store fetch
-# inst is 1100 0010 0010 0000 0010 0000 0000 0000
-# rd address = 1
 # madd : 00000000000000000000000000000000
 # result = 665878095
 # driver have started
@@ -830,21 +705,6 @@
 # 
 # 				imm13=xxxx,imm22=xxxxxx 
 # madd : 00000000000000000000000000000000
-# ELMONITOR SHA8AAAALLLL!
-# driver starting fetching
-# driver first load fetch
-# inst is 1101 1000 0000 0000 0010 0000 0000 0000
-# rs1 address = 12 and data=1203347855
-# driver second load fetch
-# inst is 1100 0100 0000 0000 0010 0000 0000 0000
-# rs2 address = 2 and data=3687669943
-# driver instruction fetch
-# inst is 1011 0000 0000 0011 0000 0000 0000 0010
-# rs1 address = 12 and rs2 address = 2 and rd address = 24
-# is immediate ?? 0
-# driver store fetch
-# inst is 1111 0000 0010 0000 0010 0000 0000 0000
-# rd address = 24
 # madd : 00000000000000000000000000000000
 # result = 596050502
 # driver have started
@@ -869,7 +729,6 @@
 #    Time: 10800 ns  Iteration: 64  Instance: /top
 # 1
 # Break in Task uvm_pkg/uvm_root::run_test at C:/questasim64_10.6c/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
-# Stopped at C:/questasim64_10.6c/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
 #   0: XXXXXXXX 03BF4E06 31799662 XXXXXXXX 571513AE XXXXXXXX XXXXXXXX XXXXXXXX
 #   8: 23870246 XXXXXXXX 6C24F0D8 XXXXXXXX XXXXXXXX XXXXXXXX BBD27277 D7563EAE
 #  16: XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX
@@ -887,5 +746,3 @@
 # 112: XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX
 # 120: B2A72665 1D06333A EC4B34D8 150FDD2A 47B9A18F XXXXXXXX XXXXXXXX 1E8DCD3D
 # 128: XXXXXXXX 27B07E4F DBCD60B7 XXXXXXXX 46DF998D 0AAA4B15 XXXXXXXX XXXXXXXX
-# End time: 13:01:10 on Mar 26,2020, Elapsed time: 0:00:06
-# Errors: 0, Warnings: 23
