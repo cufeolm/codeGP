@@ -32,8 +32,8 @@ class GUVM_scoreboard extends uvm_scoreboard;
       //Instantiate the analysis ports and Fifo
       Mon2Sb_port = new("Mon2Sb",  this);
       Drv2Sb_port = new("Drv2Sb",  this);
-      drv_fifo     = new("drv_fifo", this,0);  //BY DEFAULT ITS SIZE IS 1 BUT CAN BE UNBOUNDED by putting 0
-      mon_fifo     = new("mon_fifo", this,0);
+      drv_fifo     = new("drv_fifo", this,100);  //BY DEFAULT ITS SIZE IS 1 BUT CAN BE UNBOUNDED by putting 0
+      mon_fifo     = new("mon_fifo", this,100);
    endfunction : build_phase
 
    // write_drv_trans will be called when the driver broadcasts a transaction
@@ -53,27 +53,44 @@ class GUVM_scoreboard extends uvm_scoreboard;
 		  bit [31:0] h1,i1,i2,imm,registered_inst;
 		  //bit [19:0] sign;
 		  forever begin
-		  $display("RANDA SCOREBOARD have started");
-				drv_fifo.get(exp_trans);
-				mon_fifo.get(out_trans);
+		  $display("RANDA SCOREBOARD have started xxx");
+		//  $display("Expected Instruction=%h \n", exp_trans.inst);
+		  //$display("operand1_scb=%h \n", i1);
+		//  $display("operand2_scb=%h \n", i2);
+		  
+		 // `uvm_info ("READ_INSTRUCTION ", $sformatf("Expected Instruction=%h \n", exp_trans.inst), UVM_LOW)
+			drv_fifo.get(exp_trans);
+			mon_fifo.get(out_trans);
 				i1=exp_trans.op1;
 				i2=exp_trans.op2;
-				
-				`uvm_info ("SCOREBOARD ENTERED ",$sformatf("HELLO IN SCOREBOARD"), UVM_LOW);
+				registered_inst=exp_trans.inst;
+				$display("RANDA HIIIIIII");
+				$display("operand1_scb=%h \n", i1);
+				$display("operand2_scb=%h \n", i2);
+				$display("Expected Instruction=%h \n", registered_inst);
+				//opcode reg_instruction;
+				//`uvm_info ("SCOREBOARD ENTERED ",$sformatf("HELLO IN SCOREBOARD"), UVM_LOW);
+				leon_package::reg_instruction = leon_package::reg_instruction.first;
+                for(int i=0;i<6;i++)
+				begin
+				$display("LOOP ENTERED");
+                $display("reg_instruction  ::  Value of  %0s is = %0d",leon_package::reg_instruction.name(),leon_package::reg_instruction);
+				end
 				//si_a []
-					for (int i = 0; i < $size(si_a); i++)
+					/*for (int i = 0; i < $size(leon_package::si_a); i++)
 					begin
-					if(exp_trans.inst==si_a[i])
+					$display("LOOP ENTERED");
+					if(exp_trans.inst==leon_package::si_a[i])
 					begin
-					registered_inst=si_a[i];
-					$display("resulted_inst is si_a[%0d] = %s", i, si_a[i]);
+					registered_inst=leon_package::si_a[i];
+					$display("resulted_inst is si_a[%0d] = %s", i, leon_package::si_a[i]);
 					end
 					else
 					begin
-					$display("instruction is not in the enum si_a[%0d] = %s",i, si_a[i]);
+					$display("instruction is not in the enum si_a[%0d] = %s",i, leon_package::si_a[i]);
 					end
-		  $display("element si_a[%0d] = %s", i, si_a[i]);
-		  end
+		  $display("element si_a[%0d] = %s", i,leon_package::si_a[i]);
+		  end*/
 			
 			//imm={{20{exp_trans.immediate_data[11]}}, exp_trans.immediate_data};  //IMMEDIATE VALUE SIGN EXTENSION
 			// rand logic [31:0] inst;
@@ -116,8 +133,10 @@ begin
 	  
 	  
 	  
-	  if((registered_inst==A)) //LEON only
+	  //if((registered_inst==A)) //LEON only
+	  if((exp_trans.inst[31:30]==2'b10 && exp_trans.inst[24:19]==6'b000000 && exp_trans.inst[13:5]==9'b000000000) ||(exp_trans.inst[6:0]==7'b0110011 && exp_trans.inst[14:12]==3'b000 && exp_trans.inst[31:25]==7'b0000000 ) || (exp_trans.inst[24:21]==4'h4 && exp_trans.inst[27:26]==2'b00))
 begin 
+ $display("RANDA inst ADDDDDDDD");
 `uvm_info ("ADD_INSTRUCTION_PASS ", $sformatf("Expected Instruction=%h \n", exp_trans.inst), UVM_LOW)
 	h1=i1+i2;				
 						if((h1)==(out_trans.receivedDATA))
@@ -149,6 +168,7 @@ begin
 	  else
 	  begin
 	  `uvm_error("INSTRUCTION_ERROR", $sformatf("Expected=%d \n", exp_trans.inst))
+	  $display("WRONG INSTTTTT");
 	  end 
 	  end
    endtask

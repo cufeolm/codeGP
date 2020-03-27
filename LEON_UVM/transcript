@@ -1,25 +1,11 @@
-# //  Questa Sim-64
-# //  Version 10.6c win64 Jul 26 2017
-# //
-# //  Copyright 1991-2017 Mentor Graphics Corporation
-# //  All Rights Reserved.
-# //
-# //  QuestaSim and its associated documentation contain trade
-# //  secrets and commercial or financial information that are the property of
-# //  Mentor Graphics Corporation and are privileged, confidential,
-# //  and exempt from disclosure under the Freedom of Information Act,
-# //  5 U.S.C. Section 552. Furthermore, this information
-# //  is prohibited from disclosure under the Trade Secrets Act,
-# //  18 U.S.C. Section 1905.
-# //
 # do run.do
 # QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 08:54:04 on Mar 27,2020
-# vlog -reportprogress 300 "+incdir+format" leon_pkg.sv 
+# Start time: 12:53:07 on Mar 27,2020
+# vlog "+incdir+format" leon_pkg.sv 
 # -- Compiling package leon_package
 # -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
 # ** Note: (vlog-2286) leon_pkg.sv(3): Using implicit +incdir+C:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
-# ** Warning: ** while parsing file included at leon_pkg.sv(27)
+# ** Warning: ** while parsing file included at leon_pkg.sv(28)
 # ** while parsing file included at target_sequence_item.sv(1)
 # ** at leon_seq_item.sv(68): (vlog-2643) Unterminated string literal continues onto next line.
 # ** Warning: GUVM_sequence.sv(21): (vlog-2240) Treating stand-alone use of function 'setup' as an implicit VOID cast.
@@ -29,11 +15,11 @@
 # 
 # Top level modules:
 # 	--none--
-# End time: 08:54:05 on Mar 27,2020, Elapsed time: 0:00:01
+# End time: 12:53:07 on Mar 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 5
 # QuestaSim-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 08:54:05 on Mar 27,2020
-# vcom -reportprogress 300 -f DUT_LEON.f 
+# Start time: 12:53:07 on Mar 27,2020
+# vcom -f DUT_LEON.f 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -493,11 +479,11 @@
 # -- Loading package tech_map
 # -- Compiling entity proc
 # -- Compiling architecture rtl of proc
-# End time: 08:54:12 on Mar 27,2020, Elapsed time: 0:00:07
+# End time: 12:53:15 on Mar 27,2020, Elapsed time: 0:00:08
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 08:54:12 on Mar 27,2020
-# vcom -reportprogress 300 -mixedsvvh leon/iface.vhd 
+# Start time: 12:53:15 on Mar 27,2020
+# vcom -mixedsvvh leon/iface.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -507,21 +493,21 @@
 # -- Loading package config
 # -- Loading package sparcv8
 # -- Compiling package iface
-# End time: 08:54:12 on Mar 27,2020, Elapsed time: 0:00:00
+# End time: 12:53:15 on Mar 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 08:54:12 on Mar 27,2020
-# vlog -reportprogress 300 GUVM_interface.sv 
+# Start time: 12:53:16 on Mar 27,2020
+# vlog GUVM_interface.sv 
 # -- Compiling interface GUVM_interface
 # -- Importing package iface__mti__sv__equiv__implct__pack
 # 
 # Top level modules:
 # 	--none--
-# End time: 08:54:12 on Mar 27,2020, Elapsed time: 0:00:00
+# End time: 12:53:16 on Mar 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 08:54:12 on Mar 27,2020
-# vlog -reportprogress 300 top.sv 
+# Start time: 12:53:16 on Mar 27,2020
+# vlog top.sv 
 # -- Compiling module top
 # -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
 # -- Importing package leon_package
@@ -530,11 +516,11 @@
 # 
 # Top level modules:
 # 	top
-# End time: 08:54:13 on Mar 27,2020, Elapsed time: 0:00:01
+# End time: 12:53:16 on Mar 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 1
 # vsim top 
-# Start time: 08:54:13 on Mar 27,2020
+# Start time: 12:53:16 on Mar 27,2020
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Warning: leon/iu.vhd(2425): (vopt-8617) Possible component instance "/top/dut/iu0/mul0/u0 : mul" is not bound.
 # ** Warning: leon/iu.vhd(2431): (vopt-8617) Possible component instance "/top/dut/iu0/div0/u0 : div" is not bound.
@@ -543,6 +529,20 @@
 # ** Warning: GUVM_sequence.sv(23): (vopt-2240) Treating stand-alone use of function 'setup' as an implicit VOID cast.
 # ** Warning: GUVM_sequence.sv(24): (vopt-2240) Treating stand-alone use of function 'setup' as an implicit VOID cast.
 # ** Warning: leon_seq_item.sv(27): (vopt-2250) Function "setup" has no return value assignment.
+# //  Questa Sim-64
+# //  Version 10.6c win64 Jul 26 2017
+# //
+# //  Copyright 1991-2017 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
 # Loading sv_std.std
 # Loading work.iface__mti__sv__equiv__implct__pack(fast)
 # Loading work.GUVM_interface(fast)
@@ -645,10 +645,11 @@
 # 
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# array is filled and ready to use
 # UVM_INFO @ 0: reporter [RNTST] Running test GUVM_test...
 # UVM_INFO GUVM_env.sv(20) @ 0: uvm_test_top.env_h [] Called env::connect_phase
 # test have started 
-# RANDA SCOREBOARD have started
+# RANDA SCOREBOARD have started xxx
 # driver have started
 # madd : 00000000000000000000000000000000
 # result = 4174376944
@@ -729,6 +730,7 @@
 #    Time: 10800 ns  Iteration: 64  Instance: /top
 # 1
 # Break in Task uvm_pkg/uvm_root::run_test at C:/questasim64_10.6c/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+# Stopped at C:/questasim64_10.6c/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
 #   0: XXXXXXXX 03BF4E06 31799662 XXXXXXXX 571513AE XXXXXXXX XXXXXXXX XXXXXXXX
 #   8: 23870246 XXXXXXXX 6C24F0D8 XXXXXXXX XXXXXXXX XXXXXXXX BBD27277 D7563EAE
 #  16: XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX
@@ -746,3 +748,5 @@
 # 112: XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX
 # 120: B2A72665 1D06333A EC4B34D8 150FDD2A 47B9A18F XXXXXXXX XXXXXXXX 1E8DCD3D
 # 128: XXXXXXXX 27B07E4F DBCD60B7 XXXXXXXX 46DF998D 0AAA4B15 XXXXXXXX XXXXXXXX
+# End time: 12:53:21 on Mar 27,2020, Elapsed time: 0:00:05
+# Errors: 0, Warnings: 23

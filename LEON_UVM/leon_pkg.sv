@@ -18,7 +18,8 @@ package leon_package;
     }special_op_t;//this op code for filling and reading the register files
 */
 
-    static opcode si_a [] ;
+    opcode si_a [] ;
+    opcode reg_instruction;
     integer supported_instructions ;
 
     //includes
@@ -52,7 +53,7 @@ package leon_package;
                 si_i=si_i.next();
 
             end
-        //$display("array is filled and ready to use");
+        $display("array is filled and ready to use");
     `endif
     endfunction
 
