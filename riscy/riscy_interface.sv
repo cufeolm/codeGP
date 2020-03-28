@@ -1,5 +1,5 @@
 interface GUVM_interface;
-
+    
     parameter N_EXT_PERF_COUNTERS =  0;
     parameter INSTR_RDATA_WIDTH   = 32;
     parameter PULP_SECURE         =  0;
@@ -76,28 +76,45 @@ interface GUVM_interface;
 
     initial begin
         clk_i = 0;
-	end	
+    end 
         
-    task send_data(logic [31:0] data);
+    function void send_data(logic [31:0] data);
         data_rdata_i = data;
-        repeat(2*5) #10 clk_i=~clk_i;
-    endtask
+    endfunction
 
-    task send_inst(logic [31:0] inst);
-        instr_rdata_i = inst;
+    function void send_inst(logic [31:0] inst);
+        instr_rdata_i = inst; 
+    endfunction
+    
+    task verify_inst(logic [31:0] inst);
+        send_inst(inst); 
         repeat(2*15) #10 clk_i=~clk_i;
     endtask
-	
-	task verify_inst(logic [31:0] inst);
-        send_inst(inst) ; 
-    endtask
-	
+    
     function logic [31:0] receive_data();
         $display("madd : %b", data_wdata_o);
-		return data_wdata_o;
+        return data_wdata_o; 
     endfunction 
+    
+    //function logic [31:0] store(logic [4:0] ra );
+    task store(logic [31:0] inst);
+        send_inst(inst);
+        $display("result = %0d", receive_data());
+        repeat(2*15) #10 clk_i=~clk_i;
+    endtask
 
-    task setup_data();
+    //function void load(logic [4:0] ra , logic [31:0] rd );
+    task load(logic [31:0] inst, logic [31:0] rd);
+        send_inst(inst);
+        send_data(rd);
+        repeat(2*15) #10 clk_i=~clk_i;
+    endtask
+    
+    function void add(logic [4:0] r1, logic [4:0] r2, logic [4:0] rd);
+        send_inst({7'b0000000, r2, r1, 3'b000, rd, 7'b0110011});
+    endfunction
+
+    task set_Up();
         clock_en_i            = 1'b1;
         test_en_i             = 1'b0;
         fregfile_disable_i    = 1'b1;
@@ -114,14 +131,13 @@ interface GUVM_interface;
         irq_sec_i             = 1'h0;
         debug_req_i           = 1'h0;
         fetch_enable_i        = 1'h1;
-        repeat(2*5) #10 clk_i=~clk_i;
     endtask
 
     task reset_dut();
         rst_ni = 1'b1;
-		repeat(2*1) #10 clk_i=~clk_i; 
-		rst_ni = 1'b0;
-		repeat(2*3) #10 clk_i=~clk_i;
+        repeat(2*1) #10 clk_i=~clk_i;
+        rst_ni = 1'b0;
+        repeat(2*3) #10 clk_i=~clk_i;
         rst_ni = 1'b1;
     endtask : reset_dut
 
