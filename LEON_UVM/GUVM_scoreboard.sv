@@ -16,7 +16,7 @@ class GUVM_scoreboard extends uvm_scoreboard;
     //GUVM_sequence_item trans, input_trans;
 
     // analysis implementation ports
-    uvm_analysis_imp_mon_trans #(GUVM_sequence_item,GUVM_scoreboard) Mon2Sb_port;
+   uvm_analysis_imp_mon_trans #(GUVM_sequence_item,GUVM_scoreboard) Mon2Sb_port;
     uvm_analysis_imp_drv_trans #(GUVM_sequence_item,GUVM_scoreboard) Drv2Sb_port;
 
     // TLM FIFOs to store the actual and expected transaction values
@@ -30,10 +30,10 @@ class GUVM_scoreboard extends uvm_scoreboard;
    function void build_phase(uvm_phase phase);
       super.build_phase(phase);
       //Instantiate the analysis ports and Fifo
-      Mon2Sb_port = new("Mon2Sb",  this);
+     Mon2Sb_port = new("Mon2Sb",  this);
       Drv2Sb_port = new("Drv2Sb",  this);
-      drv_fifo     = new("drv_fifo", this,100);  //BY DEFAULT ITS SIZE IS 1 BUT CAN BE UNBOUNDED by putting 0
-      mon_fifo     = new("mon_fifo", this,100);
+      drv_fifo     = new("drv_fifo", this);  //BY DEFAULT ITS SIZE IS 1 BUT CAN BE UNBOUNDED by putting 0
+     mon_fifo     = new("mon_fifo", this);
    endfunction : build_phase
 
    // write_drv_trans will be called when the driver broadcasts a transaction
@@ -42,8 +42,8 @@ class GUVM_scoreboard extends uvm_scoreboard;
         void'(drv_fifo.try_put(input_trans));
    endfunction : write_drv_trans
 
-   // write_mon_trans will be called when the monitor broadcasts the DUT results
-   // to the scoreboard 
+    //write_mon_trans will be called when the monitor broadcasts the DUT results
+   //to the scoreboard 
    function void write_mon_trans (GUVM_sequence_item trans);
         void'(mon_fifo.try_put(trans));
    endfunction : write_mon_trans
@@ -60,7 +60,7 @@ class GUVM_scoreboard extends uvm_scoreboard;
 		  
 		 // `uvm_info ("READ_INSTRUCTION ", $sformatf("Expected Instruction=%h \n", exp_trans.inst), UVM_LOW)
 			drv_fifo.get(exp_trans);
-			mon_fifo.get(out_trans);
+			//mon_fifo.get(out_trans);
 				i1=exp_trans.op1;
 				i2=exp_trans.op2;
 				registered_inst=exp_trans.inst;

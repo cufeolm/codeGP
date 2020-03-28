@@ -58,7 +58,7 @@ class GUVM_driver extends uvm_driver #(GUVM_sequence_item);
         //    $display("inst is %b %b %b %b %b %b %b %b",cmd.inst[31:28],cmd.inst[27:24],cmd.inst[23:20],cmd.inst[19:16],cmd.inst[15:12],cmd.inst[11:8],cmd.inst[7:4],cmd.inst[3:0]);
         //    $display("rd address = %0d",cmd.inst[29:25]);
             bfm.store(cmd.inst);
-            Drv2Sb_port.write(cmd);
+           // Drv2Sb_port.write(cmd);
             seq_item_port.item_done();
         end : cmd_loop
     endtask : run_phase

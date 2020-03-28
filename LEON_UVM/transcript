@@ -1,6 +1,6 @@
 # do run.do
 # QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 18:12:48 on Mar 27,2020
+# Start time: 22:30:55 on Mar 27,2020
 # vlog "+incdir+format" leon_pkg.sv 
 # -- Compiling package leon_package
 # -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -15,10 +15,10 @@
 # 
 # Top level modules:
 # 	--none--
-# End time: 18:12:48 on Mar 27,2020, Elapsed time: 0:00:00
+# End time: 22:30:55 on Mar 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 5
 # QuestaSim-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 18:12:48 on Mar 27,2020
+# Start time: 22:30:55 on Mar 27,2020
 # vcom -f DUT_LEON.f 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -479,10 +479,10 @@
 # -- Loading package tech_map
 # -- Compiling entity proc
 # -- Compiling architecture rtl of proc
-# End time: 18:12:55 on Mar 27,2020, Elapsed time: 0:00:07
+# End time: 22:31:02 on Mar 27,2020, Elapsed time: 0:00:07
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 18:12:55 on Mar 27,2020
+# Start time: 22:31:02 on Mar 27,2020
 # vcom -mixedsvvh leon/iface.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -493,20 +493,20 @@
 # -- Loading package config
 # -- Loading package sparcv8
 # -- Compiling package iface
-# End time: 18:12:56 on Mar 27,2020, Elapsed time: 0:00:01
+# End time: 22:31:03 on Mar 27,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 18:12:56 on Mar 27,2020
+# Start time: 22:31:03 on Mar 27,2020
 # vlog GUVM_interface.sv 
 # -- Compiling interface GUVM_interface
 # -- Importing package iface__mti__sv__equiv__implct__pack
 # 
 # Top level modules:
 # 	--none--
-# End time: 18:12:56 on Mar 27,2020, Elapsed time: 0:00:00
+# End time: 22:31:03 on Mar 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 18:12:56 on Mar 27,2020
+# Start time: 22:31:03 on Mar 27,2020
 # vlog top.sv 
 # -- Compiling module top
 # -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -516,11 +516,11 @@
 # 
 # Top level modules:
 # 	top
-# End time: 18:12:56 on Mar 27,2020, Elapsed time: 0:00:00
+# End time: 22:31:04 on Mar 27,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 1
 # vsim top 
-# Start time: 18:12:56 on Mar 27,2020
+# Start time: 22:31:04 on Mar 27,2020
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Warning: leon/iu.vhd(2425): (vopt-8617) Possible component instance "/top/dut/iu0/mul0/u0 : mul" is not bound.
 # ** Warning: leon/iu.vhd(2431): (vopt-8617) Possible component instance "/top/dut/iu0/div0/u0 : div" is not bound.
@@ -651,34 +651,264 @@
 # test have started 
 # RANDA SCOREBOARD have started xxx
 # driver have started
+# RANDA HIIIIIII
+# operand1_scb=00000000 
+# 
+# operand2_scb=00000000 
+# 
+# Expected Instruction=e8002000 
+# 
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# UVM_ERROR GUVM_scoreboard.sv(170) @ 520: uvm_test_top.env_h.sb [INSTRUCTION_ERROR] Expected=3892322304 
+# 
+# WRONG INSTTTTT
+# RANDA SCOREBOARD have started xxx
 # madd : 00000000000000000000000000000000
 # result = 4174376944
 # driver have started
+# RANDA HIIIIIII
+# operand1_scb=00000000 
+# 
+# operand2_scb=00000000 
+# 
+# Expected Instruction=de002000 
+# 
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# UVM_ERROR GUVM_scoreboard.sv(170) @ 1700: uvm_test_top.env_h.sb [INSTRUCTION_ERROR] Expected=3724550144 
+# 
+# WRONG INSTTTTT
+# RANDA SCOREBOARD have started xxx
 # madd : 00000000000000000000000000000000
 # result = 0
 # driver have started
+# RANDA HIIIIIII
+# operand1_scb=00000000 
+# 
+# operand2_scb=00000000 
+# 
+# Expected Instruction=fc002000 
+# 
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# UVM_ERROR GUVM_scoreboard.sv(170) @ 2880: uvm_test_top.env_h.sb [INSTRUCTION_ERROR] Expected=4227866624 
+# 
+# WRONG INSTTTTT
+# RANDA SCOREBOARD have started xxx
 # madd : 00000000000000000000000000000000
 # result = 62868998
 # driver have started
+# RANDA HIIIIIII
+# operand1_scb=00000000 
+# 
+# operand2_scb=00000000 
+# 
+# Expected Instruction=c2002000 
+# 
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# UVM_ERROR GUVM_scoreboard.sv(170) @ 4060: uvm_test_top.env_h.sb [INSTRUCTION_ERROR] Expected=3254788096 
+# 
+# WRONG INSTTTTT
+# RANDA SCOREBOARD have started xxx
 # madd : 00000000000000000000000000000000
 # result = 2436189986
 # driver have started
+# RANDA HIIIIIII
+# operand1_scb=00000000 
+# 
+# operand2_scb=00000000 
+# 
+# Expected Instruction=d8002000 
+# 
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# UVM_ERROR GUVM_scoreboard.sv(170) @ 5240: uvm_test_top.env_h.sb [INSTRUCTION_ERROR] Expected=3623886848 
+# 
+# WRONG INSTTTTT
+# RANDA SCOREBOARD have started xxx
 # madd : 00000000000000000000000000000000
 # result = 0
 # driver have started
+# RANDA HIIIIIII
+# operand1_scb=00000000 
+# 
+# operand2_scb=00000000 
+# 
+# Expected Instruction=fe002000 
+# 
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# UVM_ERROR GUVM_scoreboard.sv(170) @ 6420: uvm_test_top.env_h.sb [INSTRUCTION_ERROR] Expected=4261421056 
+# 
+# WRONG INSTTTTT
+# RANDA SCOREBOARD have started xxx
 # madd : 00000000000000000000000000000000
 # result = 3206263165
 # driver have started
+# RANDA HIIIIIII
+# operand1_scb=00000000 
+# 
+# operand2_scb=00000000 
+# 
+# Expected Instruction=d8002000 
+# 
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# UVM_ERROR GUVM_scoreboard.sv(170) @ 7600: uvm_test_top.env_h.sb [INSTRUCTION_ERROR] Expected=3623886848 
+# 
+# WRONG INSTTTTT
+# RANDA SCOREBOARD have started xxx
 # madd : 00000000000000000000000000000000
 # result = 830051938
 # driver have started
+# RANDA HIIIIIII
+# operand1_scb=00000000 
+# 
+# operand2_scb=00000000 
+# 
+# Expected Instruction=e8002000 
+# 
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# UVM_ERROR GUVM_scoreboard.sv(170) @ 8780: uvm_test_top.env_h.sb [INSTRUCTION_ERROR] Expected=3892322304 
+# 
+# WRONG INSTTTTT
+# RANDA SCOREBOARD have started xxx
 # madd : 00000000000000000000000000000000
 # result = 1814360280
 # driver have started
+# RANDA HIIIIIII
+# operand1_scb=00000000 
+# 
+# operand2_scb=00000000 
+# 
+# Expected Instruction=d2002000 
+# 
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# UVM_ERROR GUVM_scoreboard.sv(170) @ 9960: uvm_test_top.env_h.sb [INSTRUCTION_ERROR] Expected=3523223552 
+# 
+# WRONG INSTTTTT
+# RANDA SCOREBOARD have started xxx
 # madd : 00000000000000000000000000000000
 # madd : 00000000000000000000000000000000
 # result = 665878095
 # driver have started
+# RANDA HIIIIIII
+# operand1_scb=00000000 
+# 
+# operand2_scb=00000000 
+# 
+# Expected Instruction=d8002000 
+# 
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# LOOP ENTERED
+# reg_instruction  ::  Value of  LDW is = X
+# UVM_ERROR GUVM_scoreboard.sv(170) @ 11140: uvm_test_top.env_h.sb [INSTRUCTION_ERROR] Expected=3623886848 
+# 
+# WRONG INSTTTTT
+# RANDA SCOREBOARD have started xxx
 # madd : 00000000000000000000000000000000
 # result = 596050502
 # driver have started
@@ -689,10 +919,11 @@
 # ** Report counts by severity
 # UVM_INFO :    5
 # UVM_WARNING :    0
-# UVM_ERROR :    0
+# UVM_ERROR :   10
 # UVM_FATAL :    0
 # ** Report counts by id
 # []     1
+# [INSTRUCTION_ERROR]    10
 # [Questa UVM]     2
 # [RNTST]     1
 # [TEST_DONE]     1
@@ -718,5 +949,5 @@
 # 112: XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX
 # 120: B2A72665 1D06333A EC4B34D8 150FDD2A 47B9A18F XXXXXXXX XXXXXXXX 1E8DCD3D
 # 128: XXXXXXXX 27B07E4F DBCD60B7 XXXXXXXX 46DF998D 0AAA4B15 XXXXXXXX XXXXXXXX
-# End time: 18:13:01 on Mar 27,2020, Elapsed time: 0:00:05
+# End time: 22:31:08 on Mar 27,2020, Elapsed time: 0:00:04
 # Errors: 0, Warnings: 23
