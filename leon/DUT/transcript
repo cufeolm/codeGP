@@ -1,0 +1,806 @@
+# //  Questa Sim-64
+# //  Version 10.4e win64 Apr  9 2016
+# //
+# //  Copyright 1991-2016 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+do wave2.do
+# vsim proc 
+# Start time: 16:27:17 on Mar 04,2020
+# ** Note: (vsim-3812) Design is being optimized...
+# 
+# ** Warning: iu.vhd(2425): (vopt-8617) Possible component instance "/proc/iu0/mul0/u0 : mul" is not bound.
+# 
+# ** Warning: iu.vhd(2431): (vopt-8617) Possible component instance "/proc/iu0/div0/u0 : div" is not bound.
+# 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.target
+# Loading ieee.std_logic_arith(body)
+# Loading work.device
+# Loading work.config
+# Loading work.sparcv8
+# Loading work.iface
+# Loading work.amba
+# Loading work.fpulib
+# Loading work.tech_map
+# Loading work.proc(rtl)#1
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.macro(body)
+# Loading work.iu(rtl)#1
+# Loading work.tech_atc25
+# Loading work.tech_atc35
+# Loading work.tech_fs90
+# Loading work.tech_umc18
+# Loading work.tech_generic
+# Loading work.tech_virtex
+# Loading work.regfile_iu(rtl)#1
+# Loading work.generic_regfile_iu(rtl)#1
+# Loading work.generic_dpram_ss(behav)#1
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/fpui.FpOp, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/fpui.FpOp.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/fpui.FpLd, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/fpui.FpLd.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/fpui.Reset, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/fpui.Reset.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/fpui.ss_scan_mode, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/fpui.ss_scan_mode.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/fpui.fp_ctl_scan_in, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/fpui.fp_ctl_scan_in.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.annul, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.annul.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.ld, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.ld.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.pv, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.pv.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.rett, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.rett.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.trap, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.trap.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.inst(31 downto 0), and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.inst(31 downto 0).
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.pc(31 downto 2), and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.pc(31 downto 2).
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.cnt(1 downto 0), and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.cnt(1 downto 0).
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.tt(5 downto 0), and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.tt(5 downto 0).
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.rd(7 downto 0), and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.rd(7 downto 0).
+add wave -position insertpoint sim:/proc/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: OoooOoOoo  Hostname: DESKTOP-S09FVG1  ProcessID: 19020
+# 
+#           Attempting to use alternate WLF file "./wlft3agjz8".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlft3agjz8
+# 
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -r /*
+force -freeze sim:/proc/rf0/inf/u0/rfss/u1/rfd(2) 32'h5 0
+force -freeze sim:/proc/rf0/inf/u0/rfss/u1/rfd(3) 32'h5 0
+force -freeze sim:/proc/rf0/inf/u0/rfss/u1/rfd(130) 32'h5 0
+force -freeze sim:/proc/rf0/inf/u0/rfss/u1/rfd(131) 32'h6 0
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# 
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/fpui.FpOp, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/fpui.FpOp.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/fpui.FpLd, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/fpui.FpLd.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/fpui.Reset, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/fpui.Reset.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/fpui.ss_scan_mode, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/fpui.ss_scan_mode.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/fpui.fp_ctl_scan_in, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/fpui.fp_ctl_scan_in.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.annul, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.annul.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.ld, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.ld.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.pv, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.pv.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.rett, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.rett.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.trap, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.trap.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.inst(31 downto 0), and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.inst(31 downto 0).
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.pc(31 downto 2), and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.pc(31 downto 2).
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.cnt(1 downto 0), and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.cnt(1 downto 0).
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.tt(5 downto 0), and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.tt(5 downto 0).
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.rd(7 downto 0), and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.rd(7 downto 0).
+add wave -position insertpoint sim:/proc/*
+do wave2.do
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -r /*
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# 
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/fpui.FpOp, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/fpui.FpOp.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/fpui.FpLd, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/fpui.FpLd.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/fpui.Reset, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/fpui.Reset.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/fpui.ss_scan_mode, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/fpui.ss_scan_mode.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/fpui.fp_ctl_scan_in, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/fpui.fp_ctl_scan_in.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.annul, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.annul.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.ld, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.ld.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.pv, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.pv.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.rett, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.rett.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.trap, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.trap.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.inst(31 downto 0), and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.inst(31 downto 0).
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.pc(31 downto 2), and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.pc(31 downto 2).
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.cnt(1 downto 0), and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.cnt(1 downto 0).
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.tt(5 downto 0), and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.tt(5 downto 0).
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.rd(7 downto 0), and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.rd(7 downto 0).
+do wave2.do
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Causality operation skipped due to absence of debug database file
+force -freeze sim:/proc/clko.holdn 1 0
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# 
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/fpui.FpOp, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/fpui.FpOp.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/fpui.FpLd, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/fpui.FpLd.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/fpui.Reset, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/fpui.Reset.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/fpui.ss_scan_mode, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/fpui.ss_scan_mode.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/fpui.fp_ctl_scan_in, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/fpui.fp_ctl_scan_in.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.annul, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.annul.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.ld, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.ld.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.pv, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.pv.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.rett, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.rett.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.trap, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.trap.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.inst(31 downto 0), and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.inst(31 downto 0).
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.pc(31 downto 2), and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.pc(31 downto 2).
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.cnt(1 downto 0), and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.cnt(1 downto 0).
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.tt(5 downto 0), and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.tt(5 downto 0).
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.rd(7 downto 0), and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.rd(7 downto 0).
+do wave2.do
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/proc/fpo.holdn 1 0
+force -freeze sim:/proc/cpo.holdn 1 0
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# 
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/fpui.FpOp, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/fpui.FpOp.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/fpui.FpLd, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/fpui.FpLd.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/fpui.Reset, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/fpui.Reset.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/fpui.ss_scan_mode, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/fpui.ss_scan_mode.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/fpui.fp_ctl_scan_in, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/fpui.fp_ctl_scan_in.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.annul, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.annul.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.ld, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.ld.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.pv, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.pv.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.rett, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.rett.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.trap, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.trap.
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.inst(31 downto 0), and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.inst(31 downto 0).
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.pc(31 downto 2), and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.pc(31 downto 2).
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.cnt(1 downto 0), and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.cnt(1 downto 0).
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.tt(5 downto 0), and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.tt(5 downto 0).
+# ** Warning: (vsim-8684) No drivers exist on out port /proc/iu0/iuo.debug.de.rd(7 downto 0), and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /proc/iuol.debug.de.rd(7 downto 0).
+do wave3.do
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/proc/dco.hold 0 0
+force -freeze sim:/proc/fpui.fpuholdn 1 0
+# End time: 19:00:52 on Mar 04,2020, Elapsed time: 2:33:35
+# Errors: 0, Warnings: 88
