@@ -30,19 +30,23 @@ class target_seq_item extends GUVM_sequence_item;
 	logic [3:0]succ;
 	logic [11:0]csr;
 
-	function setup();
+	function void store(logic [4:0] r);
+		ran_constrained(Store);
+		inst[24:20]=r;
+	endfunction
+
+	function void load(logic [4:0] r);
+		ran_constrained(Load);
+		inst[11:7]=r;
+	endfunction
+
+	function void setup();
 		GUVM_sequence_item temp;
 		//target_seq_item leon ;
 		temp = get_format(inst);
 		//if (!($cast(leon,temp))) 
 		//$fatal(1,"failed to cast transaction to leon's transaction"); 
 		do_copy(temp);
-	endfunction
-
-	function void update_rd();
-		parameter upper_bit = 29 ;
-		parameter lower_bit = 25 ;
-		inst[upper_bit:lower_bit]=rd;
 	endfunction
 
 	function void do_copy(uvm_object rhs);
