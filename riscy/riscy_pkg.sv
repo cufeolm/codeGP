@@ -10,7 +10,8 @@ package target_package;
 	} opcode;
 
 
-    opcode si_a []; 
+	opcode si_a []; 
+	opcode reg_instruction;
     integer supported_instructions; 
 
     //includes

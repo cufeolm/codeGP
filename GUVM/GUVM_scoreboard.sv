@@ -70,11 +70,11 @@ class GUVM_scoreboard extends uvm_scoreboard;
 				$display("Expected Instruction=%h \n", exp_trans.inst);
 				//opcode reg_instruction;
 				//`uvm_info ("SCOREBOARD ENTERED ",$sformatf("HELLO IN SCOREBOARD"), UVM_LOW);
-				//leon_package::reg_instruction = leon_package::reg_instruction.first;------------------------------------------------------mostafa
+				target_package::reg_instruction = target_package::reg_instruction.first;
                 for(int i=0;i<6;i++)
 				begin
 				$display("LOOP ENTERED");
-                //$display("reg_instruction  ::  Value of  %0s is = %0d",leon_package::reg_instruction.name(),leon_package::reg_instruction);----------------------mostafa-----
+                $display("reg_instruction  ::  Value of  %0s is = %0d",target_package::reg_instruction.name(),target_package::reg_instruction);
 				end
 				//si_a []
 					/*for (int i = 0; i < $size(leon_package::si_a); i++)
