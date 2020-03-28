@@ -24,6 +24,8 @@ class GUVM_sequence_item extends uvm_sequence_item;
 	function void ran_constrained(opcode con);//resiricted randomization 
 		inst = $random();
 		data = $random();
+		op1  = $random();
+		op2  = $random();
 		inst = generate_instruction(con);
 	endfunction 
 
