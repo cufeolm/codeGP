@@ -65,13 +65,13 @@ interface GUVM_interface(input logic i_clk);
         return o_wb_dat;
     endfunction
 
-    function void setup_data();
+    function void set_UP();
         i_irq = 1'b0;
         i_firq = 1'b0;
         i_system_rdy = 1'b1;
         i_wb_ack = 1'b1;
         i_wb_err = 1'b0;
-    endfunction: setup_data
+    endfunction: set_UP
 
     /*
     task reset_dut(clk);

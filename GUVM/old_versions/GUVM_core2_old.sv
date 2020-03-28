@@ -42,7 +42,7 @@ interface GUVM_interface;
         
     endfunction : OUTPUT_DATA 
 
-    function void setup_data();
+    function void set_UP();
         pciclk = 1'b0;
         pcirst = 1'b0;
 
@@ -70,6 +70,6 @@ interface GUVM_interface;
         dcache_output_inside.tag = 1'b0;
         dcache_output_inside.flush = 1'b0;
 
-    endfunction: setup_data
+    endfunction: set_UP
 
 endinterface: GUVM_interface

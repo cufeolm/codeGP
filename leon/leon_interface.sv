@@ -57,7 +57,7 @@ interface GUVM_interface;
     endtask
 
     //function void load(logic [4:0] ra , logic [31:0] rd );
-    task load(logic [31:0] inst , logic [31:0] rd );
+    task load(logic [31:0] inst, logic [31:0] rd );
         send_inst(inst);
         send_data(rd);
 		repeat(2*1)#10 clk=~clk;

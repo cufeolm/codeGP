@@ -56,16 +56,36 @@ interface GUVM_interface;
     endfunction
 
     task verify_inst(logic [31:0] inst);
-        repeat(2*50) #10 i_clk=~i_clk;
         send_inst(inst) ; 
     endtask
 
-    task setup_data();
+    task store(logic [31:0] inst );
+        send_inst(inst);
+        $display("result = %0d", receive_data());
+        repeat(2*10)#10 i_clk=~i_clk;
+    endtask
+
+    task load(logic [31:0] inst, logic [31:0] rd);
+        send_inst(inst);
+        send_data(rd);
+        repeat(2*50) #10 i_clk=~i_clk;
+    endtask
+    
+    task add(logic [4:0] r1, logic [4:0] r2, logic [4:0] rd);
+        send_inst({12'b111000001000, r1, rd, 8'b00000000, r2});
+        repeat(2*50) #10 i_clk=~i_clk;
+    endtask
+
+    task set_UP();
         i_irq = 1'b0;
         i_firq = 1'b0;
         i_system_rdy = 1'b1;
         i_wb_ack = 1'b1;
         i_wb_err = 1'b0;
-    endtask:setup_data
+    endtask: set_UP
+
+    task reset_dut();
+        //
+    endtask : reset_dut
 
 endinterface: GUVM_interface

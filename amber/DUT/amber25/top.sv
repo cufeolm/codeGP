@@ -20,7 +20,7 @@ module top;
     );
 
     initial begin
-      /*  bfm.setup_data();
+      /*  bfm.set_UP();
         bfm.send_data(128'hF0801003F0801003F0801003E5800000, 32'h00000005);
         bfm.send_inst(128'hF0801003F0801003F0801003F0801003);
         #1000
@@ -33,7 +33,7 @@ module top;
         #200
         bfm.receive_data();*/
 
-        bfm.setup_data();
+        bfm.set_UP();
         bfm.send_data(32'h00000005);
         bfm.send_inst(128'hF0801003F0801003F0801003F0800003);
         #1000
