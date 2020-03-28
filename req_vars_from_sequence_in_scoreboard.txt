@@ -1,3 +1,0 @@
-   bit [31:0] RS1_data;
-   bit [31:0] RS2_data;
-   bit [11:0] immediate_data;

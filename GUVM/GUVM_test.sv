@@ -1,34 +1,23 @@
 class GUVM_test extends uvm_test;
-   `uvm_component_utils(GUVM_test)
-   
-   GUVM_env env;
-   GUVM_sequence processor_seq;
+    `uvm_component_utils(GUVM_test);
 
-   function new(string name, uvm_component parent);
-      super.new(name, parent);
-   endfunction
-   
-   function void build_phase(uvm_phase phase);
-      env = GUVM_env::type_id::create("env", this);
-      processor_seq = GUVM_sequence::type_id::create("processor_seq");
-   endfunction
+    GUVM_env       env_h;
+    GUVM_sequence generic_sequence_h;
 
-   function void end_of_elaboration_phase(uvm_phase phase);
-      print();
-   endfunction
+    function new(string name = "GUVM_test", uvm_component parent);
+        super.new(name, parent);
+    endfunction: new
 
-   task run_phase(uvm_phase phase);
-     
-     // We raise objection to keep the test from completing
-     phase.raise_objection(this);
-     `uvm_warning("", "processor test!")
-     #10;
+    function void build_phase(uvm_phase phase);
+        env_h   = GUVM_env::type_id::create("env_h",this);
+        generic_sequence_h = GUVM_sequence::type_id::create("generic_sequence_h");
+    endfunction: build_phase 
     
-     processor_seq.start(env.agent.sequencer);
-     
-     #1000;
-     // We drop objection to allow the test to complete
-     phase.drop_objection(this);
-   endtask
-
-endclass
+    task run_phase(uvm_phase phase);
+        phase.raise_objection(this);
+        $display("test have started ");
+        generic_sequence_h.start(env_h.agent.sequencer);
+        phase.drop_objection(this);
+    endtask: run_phase
+   
+endclass: GUVM_test

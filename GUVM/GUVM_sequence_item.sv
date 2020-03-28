@@ -4,6 +4,7 @@ class GUVM_sequence_item extends uvm_sequence_item;
    rand logic [31:0] inst;
    rand logic [31:0] data;// the effective data that should be stored inside memory 
    logic [31:0] op1,op2;// the 2 operands that shoould be at the registers 
+   logic [31:0] receivedDATA;
 
    protected function logic [31:0] generate_instruction(opcode target_instruction );
 		//logic [31:0] rand_inst;
@@ -22,6 +23,7 @@ class GUVM_sequence_item extends uvm_sequence_item;
 
 	function void ran_constrained(opcode con);//resiricted randomization 
 		inst = $random();
+		data = $random();
 		inst = generate_instruction(con);
 	endfunction 
 

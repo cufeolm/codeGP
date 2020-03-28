@@ -1,1 +1,0 @@
-vsim -view vsim.wlf -do wave.do

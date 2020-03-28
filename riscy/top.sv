@@ -1,7 +1,10 @@
 module top;
+   import uvm_pkg::*;
+   import target_package::*;
 
-    logic clk_i; 
-    GUVM_interface bfm(clk_i);
+    `include "uvm_macros.svh"
+
+	GUVM_interface bfm();
 
     riscv_core dut(
         .clk_i(bfm.clk_i),
@@ -21,7 +24,7 @@ module top;
         .data_gnt_i(bfm.data_gnt_i),
         .data_rvalid_i(bfm.data_rvalid_i),
         .data_we_o(bfm.data_we_o),
-        .data_be_o(bfm.data_addr_o),
+        .data_be_o(bfm.data_be_o),
         .data_addr_o(bfm.data_addr_o),
         .data_wdata_o(bfm.data_wdata_o),
         .data_rdata_i(bfm.data_rdata_i),
@@ -48,31 +51,12 @@ module top;
     );
 
     initial begin
-        bfm.reset_dut(clk_i);
-        bfm.setup_data();
-        #50
-        bfm.send_inst(32'h000Fa103);
-        bfm.send_data(32'h00000005);
-        #150
-        bfm.send_inst(32'h000Fa183);
-        #50
-        bfm.send_data(32'h00000003);
-        #150
-        bfm.send_inst(32'h002180B3);
-        #150
-        bfm.send_inst(32'h001Fa023);
-        
-        repeat(700) @(posedge clk_i) begin
-            bfm.receive_data();
-            //$display("is this data ? :%b",bfm.recive_data());
-        end
-    end
-    
-    always begin
-        clk_i = 0; 
-        forever begin 
-            #10 clk_i=~clk_i;
-        end
+        uvm_config_db#(virtual GUVM_interface)::set(null, "*", "bfm", bfm);
+        fill_si_array();
+        run_test("GUVM_test");
     end
 
-endmodule: top
+endmodule : top
+
+     
+   

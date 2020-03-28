@@ -2,7 +2,7 @@ class GUVM_agent extends uvm_agent;
     `uvm_component_utils(GUVM_agent)
 
     GUVM_driver driver;
-    uvm_sequencer#(GUVM_sequence_item) sequencer;
+    uvm_sequencer #(GUVM_sequence_item) sequencer;
 
     function new(string name, uvm_component parent);
         super.new(name, parent);
