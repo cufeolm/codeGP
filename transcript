@@ -1,6 +1,6 @@
 # do riscy/run_riscy.do
 # QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 16:03:17 on Mar 28,2020
+# Start time: 16:30:19 on Mar 28,2020
 # vlog -f riscy/dut_riscy.f 
 # -- Compiling package fpnew_pkg
 # -- Compiling package riscv_defines_sv_unit
@@ -518,38 +518,30 @@
 # Top level modules:
 # 	riscv_alu_basic
 # 	riscv_core
-# End time: 16:03:17 on Mar 28,2020, Elapsed time: 0:00:00
+# End time: 16:30:19 on Mar 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 421
 # QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 16:03:17 on Mar 28,2020
+# Start time: 16:30:19 on Mar 28,2020
 # vlog "+incdir+riscy+GUVM" riscy/target_pkg.sv 
 # -- Compiling package target_package
 # -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
 # ** Note: (vlog-2286) riscy/riscy_pkg.sv(3): Using implicit +incdir+C:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
-# ** Warning: ** while parsing file included at riscy/target_pkg.sv(1)
-# ** at GUVM/GUVM_sequence.sv(21): (vlog-2240) Treating stand-alone use of function 'setup' as an implicit VOID cast.
-# ** Warning: ** while parsing file included at riscy/target_pkg.sv(1)
-# ** at GUVM/GUVM_sequence.sv(22): (vlog-2240) Treating stand-alone use of function 'setup' as an implicit VOID cast.
-# ** Warning: ** while parsing file included at riscy/target_pkg.sv(1)
-# ** at GUVM/GUVM_sequence.sv(23): (vlog-2240) Treating stand-alone use of function 'setup' as an implicit VOID cast.
-# ** Warning: ** while parsing file included at riscy/target_pkg.sv(1)
-# ** at GUVM/GUVM_sequence.sv(24): (vlog-2240) Treating stand-alone use of function 'setup' as an implicit VOID cast.
 # 
 # Top level modules:
 # 	--none--
-# End time: 16:03:18 on Mar 28,2020, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 4
+# End time: 16:30:20 on Mar 28,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 16:03:18 on Mar 28,2020
+# Start time: 16:30:20 on Mar 28,2020
 # vlog riscy/riscy_interface.sv 
 # -- Compiling interface GUVM_interface
 # 
 # Top level modules:
 # 	--none--
-# End time: 16:03:18 on Mar 28,2020, Elapsed time: 0:00:00
+# End time: 16:30:20 on Mar 28,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 16:03:18 on Mar 28,2020
+# Start time: 16:30:20 on Mar 28,2020
 # vlog riscy/top.sv 
 # -- Compiling module top
 # -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -558,16 +550,11 @@
 # 
 # Top level modules:
 # 	top
-# End time: 16:03:19 on Mar 28,2020, Elapsed time: 0:00:01
+# End time: 16:30:21 on Mar 28,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vsim top 
-# Start time: 16:03:19 on Mar 28,2020
+# Start time: 16:30:21 on Mar 28,2020
 # ** Note: (vsim-3812) Design is being optimized...
-# ** Warning: GUVM/GUVM_sequence.sv(21): (vopt-2240) Treating stand-alone use of function 'setup' as an implicit VOID cast.
-# ** Warning: GUVM/GUVM_sequence.sv(22): (vopt-2240) Treating stand-alone use of function 'setup' as an implicit VOID cast.
-# ** Warning: GUVM/GUVM_sequence.sv(23): (vopt-2240) Treating stand-alone use of function 'setup' as an implicit VOID cast.
-# ** Warning: GUVM/GUVM_sequence.sv(24): (vopt-2240) Treating stand-alone use of function 'setup' as an implicit VOID cast.
-# ** Warning: riscy/riscy_seq_item.sv(33): (vopt-2250) Function "setup" has no return value assignment.
 # //  Questa Sim-64
 # //  Version 10.6c win64 Jul 26 2017
 # //
@@ -635,9 +622,77 @@
 # test have started 
 # RANDA SCOREBOARD have started xxx
 # driver has started
-# ** Fatal: failed to cast transaction to riscy's transaction
-#    Time: 0 ns  Scope: target_package.get_format File: riscy/riscy_pkg.sv Line: 134
-# ** Note: $finish    : riscy/riscy_pkg.sv(134)
-#    Time: 0 ns  Iteration: 53  Region: /uvm_pkg::uvm_sequence_base::start
-# End time: 16:03:24 on Mar 28,2020, Elapsed time: 0:00:05
-# Errors: 1, Warnings: 5
+# ** Warning: (vsim-8315) riscy/DUT/riscv_int_controller.sv(79): No condition is true in the unique/priority if/case statement.
+#    Time: 10 ns  Iteration: 1  Instance: /top/dut/id_stage_i/int_controller_i
+# There should be no rvalid when we the LSU is IDLE                   30
+# There should be no rvalid when we the LSU is IDLE                   50
+# There should be no rvalid when we the LSU is IDLE                   70
+# driver starting fetching
+# driver starting fetching
+# inst is: 000000000000 00000 010 01010 0000011
+# rs1 address = 0 and data = 2985317987
+# driver is fetshing the first load
+# inst = 0000 00000000 0000 0010 010100000011
+# rs1 address = 2 and data = 2985317987
+# ** Warning: There was a grant without a request
+#    Time: 90 ns Started: 90 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
+# There should be no rvalid when we the LSU is IDLE                   90
+# There should be no rvalid when we the LSU is IDLE                  110
+# There should be no rvalid when we the LSU is IDLE                  130
+# There should be no rvalid when we the LSU is IDLE                  150
+# There should be no rvalid when we the LSU is IDLE                  170
+# driver starting fetching
+# inst is: 000000000000 00000 010 00001 0000011
+# rs1 address = 0 and data = 1189058957
+# driver is fetshing the second load
+# inst = 0000 00000000 0000 0010 000010000011
+# rs2 address = 2 and data = 1189058957
+# driver instruction fetch
+# inst is: 000000 000001 01010 000 01010 0110011
+# rs1 address = 10 and rs2 address = 1 and rd address = 10
+# drive is fetching the instruction
+# inst is 0000 00 0 0000 1 0101 0000 01010011 3
+# rs1 address = 5 and rs2 address = 3 and rd address = 0
+# There should be no rvalid when we the LSU is IDLE                  950
+# There should be no rvalid when we the LSU is IDLE                  970
+# There should be no rvalid when we the LSU is IDLE                  990
+# There should be no rvalid when we the LSU is IDLE                 1010
+# There should be no rvalid when we the LSU is IDLE                 1030
+# There should be no rvalid when we the LSU is IDLE                 1050
+# There should be no rvalid when we the LSU is IDLE                 1070
+# There should be no rvalid when we the LSU is IDLE                 1090
+# There should be no rvalid when we the LSU is IDLE                 1110
+# There should be no rvalid when we the LSU is IDLE                 1130
+# There should be no rvalid when we the LSU is IDLE                 1150
+# There should be no rvalid when we the LSU is IDLE                 1170
+# driver store fetch
+# inst is: 000000 001010 00000 010 00000 0100011
+# rd address = 0
+# driver is fetshing the result
+# inst = 0000 00001010 0000 0010 000000100011
+# rd address = 2
+# madd : 00000000000000000000000000000000
+# result = 0
+# There should be no rvalid when we the LSU is IDLE                 1190
+# There should be no rvalid when we the LSU is IDLE                 1210
+# There should be no rvalid when we the LSU is IDLE                 1230
+# There should be no rvalid when we the LSU is IDLE                 1250
+# driver has started
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 1480: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    5
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# []     1
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# ** Note: $finish    : C:/questasim64_10.6c/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 1480 ns  Iteration: 60  Instance: /top
+# End time: 16:30:27 on Mar 28,2020, Elapsed time: 0:00:06
+# Errors: 0, Warnings: 2

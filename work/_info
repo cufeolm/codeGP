@@ -9,10 +9,10 @@ z2
 cModel Technology
 Z0 dC:/Users/walee/Documents/GitHub/codeGP
 T_opt
-!s110 1585404200
-VPiocB?1GFSjkIYHPlMoZ53
+!s110 1585405822
+Vm:;5H7GzE8BoS:LPi>>3g0
 04 3 4 work top fast 0
-=1-28f10e325aa4-5e7f5927-1a4-33dc
+=1-28f10e325aa4-5e7f5f7d-1f9-5880
 o-quiet -auto_acc_if_foreign -work work
 Z1 tCvgOpt 0
 n@_opt
@@ -37,7 +37,7 @@ Z9 8riscy/DUT/riscv_alu.sv
 Z10 Friscy/DUT/riscv_alu.sv
 L0 1157
 Z11 OL;L;10.6c;65
-Z12 !s108 1585404197.000000
+Z12 !s108 1585405819.000000
 Z13 !s107 riscy\DUT\riscv_config.sv|riscy\DUT\apu_macros.sv|riscy/DUT/riscv_tracer.sv|riscy/DUT/riscv_register_file.sv|riscy/DUT/riscv_prefetch_L0_buffer.sv|riscy/DUT/riscv_prefetch_buffer.sv|riscy/DUT/riscv_pmp.sv|riscy/DUT/riscv_mult.sv|riscy/DUT/riscv_load_store_unit.sv|riscy/DUT/riscv_L0_buffer.sv|riscy/DUT/riscv_int_controller.sv|riscy/DUT/riscv_if_stage.sv|riscy/DUT/riscv_id_stage.sv|riscy/DUT/riscv_hwloop_regs.sv|riscy/DUT/riscv_hwloop_controller.sv|riscy/DUT/riscv_fetch_fifo.sv|riscy/DUT/riscv_ex_stage.sv|riscy/DUT/riscv_decoder.sv|riscy/DUT/riscv_cs_registers.sv|riscy/DUT/riscv_core.sv|riscy/DUT/riscv_controller.sv|riscy/DUT/riscv_compressed_decoder.sv|riscy/DUT/riscv_apu_disp.sv|riscy/DUT/riscv_alu_div.sv|riscy/DUT/riscv_alu_basic.sv|riscy/DUT/riscv_alu.sv|riscy/DUT/register_file_test_wrap.sv|riscy/DUT/fpnew_top.sv|riscy/DUT/cluster_clock_gating.sv|riscy/DUT/apu_macros.sv|riscy/DUT/apu_core_package.sv|riscy/DUT/riscv_tracer_defines.sv|riscy/DUT/riscv_config.sv|riscy/DUT/riscv_defines.sv|riscy/DUT/fpnew_pkg.sv|
 Z14 !s90 -f|riscy/dut_riscy.f|
 !i113 0
@@ -71,7 +71,7 @@ R15
 R1
 Xapu_core_package
 R2
-Z16 !s110 1585404197
+Z16 !s110 1585405819
 !i10b 1
 !s100 8iVNfekdLB6`NYYZYz32]2
 I]dDQ4aWLH5cCf;jbTO<l33
@@ -191,7 +191,7 @@ R15
 R1
 YGUVM_interface
 R2
-Z21 !s110 1585404198
+Z21 !s110 1585405820
 !i10b 1
 !s100 OD@OVmIOB87Ph[NHC?V<[2
 I<S0iFCjI>3[=lQ]fO1lOL0
@@ -207,7 +207,7 @@ R11
 r1
 !s85 0
 31
-Z22 !s108 1585404198.000000
+Z22 !s108 1585405820.000000
 !s107 riscy/riscy_interface.sv|
 !s90 riscy/riscy_interface.sv|
 !i113 0
@@ -1311,12 +1311,12 @@ R2
 Z65 DXx6 mtiUvm 7 uvm_pkg 0 22 oMKUklN?>LE6@MJe7=2><1
 R21
 !i10b 1
-!s100 ;<g6BOP:OGiWBaWY8S:cB3
-IXA5e<oD0l^4B?BR[Ca=ja0
-VXA5e<oD0l^4B?BR[Ca=ja0
+!s100 i749zh3T>`_VgECYXY94c2
+I83`hG_RZNT<fj;YOB;:LD0
+V83`hG_RZNT<fj;YOB;:LD0
 S1
 R0
-w1585401055
+w1585405042
 Friscy/riscy_pkg.sv
 Z66 FC:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh
 Z67 FC:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh
@@ -1356,11 +1356,11 @@ R1
 vtop
 R2
 R65
-DXx4 work 14 target_package 0 22 XA5e<oD0l^4B?BR[Ca=ja0
-!s110 1585404199
+DXx4 work 14 target_package 0 22 83`hG_RZNT<fj;YOB;:LD0
+!s110 1585405821
 !i10b 1
 !s100 I7;P@]T5@K0eFAoB^_TI61
-I?:z4RhW]`4KL`S1Cf2AHT2
+IEmi<`9<2d[C]ZQjhC;4@o0
 R6
 !s105 top_sv_unit
 S1
