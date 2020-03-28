@@ -7,4 +7,1387 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-dC:/Users/walee/Documents/GitHub/codeGP
+Z0 dC:/Users/walee/Documents/GitHub/codeGP
+T_opt
+!s110 1585404200
+VPiocB?1GFSjkIYHPlMoZ53
+04 3 4 work top fast 0
+=1-28f10e325aa4-5e7f5927-1a4-33dc
+o-quiet -auto_acc_if_foreign -work work
+Z1 tCvgOpt 0
+n@_opt
+OL;O;10.6c;65
+valu_ff
+Z2 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z3 DXx4 work 9 fpnew_pkg 0 22 0Eci8^eNLJKR1I4Vi=6fS1
+Z4 DXx4 work 13 riscv_defines 0 22 HnfKM^mf9eRgTgFOF::^V2
+Z5 DXx4 work 17 riscv_alu_sv_unit 0 22 `@oYLd8QH96hg:?SZ=V2G1
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+31
+!i10b 1
+!s100 K`R2JdB_WeHjO7>C;Z0P02
+IeP3L`eTP1F>ab3ogLQLZ21
+Z7 !s105 riscv_alu_sv_unit
+S1
+R0
+Z8 w1585392438
+Z9 8riscy/DUT/riscv_alu.sv
+Z10 Friscy/DUT/riscv_alu.sv
+L0 1157
+Z11 OL;L;10.6c;65
+Z12 !s108 1585404197.000000
+Z13 !s107 riscy\DUT\riscv_config.sv|riscy\DUT\apu_macros.sv|riscy/DUT/riscv_tracer.sv|riscy/DUT/riscv_register_file.sv|riscy/DUT/riscv_prefetch_L0_buffer.sv|riscy/DUT/riscv_prefetch_buffer.sv|riscy/DUT/riscv_pmp.sv|riscy/DUT/riscv_mult.sv|riscy/DUT/riscv_load_store_unit.sv|riscy/DUT/riscv_L0_buffer.sv|riscy/DUT/riscv_int_controller.sv|riscy/DUT/riscv_if_stage.sv|riscy/DUT/riscv_id_stage.sv|riscy/DUT/riscv_hwloop_regs.sv|riscy/DUT/riscv_hwloop_controller.sv|riscy/DUT/riscv_fetch_fifo.sv|riscy/DUT/riscv_ex_stage.sv|riscy/DUT/riscv_decoder.sv|riscy/DUT/riscv_cs_registers.sv|riscy/DUT/riscv_core.sv|riscy/DUT/riscv_controller.sv|riscy/DUT/riscv_compressed_decoder.sv|riscy/DUT/riscv_apu_disp.sv|riscy/DUT/riscv_alu_div.sv|riscy/DUT/riscv_alu_basic.sv|riscy/DUT/riscv_alu.sv|riscy/DUT/register_file_test_wrap.sv|riscy/DUT/fpnew_top.sv|riscy/DUT/cluster_clock_gating.sv|riscy/DUT/apu_macros.sv|riscy/DUT/apu_core_package.sv|riscy/DUT/riscv_tracer_defines.sv|riscy/DUT/riscv_config.sv|riscy/DUT/riscv_defines.sv|riscy/DUT/fpnew_pkg.sv|
+Z14 !s90 -f|riscy/dut_riscy.f|
+!i113 0
+Z15 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+valu_popcnt
+R2
+R3
+R4
+R5
+R6
+r1
+!s85 0
+31
+!i10b 1
+!s100 `2l@ZC[GRP^7ZH1:R2aDK0
+I<RZZmDbhCKn64cOIl3Mea1
+R7
+S1
+R0
+R8
+R9
+R10
+L0 1233
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+Xapu_core_package
+R2
+Z16 !s110 1585404197
+!i10b 1
+!s100 8iVNfekdLB6`NYYZYz32]2
+I]dDQ4aWLH5cCf;jbTO<l33
+V]dDQ4aWLH5cCf;jbTO<l33
+S1
+R0
+R8
+8riscy/DUT/apu_core_package.sv
+Friscy/DUT/apu_core_package.sv
+L0 22
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R1
+Xapu_macros_sv_unit
+R2
+Z17 DXx4 work 16 apu_core_package 0 22 ]dDQ4aWLH5cCf;jbTO<l33
+R16
+!i10b 1
+!s100 ePd_dmK;SBFTD]<abRkCW2
+IAm40:e5^M7gS7VYJL1dj[0
+VAm40:e5^M7gS7VYJL1dj[0
+!i103 1
+S1
+R0
+R8
+8riscy/DUT/apu_macros.sv
+Friscy/DUT/apu_macros.sv
+Z18 L0 15
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R1
+vcluster_clock_gating
+R2
+R16
+!i10b 1
+!s100 P6D0b;OH7HKPBjzmmIDOf3
+IJCjnSMPQmJ=4MoX]mUE3F1
+R6
+!s105 cluster_clock_gating_sv_unit
+S1
+R0
+R8
+8riscy/DUT/cluster_clock_gating.sv
+Friscy/DUT/cluster_clock_gating.sv
+Z19 L0 11
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R1
+Xfpnew_pkg
+R2
+R16
+!i10b 1
+!s100 B<Vbdmg[E?jIYaR<3XTZW0
+I0Eci8^eNLJKR1I4Vi=6fS1
+V0Eci8^eNLJKR1I4Vi=6fS1
+S1
+R0
+R8
+8riscy/DUT/fpnew_pkg.sv
+Friscy/DUT/fpnew_pkg.sv
+Z20 L0 14
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R1
+vfpnew_top
+R2
+R3
+R16
+!i10b 1
+!s100 i9N]R`@a<>J;62PG9l;Ic2
+IY:GlDW`MWeWga:MS8>>>N2
+R6
+!s105 fpnew_top_sv_unit
+S1
+R0
+R8
+8riscy/DUT/fpnew_top.sv
+Friscy/DUT/fpnew_top.sv
+R20
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R1
+YGUVM_interface
+R2
+Z21 !s110 1585404198
+!i10b 1
+!s100 OD@OVmIOB87Ph[NHC?V<[2
+I<S0iFCjI>3[=lQ]fO1lOL0
+R6
+!s105 riscy_interface_sv_unit
+S1
+R0
+w1585404041
+8riscy/riscy_interface.sv
+Friscy/riscy_interface.sv
+L0 1
+R11
+r1
+!s85 0
+31
+Z22 !s108 1585404198.000000
+!s107 riscy/riscy_interface.sv|
+!s90 riscy/riscy_interface.sv|
+!i113 0
+R15
+R1
+n@g@u@v@m_interface
+vregister_file_test_wrap
+R2
+R16
+!i10b 1
+!s100 kf<ndd]PcIZAUm]Am8ccP2
+I<Y[ZRmXDKL?0QbCCIVW_20
+R6
+!s105 register_file_test_wrap_sv_unit
+S1
+R0
+R8
+8riscy/DUT/register_file_test_wrap.sv
+Friscy/DUT/register_file_test_wrap.sv
+L0 35
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R1
+vriscv_alu
+R2
+R3
+R4
+R5
+R6
+r1
+!s85 0
+31
+!i10b 1
+!s100 g?0zN=7G[1FDQhoKl>>mQ3
+IMMW4zX=DdFGbP0Em:b1TN1
+R7
+S1
+R0
+R8
+R9
+R10
+Z23 L0 31
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+vriscv_alu_basic
+R2
+R3
+R4
+DXx4 work 23 riscv_alu_basic_sv_unit 0 22 9NPFDZJOYTkD8AjCaRhjZ2
+R6
+r1
+!s85 0
+31
+!i10b 1
+!s100 :DY@`fDCSV5zcoJ5d@PSh3
+I3eHDGPL1=22i]V:=lFZ=o0
+!s105 riscv_alu_basic_sv_unit
+S1
+R0
+R8
+Z24 8riscy/DUT/riscv_alu_basic.sv
+Z25 Friscy/DUT/riscv_alu_basic.sv
+Z26 L0 30
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+Xriscv_alu_basic_sv_unit
+R2
+R3
+R4
+V9NPFDZJOYTkD8AjCaRhjZ2
+r1
+!s85 0
+31
+!i10b 1
+!s100 ?AN>:PECRL7TCanJgQ:MT1
+I9NPFDZJOYTkD8AjCaRhjZ2
+!i103 1
+S1
+R0
+R8
+R24
+R25
+Z27 L0 28
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+vriscv_alu_div
+R2
+R16
+!i10b 1
+!s100 VYddzQJ>no4S_bJeQ2g:P1
+IVl0Soj;ZU8hN;[HV9`ehO3
+R6
+!s105 riscv_alu_div_sv_unit
+S1
+R0
+R8
+8riscy/DUT/riscv_alu_div.sv
+Friscy/DUT/riscv_alu_div.sv
+Z28 L0 26
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R1
+Xriscv_alu_sv_unit
+R2
+R3
+R4
+V`@oYLd8QH96hg:?SZ=V2G1
+r1
+!s85 0
+31
+!i10b 1
+!s100 8E=;nfcNmmHh5J7bg5bOA3
+I`@oYLd8QH96hg:?SZ=V2G1
+!i103 1
+S1
+R0
+R8
+R9
+R10
+Z29 L0 29
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+vriscv_apu_disp
+R2
+R17
+DXx4 work 22 riscv_apu_disp_sv_unit 0 22 Z_z@^>m`5j@;jW^7dzGbm0
+R6
+r1
+!s85 0
+31
+!i10b 1
+!s100 MQVeAX1eFF6@Z4dBobO`?3
+IjbSmgDdZ1;aK[cIbIT7380
+!s105 riscv_apu_disp_sv_unit
+S1
+R0
+R8
+Z30 8riscy/DUT/riscv_apu_disp.sv
+Z31 Friscy/DUT/riscv_apu_disp.sv
+Z32 L0 27
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+Xriscv_apu_disp_sv_unit
+R2
+R17
+VZ_z@^>m`5j@;jW^7dzGbm0
+r1
+!s85 0
+31
+!i10b 1
+!s100 LEnc[_Xd>X9_oB@?PYJ?22
+IZ_z@^>m`5j@;jW^7dzGbm0
+!i103 1
+S1
+R0
+R8
+R30
+R31
+Z33 Friscy\DUT\apu_macros.sv
+R18
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+vriscv_compressed_decoder
+R2
+R3
+R4
+DXx4 work 32 riscv_compressed_decoder_sv_unit 0 22 4?R9H><BnndCoR837MW831
+R6
+r1
+!s85 0
+31
+!i10b 1
+!s100 ^2kXY5gYSBhd<Uab0K4j]0
+I568ODG=dBJi]9D6>8aNMo3
+!s105 riscv_compressed_decoder_sv_unit
+S1
+R0
+R8
+Z34 8riscy/DUT/riscv_compressed_decoder.sv
+Z35 Friscy/DUT/riscv_compressed_decoder.sv
+R26
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+Xriscv_compressed_decoder_sv_unit
+R2
+R3
+R4
+V4?R9H><BnndCoR837MW831
+r1
+!s85 0
+31
+!i10b 1
+!s100 TAiKT]czUhUBDc7>zZZST1
+I4?R9H><BnndCoR837MW831
+!i103 1
+S1
+R0
+R8
+R34
+R35
+R27
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+vriscv_controller
+R2
+R3
+R4
+DXx4 work 24 riscv_controller_sv_unit 0 22 ]U0gfoK4ahUC^OcbaB`z03
+R6
+r1
+!s85 0
+31
+!i10b 1
+!s100 VjcWBjo6_kj^?UH`B6Q6>1
+Ib@:PKQ2P7X>oZH<z_;lHg3
+!s105 riscv_controller_sv_unit
+S1
+R0
+R8
+Z36 8riscy/DUT/riscv_controller.sv
+Z37 Friscy/DUT/riscv_controller.sv
+Z38 L0 32
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+Xriscv_controller_sv_unit
+R2
+R3
+R4
+V]U0gfoK4ahUC^OcbaB`z03
+r1
+!s85 0
+31
+!i10b 1
+!s100 W:hzVPE`=0_0jjA8YZU<C2
+I]U0gfoK4ahUC^OcbaB`z03
+!i103 1
+S1
+R0
+R8
+R36
+R37
+R26
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+vriscv_core
+R2
+R17
+R3
+R4
+DXx4 work 18 riscv_core_sv_unit 0 22 Q`AlSgl>cd0^VD1;1JSgb3
+R6
+r1
+!s85 0
+31
+!i10b 1
+!s100 REl[FIho^4dCADdh1e4K43
+I>0^F?IbAgGRbK`ihZ<@So2
+!s105 riscv_core_sv_unit
+S1
+R0
+R8
+Z39 8riscy/DUT/riscv_core.sv
+Z40 Friscy/DUT/riscv_core.sv
+L0 38
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+Xriscv_core_sv_unit
+R2
+R17
+R3
+R4
+VQ`AlSgl>cd0^VD1;1JSgb3
+r1
+!s85 0
+31
+!i10b 1
+!s100 EV:O;A<kg_dX0nFf7UE;U3
+IQ`AlSgl>cd0^VD1;1JSgb3
+!i103 1
+S1
+R0
+R8
+R39
+R40
+Friscy\DUT\riscv_config.sv
+R38
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+vriscv_cs_registers
+R2
+R3
+R4
+DXx4 work 26 riscv_cs_registers_sv_unit 0 22 ;b9]eYAEVz?h78:=Sjg763
+R6
+r1
+!s85 0
+31
+!i10b 1
+!s100 >eeOdzRTZOWzzcW4[hPSc3
+Ioe_^7F8^_W@@PSRK51DTK3
+!s105 riscv_cs_registers_sv_unit
+S1
+R0
+R8
+Z41 8riscy/DUT/riscv_cs_registers.sv
+Z42 Friscy/DUT/riscv_cs_registers.sv
+Z43 L0 37
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+Xriscv_cs_registers_sv_unit
+R2
+R3
+R4
+V;b9]eYAEVz?h78:=Sjg763
+r1
+!s85 0
+31
+!i10b 1
+!s100 lG8OD8n@fbP:]EYNFdmAU3
+I;b9]eYAEVz?h78:=Sjg763
+!i103 1
+S1
+R0
+R8
+R41
+R42
+R29
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+vriscv_decoder
+R2
+R17
+R3
+R4
+DXx4 work 21 riscv_decoder_sv_unit 0 22 =jC<V:lQ2E9:NmS3e4KPc1
+R6
+r1
+!s85 0
+31
+!i10b 1
+!s100 9jCkN@Om9K@o[WFa=9;Z92
+IDPZnY>lmd7@YG@OigcCn92
+!s105 riscv_decoder_sv_unit
+S1
+R0
+R8
+Z44 8riscy/DUT/riscv_decoder.sv
+Z45 Friscy/DUT/riscv_decoder.sv
+R38
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+Xriscv_decoder_sv_unit
+R2
+R17
+R3
+R4
+V=jC<V:lQ2E9:NmS3e4KPc1
+r1
+!s85 0
+31
+!i10b 1
+!s100 =m>49=zAcRT`AQk]Bc8ED3
+I=jC<V:lQ2E9:NmS3e4KPc1
+!i103 1
+S1
+R0
+R8
+R44
+R45
+R33
+R18
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+Xriscv_defines
+R2
+R3
+VHnfKM^mf9eRgTgFOF::^V2
+r1
+!s85 0
+31
+!i10b 1
+!s100 T8=@i9zP>XaMDajWWOYOc1
+IHnfKM^mf9eRgTgFOF::^V2
+S1
+R0
+R8
+Z46 8riscy/DUT/riscv_defines.sv
+Z47 Friscy/DUT/riscv_defines.sv
+R32
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+Xriscv_defines_sv_unit
+R2
+R3
+Vo@f@ekOHZ@E[m;7TdFl;C2
+r1
+!s85 0
+31
+!i10b 1
+!s100 H^M4`k;?CeV6nVY5i@<a83
+Io@f@ekOHZ@E[m;7TdFl;C2
+!i103 1
+S1
+R0
+R8
+R46
+R47
+Z48 L0 25
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+vriscv_ex_stage
+R2
+R17
+R3
+R4
+DXx4 work 22 riscv_ex_stage_sv_unit 0 22 jmk]@`8GYiL40QWnQmgO81
+R6
+r1
+!s85 0
+31
+!i10b 1
+!s100 6m<iM^^=a`>9V?=NEMD=@0
+If80ldc^lnz;TBVPUmBBOQ2
+!s105 riscv_ex_stage_sv_unit
+S1
+R0
+R8
+Z49 8riscy/DUT/riscv_ex_stage.sv
+Z50 Friscy/DUT/riscv_ex_stage.sv
+Z51 L0 40
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+Xriscv_ex_stage_sv_unit
+R2
+R17
+R3
+R4
+Vjmk]@`8GYiL40QWnQmgO81
+r1
+!s85 0
+31
+!i10b 1
+!s100 ?PYchXT<FQnABP_Z@IkF`1
+Ijmk]@`8GYiL40QWnQmgO81
+!i103 1
+S1
+R0
+R8
+R49
+R50
+R33
+R18
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+vriscv_fetch_fifo
+R2
+R16
+!i10b 1
+!s100 ><[YT1^aY6I?OHjXkeR9B3
+IaMJFH7AWH[DA9cjb:U?U@1
+R6
+!s105 riscv_fetch_fifo_sv_unit
+S1
+R0
+R8
+8riscy/DUT/riscv_fetch_fifo.sv
+Friscy/DUT/riscv_fetch_fifo.sv
+R48
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R1
+vriscv_hwloop_controller
+R2
+R16
+!i10b 1
+!s100 Mb37XnbeOIK`?T@K_ZSZ63
+IEDB`2oZ=A9@jZ33o^[mh91
+R6
+!s105 riscv_hwloop_controller_sv_unit
+S1
+R0
+R8
+8riscy/DUT/riscv_hwloop_controller.sv
+Friscy/DUT/riscv_hwloop_controller.sv
+R48
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R1
+vriscv_hwloop_regs
+R2
+R16
+!i10b 1
+!s100 eiZ1Be3M>8hgo3a3gF>lL2
+I[:U;72`V?kf=:T;[P4]]42
+R6
+!s105 riscv_hwloop_regs_sv_unit
+S1
+R0
+R8
+8riscy/DUT/riscv_hwloop_regs.sv
+Friscy/DUT/riscv_hwloop_regs.sv
+R48
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R1
+vriscv_id_stage
+R2
+R3
+R4
+R17
+DXx4 work 22 riscv_id_stage_sv_unit 0 22 0[_GL4dB5VC2N5ZHCUH:z2
+R6
+r1
+!s85 0
+31
+!i10b 1
+!s100 PZ<RNPGIiOneLSk>V=]9d3
+IX1K7e9Q?aDnZQb1Rdl8fW3
+!s105 riscv_id_stage_sv_unit
+S1
+R0
+R8
+Z52 8riscy/DUT/riscv_id_stage.sv
+Z53 Friscy/DUT/riscv_id_stage.sv
+R51
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+Xriscv_id_stage_sv_unit
+R2
+R3
+R4
+R17
+V0[_GL4dB5VC2N5ZHCUH:z2
+r1
+!s85 0
+31
+!i10b 1
+!s100 9>0C0IZmDjcJ7j6U8eEb?3
+I0[_GL4dB5VC2N5ZHCUH:z2
+!i103 1
+S1
+R0
+R8
+R52
+R53
+R26
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+vriscv_if_stage
+R2
+R3
+R4
+DXx4 work 22 riscv_if_stage_sv_unit 0 22 CbCK<LhN>cne5DYB701m]3
+R6
+r1
+!s85 0
+31
+!i10b 1
+!s100 dUFZ4AoV:fmG:CWc@2@L81
+IW9^B4^LeXVGfWFL3YYFUe2
+!s105 riscv_if_stage_sv_unit
+S1
+R0
+R8
+Z54 8riscy/DUT/riscv_if_stage.sv
+Z55 Friscy/DUT/riscv_if_stage.sv
+R23
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+Xriscv_if_stage_sv_unit
+R2
+R3
+R4
+VCbCK<LhN>cne5DYB701m]3
+r1
+!s85 0
+31
+!i10b 1
+!s100 oA>5ImMozYj<PFzjD6i?M2
+ICbCK<LhN>cne5DYB701m]3
+!i103 1
+S1
+R0
+R8
+R54
+R55
+R29
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+vriscv_int_controller
+R2
+R3
+R4
+DXx4 work 28 riscv_int_controller_sv_unit 0 22 QZ@zN1CAI?LK]bNM5TlZ91
+R6
+r1
+!s85 0
+31
+!i10b 1
+!s100 z2cUD=W6el=9LG`LHbUD^2
+IEVTS;_eTgzFzBnPQB^G`e2
+!s105 riscv_int_controller_sv_unit
+S1
+R0
+R8
+Z56 8riscy/DUT/riscv_int_controller.sv
+Z57 Friscy/DUT/riscv_int_controller.sv
+R28
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+Xriscv_int_controller_sv_unit
+R2
+R3
+R4
+VQZ@zN1CAI?LK]bNM5TlZ91
+r1
+!s85 0
+31
+!i10b 1
+!s100 V9ES[FoQ^mX[0c1FM]5oZ3
+IQZ@zN1CAI?LK]bNM5TlZ91
+!i103 1
+S1
+R0
+R8
+R56
+R57
+L0 24
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+vriscv_L0_buffer
+R2
+R16
+!i10b 1
+!s100 8Q4cEL_84MYD`=R3P3E;`3
+I<R5g[^;2o9HJLbIn=RDH<1
+R6
+!s105 riscv_L0_buffer_sv_unit
+S1
+R0
+R8
+8riscy/DUT/riscv_L0_buffer.sv
+Friscy/DUT/riscv_L0_buffer.sv
+R19
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R1
+nriscv_@l0_buffer
+vriscv_load_store_unit
+R2
+R16
+!i10b 1
+!s100 B?omDo5SeKCzYObb3=LF?3
+IOd2nl82DV;Ehn3o2E<?fg1
+R6
+!s105 riscv_load_store_unit_sv_unit
+S1
+R0
+R8
+8riscy/DUT/riscv_load_store_unit.sv
+Friscy/DUT/riscv_load_store_unit.sv
+R32
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R1
+vriscv_mult
+R2
+R3
+R4
+DXx4 work 18 riscv_mult_sv_unit 0 22 V1;0^:aFD7BO5hJe3nRnE2
+R6
+r1
+!s85 0
+31
+!i10b 1
+!s100 IK<Yh0`m6<TOJFSbIK9dM2
+IV^onTNcoORc2l@mMMKl3D0
+!s105 riscv_mult_sv_unit
+S1
+R0
+R8
+Z58 8riscy/DUT/riscv_mult.sv
+Z59 Friscy/DUT/riscv_mult.sv
+R26
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+Xriscv_mult_sv_unit
+R2
+R3
+R4
+VV1;0^:aFD7BO5hJe3nRnE2
+r1
+!s85 0
+31
+!i10b 1
+!s100 AQb[0GKB@cliOaTn_G@iU3
+IV1;0^:aFD7BO5hJe3nRnE2
+!i103 1
+S1
+R0
+R8
+R58
+R59
+R27
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+vriscv_pmp
+R2
+R3
+R4
+DXx4 work 17 riscv_pmp_sv_unit 0 22 >zQ7HSk5l5S]^gJE93zfZ3
+R6
+r1
+!s85 0
+31
+!i10b 1
+!s100 CTL6WDZ=NfReLW1nT1iR01
+IALQT:LYCm<8K6<OD>?c^:3
+!s105 riscv_pmp_sv_unit
+S1
+R0
+R8
+Z60 8riscy/DUT/riscv_pmp.sv
+Z61 Friscy/DUT/riscv_pmp.sv
+L0 106
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+Xriscv_pmp_sv_unit
+R2
+R3
+R4
+V>zQ7HSk5l5S]^gJE93zfZ3
+r1
+!s85 0
+31
+!i10b 1
+!s100 bVo9[>4=iL?_MNRZ=69ak2
+I>zQ7HSk5l5S]^gJE93zfZ3
+!i103 1
+S1
+R0
+R8
+R60
+R61
+L0 104
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+vriscv_prefetch_buffer
+R2
+R16
+!i10b 1
+!s100 VLQ`:BU_jU4BVmUjn;f1I3
+I^U=kS^zZW3_V:XME<2D3P0
+R6
+!s105 riscv_prefetch_buffer_sv_unit
+S1
+R0
+R8
+8riscy/DUT/riscv_prefetch_buffer.sv
+Friscy/DUT/riscv_prefetch_buffer.sv
+R32
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R1
+vriscv_prefetch_L0_buffer
+R2
+R16
+!i10b 1
+!s100 B9>OzP^^UBmcgCLE9Cc2_0
+IFCNfc^I<P7U_jQ0=A;fRj3
+R6
+!s105 riscv_prefetch_L0_buffer_sv_unit
+S1
+R0
+R8
+8riscy/DUT/riscv_prefetch_L0_buffer.sv
+Friscy/DUT/riscv_prefetch_L0_buffer.sv
+R28
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R1
+nriscv_prefetch_@l0_buffer
+vriscv_register_file
+R2
+R16
+!i10b 1
+!s100 a4m:d?oaf`BNgUf?8dMeX1
+IkYTg_EZNQlCizAA8=LEPc3
+R6
+!s105 riscv_register_file_sv_unit
+S1
+R0
+R8
+8riscy/DUT/riscv_register_file.sv
+Friscy/DUT/riscv_register_file.sv
+R26
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R1
+vriscv_tracer
+R2
+R3
+R4
+Z62 DXx4 work 20 riscv_tracer_defines 0 22 E[jOOBW2=Xg@dF^iJOU=f3
+DXx4 work 20 riscv_tracer_sv_unit 0 22 @?E^e=iCD:aA9ZU0?VN6E1
+R6
+r1
+!s85 0
+31
+!i10b 1
+!s100 T5dE;eERHN`i@P25a4Kk82
+IQTOAZX?Wn^ZzW[I6IU?P33
+!s105 riscv_tracer_sv_unit
+S1
+R0
+R8
+Z63 8riscy/DUT/riscv_tracer.sv
+Z64 Friscy/DUT/riscv_tracer.sv
+R43
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+Xriscv_tracer_defines
+R2
+R3
+R4
+R16
+!i10b 1
+!s100 95[=4b`boIL8]lEf3m@m_3
+IE[jOOBW2=Xg@dF^iJOU=f3
+VE[jOOBW2=Xg@dF^iJOU=f3
+S1
+R0
+R8
+8riscy/DUT/riscv_tracer_defines.sv
+Friscy/DUT/riscv_tracer_defines.sv
+L0 12
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R1
+Xriscv_tracer_sv_unit
+R2
+R3
+R4
+R62
+V@?E^e=iCD:aA9ZU0?VN6E1
+r1
+!s85 0
+31
+!i10b 1
+!s100 ?7RWTnFa2b9lX3V0_`F>D3
+I@?E^e=iCD:aA9ZU0?VN6E1
+!i103 1
+S1
+R0
+R8
+R63
+R64
+R32
+R11
+R12
+R13
+R14
+!i113 0
+R15
+R1
+Xtarget_package
+!s115 GUVM_interface
+R2
+Z65 DXx6 mtiUvm 7 uvm_pkg 0 22 oMKUklN?>LE6@MJe7=2><1
+R21
+!i10b 1
+!s100 ;<g6BOP:OGiWBaWY8S:cB3
+IXA5e<oD0l^4B?BR[Ca=ja0
+VXA5e<oD0l^4B?BR[Ca=ja0
+S1
+R0
+w1585401055
+Friscy/riscy_pkg.sv
+Z66 FC:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh
+Z67 FC:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh
+Z68 FC:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh
+Z69 FC:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh
+Z70 FC:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh
+Z71 FC:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh
+Z72 FC:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh
+Z73 FC:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh
+Z74 FC:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh
+Z75 FC:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh
+Z76 FC:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh
+Z77 FC:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh
+FGUVM.sv
+FGUVM/GUVM_sequence_item.sv
+Friscy/target_sequence_item.sv
+Friscy/riscy_seq_item.sv
+FGUVM/GUVM_sequence.sv
+FGUVM/GUVM_driver.sv
+FGUVM/GUVM_monitor.sv
+FGUVM/GUVM_scoreboard.sv
+FGUVM/GUVM_agent.sv
+FGUVM/GUVM_env.sv
+FGUVM/GUVM_test.sv
+L0 1
+R11
+r1
+!s85 0
+31
+R12
+!s107 GUVM/GUVM_test.sv|GUVM/GUVM_env.sv|GUVM/GUVM_agent.sv|GUVM/GUVM_scoreboard.sv|GUVM/GUVM_monitor.sv|GUVM/GUVM_driver.sv|GUVM/GUVM_sequence.sv|riscy/riscy_seq_item.sv|riscy/target_sequence_item.sv|GUVM/GUVM_sequence_item.sv|GUVM.sv|C:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|C:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|C:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|C:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|C:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|C:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|C:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|C:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|C:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|C:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|C:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|C:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|riscy/riscy_pkg.sv|riscy/target_pkg.sv|
+!s90 +incdir+riscy+GUVM|riscy/target_pkg.sv|
+!i113 0
+R15
+!s92 +incdir+riscy+GUVM -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vtop
+R2
+R65
+DXx4 work 14 target_package 0 22 XA5e<oD0l^4B?BR[Ca=ja0
+!s110 1585404199
+!i10b 1
+!s100 I7;P@]T5@K0eFAoB^_TI61
+I?:z4RhW]`4KL`S1Cf2AHT2
+R6
+!s105 top_sv_unit
+S1
+R0
+R8
+8riscy/top.sv
+Friscy/top.sv
+R66
+R67
+R68
+R69
+R70
+R71
+R72
+R73
+R74
+R75
+R76
+R77
+L0 1
+R11
+r1
+!s85 0
+31
+R22
+!s107 C:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|C:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|C:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|C:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|C:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|C:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|C:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|C:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|C:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|C:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|C:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|C:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|riscy/top.sv|
+!s90 riscy/top.sv|
+!i113 0
+R15
+R1

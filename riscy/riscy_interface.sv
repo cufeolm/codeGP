@@ -78,9 +78,10 @@ interface GUVM_interface;
         clk_i = 0;
     end 
         
-    function void send_data(logic [31:0] data);
+    task send_data(logic [31:0] data);
         data_rdata_i = data;
-    endfunction
+        repeat(2*5) #10 clk_i=~clk_i;
+    endtask
 
     function void send_inst(logic [31:0] inst);
         instr_rdata_i = inst; 
@@ -96,23 +97,22 @@ interface GUVM_interface;
         return data_wdata_o; 
     endfunction 
     
-    //function logic [31:0] store(logic [4:0] ra );
     task store(logic [31:0] inst);
         send_inst(inst);
         $display("result = %0d", receive_data());
         repeat(2*15) #10 clk_i=~clk_i;
     endtask
 
-    //function void load(logic [4:0] ra , logic [31:0] rd );
     task load(logic [31:0] inst, logic [31:0] rd);
         send_inst(inst);
         send_data(rd);
         repeat(2*15) #10 clk_i=~clk_i;
     endtask
     
-    function void add(logic [4:0] r1, logic [4:0] r2, logic [4:0] rd);
+    task add(logic [4:0] r1, logic [4:0] r2, logic [4:0] rd);
         send_inst({7'b0000000, r2, r1, 3'b000, rd, 7'b0110011});
-    endfunction
+        repeat(2*15) #10 clk_i=~clk_i;
+    endtask
 
     task set_Up();
         clock_en_i            = 1'b1;

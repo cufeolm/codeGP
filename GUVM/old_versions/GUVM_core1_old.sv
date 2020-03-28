@@ -107,7 +107,7 @@ reg [N_EXT_PERF_COUNTERS-1:0] ext_perf_counters_i;
 
   endfunction : OUTPUT_DATA 
 
- function void setup_data();
+ function void set_UP();
     clock_en_i            = 1'b1;
     test_en_i             = 1'b0;
     fregfile_disable_i    = 1'b1;
@@ -121,6 +121,6 @@ reg [N_EXT_PERF_COUNTERS-1:0] ext_perf_counters_i;
     data_rvalid_i         = 1'b1;
     irq_i                 = 1'h0;
     
- endfunction: setup_data
+ endfunction: set_UP
 
 	endinterface: GUVM_interface
