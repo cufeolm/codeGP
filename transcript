@@ -1,49 +1,6 @@
-# do amber/run_amber.do
-# QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 17:19:38 on Mar 28,2020
-# vlog -f amber/dut_amber.f 
-# -- Compiling module a25_alu
-# -- Compiling module a25_barrel_shift
-# -- Compiling module a25_coprocessor
-# -- Compiling module a25_core
-# -- Compiling module a25_dcache
-# -- Compiling module a25_decode
-# -- Compiling module a25_execute
-# -- Compiling module a25_fetch
-# -- Compiling module a25_icache
-# -- Compiling module a25_mem
-# -- Compiling module a25_multiply
-# -- Compiling module a25_register_bank
-# -- Compiling module a25_shifter
-# -- Compiling module a25_wishbone
-# -- Compiling module a25_wishbone_buf
-# -- Compiling module a25_write_back
-# -- Compiling module generic_sram_line_en
-# -- Compiling module generic_sram_byte_en
-# -- Compiling module boot_mem32
-# -- Compiling module boot_mem128
+
 # 
 # Top level modules:
-# 	a25_core
-# 	boot_mem32
-# 	boot_mem128
-# End time: 17:19:38 on Mar 28,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 17:19:38 on Mar 28,2020
-# vlog "+incdir+amber+GUVM" amber/target_pkg.sv 
-# -- Compiling package target_package
+
 # -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
-# ** Note: (vlog-2286) amber/amber_pkg.sv(3): Using implicit +incdir+C:/questasim64_10.6c/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
-# ** Error (suppressible): (vlog-13276) GUVM/GUVM_sequence.sv(19): Field/method name (load) not in 'load1'.
-# ** Error (suppressible): (vlog-13276) GUVM/GUVM_sequence.sv(20): Field/method name (load) not in 'load2'.
-# ** Error (suppressible): (vlog-13276) GUVM/GUVM_sequence.sv(21): Field/method name (store) not in 'store'.
-# ** Warning: ** while parsing file included at amber/target_pkg.sv(1)
-# ** at GUVM/GUVM_sequence.sv(18): (vlog-2240) Treating stand-alone use of function 'setup' as an implicit VOID cast.
-# ** Error (suppressible): (vlog-13276) GUVM/GUVM_sequence.sv(19): Field/method name (load) not in 'load1'.
-# ** Error (suppressible): (vlog-13276) GUVM/GUVM_sequence.sv(20): Field/method name (load) not in 'load2'.
-# ** Error (suppressible): (vlog-13276) GUVM/GUVM_sequence.sv(21): Field/method name (store) not in 'store'.
-# End time: 17:19:38 on Mar 28,2020, Elapsed time: 0:00:00
-# Errors: 6, Warnings: 1
-# ** Error: C:/questasim64_10.6c/win64/vlog failed.
-# Executing ONERROR command at macro ./amber/run_amber.do line 7
+

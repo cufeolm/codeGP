@@ -40,15 +40,25 @@ class target_seq_item extends GUVM_sequence_item;
 
 	function setup();
 		GUVM_sequence_item temp;
+		//$display(inst);
 		temp = get_format(inst);
+
+		//$display(temp.inst);
+		//$display(inst);
 		do_copy(temp);
+		//$display(inst);
 	endfunction
 
-	function void update_rd();
-		parameter upper_bit = 15;
-		parameter lower_bit = 12;
-		inst[upper_bit:lower_bit] = rd;
+	function void store(logic [3:0] r);
+		ran_constrained(Store);
+		inst[15:12]=r;
 	endfunction
+
+	function void load(logic [3:0] r);
+		ran_constrained(Load);
+		inst[15:12]=r;
+	endfunction
+
 
 	function void do_copy(uvm_object rhs);
 		target_seq_item RHS;

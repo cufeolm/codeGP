@@ -4,10 +4,16 @@ package target_package;
     typedef enum logic[31:0] {
         LW = 32'b111101101000xxxxxxxxxxxxxxxxxxxx,
         SW = 32'b111001011001xxxxxxxxxxxxxxxxxxxx,
-        A  = 32'b111000001000xxxxxxxx00000000xxxx,
-        Store = 32'b1110010110010011xxxxxxxxxxxxxxxx,
-        Load =32'b1111011010000011xxxxxxxxxxxxxxxx 
+        A  = 32'b1110000010000xxx0xxx000000000xxx,
+        Store = 32'b11100101100100000xxx000000000000,
+        Load =  32'b11110110100000000xxx000000000000 
     } opcode;
+    /*
+    LW = 32'b111101101000xxxxxxxxxxxxxxxxxxxx,
+        SW = 32'b111001011001xxxxxxxxxxxxxxxxxxxx,
+        A  = 32'b111000001000xxxxxxxx00000000xxxx
+
+    */
 
     opcode si_a[];
     integer supported_instructions;
@@ -48,6 +54,7 @@ package target_package;
         GUVM_sequence_item k;
         k = new("k");
         ay = new("ay");
+        ay.inst=inst;
         ay.cond = inst[31:28];
         case (inst[27:25])
             3'b000:
