@@ -59,13 +59,13 @@ interface GUVM_interface(
 	endtask : reset_dut
 	*/
 
-	function void set_UP();
+	function void set_Up();
 		i_irq 				= 1'b0;
 		i_firq      		= 1'b0;
 		i_system_rdy        = 1'b1;
 		i_wb_ack			= 1'b1;
 		i_wb_err			= 1'b0;
-	endfunction: set_UP
+	endfunction: set_Up
 
 	clocking driver_cb @ (posedge i_clk);
 	output inst_in;

@@ -110,7 +110,7 @@ interface GUVM_interface(
 	endtask : reset_dut
 	*/
 
-	function void set_UP();
+	function void set_Up();
 		clock_en_i            = 1'b1;
 		test_en_i             = 1'b0;
 		fregfile_disable_i    = 1'b1;
@@ -126,7 +126,7 @@ interface GUVM_interface(
 		debug_req_i           = 1'h0;
 		fetch_enable_i        = 1'h1;
 
-	endfunction: set_UP
+	endfunction: set_Up
 
 	clocking driver_cb @ (posedge clk_i);
 	output inst_in;

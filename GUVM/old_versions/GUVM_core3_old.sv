@@ -34,13 +34,13 @@ task input_inst (logic [31:0] inst);
 	i_wb_dat = {96'hF0081003F0081003F0081003, inst};
 endtask : input_inst	
 
-function void set_UP();
+function void set_Up();
 i_irq 				= 1'b0;
 i_firq      		= 1'b0;
 i_system_rdy        = 1'b1;
 i_wb_ack			= 1'b1;
 i_wb_err			= 1'b0;
-endfunction: set_UP
+endfunction: set_Up
 
 function automatic logic [31:0] OUTPUT_DATA(
 		ref logic [31:0] idata,

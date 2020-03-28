@@ -76,13 +76,13 @@ interface GUVM_interface;
         repeat(2*50) #10 i_clk=~i_clk;
     endtask
 
-    task set_UP();
+    task set_Up();
         i_irq = 1'b0;
         i_firq = 1'b0;
         i_system_rdy = 1'b1;
         i_wb_ack = 1'b1;
         i_wb_err = 1'b0;
-    endtask: set_UP
+    endtask: set_Up
 
     task reset_dut();
         //
