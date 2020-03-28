@@ -11,16 +11,17 @@ package target_package;
 
     opcode si_a[];
     integer supported_instructions;
-
-    `include "GUVM_sequence_item.sv"
-    `include "target_sequence_item.sv"
-    `include "GUVM_sequence.sv"
-    `include "GUVM_driver.sv"
-    `include "GUVM_monitor.sv"
-    `include "GUVM_scoreboard.sv"
-    `include "GUVM_agent.sv"
-    `include "GUVM_env.sv"
-    `include "GUVM_test.sv"
+    opcode reg_instruction;
+    `include"GUVM.sv"
+    //`include "GUVM_sequence_item.sv"
+   // `include "target_sequence_item.sv"
+    //`include "GUVM_sequence.sv"
+    //`include "GUVM_driver.sv"
+    //`include "GUVM_monitor.sv"
+    //`include "GUVM_scoreboard.sv"
+   // `include "GUVM_agent.sv"
+    //`include "GUVM_env.sv"
+    //`include "GUVM_test.sv"
 
     function void fill_si_array();
     // fill supported instruction array
