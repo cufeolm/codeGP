@@ -67,7 +67,7 @@ class GUVM_scoreboard extends uvm_scoreboard;
 				$display("RANDA HIIIIIII");
 				$display("operand1_scb=%h \n", i1);
 				$display("operand2_scb=%h \n", i2);
-				$display("Expected Instruction=%h \n", registered_inst);
+				$display("Expected Instruction=%h \n", exp_trans.inst);
 				//opcode reg_instruction;
 				//`uvm_info ("SCOREBOARD ENTERED ",$sformatf("HELLO IN SCOREBOARD"), UVM_LOW);
 				leon_package::reg_instruction = leon_package::reg_instruction.first;

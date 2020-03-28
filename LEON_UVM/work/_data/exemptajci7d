@@ -1,0 +1,578 @@
+package iface__mti__sv__equiv__implct__pack;
+
+    typedef logic clk_type;
+
+    typedef struct 
+    {
+        logic [15:0] piol;
+        logic [0:3] pci_arb_req_n;
+    } io_in_type;
+
+    typedef struct 
+    {
+        logic [15:0] piol;
+        logic [15:0] piodir;
+        logic errorn;
+        logic wdog;
+        logic [0:3] pci_arb_gnt_n;
+    } io_out_type;
+
+    typedef struct 
+    {
+        logic [7:0] rd1addr;
+        logic [7:0] rd2addr;
+        logic [7:0] wraddr;
+        logic [31:0] wrdata;
+        logic ren1;
+        logic ren2;
+        logic wren;
+    } rf_in_type;
+
+    typedef struct 
+    {
+        logic [31:0] data1;
+        logic [31:0] data2;
+    } rf_out_type;
+
+    typedef struct 
+    {
+        logic [3:0] rd1addr;
+        logic [3:0] rd2addr;
+        logic [3:0] wraddr;
+        logic [31:0] wrdata;
+        logic ren1;
+        logic ren2;
+        logic wren;
+    } rf_cp_in_type;
+
+    typedef struct 
+    {
+        logic [31:0] data1;
+        logic [31:0] data2;
+    } rf_cp_out_type;
+
+    typedef struct 
+    {
+        logic [31:0] addr;
+        logic enable;
+        logic read;
+        logic tag;
+        logic flush;
+    } icdiag_in_type;
+
+    typedef struct 
+    {
+        logic [7:0] asi;
+        logic [31:0] maddress;
+        logic [31:0] eaddress;
+        logic [31:0] edata;
+        logic [1:0] size;
+        logic \signed ;
+        logic enaddr;
+        logic eenaddr;
+        logic nullify;
+        logic lock;
+        logic read;
+        logic write;
+        logic flush;
+    } dcache_in_type;
+
+    typedef struct 
+    {
+        logic [31:0] data;
+        logic mexc;
+        logic hold;
+        logic mds;
+        logic werr;
+        icdiag_in_type icdiag;
+    } dcache_out_type;
+
+    typedef struct 
+    {
+        logic [31:2] rpc;
+        logic [31:2] fpc;
+        logic [31:2] dpc;
+        logic rbranch;
+        logic fbranch;
+        logic nullify;
+        logic su;
+        logic flush;
+    } icache_in_type;
+
+    typedef struct 
+    {
+        logic [31:0] data;
+        logic exception;
+        logic hold;
+        logic flush;
+        logic diagrdy;
+        logic [31:0] diagdata;
+        logic mds;
+    } icache_out_type;
+
+    typedef struct 
+    {
+        logic [31:0] address;
+        logic burst;
+        logic req;
+        logic su;
+        logic flush;
+    } memory_ic_in_type;
+
+    typedef struct 
+    {
+        logic [31:0] data;
+        logic ready;
+        logic grant;
+        logic retry;
+        logic mexc;
+        logic burst;
+        logic [1:0] ics;
+        logic cache;
+    } memory_ic_out_type;
+
+    typedef struct 
+    {
+        logic [31:0] address;
+        logic [31:0] data;
+        logic [3:0] asi;
+        logic [1:0] size;
+        logic burst;
+        logic read;
+        logic req;
+        logic flush;
+        logic lock;
+    } memory_dc_in_type;
+
+    typedef struct 
+    {
+        logic [31:0] data;
+        logic ready;
+        logic grant;
+        logic retry;
+        logic mexc;
+        logic werr;
+        logic [1:0] dcs;
+        logic cache;
+    } memory_dc_out_type;
+
+    typedef struct 
+    {
+        logic [31:0] data;
+        logic brdyn;
+        logic bexcn;
+        logic writen;
+        logic [3:0] wrn;
+    } memory_in_type;
+
+    typedef struct 
+    {
+        logic [27:0] address;
+        logic [31:0] data;
+        logic [3:0] ramsn;
+        logic [3:0] ramoen;
+        logic iosn;
+        logic [1:0] romsn;
+        logic oen;
+        logic writen;
+        logic [3:0] wrn;
+        logic [3:0] bdrive;
+        logic read;
+    } memory_out_type;
+
+    typedef struct 
+    {
+        logic [15:0] piol;
+        logic [15:0] pioh;
+    } pio_in_type;
+
+    typedef struct 
+    {
+        logic [3:0] irq;
+        logic [31:0] piol;
+        logic [17:0] piodir;
+        logic [7:0] io8lsb;
+        logic [1:0] rxd;
+        logic [1:0] ctsn;
+        logic wrio;
+    } pio_out_type;
+
+    typedef struct 
+    {
+        logic wprothit;
+    } wprot_out_type;
+
+    typedef struct 
+    {
+        logic ahberr;
+    } ahbstat_out_type;
+
+    typedef struct 
+    {
+        logic [15:0] pioh;
+    } mctrl_out_type;
+
+    typedef struct 
+    {
+        logic [20:0] tag;
+        logic [3:0] valid;
+        logic enable;
+        logic write;
+    } itram_in_type;
+
+    typedef struct 
+    {
+        logic [20:0] tag;
+        logic [3:0] valid;
+    } itram_out_type;
+
+    typedef struct 
+    {
+        logic [8:0] address;
+        logic [31:0] data;
+        logic enable;
+        logic write;
+    } idram_in_type;
+
+    typedef struct 
+    {
+        logic [31:0] data;
+    } idram_out_type;
+
+    typedef struct 
+    {
+        logic [20:0] tag;
+        logic [3:0] valid;
+        logic enable;
+        logic write;
+    } dtram_in_type;
+
+    typedef struct 
+    {
+        logic [20:0] tag;
+        logic [3:0] valid;
+    } dtram_out_type;
+
+    typedef struct 
+    {
+        logic [8:0] address;
+        logic [31:0] data;
+        logic enable;
+        logic write;
+    } ddram_in_type;
+
+    typedef struct 
+    {
+        logic [31:0] data;
+    } ddram_out_type;
+
+    typedef struct 
+    {
+        itram_in_type itramin;
+        idram_in_type idramin;
+    } icram_in_type;
+
+    typedef struct 
+    {
+        itram_out_type itramout;
+        idram_out_type idramout;
+    } icram_out_type;
+
+    typedef struct 
+    {
+        dtram_in_type dtramin;
+        ddram_in_type ddramin;
+    } dcram_in_type;
+
+    typedef struct 
+    {
+        dtram_out_type dtramout;
+        ddram_out_type ddramout;
+    } dcram_out_type;
+
+    typedef struct 
+    {
+        icram_in_type icramin;
+        dcram_in_type dcramin;
+    } cram_in_type;
+
+    typedef struct 
+    {
+        icram_out_type icramout;
+        dcram_out_type dcramout;
+    } cram_out_type;
+
+    typedef struct 
+    {
+        logic [15:1] irq;
+        logic intack;
+        logic [3:0] irl;
+    } irq_in_type;
+
+    typedef struct 
+    {
+        logic [3:0] irl;
+    } irq_out_type;
+
+    typedef struct 
+    {
+        logic [31:0] irq;
+    } irq2_in_type;
+
+    typedef struct 
+    {
+        logic irq;
+    } irq2_out_type;
+
+    typedef struct 
+    {
+        logic [1:0] irq;
+        logic tick;
+        logic wdog;
+    } timers_out_type;
+
+    typedef struct 
+    {
+        logic rxd;
+        logic ctsn;
+        logic [7:0] scaler;
+    } uart_in_type;
+
+    typedef struct 
+    {
+        logic rxen;
+        logic txen;
+        logic flow;
+        logic irq;
+        logic rtsn;
+        logic txd;
+    } uart_out_type;
+
+    typedef struct 
+    {
+        logic iholdn;
+        logic imdsn;
+        logic dholdn;
+        logic dmdsn;
+        logic fpuholdn;
+    } clkgen_in_type;
+
+    typedef struct 
+    {
+        logic clk;
+        logic clkn;
+        logic iuclk;
+        logic dclk;
+        logic iclk;
+        logic pciclk;
+        logic holdn;
+    } clkgen_out_type;
+
+    typedef struct 
+    {
+        logic [31:0] inst;
+        logic [31:2] pc;
+        logic annul;
+        logic [1:0] cnt;
+        logic ld;
+        logic pv;
+        logic rett;
+        logic trap;
+        logic [5:0] tt;
+        logic [7:0] rd;
+    } pipeline_control_type;
+
+    typedef struct 
+    {
+        logic flush;
+        logic exack;
+        logic dannul;
+        logic dtrap;
+        logic [1:0] dcnt;
+        logic [31:0] dinst;
+        pipeline_control_type ex;
+        pipeline_control_type me;
+        pipeline_control_type wr;
+        logic [31:0] lddata;
+    } cp_in_type;
+
+    typedef struct 
+    {
+        logic [31:0] data;
+        logic exc;
+        logic [1:0] cc;
+        logic ccv;
+        logic holdn;
+        logic ldlock;
+    } cp_out_type;
+
+    typedef struct 
+    {
+        logic clk;
+        logic rst;
+        logic holdn;
+        pipeline_control_type de;
+        pipeline_control_type ex;
+        pipeline_control_type me;
+        pipeline_control_type wr;
+        logic write_reg;
+        logic [31:0] result;
+        logic trap;
+        logic [7:0] tt;
+    } iu_debug_type;
+
+    typedef struct 
+    {
+        logic [3:0] irl;
+    } iu_in_type;
+
+    typedef struct 
+    {
+        logic error;
+        logic intack;
+        logic [3:0] irqvec;
+        logic ipend;
+        iu_debug_type debug;
+    } iu_out_type;
+
+    typedef struct 
+    {
+        logic [9:0] fpinst;
+        logic fpop;
+        logic fpld;
+        logic reset;
+        logic [63:0] fprf_dout1;
+        logic [63:0] fprf_dout2;
+        logic [1:0] roundingmode;
+        logic ss_scan_mode;
+        logic fp_ctl_scan_in;
+        logic fpuholdn;
+    } fpu_in_type;
+
+    typedef struct 
+    {
+        logic fpbusy;
+        logic [54:3] fracresult;
+        logic [10:0] expresult;
+        logic signresult;
+        logic snnotdb;
+        logic [5:0] excep;
+        logic [1:0] conditioncodes;
+        logic fp_ctl_scan_out;
+    } fpu_out_type;
+
+    typedef struct 
+    {
+        logic [63:0] op1;
+        logic [63:0] op2;
+        logic [9:0] opcode;
+        logic start;
+        logic load;
+        logic flush;
+    } cp_unit_in_type;
+
+    typedef struct 
+    {
+        logic [63:0] res;
+        logic [1:0] cc;
+        logic [5:0] exc;
+        logic busy;
+    } cp_unit_out_type;
+
+    typedef struct 
+    {
+        logic syncrst;
+        logic rawrst;
+    } rst_type;
+
+    typedef struct 
+    {
+        logic pci_rst_in_n;
+        logic pci_clk_in;
+        logic pci_gnt_in_n;
+        logic pci_idsel_in;
+        logic [31:0] pci_adin;
+        logic [3:0] pci_cbein_n;
+        logic pci_frame_in_n;
+        logic pci_irdy_in_n;
+        logic pci_trdy_in_n;
+        logic pci_devsel_in_n;
+        logic pci_stop_in_n;
+        logic pci_lock_in_n;
+        logic pci_perr_in_n;
+        logic pci_serr_in_n;
+        logic pci_par_in;
+        logic pci_host;
+        logic pci_66;
+        logic pme_status;
+    } pci_in_type;
+
+    typedef struct 
+    {
+        logic [31:0] pci_aden_n;
+        logic pci_cbe0_en_n;
+        logic pci_cbe1_en_n;
+        logic pci_cbe2_en_n;
+        logic pci_cbe3_en_n;
+        logic pci_frame_en_n;
+        logic pci_irdy_en_n;
+        logic pci_ctrl_en_n;
+        logic pci_perr_en_n;
+        logic pci_par_en_n;
+        logic pci_req_en_n;
+        logic pci_lock_en_n;
+        logic pci_serr_en_n;
+        logic pci_req_out_n;
+        logic [31:0] pci_adout;
+        logic [3:0] pci_cbeout_n;
+        logic pci_frame_out_n;
+        logic pci_irdy_out_n;
+        logic pci_trdy_out_n;
+        logic pci_devsel_out_n;
+        logic pci_stop_out_n;
+        logic pci_perr_out_n;
+        logic pci_serr_out_n;
+        logic pci_par_out;
+        logic pci_lock_out_n;
+        logic [1:0] power_state;
+        logic pme_enable;
+        logic pme_clear;
+    } pci_out_type;
+
+    typedef struct 
+    {
+        logic [32:0] op1;
+        logic [32:0] op2;
+        logic [32:0] y;
+        logic flush;
+        logic \signed ;
+        logic start;
+    } div_in_type;
+
+    typedef struct 
+    {
+        logic ready;
+        logic [3:0] icc;
+        logic [31:0] result;
+    } div_out_type;
+
+    typedef struct 
+    {
+        logic [32:0] op1;
+        logic [32:0] op2;
+        logic flush;
+        logic \signed ;
+        logic start;
+        logic mac;
+        logic [7:0] y;
+        logic [31:0] asr18;
+    } mul_in_type;
+
+    typedef struct 
+    {
+        logic ready;
+        logic [3:0] icc;
+        logic [63:0] result;
+    } mul_out_type;
+
+endpackage

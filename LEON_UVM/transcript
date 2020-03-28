@@ -1,6 +1,6 @@
 # do run.do
 # QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 13:26:35 on Mar 27,2020
+# Start time: 18:12:48 on Mar 27,2020
 # vlog "+incdir+format" leon_pkg.sv 
 # -- Compiling package leon_package
 # -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -15,10 +15,10 @@
 # 
 # Top level modules:
 # 	--none--
-# End time: 13:26:35 on Mar 27,2020, Elapsed time: 0:00:00
+# End time: 18:12:48 on Mar 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 5
 # QuestaSim-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 13:26:35 on Mar 27,2020
+# Start time: 18:12:48 on Mar 27,2020
 # vcom -f DUT_LEON.f 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -479,10 +479,10 @@
 # -- Loading package tech_map
 # -- Compiling entity proc
 # -- Compiling architecture rtl of proc
-# End time: 13:26:43 on Mar 27,2020, Elapsed time: 0:00:08
+# End time: 18:12:55 on Mar 27,2020, Elapsed time: 0:00:07
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 13:26:43 on Mar 27,2020
+# Start time: 18:12:55 on Mar 27,2020
 # vcom -mixedsvvh leon/iface.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -493,20 +493,20 @@
 # -- Loading package config
 # -- Loading package sparcv8
 # -- Compiling package iface
-# End time: 13:26:43 on Mar 27,2020, Elapsed time: 0:00:00
+# End time: 18:12:56 on Mar 27,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 13:26:43 on Mar 27,2020
+# Start time: 18:12:56 on Mar 27,2020
 # vlog GUVM_interface.sv 
 # -- Compiling interface GUVM_interface
 # -- Importing package iface__mti__sv__equiv__implct__pack
 # 
 # Top level modules:
 # 	--none--
-# End time: 13:26:44 on Mar 27,2020, Elapsed time: 0:00:01
+# End time: 18:12:56 on Mar 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 13:26:44 on Mar 27,2020
+# Start time: 18:12:56 on Mar 27,2020
 # vlog top.sv 
 # -- Compiling module top
 # -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -516,11 +516,11 @@
 # 
 # Top level modules:
 # 	top
-# End time: 13:26:44 on Mar 27,2020, Elapsed time: 0:00:00
+# End time: 18:12:56 on Mar 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 1
 # vsim top 
-# Start time: 13:26:44 on Mar 27,2020
+# Start time: 18:12:56 on Mar 27,2020
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Warning: leon/iu.vhd(2425): (vopt-8617) Possible component instance "/top/dut/iu0/mul0/u0 : mul" is not bound.
 # ** Warning: leon/iu.vhd(2431): (vopt-8617) Possible component instance "/top/dut/iu0/div0/u0 : div" is not bound.
@@ -654,65 +654,35 @@
 # madd : 00000000000000000000000000000000
 # result = 4174376944
 # driver have started
-# command sequence : inst =10010010000001010000000000000100/n op=10,op2=101,op3=000000,rd=01001,rs1=10100,rs2=00100,i=0,a=x /n
-# 
-# 				imm13=xxxx,imm22=xxxxxx 
 # madd : 00000000000000000000000000000000
 # result = 0
 # driver have started
-# command sequence : inst =10000000000000111100000000000001/n op=10,op2=100,op3=000000,rd=00000,rs1=01111,rs2=00001,i=0,a=x /n
-# 
-# 				imm13=xxxx,imm22=xxxxxx 
 # madd : 00000000000000000000000000000000
 # result = 62868998
 # driver have started
-# command sequence : inst =10100010000001111000000000000101/n op=10,op2=111,op3=000000,rd=10001,rs1=11110,rs2=00101,i=0,a=x /n
-# 
-# 				imm13=xxxx,imm22=xxxxxx 
 # madd : 00000000000000000000000000000000
 # result = 2436189986
 # driver have started
-# command sequence : inst =10110100000000000100000000001000/n op=10,op2=101,op3=000000,rd=11010,rs1=00001,rs2=01000,i=0,a=x /n
-# 
-# 				imm13=xxxx,imm22=xxxxxx 
 # madd : 00000000000000000000000000000000
 # result = 0
 # driver have started
-# command sequence : inst =10000000000000110000000000000000/n op=10,op2=011,op3=000000,rd=00000,rs1=01100,rs2=00000,i=0,a=x /n
-# 
-# 				imm13=xxxx,imm22=xxxxxx 
 # madd : 00000000000000000000000000000000
 # result = 3206263165
 # driver have started
-# command sequence : inst =10110100000001111100000000001011/n op=10,op2=111,op3=000000,rd=11010,rs1=11111,rs2=01011,i=0,a=x /n
-# 
-# 				imm13=xxxx,imm22=xxxxxx 
 # madd : 00000000000000000000000000000000
 # result = 830051938
 # driver have started
-# command sequence : inst =10100100000000110000000000001010/n op=10,op2=000,op3=000000,rd=10010,rs1=01100,rs2=01010,i=0,a=x /n
-# 
-# 				imm13=xxxx,imm22=xxxxxx 
 # madd : 00000000000000000000000000000000
 # result = 1814360280
 # driver have started
-# command sequence : inst =10110100000001010000000000001011/n op=10,op2=010,op3=000000,rd=11010,rs1=10100,rs2=01011,i=0,a=x /n
-# 
-# 				imm13=xxxx,imm22=xxxxxx 
+# madd : 00000000000000000000000000000000
 # madd : 00000000000000000000000000000000
 # result = 665878095
 # driver have started
-# command sequence : inst =10000010000000100100000000000101/n op=10,op2=101,op3=000000,rd=00001,rs1=01001,rs2=00101,i=0,a=x /n
-# 
-# 				imm13=xxxx,imm22=xxxxxx 
-# madd : 00000000000000000000000000000000
 # madd : 00000000000000000000000000000000
 # result = 596050502
 # driver have started
-# command sequence : inst =10110000000000110000000000000010/n op=10,op2=111,op3=000000,rd=11000,rs1=01100,rs2=00010,i=0,a=x /n
-# 
-# 				imm13=xxxx,imm22=xxxxxx 
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 10800: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 11800: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
 # 
 # --- UVM Report Summary ---
 # 
@@ -727,7 +697,7 @@
 # [RNTST]     1
 # [TEST_DONE]     1
 # ** Note: $finish    : C:/questasim64_10.6c/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
-#    Time: 10800 ns  Iteration: 64  Instance: /top
+#    Time: 11800 ns  Iteration: 64  Instance: /top
 # 1
 # Break in Task uvm_pkg/uvm_root::run_test at C:/questasim64_10.6c/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
 # Stopped at C:/questasim64_10.6c/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
@@ -748,5 +718,5 @@
 # 112: XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX XXXXXXXX
 # 120: B2A72665 1D06333A EC4B34D8 150FDD2A 47B9A18F XXXXXXXX XXXXXXXX 1E8DCD3D
 # 128: XXXXXXXX 27B07E4F DBCD60B7 XXXXXXXX 46DF998D 0AAA4B15 XXXXXXXX XXXXXXXX
-# End time: 13:26:49 on Mar 27,2020, Elapsed time: 0:00:05
+# End time: 18:13:01 on Mar 27,2020, Elapsed time: 0:00:05
 # Errors: 0, Warnings: 23

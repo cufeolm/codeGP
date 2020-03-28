@@ -19,6 +19,8 @@ class GUVM_env extends uvm_env;
     function void connect_phase(uvm_phase phase);
         `uvm_info("", "Called env::connect_phase", UVM_NONE);
         agent.driver.Drv2Sb_port.connect(sb.Drv2Sb_port);
+      //  agent.driver.Drv2Sb_port.connect(sb.Drv2Sb_port);
         monitor_h.Mon2Sb_port.connect(sb.Mon2Sb_port);
+    //    mon.aport.connect(sub.aport);
     endfunction
 endclass : GUVM_env

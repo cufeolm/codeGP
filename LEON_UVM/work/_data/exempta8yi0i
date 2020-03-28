@@ -1,0 +1,136 @@
+package AMBA__mti__sv__equiv__implct__pack;
+
+    localparam bit unsigned [0:10] hdmax = 32;
+
+    localparam bit unsigned [0:5] hamax = 32;
+
+    typedef struct 
+    {
+        logic hgrant;
+        logic hready;
+        logic [1:0] hresp;
+        logic [31:0] hrdata;
+        logic hcache;
+    } ahb_mst_in_type;
+
+    typedef struct 
+    {
+        logic hbusreq;
+        logic hlock;
+        logic [1:0] htrans;
+        logic [31:0] haddr;
+        logic hwrite;
+        logic [2:0] hsize;
+        logic [2:0] hburst;
+        logic [3:0] hprot;
+        logic [31:0] hwdata;
+    } ahb_mst_out_type;
+
+    typedef struct 
+    {
+        logic hsel;
+        logic [31:0] haddr;
+        logic hwrite;
+        logic [1:0] htrans;
+        logic [2:0] hsize;
+        logic [2:0] hburst;
+        logic [31:0] hwdata;
+        logic [3:0] hprot;
+        logic hready;
+        logic [3:0] hmaster;
+        logic hmastlock;
+    } ahb_slv_in_type;
+
+    typedef struct 
+    {
+        logic hready;
+        logic [1:0] hresp;
+        logic [31:0] hrdata;
+        logic [15:0] hsplit;
+    } ahb_slv_out_type;
+
+    (* mtidim = 1 *)
+    typedef ahb_mst_in_type ahb_mst_in_vector;
+
+    (* mtidim = 1 *)
+    typedef ahb_mst_out_type ahb_mst_out_vector;
+
+    (* mtidim = 1 *)
+    typedef ahb_slv_in_type ahb_slv_in_vector;
+
+    (* mtidim = 1 *)
+    typedef ahb_slv_out_type ahb_slv_out_vector;
+
+    localparam logic [1:0] htrans_idle = '{1'b0, 1'b0};
+
+    localparam logic [1:0] htrans_busy = '{1'b0, 1'b1};
+
+    localparam logic [1:0] htrans_nonseq = '{1'b1, 1'b0};
+
+    localparam logic [1:0] htrans_seq = '{1'b1, 1'b1};
+
+    localparam logic [2:0] hburst_single = '{1'b0, 1'b0, 1'b0};
+
+    localparam logic [2:0] hburst_incr = '{1'b0, 1'b0, 1'b1};
+
+    localparam logic [2:0] hburst_wrap4 = '{1'b0, 1'b1, 1'b0};
+
+    localparam logic [2:0] hburst_incr4 = '{1'b0, 1'b1, 1'b1};
+
+    localparam logic [2:0] hburst_wrap8 = '{1'b1, 1'b0, 1'b0};
+
+    localparam logic [2:0] hburst_incr8 = '{1'b1, 1'b0, 1'b1};
+
+    localparam logic [2:0] hburst_wrap16 = '{1'b1, 1'b1, 1'b0};
+
+    localparam logic [2:0] hburst_incr16 = '{1'b1, 1'b1, 1'b1};
+
+    localparam logic [2:0] hsize_byte = '{1'b0, 1'b0, 1'b0};
+
+    localparam logic [2:0] hsize_hword = '{1'b0, 1'b0, 1'b1};
+
+    localparam logic [2:0] hsize_word = '{1'b0, 1'b1, 1'b0};
+
+    localparam logic [2:0] hsize_dword = '{1'b0, 1'b1, 1'b1};
+
+    localparam logic [2:0] hsize_4word = '{1'b1, 1'b0, 1'b0};
+
+    localparam logic [2:0] hsize_8word = '{1'b1, 1'b0, 1'b1};
+
+    localparam logic [2:0] hsize_16word = '{1'b1, 1'b1, 1'b0};
+
+    localparam logic [2:0] hsize_32word = '{1'b1, 1'b1, 1'b1};
+
+    localparam logic [1:0] hresp_okay = '{1'b0, 1'b0};
+
+    localparam logic [1:0] hresp_error = '{1'b0, 1'b1};
+
+    localparam logic [1:0] hresp_retry = '{1'b1, 1'b0};
+
+    localparam logic [1:0] hresp_split = '{1'b1, 1'b1};
+
+    localparam bit unsigned [0:5] pdmax = 32;
+
+    localparam bit unsigned [0:5] pamax = 32;
+
+    typedef struct 
+    {
+        logic psel;
+        logic penable;
+        logic [31:0] paddr;
+        logic pwrite;
+        logic [31:0] pwdata;
+    } apb_slv_in_type;
+
+    typedef struct 
+    {
+        logic [31:0] prdata;
+    } apb_slv_out_type;
+
+    (* mtidim = 1 *)
+    typedef apb_slv_in_type apb_slv_in_vector;
+
+    (* mtidim = 1 *)
+    typedef apb_slv_out_type apb_slv_out_vector;
+
+endpackage

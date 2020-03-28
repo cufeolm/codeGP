@@ -46,7 +46,7 @@ class GUVM_sequence extends uvm_sequence #(GUVM_sequence_item);
 
             start_item(store);
             finish_item(store);
-            $display(command.convert2string());
+            //$display(command.convert2string());
 
             //c = target_seq_item::type_id::create("c");
             //command.inst = 1;
