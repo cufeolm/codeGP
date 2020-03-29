@@ -78,10 +78,9 @@ interface GUVM_interface;
         clk_i = 0;
     end 
         
-    task send_data(logic [31:0] data);
+    function void send_data(logic [31:0] data);
         data_rdata_i = data;
-        repeat(2*5) #10 clk_i=~clk_i;
-    endtask
+    endfunction
 
     function void send_inst(logic [31:0] inst);
         instr_rdata_i = inst; 
@@ -89,30 +88,44 @@ interface GUVM_interface;
     
     task verify_inst(logic [31:0] inst);
         send_inst(inst); 
-        repeat(2*15) #10 clk_i=~clk_i;
+        repeat(30) begin 
+            #10 clk_i=~clk_i;
+        end
     endtask
     
     function logic [31:0] receive_data();
-        $display("madd : %b", data_wdata_o);
+        $display("received result: %b", data_wdata_o);
         return data_wdata_o; 
     endfunction 
     
     task store(logic [31:0] inst);
         send_inst(inst);
+        repeat(6) begin 
+            #10 clk_i=~clk_i;
+        end
         $display("result = %0d", receive_data());
-        repeat(2*15) #10 clk_i=~clk_i;
+        repeat(30) begin 
+            #10 clk_i=~clk_i;
+        end
     endtask
 
     task load(logic [31:0] inst, logic [31:0] rd);
         send_inst(inst);
+        repeat(10) begin 
+            #10 clk_i=~clk_i;
+        end
         send_data(rd);
-        repeat(2*15) #10 clk_i=~clk_i;
+        repeat(30) begin 
+            #10 clk_i=~clk_i;
+        end
     endtask
     
-    task add(logic [4:0] r1, logic [4:0] r2, logic [4:0] rd);
+    /*task add(logic [4:0] r1, logic [4:0] r2, logic [4:0] rd);
         send_inst({7'b0000000, r2, r1, 3'b000, rd, 7'b0110011});
-        repeat(2*15) #10 clk_i=~clk_i;
-    endtask
+        repeat(15) begin 
+            #10 clk_i=~clk_i;
+        end
+    endtask*/
 
     task set_Up();
         clock_en_i            = 1'b1;
@@ -131,13 +144,20 @@ interface GUVM_interface;
         irq_sec_i             = 1'h0;
         debug_req_i           = 1'h0;
         fetch_enable_i        = 1'h1;
+        repeat(10) begin 
+            #10 clk_i=~clk_i;
+        end
     endtask
 
     task reset_dut();
         rst_ni = 1'b1;
-        repeat(2*1) #10 clk_i=~clk_i;
+        repeat(2*1) begin 
+            #10 clk_i=~clk_i;
+        end
         rst_ni = 1'b0;
-        repeat(2*3) #10 clk_i=~clk_i;
+        repeat(2*3) begin 
+            #10 clk_i=~clk_i;
+        end
         rst_ni = 1'b1;
     endtask : reset_dut
 
