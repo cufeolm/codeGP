@@ -20,14 +20,17 @@ class GUVM_monitor extends uvm_monitor;
     task run_phase(uvm_phase phase);
         GUVM_sequence_item pros_trans;
         pros_trans = new ("trans");
+        //$display("monitor starts");
         //#10000 // ay time 3la 7asab elcritical path llduts
         fork
-	   //forever begin
+	   forever begin@(bfm.out)
        begin
-        pros_trans.receivedDATA = bfm.receive_data();
+        pros_trans.receivedDATA = bfm.out;
+       // $display("monitor out is %0d", pros_trans.receivedDATA);
         Mon2Sb_port.write(pros_trans);
+
         end
-     //   end
+      end
         join
         
     endtask : run_phase

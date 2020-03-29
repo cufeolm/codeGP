@@ -53,7 +53,7 @@ class GUVM_scoreboard extends uvm_scoreboard;
 		  bit [31:0] h1,i1,i2,imm,registered_inst,Mon_out;
 		  //bit [19:0] sign;
 		  forever begin
-		  $display("SCOREBOARD have started");
+		 // $display("SCOREBOARD have started");
 		//  $display("Expected Instruction=%h \n", exp_trans.inst);
 		  //$display("operand1_scb=%h \n", i1);
 		//  $display("operand2_scb=%h \n", i2);
@@ -68,11 +68,11 @@ class GUVM_scoreboard extends uvm_scoreboard;
 				i2=exp_trans_data2.data;
 				registered_inst=exp_trans_inst.inst;
 				Mon_out=out_trans.receivedDATA;
-				$display("RANDA HIIIIIII");
-				$display("operand1_scb=%0d \n", i1);
-				$display("operand2_scb=%0d \n", i2);
-				$display("Expected Instruction=%b \n", exp_trans_inst.inst);
-				$display("Monitor_scb=%0d \n",Mon_out);
+				//$display("RANDA HIIIIIII");
+				//$display("operand1_scb=%0d \n", i1);
+			//	$display("operand2_scb=%0d \n", i2);
+			//	$display("Expected Instruction=%b \n", exp_trans_inst.inst);
+			//	$display("Monitor_scb=%0d \n",Mon_out);
 				//opcode reg_instruction;
 				//`uvm_info ("SCOREBOARD ENTERED ",$sformatf("HELLO IN SCOREBOARD"), UVM_LOW);
 			//	target_package::reg_instruction = target_package::reg_instruction.first;
@@ -141,17 +141,17 @@ begin
 	  //if((registered_inst==A)) //LEON only
 	  if((exp_trans_inst.inst[31:30]==2'b10 && exp_trans_inst.inst[24:19]==6'b000000 && exp_trans_inst.inst[13:5]==9'b000000000) ||(exp_trans_inst.inst[6:0]==7'b0110011 && exp_trans_inst.inst[14:12]==3'b000 && exp_trans_inst.inst[31:25]==7'b0000000 ) || (exp_trans_inst.inst[24:21]==4'h4 && exp_trans_inst.inst[27:26]==2'b00))
 begin 
- $display("RANDA inst ADDDDDDDD");
+ //$display("RANDA inst ADDDDDDDD");
 `uvm_info ("ADD_INSTRUCTION_PASS ", $sformatf("Expected Instruction=%h \n", exp_trans_inst.inst), UVM_LOW)
 	h1=i1+i2;				
-						//if((h1)==(out_trans.receivedDATA))
-						//begin
-						//`uvm_info ("ADDITION_PASS ", $sformatf("Actual Calculation=%d Expected Calculation=%d \n",out_trans.receivedDATA, h1), UVM_LOW)
-						//end
-						//else
-						//begin
-						//`uvm_error("ADDITION_FAIL", $sformatf("Actual Calculation=%d Expected Calculation=%d \n",out_trans.receivedDATA, h1))
-						//end
+						if((h1)==(out_trans.receivedDATA))
+						begin
+						`uvm_info ("ADDITION_PASS ", $sformatf("Actual Calculation=%d Expected Calculation=%d \n",out_trans.receivedDATA, h1), UVM_LOW)
+						end
+						else
+						begin
+						`uvm_error("ADDITION_FAIL", $sformatf("Actual Calculation=%d Expected Calculation=%d \n",out_trans.receivedDATA, h1))
+						end
 
 
 	  end
@@ -173,7 +173,7 @@ begin
 	  else
 	  begin
 	  `uvm_error("INSTRUCTION_ERROR", $sformatf("Expected=%d \n", exp_trans_inst.inst))
-	  $display("WRONG INSTTTTT");
+	 // $display("WRONG INSTTTTT");
 	  end 
 	  end
    endtask

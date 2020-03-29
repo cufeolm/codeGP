@@ -44,7 +44,7 @@ package target_package;
                 si_i=si_i.next();
 
             end
-        $display("array is filled and ready to use");
+      //  $display("array is filled and ready to use");
     `endif
     endfunction
 

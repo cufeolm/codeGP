@@ -1,5 +1,6 @@
 interface GUVM_interface;
     import iface::*;
+    import target_package::*;
 
     logic       clk;
     logic       rst;
@@ -17,7 +18,7 @@ interface GUVM_interface;
     dcache_in_type dcache_input ;  // to the data cach
 
     icdiag_in_type dcache_output_diag; // inside dcache_out_type package // what is this ? 
-
+logic [31:0]out;
     initial begin
         clk = 0;
 	end	
@@ -39,25 +40,28 @@ interface GUVM_interface;
     endtask
 	
 	
-    function logic [31:0] receive_data();
-        $display("madd : %b",dcache_input.maddress);
+    function logic [31:0] receive_data(); // logic is 4 state variable
+      //  $display("madd : %b",dcache_input.maddress);
 		return dcache_input.edata;
     endfunction 
 	
-	
+	//GUVM_monitor kholoud_monitor;
     //function logic [31:0] store(logic [4:0] ra );
     task store(logic [31:0] inst );
 		send_inst(inst);
 		repeat(2*2)#10 clk=~clk;
         bfm.nop();		
 		repeat(2*1)#10 clk=~clk;
-		$display("result = %0d",receive_data());
-		repeat(2*10)#10 clk=~clk;
+         out=receive_data();
+         repeat(2*10)#10 clk=~clk;
+        //kholoud_monitor.monitor(out);
+		//$display("result = %0d",receive_data());
+		
 		//mon();
     endtask
 
     //function void load(logic [4:0] ra , logic [31:0] rd );
-    task load(logic [31:0] inst, logic [31:0] rd );
+    task load(logic [31:0] inst , logic [31:0] rd );
         send_inst(inst);
         send_data(rd);
 		repeat(2*1)#10 clk=~clk;
