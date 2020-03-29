@@ -50,7 +50,7 @@ class GUVM_scoreboard extends uvm_scoreboard;
 
 	   task run_phase(uvm_phase phase);
 		  GUVM_sequence_item exp_trans_inst, out_trans,exp_trans_data1,exp_trans_data2;
-		  bit [31:0] h1,i1,i2,imm,registered_inst;
+		  bit [31:0] h1,i1,i2,imm,registered_inst,Mon_out;
 		  //bit [19:0] sign;
 		  forever begin
 		  $display("SCOREBOARD have started");
@@ -63,14 +63,16 @@ class GUVM_scoreboard extends uvm_scoreboard;
 			drv_fifo.get(exp_trans_data2);
 			drv_fifo.get(exp_trans_inst);
 		//	drv_fifo.get(exp_trans);
-			//mon_fifo.get(out_trans);
+			mon_fifo.get(out_trans);
 				i1=exp_trans_data1.data;
 				i2=exp_trans_data2.data;
 				registered_inst=exp_trans_inst.inst;
+				Mon_out=out_trans.receivedDATA;
 				$display("RANDA HIIIIIII");
-				$display("operand1_scb=%h \n", i1);
-				$display("operand2_scb=%h \n", i2);
+				$display("operand1_scb=%0d \n", i1);
+				$display("operand2_scb=%0d \n", i2);
 				$display("Expected Instruction=%b \n", exp_trans_inst.inst);
+				$display("Monitor_scb=%0d \n",Mon_out);
 				//opcode reg_instruction;
 				//`uvm_info ("SCOREBOARD ENTERED ",$sformatf("HELLO IN SCOREBOARD"), UVM_LOW);
 			//	target_package::reg_instruction = target_package::reg_instruction.first;

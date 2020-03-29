@@ -20,8 +20,16 @@ class GUVM_monitor extends uvm_monitor;
     task run_phase(uvm_phase phase);
         GUVM_sequence_item pros_trans;
         pros_trans = new ("trans");
-        #10000 // ay time 3la 7asab elcritical path llduts
+        //#10000 // ay time 3la 7asab elcritical path llduts
+        fork
+	   //forever begin
+       begin
         pros_trans.receivedDATA = bfm.receive_data();
+        Mon2Sb_port.write(pros_trans);
+        end
+     //   end
+        join
+        
     endtask : run_phase
 
 endclass : GUVM_monitor
