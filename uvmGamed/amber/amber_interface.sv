@@ -1,4 +1,5 @@
 interface GUVM_interface;
+    import target_package::*;
 
     logic       i_clk;
     logic       i_irq;
@@ -20,6 +21,8 @@ interface GUVM_interface;
     logic [31:0] data_in;
 
     logic [31:0] out;
+
+    GUVM_monitor monitor_h;
 
     initial begin
        i_clk = 0;
@@ -55,6 +58,7 @@ interface GUVM_interface;
 
     function logic [127:0] receive_data();
         $display("result: %h", o_wb_dat);
+        monitor_h.write_to_monitor(o_wb_dat);
         return o_wb_dat;
     endfunction
 
@@ -71,7 +75,7 @@ interface GUVM_interface;
             #10 i_clk=~i_clk;
         end
         $display("result = %0d", receive_data());
-        out = receive_data();
+        // out = receive_data();
         repeat(2*10) begin 
             #10 i_clk=~i_clk;
         end
