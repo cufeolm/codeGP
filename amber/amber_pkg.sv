@@ -2,11 +2,11 @@ package target_package;
     import uvm_pkg::*;
     `include "uvm_macros.svh"
     typedef enum logic[31:0] {
-        LW = 32'b111101101000xxxxxxxxxxxxxxxxxxxx,
-        SW = 32'b111001011001xxxxxxxxxxxxxxxxxxxx,
+        LW = 32'b111101101001xxxxxxxxxxxxxxxxxxxx,
+        SW = 32'b111001011000xxxxxxxxxxxxxxxxxxxx,
         A  = 32'b1110000010000xxx0xxx000000000xxx,
-        Store = 32'b11100101100100000xxx000000000000,
-        Load =  32'b11110110100000000xxx000000000000 
+        Store = 32'b11100101100000000xxx000000000000,
+        Load =  32'b1111011010010xxx0xxx000000000xxx 
     } opcode;
     /*
     LW = 32'b111101101000xxxxxxxxxxxxxxxxxxxx,

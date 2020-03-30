@@ -19,6 +19,8 @@ interface GUVM_interface;
     logic [3:0] indicator;
     logic [31:0] data_in;
 
+    logic [31:0] out;
+
     initial begin
        i_clk = 0;
     end 
@@ -30,7 +32,10 @@ interface GUVM_interface;
     task send_inst(logic [31:0] inst);
         indicator = inst[31:28];
         Rd = inst[15:12];
-        if (indicator == 4'b1111) begin
+        if(indicator == 4'b1111) begin
+            /*repeat(2*50) begin 
+                #10 i_clk=~i_clk;
+            end*/
             i_wb_dat = {96'hF0801003F0801003F0801003, inst};
             case(Rd)
                 4'b0000: dut.u_execute.u_register_bank.r0 = data_in;
@@ -40,13 +45,11 @@ interface GUVM_interface;
                 4'b0100: dut.u_execute.u_register_bank.r4 = data_in;
                 4'b0101: dut.u_execute.u_register_bank.r5 = data_in;
                 4'b0111: dut.u_execute.u_register_bank.r6 = data_in;
-                4'b1000: dut.u_execute.u_register_bank.r6 = data_in;
-                4'b1001: dut.u_execute.u_register_bank.r7 = data_in;
+                4'b1000: dut.u_execute.u_register_bank.r7 = data_in;
                 default: $display("Error in SEL");
             endcase
         end else begin
-            i_wb_dat[31:0] = inst;
-            i_wb_dat[127:32] = 96'hF0801003F0801003F0801003;
+            i_wb_dat = {96'hF0801003F0801003F0801003, inst};
         end
     endtask
 
@@ -56,24 +59,31 @@ interface GUVM_interface;
     endfunction
 
     task verify_inst(logic [31:0] inst);
-        send_inst(inst) ; 
+        send_inst(inst); 
+        repeat(2*50) begin 
+            #10 i_clk=~i_clk;
+        end
     endtask
 
-    task store(logic [31:0] inst );
+    task store(logic [31:0] inst);
         send_inst(inst);
+        repeat(2*10) begin 
+            #10 i_clk=~i_clk;
+        end
         $display("result = %0d", receive_data());
-        repeat(2*10)#10 i_clk=~i_clk;
+        out = receive_data();
+        repeat(2*10) begin 
+            #10 i_clk=~i_clk;
+        end
     endtask
 
     task load(logic [31:0] inst, logic [31:0] rd);
+        send_data(rd);
         send_inst(inst);
         send_data(rd);
-        repeat(2*50) #10 i_clk=~i_clk;
-    endtask
-    
-    task add(logic [4:0] r1, logic [4:0] r2, logic [4:0] rd);
-        send_inst({12'b111000001000, r1, rd, 8'b00000000, r2});
-        repeat(2*50) #10 i_clk=~i_clk;
+        repeat(2*50) begin 
+            #10 i_clk=~i_clk;
+        end
     endtask
 
     task set_Up();
