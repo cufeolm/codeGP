@@ -47,6 +47,7 @@ class GUVM_scoreboard extends uvm_scoreboard;
 	task run_phase(uvm_phase phase);
 		GUVM_sequence_item exp_trans_inst, out_trans,exp_trans_data1,exp_trans_data2;
 		bit [31:0] h1,i1,i2,imm,registered_inst,Mon_out;
+		string inst_name;
 		// bit [19:0] sign;
 		forever begin
 			// $display("SCOREBOARD have started");
@@ -61,7 +62,7 @@ class GUVM_scoreboard extends uvm_scoreboard;
 			mon_fifo.get(out_trans);
 			i1=exp_trans_data1.data;
 			i2=exp_trans_data2.data;
-			registered_inst=exp_trans_inst.inst;
+			//registered_inst=exp_trans_inst.inst;
 			Mon_out=out_trans.receivedDATA;
 			// $display("RANDA HIIIIIII");
 			// $display("operand1_scb=%0d \n", i1);
@@ -70,27 +71,34 @@ class GUVM_scoreboard extends uvm_scoreboard;
 			// $display("Monitor_scb=%0d \n",Mon_out);
 			// opcode reg_instruction;
 			// `uvm_info ("SCOREBOARD ENTERED ",$sformatf("HELLO IN SCOREBOARD"), UVM_LOW);
-			// target_package::reg_instruction = target_package::reg_instruction.first;
+			
 			/*for(int i=0;i<6;i++)
 				begin
-					$display("LOOP ENTERED");
-					$display("reg_instruction  ::  Value of  %0s is = %0d",target_package::reg_instruction.name(),target_package::reg_instruction);
+					//$display("LOOP ENTERED");
+					//$display("reg_instruction  ::  Value of  %0s is = %0h",target_package::reg_instruction.name(),target_package::reg_instruction);
+					target_package::reg_instruction = target_package::reg_instruction.next;
 				end*/
 			// si_a []
-			/*for (int i = 0; i < $size(leon_package::si_a); i++)
+			target_package::reg_instruction = target_package::reg_instruction.first;
+			for (int i = 0; i < target_package::reg_instruction.num(); i++)
 			begin
-			$display("LOOP ENTERED");
-			if(exp_trans.inst==leon_package::si_a[i])
+			//$display("LOOP ENTERED");
+			if((exp_trans_inst.inst[31:30]== target_package::reg_instruction[31:30]&& exp_trans_inst.inst[24:19]==target_package::reg_instruction[24:19] && exp_trans_inst.inst[13:5]==target_package::reg_instruction[13:5]) ||(exp_trans_inst.inst[6:0]==target_package::reg_instruction[6:0] && exp_trans_inst.inst[14:12]==target_package::reg_instruction[14:12]&& exp_trans_inst.inst[31:25]==target_package::reg_instruction[31:25] ) || (exp_trans_inst.inst[24:21]==target_package::reg_instruction[24:21] && exp_trans_inst.inst[27:26]==target_package::reg_instruction[27:26]))
+			//if(exp_trans_inst.inst==target_package::reg_instruction)
 			begin
-			registered_inst=leon_package::si_a[i];
-			$display("resulted_inst is si_a[%0d] = %s", i, leon_package::si_a[i]);
+			registered_inst=target_package::reg_instruction;
+			inst_name=target_package::reg_instruction.name();
+			//$display("resulted_inst is si_a[%0d] = %s", i, leon_package::si_a[i]);
+			//$display("current instruction  is %0s Value of   = %b",target_package::reg_instruction.name(),registered_inst);
+			//$display("instruction %s",inst_name);
 			end
 			else
 			begin
-			$display("instruction is not in the enum si_a[%0d] = %s",i, leon_package::si_a[i]);
+			target_package::reg_instruction = target_package::reg_instruction.next;
+			//$display("instruction is not in the enum");
 			end
-			$display("element si_a[%0d] = %s", i,leon_package::si_a[i]);
-			end*/
+			//$display("element si_a[%0d] = %s", i,leon_package::si_a[i]);
+			end
 
 			//imm={{20{exp_trans.immediate_data[11]}}, exp_trans.immediate_data};  //IMMEDIATE VALUE SIGN EXTENSION
 			// rand logic [31:0] inst;
@@ -132,10 +140,10 @@ class GUVM_scoreboard extends uvm_scoreboard;
 
 
 			// if((registered_inst==A)) //LEON only
-			if((exp_trans_inst.inst[31:30]==2'b10 && exp_trans_inst.inst[24:19]==6'b000000 && exp_trans_inst.inst[13:5]==9'b000000000) ||(exp_trans_inst.inst[6:0]==7'b0110011 && exp_trans_inst.inst[14:12]==3'b000 && exp_trans_inst.inst[31:25]==7'b0000000 ) || (exp_trans_inst.inst[24:21]==4'h4 && exp_trans_inst.inst[27:26]==2'b00))
-				begin
+			case(inst_name)
+			"A" : begin
 					// $display("RANDA inst ADDDDDDDD");
-					`uvm_info ("ADD_INSTRUCTION_PASS ", $sformatf("Expected Instruction=%h \n", exp_trans_inst.inst), UVM_LOW)
+					`uvm_info ("ADD_INSTRUCTION_PASS ", $sformatf("Expected Instruction=%b \n", exp_trans_inst.inst), UVM_LOW)
 					h1=i1+i2;
 					if((h1)==(out_trans.receivedDATA))
 						begin
@@ -145,29 +153,23 @@ class GUVM_scoreboard extends uvm_scoreboard;
 						begin
 							`uvm_error("ADDITION_FAIL", $sformatf("Actual Calculation=%d Expected Calculation=%d \n",out_trans.receivedDATA, h1))
 						end
-
-
 				end
-				/*else if((exp_trans.inst==AI) //ADD IMMEDIATE INSTRUCTION
-					begin
-						`uvm_info ("ADD_IMMEDIATE_INSTRUCTION_PASS ", $sformatf("Actual Instruction=%h Expected Instruction=%h \n",out_trans.inst_out, exp_trans.instrn), UVM_LOW)
-						h1=i1+i2;
-						if((h1)==(out_trans.data))
-							begin
-								`uvm_info ("ADDITION_IMMEDIATE_PASS ", $sformatf("Actual Calculation=%d Expected Calculation=%d \n",out_trans.reg_data, h1), UVM_LOW)
-							end
-						else
-							begin
-								`uvm_error("ADDITION_IMMEDIATE_FAIL", $sformatf("Actual Calculation=%d Expected Calculation=%d \n",out_trans.reg_data, h1))
-							end
-
-
-					end*/
-			else
-				begin
-					`uvm_error("INSTRUCTION_ERROR", $sformatf("Expected=%d \n", exp_trans_inst.inst))
-					// $display("WRONG INSTTTTT");
-				end
-		end
-	endtask
-endclass : GUVM_scoreboard
+			"S" : begin
+					// $display("RANDA inst ADDDDDDDD");
+					`uvm_info ("ADD_INSTRUCTION_PASS ", $sformatf("Expected Instruction=%h \n", exp_trans_inst.inst), UVM_LOW)
+					h1=i1-i2;
+					if((h1)==(out_trans.receivedDATA))
+						begin
+							`uvm_info ("ADDITION_PASS ", $sformatf("Actual Calculation=%d Expected Calculation=%d \n",out_trans.receivedDATA, h1), UVM_LOW)
+						end
+					else
+						begin
+							`uvm_error("ADDITION_FAIL", $sformatf("Actual Calculation=%d Expected Calculation=%d \n",out_trans.receivedDATA, h1))
+						end	
+						
+			    end
+			
+			default    : 	`uvm_error("INSTRUCTION_ERROR", $sformatf("Expected=%d \n", exp_trans_inst.inst))
+			
+			endcase
+			
