@@ -1,9 +1,9 @@
-class GUVM_driver extends uvm_driver #(GUVM_sequence_item);
+class GUVM_driver extends uvm_driver #(target_seq_item);
     `uvm_component_utils(GUVM_driver)
 
     virtual GUVM_interface bfm;
 
-    uvm_analysis_port #(GUVM_sequence_item) Drv2Sb_port;
+    uvm_analysis_port #(target_seq_item) Drv2Sb_port;
 
     function new(string name, uvm_component parent);
         super.new(name, parent);
@@ -18,7 +18,7 @@ class GUVM_driver extends uvm_driver #(GUVM_sequence_item);
     endfunction
 
     task run_phase(uvm_phase phase);
-        GUVM_sequence_item cmd;
+        target_seq_item cmd;
         forever begin: cmd_loop
             $display("driver has started");
             bfm.reset_dut();
@@ -30,7 +30,7 @@ class GUVM_driver extends uvm_driver #(GUVM_sequence_item);
             //$display leon
                 $display("driver first load fetch");
                 $display("inst is %b %b %b %b %b %b %b %b", cmd.inst[31:28], cmd.inst[27:24], cmd.inst[23:20], cmd.inst[19:16], cmd.inst[15:12], cmd.inst[11:8], cmd.inst[7:4], cmd.inst[3:0]);
-                $display("rs1 address = %0d and data=%0d", cmd.inst[29:25], cmd.data);
+                //$display("rs1 address = %0d and data=%0d", cmd.inst[29:25], cmd.data);
                 /* display riscy
             display("driver starting fetching");
             $display("inst is: %b %b %b %b %b", cmd.inst[31:20], cmd.inst[19:15], cmd.inst[14:12], cmd.inst[11:7], cmd.inst[6:0]);
@@ -47,7 +47,7 @@ class GUVM_driver extends uvm_driver #(GUVM_sequence_item);
             //$display leon
                 $display("driver second load fetch");
                 $display("inst is %b %b %b %b %b %b %b %b", cmd.inst[31:28], cmd.inst[27:24], cmd.inst[23:20], cmd.inst[19:16], cmd.inst[15:12], cmd.inst[11:8], cmd.inst[7:4], cmd.inst[3:0]);
-                $display("rs2 address = %0d and data=%0d", cmd.inst[29:25], cmd.data);
+                //$display("rs2 address = %0d and data=%0d", cmd.inst[29:25], cmd.data);
                 /* display riscy
             /*$display("driver starting fetching");
             $display("inst is: %b %b %b %b %b", cmd.inst[31:20], cmd.inst[19:15], cmd.inst[14:12], cmd.inst[11:7], cmd.inst[6:0]);
@@ -64,9 +64,8 @@ class GUVM_driver extends uvm_driver #(GUVM_sequence_item);
                 // display leon
                 $display("driver instruction fetch");
                 $display("inst is %b %b %b %b %b %b %b %b", cmd.inst[31:28], cmd.inst[27:24], cmd.inst[23:20], cmd.inst[19:16], cmd.inst[15:12], cmd.inst[11:8], cmd.inst[7:4], cmd.inst[3:0]);
-                $display("rs1 address = %0d and rs2 address = %0d and rd address = %0d", cmd.inst[18:14], cmd.inst[4:0], cmd.inst[29:25]);
-                $display("is immediate ?? %b", cmd.inst[13]);
-                $display("11111111111111111111111 op1= %0d op2= %0d",cmd.operand1,cmd.operand2);
+                $display("rs1 address = %0d and rs2 address = %0d and rd address = %0d", cmd.rs1, cmd.rs2, cmd.rd);
+                $display("op1= %0d op2= %0d",cmd.operand1,cmd.operand2);
                 // display riscy
             /*$display("driver instruction fetch");
             $display("inst is: %b %b %b %b %b %b", cmd.inst[31:26], cmd.inst[25:20], cmd.inst[19:15], cmd.inst[14:12], cmd.inst[11:7], cmd.inst[6:0]);
@@ -86,7 +85,7 @@ class GUVM_driver extends uvm_driver #(GUVM_sequence_item);
                 // display leon
                 $display("driver store fetch");
                 $display("inst is %b %b %b %b %b %b %b %b",cmd.inst[31:28],cmd.inst[27:24],cmd.inst[23:20],cmd.inst[19:16],cmd.inst[15:12],cmd.inst[11:8],cmd.inst[7:4],cmd.inst[3:0]);
-                $display("rd address = %0d",cmd.inst[29:25]);
+                //$display("rd address = %0d",cmd.inst[29:25]);
                 // display riscy
            /* $display("driver store fetch");
             $display("inst is: %b %b %b %b %b %b", cmd.inst[31:26], cmd.inst[25:20], cmd.inst[19:15], cmd.inst[14:12], cmd.inst[11:7], cmd.inst[6:0]);

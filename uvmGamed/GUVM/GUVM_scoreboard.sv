@@ -8,10 +8,10 @@ class GUVM_scoreboard extends uvm_scoreboard;
 
 	// analysis implementation ports
 	uvm_analysis_imp_mon_trans #(GUVM_result_transaction, GUVM_scoreboard) Mon2Sb_port;
-	uvm_analysis_imp_drv_trans #(GUVM_sequence_item, GUVM_scoreboard) Drv2Sb_port;
+	uvm_analysis_imp_drv_trans #(target_seq_item, GUVM_scoreboard) Drv2Sb_port;
 
 	// TLM FIFOs to store the actual and expected transaction values
-	uvm_tlm_fifo #(GUVM_sequence_item) drv_fifo;
+	uvm_tlm_fifo #(target_seq_item) drv_fifo;
 	uvm_tlm_fifo #(GUVM_result_transaction) mon_fifo;
 
 	function new (string name, uvm_component parent);
@@ -29,7 +29,7 @@ class GUVM_scoreboard extends uvm_scoreboard;
 
 	// write_drv_trans will be called when the driver broadcasts a transaction
 	// to the scoreboard
-	function void write_drv_trans (GUVM_sequence_item input_trans);
+	function void write_drv_trans (target_seq_item input_trans);
 		void'(drv_fifo.try_put(input_trans));
 	endfunction: write_drv_trans
 
@@ -40,7 +40,7 @@ class GUVM_scoreboard extends uvm_scoreboard;
 	endfunction: write_mon_trans
 
 	task run_phase(uvm_phase phase);
-		GUVM_sequence_item cmd_trans;
+		target_seq_item cmd_trans;
 		GUVM_result_transaction res_trans;
 		bit [31:0] h1,i1,i2,imm,registered_inst;
 		integer i;
