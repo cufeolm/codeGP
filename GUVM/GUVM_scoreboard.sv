@@ -1,11 +1,11 @@
-`include "uvm_macros.svh"
-import uvm_pkg::*;
-import target_package::*;
-`uvm_analysis_imp_decl(_mon_trans)
-`uvm_analysis_imp_decl(_drv_trans)
+
 
 class GUVM_scoreboard extends uvm_scoreboard;
-
+	//`include "uvm_macros.svh"
+	//import uvm_pkg::*;
+	//import target_package::*;
+	`uvm_analysis_imp_decl(_mon_trans)
+	`uvm_analysis_imp_decl(_drv_trans)
 	// register the scoreboard in the UVM factory
 	`uvm_component_utils(GUVM_scoreboard);
 
@@ -172,4 +172,6 @@ class GUVM_scoreboard extends uvm_scoreboard;
 			default    : 	`uvm_error("INSTRUCTION_ERROR", $sformatf("Expected=%d \n", exp_trans_inst.inst))
 			
 			endcase
-			
+		end
+	endtask
+endclass
