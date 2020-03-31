@@ -78,7 +78,7 @@ class GUVM_scoreboard extends uvm_scoreboard;
 					h1 = i1+i2;
 					if((h1) == (res_trans.result))
 						begin
-							`uvm_info ("ADDITION_PASS ", $sformatf("Actual Calculation=%d Expected Calculation=%d ", res_trans.result, h1), UVM_LOW)
+							`uvm_info ("ADDITION_PASS", $sformatf("Actual Calculation=%d Expected Calculation=%d ", res_trans.result, h1), UVM_LOW)
 						end
 					else
 						begin
