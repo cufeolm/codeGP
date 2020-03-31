@@ -74,6 +74,8 @@ interface GUVM_interface;
     logic       core_busy_o;
     logic [N_EXT_PERF_COUNTERS-1:0] ext_perf_counters_i;
 
+    logic [31:0] out;
+
     initial begin
         clk_i = 0;
     end 
@@ -88,7 +90,7 @@ interface GUVM_interface;
     
     task verify_inst(logic [31:0] inst);
         send_inst(inst); 
-        repeat(30) begin 
+        repeat(2) begin 
             #10 clk_i=~clk_i;
         end
     endtask
@@ -104,6 +106,7 @@ interface GUVM_interface;
             #10 clk_i=~clk_i;
         end
         $display("result = %0d", receive_data());
+        out = receive_data();
         repeat(30) begin 
             #10 clk_i=~clk_i;
         end
