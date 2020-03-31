@@ -7,6 +7,8 @@ class GUVM_sequence extends uvm_sequence #(GUVM_sequence_item);
     endfunction : new
 
     task body();
+        repeat(10)
+        begin
             load1 = target_seq_item::type_id::create("load1");
             load2 = target_seq_item::type_id::create("load2");
             command = target_seq_item::type_id::create("command");
@@ -20,8 +22,8 @@ class GUVM_sequence extends uvm_sequence #(GUVM_sequence_item);
             load2.load(command.rs2);
             store.store(command.rd);
 
-            command.op1=load1.data;
-            command.op2=load2.data;
+            command.operand1=load1.data;
+            command.operand2=load2.data;
 
 
             start_item(load1);
@@ -35,7 +37,7 @@ class GUVM_sequence extends uvm_sequence #(GUVM_sequence_item);
 
             start_item(store);
             finish_item(store);
-            
+        end
     endtask : body
 
 

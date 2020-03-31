@@ -1,4 +1,5 @@
 interface GUVM_interface;
+    import target_package::*;
     
     parameter N_EXT_PERF_COUNTERS =  0;
     parameter INSTR_RDATA_WIDTH   = 32;
@@ -76,6 +77,8 @@ interface GUVM_interface;
 
     logic [31:0] out;
 
+    GUVM_monitor monitor_h;
+
     initial begin
         clk_i = 0;
     end 
@@ -97,6 +100,7 @@ interface GUVM_interface;
     
     function logic [31:0] receive_data();
         $display("received result: %b", data_wdata_o);
+        monitor_h.write_to_monitor(data_wdata_o);
         return data_wdata_o; 
     endfunction 
     
@@ -106,7 +110,7 @@ interface GUVM_interface;
             #10 clk_i=~clk_i;
         end
         $display("result = %0d", receive_data());
-        out = receive_data();
+        // out = receive_data();
         repeat(30) begin 
             #10 clk_i=~clk_i;
         end

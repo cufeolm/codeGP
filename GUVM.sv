@@ -1,3 +1,5 @@
+    `include "GUVM_result_transaction.sv"
+    
     `include "GUVM_sequence_item.sv"
     `include "target_sequence_item.sv"
     `include "GUVM_sequence.sv"
@@ -8,3 +10,4 @@
     `include "GUVM_agent.sv"
     `include "GUVM_env.sv"
     `include "GUVM_test.sv"
+	

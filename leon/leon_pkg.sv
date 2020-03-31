@@ -44,7 +44,7 @@ package target_package;
                 si_i=si_i.next();
 
             end
-      //  $display("array is filled and ready to use");
+        $display("array is filled and ready to use");
     `endif
     endfunction
 
@@ -104,4 +104,18 @@ package target_package;
                 $fatal(1,"failed to cast transaction to leon's transaction");
             return k;
         endfunction
+
+        function bit xis1 (logic[15:0] a,logic[15:0] b);
+		logic x;
+		x = (a == b);
+		if (x === 1'bx)
+			begin
+				return 1'b1;
+			end
+		else
+			begin
+				return 1'b0;
+			end
+	    endfunction : xis1
+
 endpackage

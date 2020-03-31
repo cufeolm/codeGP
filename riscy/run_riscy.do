@@ -13,6 +13,7 @@ vlog riscy/top.sv
 
 vsim top
 
+
 run -all
 log /* -r
 quit
