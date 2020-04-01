@@ -12,8 +12,8 @@ package target_package;
     opcode si_a[];
     integer supported_instructions;
     opcode reg_instruction;
-    /*`include"GUVM.sv"
-    `include "GUVM_sequence_item.sv"
+    `include"GUVM.sv"
+    /*`include "GUVM_sequence_item.sv"
     `include "target_sequence_item.sv"
     `include "GUVM_sequence.sv"
     `include "GUVM_driver.sv"
