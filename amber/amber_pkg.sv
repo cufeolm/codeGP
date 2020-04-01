@@ -8,26 +8,20 @@ package target_package;
         Store = 32'b11100101100000000xxx000000000000,
         Load =  32'b1111011010010xxx0xxx000000000xxx 
     } opcode;
-    /*
-    LW = 32'b111101101000xxxxxxxxxxxxxxxxxxxx,
-        SW = 32'b111001011001xxxxxxxxxxxxxxxxxxxx,
-        A  = 32'b111000001000xxxxxxxx00000000xxxx
-
-    */
 
     opcode si_a[];
     integer supported_instructions;
     opcode reg_instruction;
-    `include"GUVM.sv"
-    //`include "GUVM_sequence_item.sv"
-   // `include "target_sequence_item.sv"
-    //`include "GUVM_sequence.sv"
-    //`include "GUVM_driver.sv"
-    //`include "GUVM_monitor.sv"
-    //`include "GUVM_scoreboard.sv"
-   // `include "GUVM_agent.sv"
-    //`include "GUVM_env.sv"
-    //`include "GUVM_test.sv"
+    /*`include"GUVM.sv"
+    `include "GUVM_sequence_item.sv"
+    `include "target_sequence_item.sv"
+    `include "GUVM_sequence.sv"
+    `include "GUVM_driver.sv"
+    `include "GUVM_monitor.sv"
+    `include "GUVM_scoreboard.sv"
+    `include "GUVM_agent.sv"
+    `include "GUVM_env.sv"
+    `include "GUVM_test.sv"*/
 
     function void fill_si_array();
     // fill supported instruction array
@@ -211,6 +205,6 @@ package target_package;
             begin
                 return 1'b0;
             end
-    endfunction : xis1
+    endfunction: xis1
 
 endpackage

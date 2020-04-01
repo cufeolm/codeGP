@@ -25,7 +25,7 @@ interface GUVM_interface;
     GUVM_monitor monitor_h;
 
     initial begin
-       i_clk = 0;
+        i_clk = 0;
     end 
 
     task send_data(logic [31:0] data);
@@ -36,9 +36,6 @@ interface GUVM_interface;
         indicator = inst[31:28];
         Rd = inst[15:12];
         if(indicator == 4'b1111) begin
-            /*repeat(2*50) begin 
-                #10 i_clk=~i_clk;
-            end*/
             i_wb_dat = {96'hF0801003F0801003F0801003, inst};
             case(Rd)
                 4'b0000: dut.u_execute.u_register_bank.r0 = data_in;
