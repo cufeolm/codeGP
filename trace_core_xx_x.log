@@ -1,0 +1,605 @@
+                Time          Cycles PC       Instr    Mnemonic
+                 221               7 xxxxxx00 00002503 lw               x10, 0(x0)          x10=xxxxxxxx  PA:00000000
+                 241               8 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=b1f05663  PA:00000000
+                 261               9 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=b1f05663  PA:00000000
+                 281              10 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=b1f05663  PA:00000000
+                 301              11 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=b1f05663  PA:00000000
+                 321              12 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=b1f05663  PA:00000000
+                 341              13 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=b1f05663  PA:00000000
+                 361              14 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=b1f05663  PA:00000000
+                 381              15 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=b1f05663  PA:00000000
+                 401              16 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=b1f05663  PA:00000000
+                 421              17 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=b1f05663  PA:00000000
+                 441              18 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=b1f05663  PA:00000000
+                 461              19 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=b1f05663  PA:00000000
+                 481              20 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=b1f05663  PA:00000000
+                 501              21 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=b1f05663  PA:00000000
+                 521              22 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=b1f05663  PA:00000000
+                 541              23 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=b1f05663  PA:00000000
+                 561              24 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=b1f05663  PA:00000000
+                 581              25 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=b1f05663  PA:00000000
+                 601              26 xxxxxxxx 00002083 lw               x1, 0(x0)            x1=b1f05663  PA:00000000
+                 621              27 xxxxxxxx 00002083 lw               x1, 0(x0)            x1=b1f05663  PA:00000000
+                 641              28 xxxxxxxx 00002083 lw               x1, 0(x0)            x1=46df998d  PA:00000000
+                 661              29 xxxxxxxx 00002083 lw               x1, 0(x0)            x1=46df998d  PA:00000000
+                 681              30 xxxxxxxx 00002083 lw               x1, 0(x0)            x1=46df998d  PA:00000000
+                 701              31 xxxxxxxx 00002083 lw               x1, 0(x0)            x1=46df998d  PA:00000000
+                 721              32 xxxxxxxx 00002083 lw               x1, 0(x0)            x1=46df998d  PA:00000000
+                 741              33 xxxxxxxx 00002083 lw               x1, 0(x0)            x1=46df998d  PA:00000000
+                 761              34 xxxxxxxx 00002083 lw               x1, 0(x0)            x1=46df998d  PA:00000000
+                 781              35 xxxxxxxx 00002083 lw               x1, 0(x0)            x1=46df998d  PA:00000000
+                 801              36 xxxxxxxx 00002083 lw               x1, 0(x0)            x1=46df998d  PA:00000000
+                 821              37 xxxxxxxx 00002083 lw               x1, 0(x0)            x1=46df998d  PA:00000000
+                 841              38 xxxxxxxx 00002083 lw               x1, 0(x0)            x1=46df998d  PA:00000000
+                 861              39 xxxxxxxx 00002083 lw               x1, 0(x0)            x1=46df998d  PA:00000000
+                 881              40 xxxxxxxx 00002083 lw               x1, 0(x0)            x1=46df998d  PA:00000000
+                 901              41 xxxxxxxx 00002083 lw               x1, 0(x0)            x1=46df998d  PA:00000000
+                 921              42 xxxxxxxx 00002083 lw               x1, 0(x0)            x1=46df998d  PA:00000000
+                 941              43 xxxxxxxx 00002083 lw               x1, 0(x0)            x1=46df998d  PA:00000000
+                 961              44 xxxxxxxx 00002083 lw               x1, 0(x0)            x1=46df998d  PA:00000000
+                 981              45 xxxxxxxx 00002083 lw               x1, 0(x0)            x1=46df998d  PA:00000000
+                1021              47 xxxxxxxx 00150533 add              x10, x10, x1        x10=f8cfeff0 x10:b1f05663  x1:46df998d
+                1041              48 xxxxxxxx 00a02023 sw               x10, 0(x0)          x10:f8cfeff0  PA:00000000
+                1061              49 xxxxxxxX 00a02023 sw               x10, 0(x0)          x10:f8cfeff0  PA:00000000
+                1081              50 xxxxxxxX 00a02023 sw               x10, 0(x0)          x10:f8cfeff0  PA:00000000
+                1101              51 xxxxxxxX 00a02023 sw               x10, 0(x0)          x10:f8cfeff0  PA:00000000
+                1121              52 xxxxxxxX 00a02023 sw               x10, 0(x0)          x10:f8cfeff0  PA:00000000
+                1141              53 xxxxxxxX 00a02023 sw               x10, 0(x0)          x10:f8cfeff0  PA:00000000
+                1161              54 xxxxxxxX 00a02023 sw               x10, 0(x0)          x10:f8cfeff0  PA:00000000
+                1181              55 xxxxxxxX 00a02023 sw               x10, 0(x0)          x10:f8cfeff0  PA:00000000
+                1201              56 xxxxxxxX 00a02023 sw               x10, 0(x0)          x10:f8cfeff0  PA:00000000
+                1221              57 xxxxxxxX 00a02023 sw               x10, 0(x0)          x10:f8cfeff0  PA:00000000
+                1241              58 xxxxxxxX 00a02023 sw               x10, 0(x0)          x10:f8cfeff0  PA:00000000
+                1261              59 xxxxxxxX 00a02023 sw               x10, 0(x0)          x10:f8cfeff0  PA:00000000
+                1281              60 xxxxxxxX 00a02023 sw               x10, 0(x0)          x10:f8cfeff0  PA:00000000
+                1301              61 xxxxxxxX 00a02023 sw               x10, 0(x0)          x10:f8cfeff0  PA:00000000
+                1321              62 xxxxxxxX 00a02023 sw               x10, 0(x0)          x10:f8cfeff0  PA:00000000
+                1341              63 xxxxxxxX 00a02023 sw               x10, 0(x0)          x10:f8cfeff0  PA:00000000
+                1361              64 xxxxxxxX 00a02023 sw               x10, 0(x0)          x10:f8cfeff0
+                1501               3 xxxxxxxX 00a02023 sw               x10, 0(x0)          x10:00000000  PA:00000000
+                1521               4 xxxxxxxx 00a02023 sw               x10, 0(x0)          x10:00000000  PA:00000000
+                1541               5 xxxxxxxx 00a02023 sw               x10, 0(x0)          x10:00000000  PA:00000000
+                1561               6 xxxxxxxx 00002383 lw               x7, 0(x0)            x7=46df998d  PA:00000000
+                1581               7 xxxxxxxx 00002383 lw               x7, 0(x0)            x7=46df998d  PA:00000000
+                1601               8 xxxxxxxx 00002383 lw               x7, 0(x0)            x7=1e8dcd3d  PA:00000000
+                1621               9 xxxxxxxx 00002383 lw               x7, 0(x0)            x7=1e8dcd3d  PA:00000000
+                1641              10 xxxxxxxx 00002383 lw               x7, 0(x0)            x7=1e8dcd3d  PA:00000000
+                1661              11 xxxxxxxx 00002383 lw               x7, 0(x0)            x7=1e8dcd3d  PA:00000000
+                1681              12 xxxxxxxx 00002383 lw               x7, 0(x0)            x7=1e8dcd3d  PA:00000000
+                1701              13 xxxxxxxx 00002383 lw               x7, 0(x0)            x7=1e8dcd3d  PA:00000000
+                1721              14 xxxxxxxx 00002383 lw               x7, 0(x0)            x7=1e8dcd3d  PA:00000000
+                1741              15 xxxxxxxx 00002383 lw               x7, 0(x0)            x7=1e8dcd3d  PA:00000000
+                1761              16 xxxxxxxx 00002383 lw               x7, 0(x0)            x7=1e8dcd3d  PA:00000000
+                1781              17 xxxxxxxx 00002383 lw               x7, 0(x0)            x7=1e8dcd3d  PA:00000000
+                1801              18 xxxxxxxx 00002383 lw               x7, 0(x0)            x7=1e8dcd3d  PA:00000000
+                1821              19 xxxxxxxx 00002383 lw               x7, 0(x0)            x7=1e8dcd3d  PA:00000000
+                1841              20 xxxxxxxx 00002383 lw               x7, 0(x0)            x7=1e8dcd3d  PA:00000000
+                1861              21 xxxxxxxx 00002383 lw               x7, 0(x0)            x7=1e8dcd3d  PA:00000000
+                1881              22 xxxxxxxx 00002383 lw               x7, 0(x0)            x7=1e8dcd3d  PA:00000000
+                1901              23 xxxxxxxx 00002383 lw               x7, 0(x0)            x7=1e8dcd3d  PA:00000000
+                1921              24 xxxxxxxx 00002383 lw               x7, 0(x0)            x7=1e8dcd3d  PA:00000000
+                1941              25 xxxxxxxx 00002383 lw               x7, 0(x0)            x7=1e8dcd3d  PA:00000000
+                1961              26 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=1e8dcd3d  PA:00000000
+                1981              27 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=1e8dcd3d  PA:00000000
+                2001              28 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=462df78c  PA:00000000
+                2021              29 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=462df78c  PA:00000000
+                2041              30 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=462df78c  PA:00000000
+                2061              31 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=462df78c  PA:00000000
+                2081              32 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=462df78c  PA:00000000
+                2101              33 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=462df78c  PA:00000000
+                2121              34 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=462df78c  PA:00000000
+                2141              35 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=462df78c  PA:00000000
+                2161              36 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=462df78c  PA:00000000
+                2181              37 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=462df78c  PA:00000000
+                2201              38 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=462df78c  PA:00000000
+                2221              39 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=462df78c  PA:00000000
+                2241              40 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=462df78c  PA:00000000
+                2261              41 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=462df78c  PA:00000000
+                2281              42 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=462df78c  PA:00000000
+                2301              43 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=462df78c  PA:00000000
+                2321              44 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=462df78c  PA:00000000
+                2341              45 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=462df78c  PA:00000000
+                2381              47 xxxxxxxx 00f38333 add              x6, x7, x15          x6=64bbc4c9  x7:1e8dcd3d x15:462df78c
+                2401              48 xxxxxxxx 00602023 sw               x6, 0(x0)            x6:64bbc4c9  PA:00000000
+                2421              49 xxxxxxxX 00602023 sw               x6, 0(x0)            x6:64bbc4c9  PA:00000000
+                2441              50 xxxxxxxX 00602023 sw               x6, 0(x0)            x6:64bbc4c9  PA:00000000
+                2461              51 xxxxxxxX 00602023 sw               x6, 0(x0)            x6:64bbc4c9  PA:00000000
+                2481              52 xxxxxxxX 00602023 sw               x6, 0(x0)            x6:64bbc4c9  PA:00000000
+                2501              53 xxxxxxxX 00602023 sw               x6, 0(x0)            x6:64bbc4c9  PA:00000000
+                2521              54 xxxxxxxX 00602023 sw               x6, 0(x0)            x6:64bbc4c9  PA:00000000
+                2541              55 xxxxxxxX 00602023 sw               x6, 0(x0)            x6:64bbc4c9  PA:00000000
+                2561              56 xxxxxxxX 00602023 sw               x6, 0(x0)            x6:64bbc4c9  PA:00000000
+                2581              57 xxxxxxxX 00602023 sw               x6, 0(x0)            x6:64bbc4c9  PA:00000000
+                2601              58 xxxxxxxX 00602023 sw               x6, 0(x0)            x6:64bbc4c9  PA:00000000
+                2621              59 xxxxxxxX 00602023 sw               x6, 0(x0)            x6:64bbc4c9  PA:00000000
+                2641              60 xxxxxxxX 00602023 sw               x6, 0(x0)            x6:64bbc4c9  PA:00000000
+                2661              61 xxxxxxxX 00602023 sw               x6, 0(x0)            x6:64bbc4c9  PA:00000000
+                2681              62 xxxxxxxX 00602023 sw               x6, 0(x0)            x6:64bbc4c9  PA:00000000
+                2701              63 xxxxxxxX 00602023 sw               x6, 0(x0)            x6:64bbc4c9  PA:00000000
+                2721              64 xxxxxxxX 00602023 sw               x6, 0(x0)            x6:64bbc4c9
+                2861               3 xxxxxxxX 00602023 sw               x6, 0(x0)            x6:00000000  PA:00000000
+                2881               4 xxxxxxxx 00602023 sw               x6, 0(x0)            x6:00000000  PA:00000000
+                2901               5 xxxxxxxx 00602023 sw               x6, 0(x0)            x6:00000000  PA:00000000
+                2921               6 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=462df78c  PA:00000000
+                2941               7 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=462df78c  PA:00000000
+                2961               8 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=bbd27277  PA:00000000
+                2981               9 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=bbd27277  PA:00000000
+                3001              10 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=bbd27277  PA:00000000
+                3021              11 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=bbd27277  PA:00000000
+                3041              12 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=bbd27277  PA:00000000
+                3061              13 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=bbd27277  PA:00000000
+                3081              14 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=bbd27277  PA:00000000
+                3101              15 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=bbd27277  PA:00000000
+                3121              16 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=bbd27277  PA:00000000
+                3141              17 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=bbd27277  PA:00000000
+                3161              18 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=bbd27277  PA:00000000
+                3181              19 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=bbd27277  PA:00000000
+                3201              20 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=bbd27277  PA:00000000
+                3221              21 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=bbd27277  PA:00000000
+                3241              22 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=bbd27277  PA:00000000
+                3261              23 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=bbd27277  PA:00000000
+                3281              24 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=bbd27277  PA:00000000
+                3301              25 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=bbd27277  PA:00000000
+                3321              26 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=bbd27277  PA:00000000
+                3341              27 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=bbd27277  PA:00000000
+                3361              28 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=47ecdb8f  PA:00000000
+                3381              29 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=47ecdb8f  PA:00000000
+                3401              30 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=47ecdb8f  PA:00000000
+                3421              31 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=47ecdb8f  PA:00000000
+                3441              32 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=47ecdb8f  PA:00000000
+                3461              33 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=47ecdb8f  PA:00000000
+                3481              34 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=47ecdb8f  PA:00000000
+                3501              35 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=47ecdb8f  PA:00000000
+                3521              36 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=47ecdb8f  PA:00000000
+                3541              37 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=47ecdb8f  PA:00000000
+                3561              38 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=47ecdb8f  PA:00000000
+                3581              39 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=47ecdb8f  PA:00000000
+                3601              40 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=47ecdb8f  PA:00000000
+                3621              41 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=47ecdb8f  PA:00000000
+                3641              42 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=47ecdb8f  PA:00000000
+                3661              43 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=47ecdb8f  PA:00000000
+                3681              44 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=47ecdb8f  PA:00000000
+                3701              45 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=47ecdb8f  PA:00000000
+                3741              47 xxxxxxxx 00f784b3 add              x9, x15, x15         x9=8fd9b71e x15:47ecdb8f x15:47ecdb8f
+                3761              48 xxxxxxxx 00902023 sw               x9, 0(x0)            x9:8fd9b71e  PA:00000000
+                3781              49 xxxxxxxX 00902023 sw               x9, 0(x0)            x9:8fd9b71e  PA:00000000
+                3801              50 xxxxxxxX 00902023 sw               x9, 0(x0)            x9:8fd9b71e  PA:00000000
+                3821              51 xxxxxxxX 00902023 sw               x9, 0(x0)            x9:8fd9b71e  PA:00000000
+                3841              52 xxxxxxxX 00902023 sw               x9, 0(x0)            x9:8fd9b71e  PA:00000000
+                3861              53 xxxxxxxX 00902023 sw               x9, 0(x0)            x9:8fd9b71e  PA:00000000
+                3881              54 xxxxxxxX 00902023 sw               x9, 0(x0)            x9:8fd9b71e  PA:00000000
+                3901              55 xxxxxxxX 00902023 sw               x9, 0(x0)            x9:8fd9b71e  PA:00000000
+                3921              56 xxxxxxxX 00902023 sw               x9, 0(x0)            x9:8fd9b71e  PA:00000000
+                3941              57 xxxxxxxX 00902023 sw               x9, 0(x0)            x9:8fd9b71e  PA:00000000
+                3961              58 xxxxxxxX 00902023 sw               x9, 0(x0)            x9:8fd9b71e  PA:00000000
+                3981              59 xxxxxxxX 00902023 sw               x9, 0(x0)            x9:8fd9b71e  PA:00000000
+                4001              60 xxxxxxxX 00902023 sw               x9, 0(x0)            x9:8fd9b71e  PA:00000000
+                4021              61 xxxxxxxX 00902023 sw               x9, 0(x0)            x9:8fd9b71e  PA:00000000
+                4041              62 xxxxxxxX 00902023 sw               x9, 0(x0)            x9:8fd9b71e  PA:00000000
+                4061              63 xxxxxxxX 00902023 sw               x9, 0(x0)            x9:8fd9b71e  PA:00000000
+                4081              64 xxxxxxxX 00902023 sw               x9, 0(x0)            x9:8fd9b71e
+                4221               3 xxxxxxxX 00902023 sw               x9, 0(x0)            x9:00000000  PA:00000000
+                4241               4 xxxxxxxx 00902023 sw               x9, 0(x0)            x9:00000000  PA:00000000
+                4261               5 xxxxxxxx 00902023 sw               x9, 0(x0)            x9:00000000  PA:00000000
+                4281               6 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4301               7 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4321               8 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4341               9 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4361              10 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4381              11 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4401              12 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4421              13 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4441              14 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4461              15 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4481              16 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4501              17 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4521              18 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4541              19 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4561              20 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4581              21 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4601              22 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4621              23 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4641              24 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4661              25 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4681              26 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4701              27 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4721              28 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4741              29 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4761              30 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4781              31 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4801              32 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4821              33 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4841              34 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4861              35 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4881              36 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4901              37 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4921              38 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4941              39 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4961              40 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                4981              41 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                5001              42 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                5021              43 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                5041              44 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                5061              45 xxxxxxxx 00002003 lw               x0, 0(x0)            PA:00000000
+                5081              46 xxxxxxxx 00000ab3 add              x21, x0, x0         x21=00000000
+                5101              47 xxxxxxxx 01502023 sw               x21, 0(x0)          x21:00000000  PA:00000000
+                5121              48 xxxxxxxx 01502023 sw               x21, 0(x0)          x21:00000000  PA:00000000
+                5141              49 xxxxxxxx 01502023 sw               x21, 0(x0)          x21:00000000  PA:00000000
+                5161              50 xxxxxxxx 01502023 sw               x21, 0(x0)          x21:00000000  PA:00000000
+                5181              51 xxxxxxxx 01502023 sw               x21, 0(x0)          x21:00000000  PA:00000000
+                5201              52 xxxxxxxx 01502023 sw               x21, 0(x0)          x21:00000000  PA:00000000
+                5221              53 xxxxxxxx 01502023 sw               x21, 0(x0)          x21:00000000  PA:00000000
+                5241              54 xxxxxxxx 01502023 sw               x21, 0(x0)          x21:00000000  PA:00000000
+                5261              55 xxxxxxxx 01502023 sw               x21, 0(x0)          x21:00000000  PA:00000000
+                5281              56 xxxxxxxx 01502023 sw               x21, 0(x0)          x21:00000000  PA:00000000
+                5301              57 xxxxxxxx 01502023 sw               x21, 0(x0)          x21:00000000  PA:00000000
+                5321              58 xxxxxxxx 01502023 sw               x21, 0(x0)          x21:00000000  PA:00000000
+                5341              59 xxxxxxxx 01502023 sw               x21, 0(x0)          x21:00000000  PA:00000000
+                5361              60 xxxxxxxx 01502023 sw               x21, 0(x0)          x21:00000000  PA:00000000
+                5381              61 xxxxxxxx 01502023 sw               x21, 0(x0)          x21:00000000  PA:00000000
+                5401              62 xxxxxxxx 01502023 sw               x21, 0(x0)          x21:00000000  PA:00000000
+                5421              63 xxxxxxxx 01502023 sw               x21, 0(x0)          x21:00000000  PA:00000000
+                5441              64 xxxxxxxx 01502023 sw               x21, 0(x0)          x21:00000000
+                5581               3 xxxxxxxX 01502023 sw               x21, 0(x0)          x21:00000000  PA:00000000
+                5601               4 xxxxxxxx 01502023 sw               x21, 0(x0)          x21:00000000  PA:00000000
+                5621               5 xxxxxxxx 01502023 sw               x21, 0(x0)          x21:00000000  PA:00000000
+                5641               6 xxxxxxxx 00002b03 lw               x22, 0(x0)          x22=b2a72665  PA:00000000
+                5661               7 xxxxxxxx 00002b03 lw               x22, 0(x0)          x22=b2a72665  PA:00000000
+                5681               8 xxxxxxxx 00002b03 lw               x22, 0(x0)          x22=cecccc9d  PA:00000000
+                5701               9 xxxxxxxx 00002b03 lw               x22, 0(x0)          x22=cecccc9d  PA:00000000
+                5721              10 xxxxxxxx 00002b03 lw               x22, 0(x0)          x22=cecccc9d  PA:00000000
+                5741              11 xxxxxxxx 00002b03 lw               x22, 0(x0)          x22=cecccc9d  PA:00000000
+                5761              12 xxxxxxxx 00002b03 lw               x22, 0(x0)          x22=cecccc9d  PA:00000000
+                5781              13 xxxxxxxx 00002b03 lw               x22, 0(x0)          x22=cecccc9d  PA:00000000
+                5801              14 xxxxxxxx 00002b03 lw               x22, 0(x0)          x22=cecccc9d  PA:00000000
+                5821              15 xxxxxxxx 00002b03 lw               x22, 0(x0)          x22=cecccc9d  PA:00000000
+                5841              16 xxxxxxxx 00002b03 lw               x22, 0(x0)          x22=cecccc9d  PA:00000000
+                5861              17 xxxxxxxx 00002b03 lw               x22, 0(x0)          x22=cecccc9d  PA:00000000
+                5881              18 xxxxxxxx 00002b03 lw               x22, 0(x0)          x22=cecccc9d  PA:00000000
+                5901              19 xxxxxxxx 00002b03 lw               x22, 0(x0)          x22=cecccc9d  PA:00000000
+                5921              20 xxxxxxxx 00002b03 lw               x22, 0(x0)          x22=cecccc9d  PA:00000000
+                5941              21 xxxxxxxx 00002b03 lw               x22, 0(x0)          x22=cecccc9d  PA:00000000
+                5961              22 xxxxxxxx 00002b03 lw               x22, 0(x0)          x22=cecccc9d  PA:00000000
+                5981              23 xxxxxxxx 00002b03 lw               x22, 0(x0)          x22=cecccc9d  PA:00000000
+                6001              24 xxxxxxxx 00002b03 lw               x22, 0(x0)          x22=cecccc9d  PA:00000000
+                6021              25 xxxxxxxx 00002b03 lw               x22, 0(x0)          x22=cecccc9d  PA:00000000
+                6041              26 xxxxxxxx 00002183 lw               x3, 0(x0)            x3=cecccc9d  PA:00000000
+                6061              27 xxxxxxxx 00002183 lw               x3, 0(x0)            x3=cecccc9d  PA:00000000
+                6081              28 xxxxxxxx 00002183 lw               x3, 0(x0)            x3=8983b813  PA:00000000
+                6101              29 xxxxxxxx 00002183 lw               x3, 0(x0)            x3=8983b813  PA:00000000
+                6121              30 xxxxxxxx 00002183 lw               x3, 0(x0)            x3=8983b813  PA:00000000
+                6141              31 xxxxxxxx 00002183 lw               x3, 0(x0)            x3=8983b813  PA:00000000
+                6161              32 xxxxxxxx 00002183 lw               x3, 0(x0)            x3=8983b813  PA:00000000
+                6181              33 xxxxxxxx 00002183 lw               x3, 0(x0)            x3=8983b813  PA:00000000
+                6201              34 xxxxxxxx 00002183 lw               x3, 0(x0)            x3=8983b813  PA:00000000
+                6221              35 xxxxxxxx 00002183 lw               x3, 0(x0)            x3=8983b813  PA:00000000
+                6241              36 xxxxxxxx 00002183 lw               x3, 0(x0)            x3=8983b813  PA:00000000
+                6261              37 xxxxxxxx 00002183 lw               x3, 0(x0)            x3=8983b813  PA:00000000
+                6281              38 xxxxxxxx 00002183 lw               x3, 0(x0)            x3=8983b813  PA:00000000
+                6301              39 xxxxxxxx 00002183 lw               x3, 0(x0)            x3=8983b813  PA:00000000
+                6321              40 xxxxxxxx 00002183 lw               x3, 0(x0)            x3=8983b813  PA:00000000
+                6341              41 xxxxxxxx 00002183 lw               x3, 0(x0)            x3=8983b813  PA:00000000
+                6361              42 xxxxxxxx 00002183 lw               x3, 0(x0)            x3=8983b813  PA:00000000
+                6381              43 xxxxxxxx 00002183 lw               x3, 0(x0)            x3=8983b813  PA:00000000
+                6401              44 xxxxxxxx 00002183 lw               x3, 0(x0)            x3=8983b813  PA:00000000
+                6421              45 xxxxxxxx 00002183 lw               x3, 0(x0)            x3=8983b813  PA:00000000
+                6461              47 xxxxxxxx 003b02b3 add              x5, x22, x3          x5=585084b0 x22:cecccc9d  x3:8983b813
+                6481              48 xxxxxxxx 00502023 sw               x5, 0(x0)            x5:585084b0  PA:00000000
+                6501              49 xxxxxxxX 00502023 sw               x5, 0(x0)            x5:585084b0  PA:00000000
+                6521              50 xxxxxxxX 00502023 sw               x5, 0(x0)            x5:585084b0  PA:00000000
+                6541              51 xxxxxxxX 00502023 sw               x5, 0(x0)            x5:585084b0  PA:00000000
+                6561              52 xxxxxxxX 00502023 sw               x5, 0(x0)            x5:585084b0  PA:00000000
+                6581              53 xxxxxxxX 00502023 sw               x5, 0(x0)            x5:585084b0  PA:00000000
+                6601              54 xxxxxxxX 00502023 sw               x5, 0(x0)            x5:585084b0  PA:00000000
+                6621              55 xxxxxxxX 00502023 sw               x5, 0(x0)            x5:585084b0  PA:00000000
+                6641              56 xxxxxxxX 00502023 sw               x5, 0(x0)            x5:585084b0  PA:00000000
+                6661              57 xxxxxxxX 00502023 sw               x5, 0(x0)            x5:585084b0  PA:00000000
+                6681              58 xxxxxxxX 00502023 sw               x5, 0(x0)            x5:585084b0  PA:00000000
+                6701              59 xxxxxxxX 00502023 sw               x5, 0(x0)            x5:585084b0  PA:00000000
+                6721              60 xxxxxxxX 00502023 sw               x5, 0(x0)            x5:585084b0  PA:00000000
+                6741              61 xxxxxxxX 00502023 sw               x5, 0(x0)            x5:585084b0  PA:00000000
+                6761              62 xxxxxxxX 00502023 sw               x5, 0(x0)            x5:585084b0  PA:00000000
+                6781              63 xxxxxxxX 00502023 sw               x5, 0(x0)            x5:585084b0  PA:00000000
+                6801              64 xxxxxxxX 00502023 sw               x5, 0(x0)            x5:585084b0
+                6941               3 xxxxxxxX 00502023 sw               x5, 0(x0)            x5:00000000  PA:00000000
+                6961               4 xxxxxxxx 00502023 sw               x5, 0(x0)            x5:00000000  PA:00000000
+                6981               5 xxxxxxxx 00502023 sw               x5, 0(x0)            x5:00000000  PA:00000000
+                7001               6 xxxxxxxx 00002f83 lw               x31, 0(x0)          x31=8983b813  PA:00000000
+                7021               7 xxxxxxxx 00002f83 lw               x31, 0(x0)          x31=8983b813  PA:00000000
+                7041               8 xxxxxxxx 00002f83 lw               x31, 0(x0)          x31=d7563eae  PA:00000000
+                7061               9 xxxxxxxx 00002f83 lw               x31, 0(x0)          x31=d7563eae  PA:00000000
+                7081              10 xxxxxxxx 00002f83 lw               x31, 0(x0)          x31=d7563eae  PA:00000000
+                7101              11 xxxxxxxx 00002f83 lw               x31, 0(x0)          x31=d7563eae  PA:00000000
+                7121              12 xxxxxxxx 00002f83 lw               x31, 0(x0)          x31=d7563eae  PA:00000000
+                7141              13 xxxxxxxx 00002f83 lw               x31, 0(x0)          x31=d7563eae  PA:00000000
+                7161              14 xxxxxxxx 00002f83 lw               x31, 0(x0)          x31=d7563eae  PA:00000000
+                7181              15 xxxxxxxx 00002f83 lw               x31, 0(x0)          x31=d7563eae  PA:00000000
+                7201              16 xxxxxxxx 00002f83 lw               x31, 0(x0)          x31=d7563eae  PA:00000000
+                7221              17 xxxxxxxx 00002f83 lw               x31, 0(x0)          x31=d7563eae  PA:00000000
+                7241              18 xxxxxxxx 00002f83 lw               x31, 0(x0)          x31=d7563eae  PA:00000000
+                7261              19 xxxxxxxx 00002f83 lw               x31, 0(x0)          x31=d7563eae  PA:00000000
+                7281              20 xxxxxxxx 00002f83 lw               x31, 0(x0)          x31=d7563eae  PA:00000000
+                7301              21 xxxxxxxx 00002f83 lw               x31, 0(x0)          x31=d7563eae  PA:00000000
+                7321              22 xxxxxxxx 00002f83 lw               x31, 0(x0)          x31=d7563eae  PA:00000000
+                7341              23 xxxxxxxx 00002f83 lw               x31, 0(x0)          x31=d7563eae  PA:00000000
+                7361              24 xxxxxxxx 00002f83 lw               x31, 0(x0)          x31=d7563eae  PA:00000000
+                7381              25 xxxxxxxx 00002f83 lw               x31, 0(x0)          x31=d7563eae  PA:00000000
+                7401              26 xxxxxxxx 00002c83 lw               x25, 0(x0)          x25=d7563eae  PA:00000000
+                7421              27 xxxxxxxx 00002c83 lw               x25, 0(x0)          x25=d7563eae  PA:00000000
+                7441              28 xxxxxxxx 00002c83 lw               x25, 0(x0)          x25=e7c572cf  PA:00000000
+                7461              29 xxxxxxxx 00002c83 lw               x25, 0(x0)          x25=e7c572cf  PA:00000000
+                7481              30 xxxxxxxx 00002c83 lw               x25, 0(x0)          x25=e7c572cf  PA:00000000
+                7501              31 xxxxxxxx 00002c83 lw               x25, 0(x0)          x25=e7c572cf  PA:00000000
+                7521              32 xxxxxxxx 00002c83 lw               x25, 0(x0)          x25=e7c572cf  PA:00000000
+                7541              33 xxxxxxxx 00002c83 lw               x25, 0(x0)          x25=e7c572cf  PA:00000000
+                7561              34 xxxxxxxx 00002c83 lw               x25, 0(x0)          x25=e7c572cf  PA:00000000
+                7581              35 xxxxxxxx 00002c83 lw               x25, 0(x0)          x25=e7c572cf  PA:00000000
+                7601              36 xxxxxxxx 00002c83 lw               x25, 0(x0)          x25=e7c572cf  PA:00000000
+                7621              37 xxxxxxxx 00002c83 lw               x25, 0(x0)          x25=e7c572cf  PA:00000000
+                7641              38 xxxxxxxx 00002c83 lw               x25, 0(x0)          x25=e7c572cf  PA:00000000
+                7661              39 xxxxxxxx 00002c83 lw               x25, 0(x0)          x25=e7c572cf  PA:00000000
+                7681              40 xxxxxxxx 00002c83 lw               x25, 0(x0)          x25=e7c572cf  PA:00000000
+                7701              41 xxxxxxxx 00002c83 lw               x25, 0(x0)          x25=e7c572cf  PA:00000000
+                7721              42 xxxxxxxx 00002c83 lw               x25, 0(x0)          x25=e7c572cf  PA:00000000
+                7741              43 xxxxxxxx 00002c83 lw               x25, 0(x0)          x25=e7c572cf  PA:00000000
+                7761              44 xxxxxxxx 00002c83 lw               x25, 0(x0)          x25=e7c572cf  PA:00000000
+                7781              45 xxxxxxxx 00002c83 lw               x25, 0(x0)          x25=e7c572cf  PA:00000000
+                7821              47 xxxxxxxx 019f8d33 add              x26, x31, x25       x26=bf1bb17d x31:d7563eae x25:e7c572cf
+                7841              48 xxxxxxxx 01a02023 sw               x26, 0(x0)          x26:bf1bb17d  PA:00000000
+                7861              49 xxxxxxxX 01a02023 sw               x26, 0(x0)          x26:bf1bb17d  PA:00000000
+                7881              50 xxxxxxxX 01a02023 sw               x26, 0(x0)          x26:bf1bb17d  PA:00000000
+                7901              51 xxxxxxxX 01a02023 sw               x26, 0(x0)          x26:bf1bb17d  PA:00000000
+                7921              52 xxxxxxxX 01a02023 sw               x26, 0(x0)          x26:bf1bb17d  PA:00000000
+                7941              53 xxxxxxxX 01a02023 sw               x26, 0(x0)          x26:bf1bb17d  PA:00000000
+                7961              54 xxxxxxxX 01a02023 sw               x26, 0(x0)          x26:bf1bb17d  PA:00000000
+                7981              55 xxxxxxxX 01a02023 sw               x26, 0(x0)          x26:bf1bb17d  PA:00000000
+                8001              56 xxxxxxxX 01a02023 sw               x26, 0(x0)          x26:bf1bb17d  PA:00000000
+                8021              57 xxxxxxxX 01a02023 sw               x26, 0(x0)          x26:bf1bb17d  PA:00000000
+                8041              58 xxxxxxxX 01a02023 sw               x26, 0(x0)          x26:bf1bb17d  PA:00000000
+                8061              59 xxxxxxxX 01a02023 sw               x26, 0(x0)          x26:bf1bb17d  PA:00000000
+                8081              60 xxxxxxxX 01a02023 sw               x26, 0(x0)          x26:bf1bb17d  PA:00000000
+                8101              61 xxxxxxxX 01a02023 sw               x26, 0(x0)          x26:bf1bb17d  PA:00000000
+                8121              62 xxxxxxxX 01a02023 sw               x26, 0(x0)          x26:bf1bb17d  PA:00000000
+                8141              63 xxxxxxxX 01a02023 sw               x26, 0(x0)          x26:bf1bb17d  PA:00000000
+                8161              64 xxxxxxxX 01a02023 sw               x26, 0(x0)          x26:bf1bb17d
+                8301               3 xxxxxxxX 01a02023 sw               x26, 0(x0)          x26:00000000  PA:00000000
+                8321               4 xxxxxxxx 01a02023 sw               x26, 0(x0)          x26:00000000  PA:00000000
+                8341               5 xxxxxxxx 01a02023 sw               x26, 0(x0)          x26:00000000  PA:00000000
+                8361               6 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=e7c572cf  PA:00000000
+                8381               7 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=e7c572cf  PA:00000000
+                8401               8 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=452e618a  PA:00000000
+                8421               9 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=452e618a  PA:00000000
+                8441              10 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=452e618a  PA:00000000
+                8461              11 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=452e618a  PA:00000000
+                8481              12 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=452e618a  PA:00000000
+                8501              13 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=452e618a  PA:00000000
+                8521              14 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=452e618a  PA:00000000
+                8541              15 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=452e618a  PA:00000000
+                8561              16 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=452e618a  PA:00000000
+                8581              17 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=452e618a  PA:00000000
+                8601              18 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=452e618a  PA:00000000
+                8621              19 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=452e618a  PA:00000000
+                8641              20 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=452e618a  PA:00000000
+                8661              21 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=452e618a  PA:00000000
+                8681              22 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=452e618a  PA:00000000
+                8701              23 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=452e618a  PA:00000000
+                8721              24 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=452e618a  PA:00000000
+                8741              25 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=452e618a  PA:00000000
+                8761              26 xxxxxxxx 00002b83 lw               x23, 0(x0)          x23=452e618a  PA:00000000
+                8781              27 xxxxxxxx 00002b83 lw               x23, 0(x0)          x23=452e618a  PA:00000000
+                8801              28 xxxxxxxx 00002b83 lw               x23, 0(x0)          x23=ec4b34d8  PA:00000000
+                8821              29 xxxxxxxx 00002b83 lw               x23, 0(x0)          x23=ec4b34d8  PA:00000000
+                8841              30 xxxxxxxx 00002b83 lw               x23, 0(x0)          x23=ec4b34d8  PA:00000000
+                8861              31 xxxxxxxx 00002b83 lw               x23, 0(x0)          x23=ec4b34d8  PA:00000000
+                8881              32 xxxxxxxx 00002b83 lw               x23, 0(x0)          x23=ec4b34d8  PA:00000000
+                8901              33 xxxxxxxx 00002b83 lw               x23, 0(x0)          x23=ec4b34d8  PA:00000000
+                8921              34 xxxxxxxx 00002b83 lw               x23, 0(x0)          x23=ec4b34d8  PA:00000000
+                8941              35 xxxxxxxx 00002b83 lw               x23, 0(x0)          x23=ec4b34d8  PA:00000000
+                8961              36 xxxxxxxx 00002b83 lw               x23, 0(x0)          x23=ec4b34d8  PA:00000000
+                8981              37 xxxxxxxx 00002b83 lw               x23, 0(x0)          x23=ec4b34d8  PA:00000000
+                9001              38 xxxxxxxx 00002b83 lw               x23, 0(x0)          x23=ec4b34d8  PA:00000000
+                9021              39 xxxxxxxx 00002b83 lw               x23, 0(x0)          x23=ec4b34d8  PA:00000000
+                9041              40 xxxxxxxx 00002b83 lw               x23, 0(x0)          x23=ec4b34d8  PA:00000000
+                9061              41 xxxxxxxx 00002b83 lw               x23, 0(x0)          x23=ec4b34d8  PA:00000000
+                9081              42 xxxxxxxx 00002b83 lw               x23, 0(x0)          x23=ec4b34d8  PA:00000000
+                9101              43 xxxxxxxx 00002b83 lw               x23, 0(x0)          x23=ec4b34d8  PA:00000000
+                9121              44 xxxxxxxx 00002b83 lw               x23, 0(x0)          x23=ec4b34d8  PA:00000000
+                9141              45 xxxxxxxx 00002b83 lw               x23, 0(x0)          x23=ec4b34d8  PA:00000000
+                9181              47 xxxxxxxx 01730ab3 add              x21, x6, x23        x21=31799662  x6:452e618a x23:ec4b34d8
+                9201              48 xxxxxxxx 01502023 sw               x21, 0(x0)          x21:31799662  PA:00000000
+                9221              49 xxxxxxxX 01502023 sw               x21, 0(x0)          x21:31799662  PA:00000000
+                9241              50 xxxxxxxX 01502023 sw               x21, 0(x0)          x21:31799662  PA:00000000
+                9261              51 xxxxxxxX 01502023 sw               x21, 0(x0)          x21:31799662  PA:00000000
+                9281              52 xxxxxxxX 01502023 sw               x21, 0(x0)          x21:31799662  PA:00000000
+                9301              53 xxxxxxxX 01502023 sw               x21, 0(x0)          x21:31799662  PA:00000000
+                9321              54 xxxxxxxX 01502023 sw               x21, 0(x0)          x21:31799662  PA:00000000
+                9341              55 xxxxxxxX 01502023 sw               x21, 0(x0)          x21:31799662  PA:00000000
+                9361              56 xxxxxxxX 01502023 sw               x21, 0(x0)          x21:31799662  PA:00000000
+                9381              57 xxxxxxxX 01502023 sw               x21, 0(x0)          x21:31799662  PA:00000000
+                9401              58 xxxxxxxX 01502023 sw               x21, 0(x0)          x21:31799662  PA:00000000
+                9421              59 xxxxxxxX 01502023 sw               x21, 0(x0)          x21:31799662  PA:00000000
+                9441              60 xxxxxxxX 01502023 sw               x21, 0(x0)          x21:31799662  PA:00000000
+                9461              61 xxxxxxxX 01502023 sw               x21, 0(x0)          x21:31799662  PA:00000000
+                9481              62 xxxxxxxX 01502023 sw               x21, 0(x0)          x21:31799662  PA:00000000
+                9501              63 xxxxxxxX 01502023 sw               x21, 0(x0)          x21:31799662  PA:00000000
+                9521              64 xxxxxxxX 01502023 sw               x21, 0(x0)          x21:31799662
+                9661               3 xxxxxxxX 01502023 sw               x21, 0(x0)          x21:00000000  PA:00000000
+                9681               4 xxxxxxxx 01502023 sw               x21, 0(x0)          x21:00000000  PA:00000000
+                9701               5 xxxxxxxx 01502023 sw               x21, 0(x0)          x21:00000000  PA:00000000
+                9721               6 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=ec4b34d8  PA:00000000
+                9741               7 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=ec4b34d8  PA:00000000
+                9761               8 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=571513ae  PA:00000000
+                9781               9 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=571513ae  PA:00000000
+                9801              10 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=571513ae  PA:00000000
+                9821              11 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=571513ae  PA:00000000
+                9841              12 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=571513ae  PA:00000000
+                9861              13 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=571513ae  PA:00000000
+                9881              14 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=571513ae  PA:00000000
+                9901              15 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=571513ae  PA:00000000
+                9921              16 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=571513ae  PA:00000000
+                9941              17 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=571513ae  PA:00000000
+                9961              18 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=571513ae  PA:00000000
+                9981              19 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=571513ae  PA:00000000
+               10001              20 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=571513ae  PA:00000000
+               10021              21 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=571513ae  PA:00000000
+               10041              22 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=571513ae  PA:00000000
+               10061              23 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=571513ae  PA:00000000
+               10081              24 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=571513ae  PA:00000000
+               10101              25 xxxxxxxx 00002503 lw               x10, 0(x0)          x10=571513ae  PA:00000000
+               10121              26 xxxxxxxx 00002e03 lw               x28, 0(x0)          x28=571513ae  PA:00000000
+               10141              27 xxxxxxxx 00002e03 lw               x28, 0(x0)          x28=571513ae  PA:00000000
+               10161              28 xxxxxxxx 00002e03 lw               x28, 0(x0)          x28=150fdd2a  PA:00000000
+               10181              29 xxxxxxxx 00002e03 lw               x28, 0(x0)          x28=150fdd2a  PA:00000000
+               10201              30 xxxxxxxx 00002e03 lw               x28, 0(x0)          x28=150fdd2a  PA:00000000
+               10221              31 xxxxxxxx 00002e03 lw               x28, 0(x0)          x28=150fdd2a  PA:00000000
+               10241              32 xxxxxxxx 00002e03 lw               x28, 0(x0)          x28=150fdd2a  PA:00000000
+               10261              33 xxxxxxxx 00002e03 lw               x28, 0(x0)          x28=150fdd2a  PA:00000000
+               10281              34 xxxxxxxx 00002e03 lw               x28, 0(x0)          x28=150fdd2a  PA:00000000
+               10301              35 xxxxxxxx 00002e03 lw               x28, 0(x0)          x28=150fdd2a  PA:00000000
+               10321              36 xxxxxxxx 00002e03 lw               x28, 0(x0)          x28=150fdd2a  PA:00000000
+               10341              37 xxxxxxxx 00002e03 lw               x28, 0(x0)          x28=150fdd2a  PA:00000000
+               10361              38 xxxxxxxx 00002e03 lw               x28, 0(x0)          x28=150fdd2a  PA:00000000
+               10381              39 xxxxxxxx 00002e03 lw               x28, 0(x0)          x28=150fdd2a  PA:00000000
+               10401              40 xxxxxxxx 00002e03 lw               x28, 0(x0)          x28=150fdd2a  PA:00000000
+               10421              41 xxxxxxxx 00002e03 lw               x28, 0(x0)          x28=150fdd2a  PA:00000000
+               10441              42 xxxxxxxx 00002e03 lw               x28, 0(x0)          x28=150fdd2a  PA:00000000
+               10461              43 xxxxxxxx 00002e03 lw               x28, 0(x0)          x28=150fdd2a  PA:00000000
+               10481              44 xxxxxxxx 00002e03 lw               x28, 0(x0)          x28=150fdd2a  PA:00000000
+               10501              45 xxxxxxxx 00002e03 lw               x28, 0(x0)          x28=150fdd2a  PA:00000000
+               10541              47 xxxxxxxx 01c50db3 add              x27, x10, x28       x27=6c24f0d8 x10:571513ae x28:150fdd2a
+               10561              48 xxxxxxxx 01b02023 sw               x27, 0(x0)          x27:6c24f0d8  PA:00000000
+               10581              49 xxxxxxxX 01b02023 sw               x27, 0(x0)          x27:6c24f0d8  PA:00000000
+               10601              50 xxxxxxxX 01b02023 sw               x27, 0(x0)          x27:6c24f0d8  PA:00000000
+               10621              51 xxxxxxxX 01b02023 sw               x27, 0(x0)          x27:6c24f0d8  PA:00000000
+               10641              52 xxxxxxxX 01b02023 sw               x27, 0(x0)          x27:6c24f0d8  PA:00000000
+               10661              53 xxxxxxxX 01b02023 sw               x27, 0(x0)          x27:6c24f0d8  PA:00000000
+               10681              54 xxxxxxxX 01b02023 sw               x27, 0(x0)          x27:6c24f0d8  PA:00000000
+               10701              55 xxxxxxxX 01b02023 sw               x27, 0(x0)          x27:6c24f0d8  PA:00000000
+               10721              56 xxxxxxxX 01b02023 sw               x27, 0(x0)          x27:6c24f0d8  PA:00000000
+               10741              57 xxxxxxxX 01b02023 sw               x27, 0(x0)          x27:6c24f0d8  PA:00000000
+               10761              58 xxxxxxxX 01b02023 sw               x27, 0(x0)          x27:6c24f0d8  PA:00000000
+               10781              59 xxxxxxxX 01b02023 sw               x27, 0(x0)          x27:6c24f0d8  PA:00000000
+               10801              60 xxxxxxxX 01b02023 sw               x27, 0(x0)          x27:6c24f0d8  PA:00000000
+               10821              61 xxxxxxxX 01b02023 sw               x27, 0(x0)          x27:6c24f0d8  PA:00000000
+               10841              62 xxxxxxxX 01b02023 sw               x27, 0(x0)          x27:6c24f0d8  PA:00000000
+               10861              63 xxxxxxxX 01b02023 sw               x27, 0(x0)          x27:6c24f0d8  PA:00000000
+               10881              64 xxxxxxxX 01b02023 sw               x27, 0(x0)          x27:6c24f0d8
+               11021               3 xxxxxxxX 01b02023 sw               x27, 0(x0)          x27:00000000  PA:00000000
+               11041               4 xxxxxxxx 01b02023 sw               x27, 0(x0)          x27:00000000  PA:00000000
+               11061               5 xxxxxxxx 01b02023 sw               x27, 0(x0)          x27:00000000  PA:00000000
+               11081               6 xxxxxxxx 00002203 lw               x4, 0(x0)            x4=150fdd2a  PA:00000000
+               11101               7 xxxxxxxx 00002203 lw               x4, 0(x0)            x4=150fdd2a  PA:00000000
+               11121               8 xxxxxxxx 00002203 lw               x4, 0(x0)            x4=1d06333a  PA:00000000
+               11141               9 xxxxxxxx 00002203 lw               x4, 0(x0)            x4=1d06333a  PA:00000000
+               11161              10 xxxxxxxx 00002203 lw               x4, 0(x0)            x4=1d06333a  PA:00000000
+               11181              11 xxxxxxxx 00002203 lw               x4, 0(x0)            x4=1d06333a  PA:00000000
+               11201              12 xxxxxxxx 00002203 lw               x4, 0(x0)            x4=1d06333a  PA:00000000
+               11221              13 xxxxxxxx 00002203 lw               x4, 0(x0)            x4=1d06333a  PA:00000000
+               11241              14 xxxxxxxx 00002203 lw               x4, 0(x0)            x4=1d06333a  PA:00000000
+               11261              15 xxxxxxxx 00002203 lw               x4, 0(x0)            x4=1d06333a  PA:00000000
+               11281              16 xxxxxxxx 00002203 lw               x4, 0(x0)            x4=1d06333a  PA:00000000
+               11301              17 xxxxxxxx 00002203 lw               x4, 0(x0)            x4=1d06333a  PA:00000000
+               11321              18 xxxxxxxx 00002203 lw               x4, 0(x0)            x4=1d06333a  PA:00000000
+               11341              19 xxxxxxxx 00002203 lw               x4, 0(x0)            x4=1d06333a  PA:00000000
+               11361              20 xxxxxxxx 00002203 lw               x4, 0(x0)            x4=1d06333a  PA:00000000
+               11381              21 xxxxxxxx 00002203 lw               x4, 0(x0)            x4=1d06333a  PA:00000000
+               11401              22 xxxxxxxx 00002203 lw               x4, 0(x0)            x4=1d06333a  PA:00000000
+               11421              23 xxxxxxxx 00002203 lw               x4, 0(x0)            x4=1d06333a  PA:00000000
+               11441              24 xxxxxxxx 00002203 lw               x4, 0(x0)            x4=1d06333a  PA:00000000
+               11461              25 xxxxxxxx 00002203 lw               x4, 0(x0)            x4=1d06333a  PA:00000000
+               11481              26 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=1d06333a  PA:00000000
+               11501              27 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=1d06333a  PA:00000000
+               11521              28 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=0aaa4b15  PA:00000000
+               11541              29 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=0aaa4b15  PA:00000000
+               11561              30 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=0aaa4b15  PA:00000000
+               11581              31 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=0aaa4b15  PA:00000000
+               11601              32 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=0aaa4b15  PA:00000000
+               11621              33 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=0aaa4b15  PA:00000000
+               11641              34 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=0aaa4b15  PA:00000000
+               11661              35 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=0aaa4b15  PA:00000000
+               11681              36 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=0aaa4b15  PA:00000000
+               11701              37 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=0aaa4b15  PA:00000000
+               11721              38 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=0aaa4b15  PA:00000000
+               11741              39 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=0aaa4b15  PA:00000000
+               11761              40 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=0aaa4b15  PA:00000000
+               11781              41 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=0aaa4b15  PA:00000000
+               11801              42 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=0aaa4b15  PA:00000000
+               11821              43 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=0aaa4b15  PA:00000000
+               11841              44 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=0aaa4b15  PA:00000000
+               11861              45 xxxxxxxx 00002783 lw               x15, 0(x0)          x15=0aaa4b15  PA:00000000
+               11901              47 xxxxxxxx 00f201b3 add              x3, x4, x15          x3=27b07e4f  x4:1d06333a x15:0aaa4b15
+               11921              48 xxxxxxxx 00302023 sw               x3, 0(x0)            x3:27b07e4f  PA:00000000
+               11941              49 xxxxxxxX 00302023 sw               x3, 0(x0)            x3:27b07e4f  PA:00000000
+               11961              50 xxxxxxxX 00302023 sw               x3, 0(x0)            x3:27b07e4f  PA:00000000
+               11981              51 xxxxxxxX 00302023 sw               x3, 0(x0)            x3:27b07e4f  PA:00000000
+               12001              52 xxxxxxxX 00302023 sw               x3, 0(x0)            x3:27b07e4f  PA:00000000
+               12021              53 xxxxxxxX 00302023 sw               x3, 0(x0)            x3:27b07e4f  PA:00000000
+               12041              54 xxxxxxxX 00302023 sw               x3, 0(x0)            x3:27b07e4f  PA:00000000
+               12061              55 xxxxxxxX 00302023 sw               x3, 0(x0)            x3:27b07e4f  PA:00000000
+               12081              56 xxxxxxxX 00302023 sw               x3, 0(x0)            x3:27b07e4f  PA:00000000
+               12101              57 xxxxxxxX 00302023 sw               x3, 0(x0)            x3:27b07e4f  PA:00000000
+               12121              58 xxxxxxxX 00302023 sw               x3, 0(x0)            x3:27b07e4f  PA:00000000
+               12141              59 xxxxxxxX 00302023 sw               x3, 0(x0)            x3:27b07e4f  PA:00000000
+               12161              60 xxxxxxxX 00302023 sw               x3, 0(x0)            x3:27b07e4f  PA:00000000
+               12181              61 xxxxxxxX 00302023 sw               x3, 0(x0)            x3:27b07e4f  PA:00000000
+               12201              62 xxxxxxxX 00302023 sw               x3, 0(x0)            x3:27b07e4f  PA:00000000
+               12221              63 xxxxxxxX 00302023 sw               x3, 0(x0)            x3:27b07e4f  PA:00000000
+               12241              64 xxxxxxxX 00302023 sw               x3, 0(x0)            x3:27b07e4f
+               12381               3 xxxxxxxX 00302023 sw               x3, 0(x0)            x3:00000000  PA:00000000
+               12401               4 xxxxxxxx 00302023 sw               x3, 0(x0)            x3:00000000  PA:00000000
+               12421               5 xxxxxxxx 00302023 sw               x3, 0(x0)            x3:00000000  PA:00000000
+               12441               6 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=0aaa4b15  PA:00000000
+               12461               7 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=0aaa4b15  PA:00000000
+               12481               8 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=47b9a18f  PA:00000000
+               12501               9 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=47b9a18f  PA:00000000
+               12521              10 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=47b9a18f  PA:00000000
+               12541              11 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=47b9a18f  PA:00000000
+               12561              12 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=47b9a18f  PA:00000000
+               12581              13 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=47b9a18f  PA:00000000
+               12601              14 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=47b9a18f  PA:00000000
+               12621              15 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=47b9a18f  PA:00000000
+               12641              16 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=47b9a18f  PA:00000000
+               12661              17 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=47b9a18f  PA:00000000
+               12681              18 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=47b9a18f  PA:00000000
+               12701              19 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=47b9a18f  PA:00000000
+               12721              20 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=47b9a18f  PA:00000000
+               12741              21 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=47b9a18f  PA:00000000
+               12761              22 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=47b9a18f  PA:00000000
+               12781              23 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=47b9a18f  PA:00000000
+               12801              24 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=47b9a18f  PA:00000000
+               12821              25 xxxxxxxx 00002303 lw               x6, 0(x0)            x6=47b9a18f  PA:00000000
+               12841              26 xxxxxxxx 00002903 lw               x18, 0(x0)          x18=47b9a18f  PA:00000000
+               12861              27 xxxxxxxx 00002903 lw               x18, 0(x0)          x18=47b9a18f  PA:00000000
+               12881              28 xxxxxxxx 00002903 lw               x18, 0(x0)          x18=dbcd60b7  PA:00000000
+               12901              29 xxxxxxxx 00002903 lw               x18, 0(x0)          x18=dbcd60b7  PA:00000000
+               12921              30 xxxxxxxx 00002903 lw               x18, 0(x0)          x18=dbcd60b7  PA:00000000
+               12941              31 xxxxxxxx 00002903 lw               x18, 0(x0)          x18=dbcd60b7  PA:00000000
+               12961              32 xxxxxxxx 00002903 lw               x18, 0(x0)          x18=dbcd60b7  PA:00000000
+               12981              33 xxxxxxxx 00002903 lw               x18, 0(x0)          x18=dbcd60b7  PA:00000000
+               13001              34 xxxxxxxx 00002903 lw               x18, 0(x0)          x18=dbcd60b7  PA:00000000
+               13021              35 xxxxxxxx 00002903 lw               x18, 0(x0)          x18=dbcd60b7  PA:00000000
+               13041              36 xxxxxxxx 00002903 lw               x18, 0(x0)          x18=dbcd60b7  PA:00000000
+               13061              37 xxxxxxxx 00002903 lw               x18, 0(x0)          x18=dbcd60b7  PA:00000000
+               13081              38 xxxxxxxx 00002903 lw               x18, 0(x0)          x18=dbcd60b7  PA:00000000
+               13101              39 xxxxxxxx 00002903 lw               x18, 0(x0)          x18=dbcd60b7  PA:00000000
+               13121              40 xxxxxxxx 00002903 lw               x18, 0(x0)          x18=dbcd60b7  PA:00000000
+               13141              41 xxxxxxxx 00002903 lw               x18, 0(x0)          x18=dbcd60b7  PA:00000000
+               13161              42 xxxxxxxx 00002903 lw               x18, 0(x0)          x18=dbcd60b7  PA:00000000
+               13181              43 xxxxxxxx 00002903 lw               x18, 0(x0)          x18=dbcd60b7  PA:00000000
+               13201              44 xxxxxxxx 00002903 lw               x18, 0(x0)          x18=dbcd60b7  PA:00000000
+               13221              45 xxxxxxxx 00002903 lw               x18, 0(x0)          x18=dbcd60b7  PA:00000000
+               13261              47 xxxxxxxx 01230733 add              x14, x6, x18        x14=23870246  x6:47b9a18f x18:dbcd60b7
+               13281              48 xxxxxxxx 00e02023 sw               x14, 0(x0)          x14:23870246  PA:00000000
+               13301              49 xxxxxxxX 00e02023 sw               x14, 0(x0)          x14:23870246  PA:00000000
+               13321              50 xxxxxxxX 00e02023 sw               x14, 0(x0)          x14:23870246  PA:00000000
+               13341              51 xxxxxxxX 00e02023 sw               x14, 0(x0)          x14:23870246  PA:00000000
+               13361              52 xxxxxxxX 00e02023 sw               x14, 0(x0)          x14:23870246  PA:00000000
+               13381              53 xxxxxxxX 00e02023 sw               x14, 0(x0)          x14:23870246  PA:00000000
+               13401              54 xxxxxxxX 00e02023 sw               x14, 0(x0)          x14:23870246  PA:00000000
+               13421              55 xxxxxxxX 00e02023 sw               x14, 0(x0)          x14:23870246  PA:00000000
+               13441              56 xxxxxxxX 00e02023 sw               x14, 0(x0)          x14:23870246  PA:00000000
+               13461              57 xxxxxxxX 00e02023 sw               x14, 0(x0)          x14:23870246  PA:00000000
+               13481              58 xxxxxxxX 00e02023 sw               x14, 0(x0)          x14:23870246  PA:00000000
+               13501              59 xxxxxxxX 00e02023 sw               x14, 0(x0)          x14:23870246  PA:00000000
+               13521              60 xxxxxxxX 00e02023 sw               x14, 0(x0)          x14:23870246  PA:00000000
+               13541              61 xxxxxxxX 00e02023 sw               x14, 0(x0)          x14:23870246  PA:00000000
