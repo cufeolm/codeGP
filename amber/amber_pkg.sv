@@ -36,6 +36,7 @@ package target_package;
             si_i = si_i.first();
             for(integer i=0; i < supported_instructions; i++)
                 begin
+                    $display("si_a[%0d] = %s",i,si_i.name);
                     si_a[i] = si_i;
                     si_i = si_i.next();
                 end
@@ -194,7 +195,7 @@ package target_package;
             return k;
     endfunction
 
-    function bit xis1 (logic[15:0] a,logic[15:0] b);
+    function bit xis1 (logic[31:0] a,logic[31:0] b);
         logic x;
         x = (a == b);
         if (x === 1'bx)

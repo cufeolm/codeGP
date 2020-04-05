@@ -66,6 +66,7 @@ class GUVM_scoreboard extends uvm_scoreboard;
 				begin
 					if (xis1(cmd_trans.inst,si_a[i])) begin
 						valid = 1;
+						break;
 					end
 					// $display("LOOP ENTERED");
 					// $display("reg_instruction  ::  Value of  %0s is = %0d",target_package::reg_instruction.name(),target_package::reg_instruction);
@@ -73,6 +74,7 @@ class GUVM_scoreboard extends uvm_scoreboard;
 			if(valid == 0) begin
 				`uvm_fatal("instruction fail", $sformatf("Sb: instruction not in pkg and its %b %b %b %b %b %b %b %b", cmd_trans.inst[31:28], cmd_trans.inst[27:24], cmd_trans.inst[23:20], cmd_trans.inst[19:16], cmd_trans.inst[15:12], cmd_trans.inst[11:8], cmd_trans.inst[7:4], cmd_trans.inst[3:0]))
 			end
+			$display("si_a[%0d] = %s and valid = %0d",i,si_a[i].name,valid);
 			casex (si_a[i])
 				A:begin
 					h1 = i1+i2;
