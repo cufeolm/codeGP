@@ -1,6 +1,7 @@
 interface GUVM_interface;
-    import target_package::*;
+    import target_package::*; // importing leon core package
     
+    // core paramerters
     parameter N_EXT_PERF_COUNTERS =  0;
     parameter INSTR_RDATA_WIDTH   = 32;
     parameter PULP_SECURE         =  0;
@@ -22,6 +23,7 @@ interface GUVM_interface;
     parameter APU_NUSFLAGS_CPU    =  5;
     parameter DM_HaltAddress      = 32'h1A110800;
 
+    // core interface ports
       // Clock and Reset
     logic       clk_i;
     logic       rst_ni;
@@ -79,18 +81,22 @@ interface GUVM_interface;
 
     GUVM_monitor monitor_h;
 
+    // initializing the clk signal
     initial begin
         clk_i = 0;
     end 
         
+    // sending data to the core    
     function void send_data(logic [31:0] data);
         data_rdata_i = data;
     endfunction
 
+    // sending instructions to the core
     function void send_inst(logic [31:0] inst);
         instr_rdata_i = inst; 
     endfunction
     
+    // sending the instruction to be verified
     task verify_inst(logic [31:0] inst);
         send_inst(inst); 
         repeat(2) begin 
@@ -98,12 +104,14 @@ interface GUVM_interface;
         end
     endtask
     
+    // reveiving data from the DUT
     function logic [31:0] receive_data();
         $display("received result: %b", data_wdata_o);
         monitor_h.write_to_monitor(data_wdata_o);
         return data_wdata_o; 
     endfunction 
     
+    // dealing with the register file with the following load and store functions
     task store(logic [31:0] inst);
         send_inst(inst);
         repeat(6) begin 
@@ -134,6 +142,7 @@ interface GUVM_interface;
         end
     endtask*/
 
+    // initializing the core
     task set_Up();
         clock_en_i            = 1'b1;
         test_en_i             = 1'b0;
