@@ -1,32 +1,25 @@
 package target_package;
     import uvm_pkg::*;
     `include "uvm_macros.svh"
-    typedef enum logic[31:0] {
+
+    // instructions opcodes verified in this core 
+    typedef enum logic[31:0] { 
         LW = 32'b111101101001xxxxxxxxxxxxxxxxxxxx,
         SW = 32'b111001011000xxxxxxxxxxxxxxxxxxxx,
         A  = 32'b1110000010000xxx0xxx000000000xxx,
         Store = 32'b11100101100000000xxx000000000000,
         Load =  32'b1111011010010xxx0xxx000000000xxx 
-    } opcode;
+    } opcode; 
+    // mutual instructions between cores have the same name so we can verify all cores using one scoreboard
+    
+    opcode si_a[];  // opcodes array to store enums so we can randomize and use them
+    integer supported_instructions; // number of instructions in the array
+    `include"GUVM.sv"   // including GUVM classes 
+    
 
-    opcode si_a[];
-    integer supported_instructions;
-    opcode reg_instruction;
-    `include"GUVM.sv"
-    /*`include "GUVM_sequence_item.sv"
-    `include "target_sequence_item.sv"
-    `include "GUVM_sequence.sv"
-    `include "GUVM_driver.sv"
-    `include "GUVM_monitor.sv"
-    `include "GUVM_scoreboard.sv"
-    `include "GUVM_agent.sv"
-    `include "GUVM_env.sv"
-    `include "GUVM_test.sv"*/
-
-    function void fill_si_array();
     // fill supported instruction array
-    // this does NOT  affect generalism this makes sure you dont run
-    // the same function twice in a test bench
+    function void fill_si_array();
+    // this does NOT affect generalism
         `ifndef SET_UP_INSTRUCTION_ARRAY
         `define SET_UP_INSTRUCTION_ARRAY
             opcode si_i; // for iteration only
@@ -39,11 +32,12 @@ package target_package;
                     si_a[i] = si_i;
                     si_i = si_i.next();
                 end
-                // $display("array is filled and ready to use");
         `endif
     endfunction
 
-    function GUVM_sequence_item get_format (logic [31:0] inst);
+
+    // function to determine format of verfied instruction and fill its operands
+    function GUVM_sequence_item get_format (logic [31:0] inst); 
         target_seq_item ay;
         GUVM_sequence_item k;
         k = new("k");
@@ -194,7 +188,9 @@ package target_package;
             return k;
     endfunction
 
-    function bit xis1 (logic[31:0] a,logic[31:0] b);
+
+    // used in if conditions to compare between (x) and (1 or 0)
+    function bit xis1 (logic[31:0] a,logic[31:0] b); 
         logic x;
         x = (a == b);
         if (x === 1'bx)
