@@ -79,7 +79,7 @@ the test bench itself (uvm code) is inside GUVM file
 	responsible for providing the instruction formats     
 	that are supported by amber to the GUVM_Sequence   
 - dut_amber.f     
-	tells questasim where to find the dut    
+	tells questasim where to find the dut
 -run_amber.do       
 	resposible for compiling the whole testbench for amber dut 
 -target_pkg.sv    
