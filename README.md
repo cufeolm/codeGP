@@ -79,15 +79,15 @@ the test bench itself (uvm code) is inside GUVM file
 	responsible for providing the instruction formats     
 	that are supported by amber to the GUVM_Sequence   
 - dut_amber.f     
-	tells questasim where to find the dut
+	tells questasim where to find the dut       
 - run_amber.do       
-	resposible for compiling the whole testbench for amber dut 
+	resposible for compiling the whole testbench for amber dut     
 - target_pkg.sv    
-	determines which package to be be compiled ; in this case amber
+	determines which package to be be compiled ; in this case amber     
 - target_sequence_item.sv    
-	determines which sequence item to be be compiled ; in this case amber
+	determines which sequence item to be be compiled ; in this case amber       
 - top.sv    
-	top module for the test bench ; in this case amber
+	top module for the test bench ; in this case amber      
 ### Step 3
 
 - ðŸ”ƒ Create a new pull request using <a href="https://github.com/joanaz/HireDot2/compare/" target="_blank">`https://github.com/joanaz/HireDot2/compare/`</a>.
