@@ -2,7 +2,7 @@ import uvm_pkg::*;
 `include "uvm_macros.svh"
 class target_seq_item extends GUVM_sequence_item;
 
-	  `uvm_object_utils(target_seq_item)
+	`uvm_object_utils(target_seq_item)
 	logic [1:0]op;
 	logic [29:0]disp30;
 	logic [4:0]rd;
