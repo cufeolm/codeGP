@@ -1,6 +1,6 @@
 class GUVM_driver extends uvm_driver #(target_seq_item);
 
-   // register the monitor in the UVM factory
+    // register the driver in the UVM factory
     `uvm_component_utils(GUVM_driver)
 
     virtual GUVM_interface bfm; // stores core interface 
