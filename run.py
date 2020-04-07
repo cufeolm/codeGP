@@ -4,8 +4,8 @@ s = """
 [[[ welcome to GUVM user interface ]]]
 please choose which dut to compile:
 1- Riscy core (based on RISC-v ISA): enter --> 1 
-2- Leon core: (based on Sparcv8 ISA): enter --> 2
-3- Amber core: (based on ARM ISA): enter --> 3
+2- Leon core (based on Sparcv8 ISA): enter --> 2
+3- Amber core (based on ARM ISA): enter --> 3
 DUT: """;
 
 g = raw_input(s);
