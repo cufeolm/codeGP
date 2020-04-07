@@ -66,10 +66,28 @@ the test bench itself (uvm code) is inside GUVM file
 - run.py      : runs the test bench for any chosen dut
 
 
-### amber
-
-- **HACK AWAY!** ðŸ”¨ðŸ”¨ðŸ”¨
-
+### Amber
+- DUT    
+	Amber verilog dut
+- amber_interface.sv    
+	amber interface used in UVM test bench    
+	we are still trying to make some sort of as generic as possible interface    
+	so currently we made an interface for each dut    
+- amber_pkg.sv         
+	contains the opcodes and instructions supported by amber DUT 
+- amber_seq_item.sv    
+	responsible for providing the instruction formats     
+	that are supported by amber to the GUVM_Sequence   
+- dut_amber.f     
+	tells questasim where to find the dut    
+-run_amber.do       
+	resposible for compiling the whole testbench for amber dut 
+-target_pkg.sv    
+	determines which package to be be compiled ; in this case amber
+-target_sequence_item.sv    
+	determines which sequence item to be be compiled ; in this case amber
+-top.sv    
+	top module for the test bench ; in this case amber
 ### Step 3
 
 - ðŸ”ƒ Create a new pull request using <a href="https://github.com/joanaz/HireDot2/compare/" target="_blank">`https://github.com/joanaz/HireDot2/compare/`</a>.
