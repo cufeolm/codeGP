@@ -1,9 +1,10 @@
 interface GUVM_interface;
    import uvm_pkg::*;
 `include "uvm_macros.svh"
-    import iface::*;
-    import target_package::*;
+    import iface::*; // importing leon interface package: includes the records
+    import target_package::*; // importing leon core package
 
+    // core interface ports: declaring records
     logic       clk;
     logic       rst;
     logic       pciclk;
@@ -17,41 +18,46 @@ interface GUVM_interface;
 
     dcache_out_type dcache_output; // to the core
     
-    dcache_in_type dcache_input ;  // to the data cach
+    dcache_in_type dcache_input ; // to the data cach
 
     icdiag_in_type dcache_output_diag; // inside dcache_out_type package // what is this ? 
 
+    // declaring the monitor
     GUVM_monitor monitor_h;
 
+    // initializing the clk signal
     initial begin
         clk = 0;
 	end	
 	
-    always @ (posedge clk)  force dut.iu0.de.cwp=7;  ///////////////
+    always @ (posedge clk)  force dut.iu0.de.cwp=7; // 
 	
+    // sending data to the core
     function void send_data(logic [31:0] data);
         dcache_output.data = data ;
     endfunction
 
+    // sending instructions to the core
     function void send_inst(logic [31:0] inst);
         icache_output.data = inst ; 
     endfunction
 	
+    // sending the instruction to be verified
 	task verify_inst(logic [31:0] inst);
         send_inst(inst) ; 
 		repeat(2*5)#10 clk=~clk;
         repeat(2*5)#10 clk=~clk;
     endtask
-	
-	
+
+	// reveiving data from the DUT
     function logic [31:0] receive_data();
         $display("madd : %b",dcache_input.maddress);
         monitor_h.write_to_monitor(dcache_input.edata);
 		return dcache_input.edata;
     endfunction 
 	
-	
-    //function logic [31:0] store(logic [4:0] ra );
+	// dealing with the register file with the following load and store functions 
+    //function logic [31:0] store(logic [4:0] ra);
     task store(logic [31:0] inst );
 		send_inst(inst);
 		repeat(2*2)#10 clk=~clk;
@@ -59,10 +65,9 @@ interface GUVM_interface;
 		repeat(2*1)#10 clk=~clk;
 		$display("result = %0d",receive_data());
 		repeat(2*10)#10 clk=~clk;
-		//mon();
     endtask
 
-    //function void load(logic [4:0] ra , logic [31:0] rd );
+    //function void load(logic [4:0] ra , logic [31:0] rd);
     task load(logic [31:0] inst, logic [31:0] rd );
         send_inst(inst);
         send_data(rd);
@@ -71,19 +76,17 @@ interface GUVM_interface;
 		repeat(2*4)#10 clk=~clk;
     endtask
 
-    function void nop ();
+    // no operation
+    function void nop();
         icache_output.data = 32'h01000000;
     endfunction
 	
-    function void add(logic [4:0] r1,logic [4:0] r2,logic [4:0] rd);
-        //dcache_output.hold = 1'b0;
-        //icache_output.hold = 1'b0;
-        //dcache_output.mds = 1'b1;
+    /*function void add(logic [4:0] r1,logic [4:0] r2,logic [4:0] rd);
         send_inst({2'b10,rd,6'b0,r1,1'b0,8'b0,r2});
-    endfunction
+    endfunction*/
 
+    // initializing the core
     task set_Up();
-                ////////////// da mkan elsetup function //////////////////
         send_data(32'h100);
         send_inst(32'h01000000);
 		pciclk = 1'b0;
