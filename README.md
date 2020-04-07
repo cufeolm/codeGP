@@ -16,7 +16,7 @@
 
 - [Installation](#Installation)
 - [Features](#features)
-- [Contributing](#contributing)
+- [Files](#Files)
 - [Team](#team)
 - [FAQ](#faq)
 
@@ -27,7 +27,7 @@
 ## Installation
 
 - needed software 
->questasim V10.4e or higher
+>questasim V10.4e or higher,
 >python v 2.7 or higher
 ### Clone
 
@@ -40,28 +40,33 @@
 ---
 
 ## Features
-## Usage (Optional)
-## Documentation (Optional)
-## Tests (Optional)
-
-- Going into more detail on code and technologies used
-- I utilized this nifty <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown Cheatsheet</a> for this sample `README`.
+the testbench supports 1 instruction(add) to be tested across diffreant duts 
+### DUTS 
+1-riscy:based on RISC-v ISA 
+2-leon :based on Sparcv8 ISA 
+3-amber:based on ARM ISA 
 
 ---
 
-## Contributing
+## Files
 
-> To get started...
+a breif describtion of the Files in GUVM test bench
+the test bench itself (uvm code) is inside GUVM file
 
-### Step 1
+### ROOT file (CodeGP)
+- amber       : contains dut,interface,pakage,sequence item,top module and do files for amber
+- full_pkgs   : still under development (not compiled currently) 
+- GUVM        : contains generic UVM code that is responsible for testing the duts
+- leon        : contains dut,interface,pakage,sequence item,top module and do files for leon
+- riscy       : contains dut,interface,pakage,sequence item,top module and do files for riscy
+- a.bat       : runs the test bench for amber dut on windows os
+- GUVM.SV     : Contains the include files for GUVM test bench 
+- l.bat       : runs the test bench for leon dut on windows os
+- r.bat       : runs the test bench for riscy dut on windows os
+- run.py      : runs the test bench for any chosen dut
 
-- **Option 1**
-    - ðŸ´ Fork this repo!
 
-- **Option 2**
-    - ðŸ‘¯ Clone this repo to your local machine using `https://github.com/joanaz/HireDot2.git`
-
-### Step 2
+### amber
 
 - **HACK AWAY!** ðŸ”¨ðŸ”¨ðŸ”¨
 

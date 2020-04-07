@@ -3,9 +3,9 @@ import os
 s="""
 welcome to GUVM user interface
 please choose which dut to compile :
-1-riscy:based on risc-v ISA 
+1-riscy:based on RISC-v ISA 
 2-leon :based on Sparcv8 ISA 
-3-amber:based on
+3-amber:based on ARM ISA 
 DUT: """;
 
 
