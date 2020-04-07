@@ -80,13 +80,13 @@ the test bench itself (uvm code) is inside GUVM file
 	that are supported by amber to the GUVM_Sequence   
 - dut_amber.f     
 	tells questasim where to find the dut
--run_amber.do       
+- run_amber.do       
 	resposible for compiling the whole testbench for amber dut 
--target_pkg.sv    
+- target_pkg.sv    
 	determines which package to be be compiled ; in this case amber
--target_sequence_item.sv    
+- target_sequence_item.sv    
 	determines which sequence item to be be compiled ; in this case amber
--top.sv    
+- top.sv    
 	top module for the test bench ; in this case amber
 ### Step 3
 
