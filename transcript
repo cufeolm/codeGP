@@ -1,6 +1,6 @@
 # do riscy/run_riscy.do
 # QuestaSim-64 vlog 10.4e Compiler 2016.04 Apr  9 2016
-# Start time: 14:45:09 on Apr 05,2020
+# Start time: 16:19:17 on Apr 07,2020
 # vlog -f riscy/dut_riscy.f 
 # -- Compiling package fpnew_pkg
 # -- Compiling package riscv_defines_sv_unit
@@ -939,10 +939,10 @@
 # Top level modules:
 # 	riscv_alu_basic
 # 	riscv_core
-# End time: 14:45:14 on Apr 05,2020, Elapsed time: 0:00:05
+# End time: 16:19:19 on Apr 07,2020, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 421
 # QuestaSim-64 vlog 10.4e Compiler 2016.04 Apr  9 2016
-# Start time: 14:45:14 on Apr 05,2020
+# Start time: 16:19:19 on Apr 07,2020
 # vlog "+incdir+riscy+GUVM" riscy/target_pkg.sv 
 # -- Compiling package target_package
 # -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -951,10 +951,10 @@
 # 
 # Top level modules:
 # 	--none--
-# End time: 14:45:15 on Apr 05,2020, Elapsed time: 0:00:01
+# End time: 16:19:20 on Apr 07,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 10.4e Compiler 2016.04 Apr  9 2016
-# Start time: 14:45:15 on Apr 05,2020
+# Start time: 16:19:20 on Apr 07,2020
 # vlog riscy/riscy_interface.sv 
 # -- Compiling interface GUVM_interface
 # -- Importing package target_package
@@ -962,10 +962,10 @@
 # 
 # Top level modules:
 # 	--none--
-# End time: 14:45:16 on Apr 05,2020, Elapsed time: 0:00:01
+# End time: 16:19:21 on Apr 07,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 10.4e Compiler 2016.04 Apr  9 2016
-# Start time: 14:45:16 on Apr 05,2020
+# Start time: 16:19:21 on Apr 07,2020
 # vlog riscy/top.sv 
 # -- Compiling module top
 # -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -975,10 +975,10 @@
 # 
 # Top level modules:
 # 	top
-# End time: 14:45:18 on Apr 05,2020, Elapsed time: 0:00:02
+# End time: 16:19:22 on Apr 07,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vsim top 
-# Start time: 14:45:18 on Apr 05,2020
+# Start time: 16:19:22 on Apr 07,2020
 # ** Note: (vsim-3812) Design is being optimized...
 # 
 # //  Questa Sim-64
@@ -1084,8 +1084,7 @@
 # Sb: inst is 0000 0000 0001 0101 0000 0101 0011 0011
 # Sb: op1=2985317987 
 # Sb: op2=1189058957
-# si_a[1] = A and valid = 1
-# UVM_INFO GUVM/GUVM_scoreboard.sv(83) @ 1060: uvm_test_top.env_h.sb [ADDITION_PASS] Actual Calculation=4174376944 Expected Calculation=4174376944 
+# UVM_INFO GUVM/GUVM_scoreboard.sv(73) @ 1060: uvm_test_top.env_h.sb [ADDITION_PASS] Actual Calculation=4174376944 Expected Calculation=4174376944 
 # Scoreboard started
 # There should be no rvalid when we the LSU is IDLE                 1070
 # driver has started
@@ -1122,8 +1121,7 @@
 # Sb: inst is 0000 0000 1111 0011 1000 0011 0011 0011
 # Sb: op1=512609597 
 # Sb: op2=1177417612
-# si_a[1] = A and valid = 1
-# UVM_INFO GUVM/GUVM_scoreboard.sv(83) @ 2420: uvm_test_top.env_h.sb [ADDITION_PASS] Actual Calculation=1690027209 Expected Calculation=1690027209 
+# UVM_INFO GUVM/GUVM_scoreboard.sv(73) @ 2420: uvm_test_top.env_h.sb [ADDITION_PASS] Actual Calculation=1690027209 Expected Calculation=1690027209 
 # Scoreboard started
 # There should be no rvalid when we the LSU is IDLE                 2430
 # driver has started
@@ -1160,8 +1158,7 @@
 # Sb: inst is 0000 0000 1111 0111 1000 0100 1011 0011
 # Sb: op1=3151131255 
 # Sb: op2=1206705039
-# si_a[1] = A and valid = 1
-# UVM_ERROR GUVM/GUVM_scoreboard.sv(87) @ 3780: uvm_test_top.env_h.sb [ADDITION_FAIL] Actual Calculation=2413410078 Expected Calculation=  62868998 
+# UVM_ERROR GUVM/GUVM_scoreboard.sv(77) @ 3780: uvm_test_top.env_h.sb [ADDITION_FAIL] Actual Calculation=2413410078 Expected Calculation=  62868998 
 # Scoreboard started
 # There should be no rvalid when we the LSU is IDLE                 3790
 # driver has started
@@ -1198,8 +1195,7 @@
 # Sb: inst is 0000 0000 0000 0000 0000 1010 1011 0011
 # Sb: op1=3733858493 
 # Sb: op2=2997298789
-# si_a[1] = A and valid = 1
-# UVM_ERROR GUVM/GUVM_scoreboard.sv(87) @ 5140: uvm_test_top.env_h.sb [ADDITION_FAIL] Actual Calculation=         0 Expected Calculation=2436189986 
+# UVM_ERROR GUVM/GUVM_scoreboard.sv(77) @ 5140: uvm_test_top.env_h.sb [ADDITION_FAIL] Actual Calculation=         0 Expected Calculation=2436189986 
 # Scoreboard started
 # driver has started
 # There should be no rvalid when we the LSU is IDLE                 5470
@@ -1235,8 +1231,7 @@
 # Sb: inst is 0000 0000 0011 1011 0000 0010 1011 0011
 # Sb: op1=3469528221 
 # Sb: op2=2307110931
-# si_a[1] = A and valid = 1
-# UVM_INFO GUVM/GUVM_scoreboard.sv(83) @ 6500: uvm_test_top.env_h.sb [ADDITION_PASS] Actual Calculation=1481671856 Expected Calculation=1481671856 
+# UVM_INFO GUVM/GUVM_scoreboard.sv(73) @ 6500: uvm_test_top.env_h.sb [ADDITION_PASS] Actual Calculation=1481671856 Expected Calculation=1481671856 
 # Scoreboard started
 # There should be no rvalid when we the LSU is IDLE                 6510
 # driver has started
@@ -1273,8 +1268,7 @@
 # Sb: inst is 0000 0001 1001 1111 1000 1101 0011 0011
 # Sb: op1=3612753582 
 # Sb: op2=3888476879
-# si_a[1] = A and valid = 1
-# UVM_INFO GUVM/GUVM_scoreboard.sv(83) @ 7860: uvm_test_top.env_h.sb [ADDITION_PASS] Actual Calculation=3206263165 Expected Calculation=3206263165 
+# UVM_INFO GUVM/GUVM_scoreboard.sv(73) @ 7860: uvm_test_top.env_h.sb [ADDITION_PASS] Actual Calculation=3206263165 Expected Calculation=3206263165 
 # Scoreboard started
 # There should be no rvalid when we the LSU is IDLE                 7870
 # driver has started
@@ -1311,8 +1305,7 @@
 # Sb: inst is 0000 0001 0111 0011 0000 1010 1011 0011
 # Sb: op1=1160667530 
 # Sb: op2=3964351704
-# si_a[1] = A and valid = 1
-# UVM_INFO GUVM/GUVM_scoreboard.sv(83) @ 9220: uvm_test_top.env_h.sb [ADDITION_PASS] Actual Calculation= 830051938 Expected Calculation= 830051938 
+# UVM_INFO GUVM/GUVM_scoreboard.sv(73) @ 9220: uvm_test_top.env_h.sb [ADDITION_PASS] Actual Calculation= 830051938 Expected Calculation= 830051938 
 # Scoreboard started
 # There should be no rvalid when we the LSU is IDLE                 9230
 # driver has started
@@ -1349,8 +1342,7 @@
 # Sb: inst is 0000 0001 1100 0101 0000 1101 1011 0011
 # Sb: op1=1460999086 
 # Sb: op2=353361194
-# si_a[1] = A and valid = 1
-# UVM_INFO GUVM/GUVM_scoreboard.sv(83) @ 10580: uvm_test_top.env_h.sb [ADDITION_PASS] Actual Calculation=1814360280 Expected Calculation=1814360280 
+# UVM_INFO GUVM/GUVM_scoreboard.sv(73) @ 10580: uvm_test_top.env_h.sb [ADDITION_PASS] Actual Calculation=1814360280 Expected Calculation=1814360280 
 # Scoreboard started
 # There should be no rvalid when we the LSU is IDLE                10590
 # driver has started
@@ -1387,8 +1379,7 @@
 # Sb: inst is 0000 0000 1111 0010 0000 0001 1011 0011
 # Sb: op1=486945594 
 # Sb: op2=178932501
-# si_a[1] = A and valid = 1
-# UVM_INFO GUVM/GUVM_scoreboard.sv(83) @ 11940: uvm_test_top.env_h.sb [ADDITION_PASS] Actual Calculation= 665878095 Expected Calculation= 665878095 
+# UVM_INFO GUVM/GUVM_scoreboard.sv(73) @ 11940: uvm_test_top.env_h.sb [ADDITION_PASS] Actual Calculation= 665878095 Expected Calculation= 665878095 
 # Scoreboard started
 # There should be no rvalid when we the LSU is IDLE                11950
 # driver has started
@@ -1425,8 +1416,7 @@
 # Sb: inst is 0000 0001 0010 0011 0000 0111 0011 0011
 # Sb: op1=1203347855 
 # Sb: op2=3687669943
-# si_a[1] = A and valid = 1
-# UVM_INFO GUVM/GUVM_scoreboard.sv(83) @ 13300: uvm_test_top.env_h.sb [ADDITION_PASS] Actual Calculation= 596050502 Expected Calculation= 596050502 
+# UVM_INFO GUVM/GUVM_scoreboard.sv(73) @ 13300: uvm_test_top.env_h.sb [ADDITION_PASS] Actual Calculation= 596050502 Expected Calculation= 596050502 
 # Scoreboard started
 # There should be no rvalid when we the LSU is IDLE                13310
 # driver has started
@@ -1448,5 +1438,5 @@
 # [TEST_DONE]     1
 # ** Note: $finish    : C:/questasim64_10.4e/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
 #    Time: 13600 ns  Iteration: 60  Instance: /top
-# End time: 14:45:31 on Apr 05,2020, Elapsed time: 0:00:13
+# End time: 16:19:33 on Apr 07,2020, Elapsed time: 0:00:11
 # Errors: 0, Warnings: 38

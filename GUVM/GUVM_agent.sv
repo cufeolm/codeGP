@@ -1,8 +1,10 @@
 class GUVM_agent extends uvm_agent;
+
+    // register the agent in the UVM factory
     `uvm_component_utils(GUVM_agent)
 
-    GUVM_driver driver;
-    uvm_sequencer #(target_seq_item) sequencer;
+    GUVM_driver driver; // defining driver
+    uvm_sequencer #(target_seq_item) sequencer; // defining sequencer 
 
     function new(string name, uvm_component parent);
         super.new(name, parent);

@@ -1,11 +1,11 @@
 module top;
-    import uvm_pkg::*;
-    import target_package::*;
-    import iface::*;
+   import uvm_pkg::*;
+   import target_package::*;
+   import iface::*;
 
-    `include "uvm_macros.svh"
+`include "uvm_macros.svh"
 
-    GUVM_interface bfm();
+	GUVM_interface bfm();
     proc dut(
         .clk(bfm.clk),
         .rst(bfm.rst),
@@ -18,12 +18,13 @@ module top;
         .dco(bfm.dcache_output)
     );
 
-    initial begin
-        uvm_config_db#(virtual GUVM_interface)::set(null, "*", "bfm", bfm);
-        fill_si_array();
-        run_test("GUVM_test");
-    end
+initial begin
+   uvm_config_db#(virtual GUVM_interface)::set(null, "*", "bfm", bfm);
+   fill_si_array();
+   run_test("GUVM_test");
+end
 
 endmodule : top
 
-
+     
+   

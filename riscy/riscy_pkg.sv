@@ -1,6 +1,8 @@
 package target_package;
 	import uvm_pkg::*;
 	`include "uvm_macros.svh"
+
+    // instructions opcodes verified in this core 
 	typedef enum logic[31:0] {
 		LW = 32'bxxxxxxxxxxxxxxxxx010xxxxx0000011,
 		A = 32'b0000000xxxxxxxxxx000xxxxx0110011,
@@ -8,17 +10,15 @@ package target_package;
 		Store =32'b0000000xxxxx00000010000000100011,
         Load = 32'b00000000000000000010xxxxx0000011
 	} opcode;
+    // mutual instructions between cores have the same name so we can verify all cores using one scoreboard
 
-
-	opcode si_a []; 
-	opcode reg_instruction;
-    integer supported_instructions; 
-
-    //includes
-	`include "GUVM.sv"
+	opcode si_a [];	// opcodes array to store enums so we can randomize and use them
+    integer supported_instructions;	 // number of instructions in the array
+	`include "GUVM.sv"	// including GUVM classes 
    
 
-	function void fill_si_array();// fill supported instruction array
+    // fill supported instruction array
+	function void fill_si_array();
 		// this does NOT  affect generalism this makes sure you dont run
 		// the same function twice in a test bench
 		`ifndef SET_UP_INSTRUCTION_ARRAY
@@ -31,10 +31,11 @@ package target_package;
 				si_a[i] = si_i;
 				si_i = si_i.next();
 			end
-			//$display("array is filled and ready to use");
 		`endif
 	endfunction
 
+
+    // function to determine format of verfied instruction and fill its operands
 	function GUVM_sequence_item get_format (logic [31:0] inst);
 		target_seq_item ay;
 		GUVM_sequence_item k;
@@ -136,6 +137,8 @@ package target_package;
 		return k;
 	endfunction
 
+
+    // used in if conditions to compare between (x) and (1 or 0)
 	function bit xis1 (logic[31:0] a,logic[31:0] b);
 		logic x;
 		x = (a == b);
