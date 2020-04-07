@@ -10,7 +10,7 @@ class GUVM_scoreboard extends uvm_scoreboard;
 	uvm_analysis_imp_mon_trans #(GUVM_result_transaction, GUVM_scoreboard) Mon2Sb_port;
 	uvm_analysis_imp_drv_trans #(target_seq_item, GUVM_scoreboard) Drv2Sb_port;
 
-	// TLM FIFOs to store the actual and expected transaction values
+	// TLM FIFOs to store the drived transaction and result transaction values
 	uvm_tlm_fifo #(target_seq_item) drv_fifo;
 	uvm_tlm_fifo #(GUVM_result_transaction) mon_fifo;
 
@@ -23,66 +23,58 @@ class GUVM_scoreboard extends uvm_scoreboard;
 		//Instantiate the analysis ports and Fifo
 		Mon2Sb_port = new("Mon2Sb", this);
 		Drv2Sb_port = new("Drv2Sb", this);
-		drv_fifo     = new("drv_fifo", this);  //BY DEFAULT ITS SIZE IS 1 BUT CAN BE UNBOUNDED by putting 0
+		drv_fifo     = new("drv_fifo", this); 
 		mon_fifo     = new("mon_fifo", this);
 	endfunction : build_phase
 
-	// write_drv_trans will be called when the driver broadcasts a transaction
-	// to the scoreboard
+	// write_drv_trans will be called when the driver broadcasts a transaction to the scoreboard
 	function void write_drv_trans (target_seq_item input_trans);
 		void'(drv_fifo.try_put(input_trans));
 	endfunction: write_drv_trans
 
-	// write_mon_trans will be called when the monitor broadcasts the DUT results
-	// to the scoreboard
+	// write_mon_trans will be called when the monitor broadcasts the DUT results to the scoreboard 
 	function void write_mon_trans (GUVM_result_transaction trans);
 		void'(mon_fifo.try_put(trans));
 	endfunction: write_mon_trans
 
 	task run_phase(uvm_phase phase);
-		target_seq_item cmd_trans;
-		GUVM_result_transaction res_trans;
-		bit [31:0] h1,i1,i2,imm,registered_inst;
-		integer i;
-		integer valid;
-		// bit [19:0] sign;
+		target_seq_item cmd_trans;	// stores drived transaction
+		GUVM_result_transaction res_trans;	// stores result transaction 
+		bit [31:0] expected1,operand1,operand2,imm,verified_inst;	// stores processed operands data
+		integer i;	// index of for loop
+		integer valid;	// stores instruction validity in the used core
 		forever begin
 			$display("Scoreboard started");
-			drv_fifo.get(cmd_trans);
-			mon_fifo.get(res_trans);
-			// `uvm_info ("READ_INSTRUCTION ", $sformatf("Expected Instruction=%h \n", exp_trans.inst), UVM_LOW)
-			// mon_fifo.get(out_trans);
-			i1=cmd_trans.operand1;
-			i2=cmd_trans.operand2;
-			registered_inst=cmd_trans.inst;
-			$display("Sb: inst is %b %b %b %b %b %b %b %b", cmd_trans.inst[31:28], cmd_trans.inst[27:24], cmd_trans.inst[23:20], cmd_trans.inst[19:16], cmd_trans.inst[15:12], cmd_trans.inst[11:8], cmd_trans.inst[7:4], cmd_trans.inst[3:0]);
-			$display("Sb: op1=%0d ", i1);
-			$display("Sb: op2=%0d", i2);
-			// opcode reg_instruction;
-			// `uvm_info ("SCOREBOARD ENTERED ", $sformatf("HELLO IN SCOREBOARD"), UVM_LOW);
-			// target_package::reg_instruction = target_package::reg_instruction.first;
+			drv_fifo.get(cmd_trans); // wait for driver to send drived transaction and get it
+			mon_fifo.get(res_trans); // wait for monitor to send result transaction and get it
+			operand1 = cmd_trans.operand1; 
+			operand2 = cmd_trans.operand2;
+			verified_inst = cmd_trans.inst;
+			$display("Sb: inst is %b %b %b %b %b %b %b %b", verified_inst[31:28], verified_inst[27:24], verified_inst[23:20], verified_inst[19:16], verified_inst[15:12], verified_inst[11:8], verified_inst[7:4], verified_inst[3:0]);
+			$display("Sb: op1=%0d ", operand1);
+			$display("Sb: op2=%0d", operand2);
 			valid = 0;
-			for(i=0;i<supported_instructions;i++)
+			// for loob to check that drived instruction is in opcodes array of the core
+			for(i=0;i<supported_instructions;i++) // supported instruction is number of instructions in opcodes array of the core
 				begin
-					if (xis1(cmd_trans.inst,si_a[i])) begin
+					if (xis1(verified_inst,si_a[i])) begin // si_a is opcodes array of the verified core
 						valid = 1;
-					end
-					// $display("LOOP ENTERED");
-					// $display("reg_instruction  ::  Value of  %0s is = %0d",target_package::reg_instruction.name(),target_package::reg_instruction);
+						break;	// break when instruction found in array to save its index in i
+ 					end
 				end
-			if(valid == 0) begin
-				`uvm_fatal("instruction fail", $sformatf("Sb: instruction not in pkg and its %b %b %b %b %b %b %b %b", cmd_trans.inst[31:28], cmd_trans.inst[27:24], cmd_trans.inst[23:20], cmd_trans.inst[19:16], cmd_trans.inst[15:12], cmd_trans.inst[11:8], cmd_trans.inst[7:4], cmd_trans.inst[3:0]))
+			if(valid == 0) begin // if valid still zero then instruction isn't found in opcodes array
+				`uvm_fatal("instruction fail", $sformatf("Sb: instruction not in pkg and its %b %b %b %b %b %b %b %b", verified_inst[31:28], verified_inst[27:24], verified_inst[23:20], verified_inst[19:16], verified_inst[15:12], verified_inst[11:8], verified_inst[7:4], verified_inst[3:0]))
 			end
-			casex (si_a[i])
-				A:begin
-					h1 = i1+i2;
-					if((h1) == (res_trans.result))
+			casex (si_a[i].name) // determining which instuction we verify  
+				"A":begin // add two registers
+					expected1 = operand1 + operand2;
+					if((expected1) == (res_trans.result))
 						begin
-							`uvm_info ("ADDITION_PASS", $sformatf("Actual Calculation=%d Expected Calculation=%d ", res_trans.result, h1), UVM_LOW)
+							`uvm_info ("ADDITION_PASS", $sformatf("Actual Calculation=%d Expected Calculation=%d ", res_trans.result, expected1), UVM_LOW)
 						end
 					else
 						begin
-							`uvm_error("ADDITION_FAIL", $sformatf("Actual Calculation=%d Expected Calculation=%d ", res_trans.result, h1))
+							`uvm_error("ADDITION_FAIL", $sformatf("Actual Calculation=%d Expected Calculation=%d ", res_trans.result, expected1))
 						end
 				end
 				default:`uvm_fatal("instruction fail", $sformatf("instruction is not add its %h", si_a[i]))
