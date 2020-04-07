@@ -1,6 +1,7 @@
 interface GUVM_interface;
-    import target_package::*;
+    import target_package::*; // importing amber core package
 
+    // core interface ports
     logic       i_clk;
     logic       i_irq;
     logic       i_firq;
@@ -16,26 +17,29 @@ interface GUVM_interface;
     logic i_wb_ack;
     logic i_wb_err;
 
+    // temp. registers
     logic [3:0] Rd;
     logic [3:0] indicator;
     logic [31:0] data_in;
 
-    logic [31:0] out;
-
+    // declaring the monitor
     GUVM_monitor monitor_h;
 
+    // initializing the clk signal
     initial begin
         i_clk = 0;
     end 
 
+    // sending data to the core
     task send_data(logic [31:0] data);
         data_in = data;
     endtask
 
+    // sending instructions to the core
     task send_inst(logic [31:0] inst);
-        indicator = inst[31:28];
-        Rd = inst[15:12];
-        if(indicator == 4'b1111) begin
+        indicator = inst[31:28]; // distinguishing the load instruction: amber only
+        Rd = inst[15:12]; // destination register address bits: 4 bits 
+        if(indicator == 4'b1111) begin // accessing the register file by forcing
             i_wb_dat = {96'hF0801003F0801003F0801003, inst};
             case(Rd)
                 4'b0000: dut.u_execute.u_register_bank.r0 = data_in;
@@ -53,12 +57,14 @@ interface GUVM_interface;
         end
     endtask
 
+    // reveiving data from the DUT
     function logic [127:0] receive_data();
         $display("result: %h", o_wb_dat);
         monitor_h.write_to_monitor(o_wb_dat);
         return o_wb_dat;
     endfunction
 
+    // sending the instruction to be verified
     task verify_inst(logic [31:0] inst);
         send_inst(inst); 
         repeat(2*50) begin 
@@ -66,13 +72,13 @@ interface GUVM_interface;
         end
     endtask
 
+    // dealing with the register file with the following load and store functions 
     task store(logic [31:0] inst);
         send_inst(inst);
         repeat(2*10) begin 
             #10 i_clk=~i_clk;
         end
         $display("result = %0d", receive_data());
-        // out = receive_data();
         repeat(2*10) begin 
             #10 i_clk=~i_clk;
         end
@@ -87,6 +93,7 @@ interface GUVM_interface;
         end
     endtask
 
+    // initializing the core
     task set_Up();
         i_irq = 1'b0;
         i_firq = 1'b0;
@@ -96,7 +103,7 @@ interface GUVM_interface;
     endtask: set_Up
 
     task reset_dut();
-        //
+        // amber does not have a reset signal in the core interface
     endtask : reset_dut
 
 endinterface: GUVM_interface
