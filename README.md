@@ -1,16 +1,9 @@
-
 # GUVM
-
-> Subtitle or Short Description Goes Here
-
-> ideally one sentence
-
-> include terms/tags that can be searched
 
 
 ---
 
-## Table of Contents (Optional)
+## Table of Contents 
 
 > If your `README` has a lot of info, section headers might be nice.
 
@@ -18,7 +11,6 @@
 - [Features](#features)
 - [Files](#Files)
 - [Team](#team)
-- [FAQ](#faq)
 
 ---
 
@@ -65,7 +57,8 @@ the test bench itself (uvm code) is inside GUVM file
 - r.bat       : runs the test bench for riscy dut on windows os
 - run.py      : runs the test bench for any chosen dut
 
-
+### GUVM
+	contains the generic uvm test bench
 ### Amber
 - DUT    
 	Amber verilog dut
@@ -88,29 +81,65 @@ the test bench itself (uvm code) is inside GUVM file
 	determines which sequence item to be be compiled ; in this case amber       
 - top.sv    
 	top module for the test bench ; in this case amber      
-### Step 3
+### Leon
+- DUT    
+	leon verilog dut
+- leon_interface.sv    
+	leon interface used in UVM test bench    
+	we are still trying to make some sort of as generic as possible interface    
+	so currently we made an interface for each dut    
+- leon_pkg.sv         
+	contains the opcodes and instructions supported by leon DUT 
+- leon_seq_item.sv    
+	responsible for providing the instruction formats     
+	that are supported by leon to the GUVM_Sequence   
+- dut_leon.f     
+	tells questasim where to find the dut       
+- run_leon.do       
+	resposible for compiling the whole testbench for leon dut     
+- target_pkg.sv    
+	determines which package to be be compiled ; in this case leon     
+- target_sequence_item.sv    
+	determines which sequence item to be be compiled ; in this case leon       
+- top.sv    
+	top module for the test bench ; in this case leon   
 
-- ðŸ”ƒ Create a new pull request using <a href="https://github.com/joanaz/HireDot2/compare/" target="_blank">`https://github.com/joanaz/HireDot2/compare/`</a>.
+### riscy
+- DUT    
+	riscy verilog dut
+- riscy_interface.sv    
+	riscy interface used in UVM test bench    
+	we are still trying to make some sort of as generic as possible interface    
+	so currently we made an interface for each dut    
+- riscy_pkg.sv         
+	contains the opcodes and instructions supported by riscy DUT 
+- riscy_seq_item.sv    
+	responsible for providing the instruction formats     
+	that are supported by riscy to the GUVM_Sequence   
+- dut_riscy.f     
+	tells questasim where to find the dut       
+- run_riscy.do       
+	resposible for compiling the whole testbench for riscy dut     
+- target_pkg.sv    
+	determines which package to be be compiled ; in this case riscy     
+- target_sequence_item.sv    
+	determines which sequence item to be be compiled ; in this case riscy       
+- top.sv    
+	top module for the test bench ; in this case riscy 	
 
 ---
 
 ## Team
 
-> Or Contributors/People
-
-| <a href="http://fvcproductions.com" target="_blank">**FVCproductions**</a> | <a href="http://fvcproductions.com" target="_blank">**FVCproductions**</a> | <a href="http://fvcproductions.com" target="_blank">**FVCproductions**</a> |
-| :---: |:---:| :---:|
-| [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com)    | [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com) | [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com)  |
-| <a href="http://github.com/fvcproductions" target="_blank">`github.com/fvcproductions`</a> | <a href="http://github.com/fvcproductions" target="_blank">`github.com/fvcproductions`</a> | <a href="http://github.com/fvcproductions" target="_blank">`github.com/fvcproductions`</a> |
-
-- You can just grab their GitHub profile image URL
-- You should probably resize their picture using `?s=200` at the end of the image URL.
+> Or Contributors
+1. Kholoud Mahmoud    
+2. Randa Ahmed     
+3. Karim Ayman     
+4. Mostafa Ayman     
+5. Waleed Samy Taie     
+6. Yasser Ibrahim     
 
 ---
 
-## FAQ
-
-- **How do I do *specifically* so and so?**
-    - No problem! Just do this.
 
 ---
