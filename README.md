@@ -42,9 +42,9 @@
 ## Features
 the testbench supports 1 instruction(add) to be tested across diffreant duts 
 ### DUTS 
-1-riscy:based on RISC-v ISA 
-2-leon :based on Sparcv8 ISA 
-3-amber:based on ARM ISA 
+1-riscy:based on RISC-v ISA  
+2-leon :based on Sparcv8 ISA   
+3-amber:based on ARM ISA   
 
 ---
 
