@@ -26,8 +26,9 @@
 
 ## Installation
 
-- needed software : questasim V10.4e or higher , python v 2.7 or higher
-
+- needed software 
+>questasim V10.4e or higher
+>python v 2.7 or higher
 ### Clone
 
 - Clone this repo to your local machine using `https://github.com/cufeolm/codeGP`
@@ -36,12 +37,6 @@
 
 - open Run.py on your machine 
 
-> update and install this package first
-
-```shell
-$ brew update
-$ brew install fvcproductions
-```
 ---
 
 ## Features
