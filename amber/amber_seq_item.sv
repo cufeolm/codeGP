@@ -1,3 +1,6 @@
+//extends the GUVM_sequence_item to specify the fields needed in the instruction format as each processor has 
+//a diffreant way of dividing the fields of a 32bit instruction
+
 class target_seq_item extends GUVM_sequence_item;
 
 	`uvm_object_utils(target_seq_item)
@@ -38,7 +41,7 @@ class target_seq_item extends GUVM_sequence_item;
 	logic l;
 	logic n;
 
-	function setup();
+	function setup(); // sets up the fields upove based on the randomized instruction
 		GUVM_sequence_item temp;
 		//$display(inst);
 		temp = get_format(inst);
@@ -49,12 +52,12 @@ class target_seq_item extends GUVM_sequence_item;
 		//$display(inst);
 	endfunction
 
-	function void store(logic [3:0] r);
+	function void store(logic [3:0] r);//for initially storing the register file only ; not for testing the store instruction 
 		ran_constrained(Store);
 		inst[15:12]=r;
 	endfunction
 
-	function void load(logic [3:0] r);
+	function void load(logic [3:0] r);//for initially loading the register file only ; not for testing the laod instruction 
 		ran_constrained(Load);
 		inst[15:12]=r;
 	endfunction

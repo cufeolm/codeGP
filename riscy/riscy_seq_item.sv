@@ -1,3 +1,7 @@
+
+//extends the GUVM_sequence_item to specify the fields needed in the instruction format as each processor has 
+//a diffreant way of dividing the fields of a 32bit instruction
+
 import uvm_pkg::*;
 `include "uvm_macros.svh"
 
@@ -30,17 +34,17 @@ class target_seq_item extends GUVM_sequence_item;
 	logic [3:0]succ;
 	logic [11:0]csr;
 
-	function void store(logic [4:0] r);
+	function void store(logic [4:0] r);//for initially storing the register file only ; not for testing the store instruction 
 		ran_constrained(Store);
 		inst[24:20]=r;
 	endfunction
 
-	function void load(logic [4:0] r);
+	function void load(logic [4:0] r);//for initially loading the register file only ; not for testing the laod instruction 
 		ran_constrained(Load);
 		inst[11:7]=r;
 	endfunction
 
-	function void setup();
+	function void setup();// sets up the fields upove based on the randomized instruction
 		GUVM_sequence_item temp;
 		//target_seq_item leon ;
 		temp = get_format(inst);
