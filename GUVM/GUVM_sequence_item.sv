@@ -1,14 +1,19 @@
-class GUVM_sequence_item extends uvm_sequence_item;
 
+//GUVM_sequence_item is the sequence that is acted upon in our test bench 
+//acts as a parent to all the target sequence items 
+
+
+class GUVM_sequence_item extends uvm_sequence_item;	
   `uvm_object_utils(GUVM_sequence_item)
    rand logic [31:0] inst;
    rand logic [31:0] data;// the effective data that should be stored inside memory 
    logic [31:0] operand1,operand2;// the 2 operands that shoould be at the registers 
    logic [31:0] receivedDATA;
 
+   
    protected function logic [31:0] generate_instruction(opcode target_instruction );
-		//logic [31:0] rand_inst;
-		//rand_inst = $random();
+		//this function generates an instruction based on the op code given in the target_package
+		// the target pacakge tells us whhich fields need to be constant and the rrest is randomized
 		for (integer i =0;i<32;i++)
 		begin 
 			if ((target_instruction[i]===1 )||(target_instruction[i]===0 )) 
@@ -17,17 +22,19 @@ class GUVM_sequence_item extends uvm_sequence_item;
 		return inst;
 	endfunction 
 
-	function void rf_load();
+	function void rf_load();//for debuggging purposes only 
 		inst=0;
 	endfunction
 
-	function void ran_constrained(opcode con);//resiricted randomization 
+	function void ran_constrained(opcode con);
+		//randomizes the non op-code fields for a certain instruction
 		inst = $random();
 		data = $random();
 		inst = generate_instruction(con);
 	endfunction 
 
 	function void ran();
+		// this function generates a random instruction from the supported instructions 
 		//randomize();
 		integer i = $urandom() % supported_instructions;
 		opcode con = si_a[i]; // con is a constraint
@@ -66,7 +73,7 @@ class GUVM_sequence_item extends uvm_sequence_item;
 	inst = RHS.inst;
  endfunction : do_copy
 
- function string convert2string();
+ function string convert2string();// for debugging purposes 
 	string            s;
 	s = $sformatf("command sequence : inst =%b",
 				  inst);
