@@ -47,6 +47,7 @@ the test bench itself (uvm code) is inside GUVM file
 
 ### ROOT file (CodeGP)
 - amber       : contains dut,interface,pakage,sequence item,top module and do files for amber
+- doc         : contains documentation for the test bench
 - full_pkgs   : still under development (not compiled currently) 
 - GUVM        : contains generic UVM code that is responsible for testing the duts
 - leon        : contains dut,interface,pakage,sequence item,top module and do files for leon
