@@ -1,11 +1,8 @@
 # GUVM
 
-
 ---
 
 ## Table of Contents 
-
-> If your `README` has a lot of info, section headers might be nice.
 
 - [Installation](#Installation)
 - [Features](#features)
@@ -14,13 +11,12 @@
 
 ---
 
----
-
 ## Installation
 
 - needed software 
 >questasim V10.4e or higher,
 >python v 2.7 or higher
+
 ### Clone
 
 - Clone this repo to your local machine using `https://github.com/cufeolm/codeGP`
@@ -60,6 +56,7 @@ the test bench itself (uvm code) is inside GUVM file
 
 ### GUVM
 	contains the generic uvm test bench
+
 ### Amber
 - DUT    
 	Amber verilog dut
@@ -82,6 +79,7 @@ the test bench itself (uvm code) is inside GUVM file
 	determines which sequence item to be be compiled ; in this case amber       
 - top.sv    
 	top module for the test bench ; in this case amber      
+
 ### Leon
 - DUT    
 	leon verilog dut
@@ -139,8 +137,5 @@ the test bench itself (uvm code) is inside GUVM file
 4. Mostafa Ayman     
 5. Waleed Samy Taie     
 6. Yasser Ibrahim     
-
----
-
 
 ---
