@@ -11,11 +11,11 @@ DUT: """;
 g = raw_input(s);
 print g;
 if g == "1":
-  os.system("vsim -c -do riscy/run_riscy.do")
+  os.system("vsim -c -do ../testing_riscy/run_riscy.do")
 elif g == "2":
-  os.system("vsim -c -do leon/run_leon.do")
+  os.system("vsim -c -do ../testing_leon/run_leon.do")
 elif g == "3":
-  os.system("vsim -c -do amber/run_amber.do")
+  os.system("vsim -c -do ../testing_amber/run_amber.do")
 else:
   print("please enter a valid number")
 
