@@ -1,6 +1,7 @@
 `uvm_analysis_imp_decl(_mon_trans)
 `uvm_analysis_imp_decl(_drv_trans)
 
+`include "GUVM_tb.sv"
 class GUVM_scoreboard extends uvm_scoreboard;
 
 	// register the scoreboard in the UVM factory
@@ -67,15 +68,10 @@ class GUVM_scoreboard extends uvm_scoreboard;
 			end
 			case (si_a[i].name) // determining which instuction we verify  
 				"A":begin // add two registers
-					expected1 = operand1 + operand2;
-					if((expected1) == (res_trans.result))
-						begin
-							`uvm_info ("ADDITION_PASS", $sformatf("Actual Calculation=%d Expected Calculation=%d ", res_trans.result, expected1), UVM_LOW)
-						end
-					else
-						begin
-							`uvm_error("ADDITION_FAIL", $sformatf("Actual Calculation=%d Expected Calculation=%d ", res_trans.result, expected1))
-						end
+					verify_add(cmd_trans,res_trans);
+				end
+				"test":begin // temp instruction 
+					verify_test(cmd_trans,res_trans);
 				end
 				default:`uvm_fatal("instruction fail", $sformatf("instruction is not add its %h", si_a[i]))
 			endcase
