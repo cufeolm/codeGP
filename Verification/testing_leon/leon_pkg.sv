@@ -1,7 +1,7 @@
 package target_package;
     import uvm_pkg::*;
     `include "uvm_macros.svh"
-
+    
     // instructions opcodes verified in this core 
     typedef enum logic [31:0] {
         LDW= 32'b11xxxxx000011xxxxx1xxxxxxxxxxxxx,
@@ -15,6 +15,7 @@ package target_package;
 
     opcode si_a [] ;    // opcodes array to store enums so we can randomize and use them
     integer supported_instructions ;    // number of instructions in the array
+    `include "leon_defines.sv"
 	`include"GUVM.sv"   // including GUVM classes 
 
 
@@ -46,10 +47,10 @@ package target_package;
         ay.inst=inst;
         ay.op = inst[31:30];
         case (ay.op)
-            2'b01 :
+            CALL :
                 //call format1
                 ay.disp30 = inst[29:0];
-            2'b00 : begin
+            SETHI_NOP_BRANCH : begin
                 ay.op2 = inst[24:22];
                 case (ay.op2)
                     3'b100,3'b000 :
@@ -68,7 +69,7 @@ package target_package;
                     default: uvm_report_error("k.instruction", "k.instruction format not defined");
                 endcase
             end
-            2'b10, 2'b11 : begin
+            Remaining_instructions, Remaining_instructions1 : begin
                 ay.i = inst[13];
                 ay.rd = inst[29:25];
                 ay.op3 = inst[24:19];

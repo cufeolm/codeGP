@@ -14,6 +14,7 @@ package target_package;
 
 	opcode si_a [];	// opcodes array to store enums so we can randomize and use them
     integer supported_instructions;	 // number of instructions in the array
+	`include "riscy_defines.sv"
 	`include "GUVM.sv"	// including GUVM classes 
    
 
@@ -44,13 +45,13 @@ package target_package;
 		ay.inst = inst;
 		ay.opcode = inst[6:0];
 		case(ay.opcode)
-			7'b0110111, 7'b0010111:
+			U_type, U_type1:
 				begin
 					//U-type
 					ay.immb31_12 = inst[31:12];
 					ay.rd = inst[11:7];
 				end
-			7'b1101111:
+			J_type:
 				begin
 					//J-type
 					ay.immb20 = inst[31];
@@ -59,7 +60,7 @@ package target_package;
 					ay.immb19_12 = inst[19:12];
 					ay.rd = inst[11:7];
 				end
-			7'b1100111, 7'b0000011:
+			I_type, I_type1:
 				begin
 					//I-type
 					ay.immb11_0 = inst[31:20];
@@ -67,7 +68,7 @@ package target_package;
 					ay.funct3 = inst[14:12];
 					ay.rd = inst[11:7];
 				end
-			7'b0010011:
+			I_type_shift:
 				begin
 					if ( (inst[14:12] == 3'b001) || (inst[14:12] == 3'b101))
 						begin
@@ -87,13 +88,13 @@ package target_package;
 								ay.rd = inst[11:7];
 							end
 				end
-			7'b0001111:
+			I_type_fence:
 				begin
 					//I-type-fence
 					ay.pred = inst[27:24];
 					ay.succ = inst[23:20];
 				end
-			7'b1110011:
+			I_type_csr:
 				begin
 					//I-type-csr
 					ay.csr = inst[31:20];
@@ -101,7 +102,7 @@ package target_package;
 					ay.funct3 = inst[14:12];
 					ay.rd = inst[11:7];
 				end
-			7'b1100011:
+			B_type:
 				begin
 					//B-type
 					ay.rs1 = inst[19:15];
@@ -112,7 +113,7 @@ package target_package;
 					ay.immb4_1 = inst[11:8];
 					ay.immb11 = inst[7];
 				end
-			7'b0100011:
+			S_type:
 				begin
 					//S-type
 					ay.immb11_5 = inst[31:25];
@@ -122,7 +123,7 @@ package target_package;
 					ay.immb4_0 = inst[11:7];
 
 				end
-			7'b0110011:
+			R_type:
 				begin
 					//R-type
 					ay.funct7 = inst[31:25];
