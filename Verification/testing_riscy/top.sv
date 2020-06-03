@@ -3,11 +3,10 @@ module top;
    import target_package::*;
 
     `include "uvm_macros.svh"
-
-	GUVM_interface bfm();
-
+    logic clk ; 
+	GUVM_interface bfm(clk);
     riscv_core dut(
-        .clk_i(bfm.clk_i),
+        .clk_i(bfm.clk_pseudo),
         .rst_ni(bfm.rst_ni),
         .clock_en_i(bfm.clock_en_i),
         .test_en_i(bfm.test_en_i),
@@ -53,7 +52,12 @@ module top;
     initial begin
         uvm_config_db#(virtual GUVM_interface)::set(null, "*", "bfm", bfm);
         fill_si_array();
-        run_test("GUVM_test");
+        run_test();
+    end
+
+    initial begin 
+        clk = 0 ;
+        forever #10 clk=~clk;
     end
 
 endmodule : top

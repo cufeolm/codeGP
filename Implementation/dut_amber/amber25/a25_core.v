@@ -56,6 +56,15 @@ output      [15:0]          o_wb_sel,
 output                      o_wb_we,
 input       [127:0]         i_wb_dat,
 output      [127:0]         o_wb_dat,
+
+input       [127:0]         icache_wb_read_data, // instruction input
+input       [127:0]         dcache_wb_cached_rdata,
+output      [127:0]         dcache_wb_write_data, // output data
+input                       icache_wb_ready,
+input                       dcache_wb_cached_ready,
+input                       dcache_wb_uncached_ready,
+
+
 output                      o_wb_cyc,
 output                      o_wb_stb,
 input                       i_wb_ack,
@@ -165,15 +174,15 @@ wire                      dcache_wb_uncached_req;
 wire                      dcache_wb_write;
 wire     [15:0]           dcache_wb_byte_enable;
 wire     [31:0]           dcache_wb_address;
-wire     [127:0]          dcache_wb_cached_rdata;
-wire     [127:0]          dcache_wb_write_data;
-wire                      dcache_wb_cached_ready;
-wire                      dcache_wb_uncached_ready;
+// wire     [127:0]          dcache_wb_cached_rdata;
+// wire     [127:0]          dcache_wb_write_data;
+// wire                      dcache_wb_cached_ready;
+// wire                      dcache_wb_uncached_ready;
 wire     [31:0]           icache_wb_address;
 wire                      icache_wb_req;
 wire     [31:0]           icache_wb_adr; 
-wire     [127:0]          icache_wb_read_data; 
-wire                      icache_wb_ready;
+// wire     [127:0]          icache_wb_read_data; 
+// wire                      icache_wb_ready;
 
 wire                      conflict;
 wire                      rn_use_read;
@@ -437,7 +446,7 @@ a25_write_back u_write_back (
 // ======================================
 //  Wishbone Master I/F
 // ======================================
-a25_wishbone u_wishbone (
+/*a25_wishbone u_wishbone (
     // CPU Side
     .i_clk                              ( i_clk                             ),
     
@@ -479,7 +488,7 @@ a25_wishbone u_wishbone (
     .i_wb_ack                           ( i_wb_ack                          ),
     .i_wb_err                           ( i_wb_err                          )
 );
-
+*/
 
 // ======================================
 //  Co-Processor #15

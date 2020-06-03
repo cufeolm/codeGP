@@ -4,10 +4,10 @@ module top;
    import iface::*;
 
 `include "uvm_macros.svh"
-
-	GUVM_interface bfm();
+    logic clk ; 
+    GUVM_interface bfm(clk);
     proc dut(
-        .clk(bfm.clk),
+        .clk(bfm.clk_pseudo),
         .rst(bfm.rst),
         .pciclk(bfm.pcirst),
         .iui(bfm.integer_unit_input),
@@ -21,7 +21,13 @@ module top;
 initial begin
    uvm_config_db#(virtual GUVM_interface)::set(null, "*", "bfm", bfm);
    fill_si_array();
-   run_test("GUVM_test");
+   //run_test("GUVM_test");
+   run_test();
+end
+
+initial begin 
+clk = 0 ;
+forever #10 clk=~clk;
 end
 
 endmodule : top

@@ -16,35 +16,24 @@ module top;
         .i_wb_err(bfm.i_wb_err),
         .o_wb_cyc(bfm.o_wb_cyc),
         .o_wb_stb(bfm.o_wb_stb),
-        .o_wb_we(bfm.o_wb_we)
+        .o_wb_we(bfm.o_wb_we),
+        .out(bfm.out),
+        .in(bfm.in)
     );
 
     initial begin
-      /*  bfm.set_Up();
-        bfm.send_data(128'hF0801003F0801003F0801003E5800000, 32'h00000005);
-        bfm.send_inst(128'hF0801003F0801003F0801003F0801003);
-        #1000
-        bfm.send_data(128'hF0801003F0801003F0801003E5802000, 32'h00000001);
-        bfm.send_inst(128'hF0801003F0801003F0801003F0801003);
-        #1000
-        bfm.send_inst(128'hF0801003F0801003F0801003E0801002);
-        #1000
-        bfm.send_inst(128'hF0801003F0801003F0801003E5801000);
-        #200
-        bfm.receive_data();*/
-
         bfm.set_Up();
-        bfm.send_data(32'h00000005);
-        bfm.send_inst(128'hF0801003F0801003F0801003F0800003);
-        #1000
-        bfm.send_data(32'h00000001);
+        // bfm.send_data(32'h00000005);
+        bfm.send_inst({96'hF0801003F0801003F0801003, 32'b11101010000000000000000000000001});
+        //receive_data();
+        /*bfm.send_data(32'h00000001);
         bfm.send_inst(128'hF0801003F0801003F0801003F0802003);
         #1000
         bfm.send_inst(128'hF0801003F0801003F0801003E0801002);
         #1000
         bfm.send_inst(128'hF0801003F0801003F0801003E5801000);
         #200
-        bfm.receive_data();
+        bfm.receive_data();*/
     end
     
     always begin

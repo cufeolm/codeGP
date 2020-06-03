@@ -41,7 +41,6 @@
 //                                                              //
 //////////////////////////////////////////////////////////////////
 
-
 module a25_fetch
 (
 input                       i_clk,
@@ -100,14 +99,14 @@ assign cache_read_data     = i_iaddress[3:2] == 2'd0    ? cache_read_data128[ 31
                              i_iaddress[3:2] == 2'd2    ? cache_read_data128[ 95:64] :
                                                           cache_read_data128[127:96] ;
 
-assign wb_rdata32 = i_iaddress[3:2] == 2'd0 ? i_wb_read_data[ 31: 0] :
+assign wb_rdata32 = i_iaddress[3:2] == 2'd0 ? i_wb_read_data[ 31: 0] : // commented by Waleed Taie
                     i_iaddress[3:2] == 2'd1 ? i_wb_read_data[ 63:32] :
                     i_iaddress[3:2] == 2'd2 ? i_wb_read_data[ 95:64] :
                                               i_wb_read_data[127:96] ;
 
-assign o_fetch_instruction = sel_cache                  ? cache_read_data : 
-                             uncached_instruction_read  ? wb_rdata32      :
-                                                          32'hffeeddcc    ;
+assign o_fetch_instruction = sel_cache                  ? cache_read_data : // commented by Waleed Taie
+                               uncached_instruction_read  ? wb_rdata32      :
+                                                            32'hffeeddcc    ;
 
 // Stall the instruction decode and execute stages of the core
 // when the fetch stage needs more than 1 cycle to return the requested

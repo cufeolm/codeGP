@@ -1,7 +1,7 @@
 class GUVM_result_transaction extends uvm_transaction;
 
-   logic [31:0]result; // stores logic and arithmetic instructions results
-
+   logic [31:0]result,next_pc,mem_add; // stores logic and arithmetic instructions results
+   logic [3:0]data_write_e;
    function new(string name = "");
       super.new(name);
    endfunction : new

@@ -27,8 +27,8 @@ package device is
 ----------------------------------------------------------------------
 -- This is the current device configuration
 ----------------------------------------------------------------------
-  constant conf : config_type := fpga_2k2k;
---  constant conf : config_type := fpga_2k2k_v8;
+--  constant conf : config_type := fpga_2k2k;
+  constant conf : config_type := fpga_2k2k_v8;
 --  constant conf : config_type := fpga_2k2k_irq2;
 --  constant conf : config_type := fpga_2k2k_softprom;
 --  constant conf : config_type := fpga_2k2k_v8_softprom;

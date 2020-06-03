@@ -4,13 +4,63 @@ package target_package;
     
     // instructions opcodes verified in this core 
     typedef enum logic [31:0] {
-        LDW= 32'b11xxxxx000011xxxxx1xxxxxxxxxxxxx,
+        LSBMA=32'b11xxxxx001001xxxxx1xxxxxxxxxxxxx, // load signed byte with misalignment feat. reg-imm
+        LSH=32'b11xxxxx001010xxxxx1xxxxxxxxxxxxx, // load signed half word reg-imm
+        LUBMA=32'b11xxxxx000001xxxxx1xxxxxxxxxxxxx, // load unsigned byte with misalignment feat. reg-imm
+        LUH=32'b11xxxxx000010xxxxx1xxxxxxxxxxxxx, // load unsigned half word reg-imm
+        LDD= 32'b1100010000011xxxxx10000000000110, // load double word reg-imm
+        LWRR=32'b11xxxxx010000xxxxx0xxxxxxxxxxxxx, // load word reg-reg (from alternate space)
+        LDDRR=32'b1100010010011xxxxx0xxxxxxxxxxxxx, // load double word reg-reg
+        LSBMARR=32'b11xxxxx011001xxxxx000001010xxxxx, // load signed byte reg-reg
+        LSHRR=32'b11xxxxx011010xxxxx0xxxxxxxxxxxxx, // load signed half word reg-reg
+        LUBRR=32'b11xxxxx010001xxxxx0xxxxxxxxxxxxx, // load unsigned byte reg-reg
+        LUHRR=32'b11xxxxx010010xxxxx0xxxxxxxxxxxxx, // load unsigned half word reg-reg
+
+        SB=32'b11xxxxx000101xxxxx1xxxxxxxxxxxxx, // store least significant byte reg-imm
+        SBRR=32'b11xxxxx010101xxxxx000001010xxxxx, // store least significant byte reg-reg
+        SH=32'b11xxxxx000110xxxxx1xxxxxxxxxxxxx, // store least significant half word reg-imm
+        SHRR=32'b11xxxxx010110xxxxx00001010xxxxxx, // store least significant half word reg-reg
+        SWRR=32'b11xxxxx010100xxxxx000001010xxxxx, // store word reg-reg
+        SD=32'b11xxxxx000111xxxxx1xxxxxxxxxxxxx, // store double word reg-imm
+        SDRR=32'b11xxxxx010111xxxxx000001010xxxxx, // store double word reg-reg
+
         A=32'b10xxxxx000000xxxxx000000000xxxxx,
-        N=32'b00000001000000000000000000000000,
+        ADDCC=32'b10xxxxx010000xxxxx000000000xxxxx,
+        ADDX =32'b10xxxxx001000xxxxx000000000xxxxx,
+        ADDXCC=32'b10xxxxx011000xxxxx000000000xxxxx,
+        Ai=32'b10xxxxx000000xxxxx1xxxxxxxxxxxxx,
+        Jalr_cpc=32'b10xxxxx111000xxxxx10000000001100,
+        Jalrr=32'b10xxxxx111000xxxxx000000000xxxxx,
+        NOP=32'b00000001000000000000000000000000,
         S=32'b10xxxxx000100xxxxx000000000xxxxx,
+        SUBCC=32'b10xxxxx010100xxxxx000000000xxxxx,
+
+        UMULR=32'b10xxxxx001010xxxxx000000000xxxxx,
+        UDIVR=32'b10xxxxx001110xxxxx000000000xxxxx,
+
+        BIEF=32'b00x0001010xxxxxxxxxxxxxxxxxxxxxx,
+        BCSF = 32'b00x0101010xxxxxxxxxxxxxxxxxxxxxx,
+        BNEGF = 32'b00x0110010xxxxxxxxxxxxxxxxxxxxxx,
+        BVSF = 32'b00x0111010xxxxxxxxxxxxxxxxxxxxxx,
+
+        BA= 32'b00x1000010xxxxxxxxxxxxxxxxxxxxxx,
+
+        RDPSR=32'b10xxxxx101001xxxxx00000000000000,
+        //BIEF=32'b0010001010xxxxxxxxxxxxxxxxxxxxxx,
         Store =32'b11xxxxx0001000000010000000000000,
-        Load = 32'b11xxxxx0000000000010000000000000
+        SW=32'b11xxxxx000100xxxxx1xxxxxxxxxxxxx, // store word reg-imm
+        Load = 32'b11xxxxx0000000000010000000000000,
+        LW= 32'b11xxxxx000000xxxxx1xxxxxxxxxxxxx // load word reg-imm
     } opcode;
+    
+    //INSTRUCTION FORMAT 
+    parameter RDU = 29;
+    parameter   RDL = 25;
+    parameter   RS1U = 18;
+    parameter   RS1L = 14;
+    parameter   RS2U = 4;
+    parameter   RS2L = 0;
+    
     // mutual instructions between cores have the same name so we can verify all cores using one scoreboard
 
     opcode si_a [] ;    // opcodes array to store enums so we can randomize and use them
@@ -37,77 +87,29 @@ package target_package;
             end
     `endif
     endfunction
-
-    // function to determine format of verfied instruction and fill its operands
-    function GUVM_sequence_item get_format (logic [31:0] inst);
-        target_seq_item ay;
-        GUVM_sequence_item k ;
-        k = new("k");
-        ay = new("ay");
-        ay.inst=inst;
-        ay.op = inst[31:30];
-        case (ay.op)
-            CALL :
-                //call format1
-                ay.disp30 = inst[29:0];
-            SETHI_NOP_BRANCH : begin
-                ay.op2 = inst[24:22];
-                case (ay.op2)
-                    3'b100,3'b000 :
-                        //sethi & no op & unimplemnted format 2
-                        begin
-                            ay.rd = inst[29:25];
-                            ay.imm22 = inst[21:0];
-                        end
-                    3'b010, 3'b110, 3'b111 :
-                        //branch & fp branch & co branch format 2
-                        begin
-                            ay.a = inst[29];
-                            ay.cond = inst[28:25];
-                            ay.disp22 = inst[21:0];
-                        end
-                    default: uvm_report_error("k.instruction", "k.instruction format not defined");
-                endcase
-            end
-            Remaining_instructions, Remaining_instructions1 : begin
-                ay.i = inst[13];
-                ay.rd = inst[29:25];
-                ay.op3 = inst[24:19];
-                ay.rs1 = inst[18:14];
-                if (!ay.i)
-                    //format 3 register register
-                    begin
-                        ay.asi = inst[12:5];
-                        ay.rs2 = inst[4:0];
-                    end
-                else
-                    //format 3 register immediate
-                    begin
-                        ay.imm13 = inst[12:0];
-                    end
-
-            end
-            default: uvm_report_error("k.instruction", "k.instruction format not defined");
-        endcase
-
-        if (!($cast(k,ay)))
-            $fatal(1,"failed to cast transaction to leon's transaction");
-        return k;
-    endfunction
-
-
-    // used in if conditions to compare between (x) and (1 or 0)
+        // used in if conditions to compare between (x) and (1 or 0)
     function bit xis1 (logic[31:0] a,logic[31:0] b);
-    logic x;
-    x = (a == b);
-    if (x === 1'bx)
-        begin
-            return 1'b1;
-        end
-    else
-        begin
-            return 1'b0;
-        end
-    endfunction : xis1
+        logic x;
+        x = (a == b);
+        if(x==1) return 1 ;
+        else if (x === 1'bx)
+            begin
+                return 1'b1;
+            end
+        else
+            begin
+                return 1'b0;
+            end
+        endfunction : xis1
+
+        function opcode findOP(string s);//returns the op code corresponding to string s from package
+            foreach(si_a[i]) // supported instruction is number of instructions in opcodes array of the core
+            begin
+                if(si_a[i].name == s) return si_a[i] ;
+            end
+            $display("couldnt find %s inside instruction package",s);
+            return NOP ; 
+        endfunction
+
 
 endpackage

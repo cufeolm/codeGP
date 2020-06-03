@@ -7,8 +7,12 @@ class GUVM_sequence_item extends uvm_sequence_item;
   `uvm_object_utils(GUVM_sequence_item)
    rand logic [31:0] inst;
    rand logic [31:0] data;// the effective data that should be stored inside memory 
-   logic [31:0] operand1,operand2;// the 2 operands that shoould be at the registers 
-   logic [31:0] receivedDATA;
+   rand logic [31:0] data2;// the effective data that should be stored inside memory in case of double load
+   logic [31:0] zimm,simm,current_pc;// the 2 operands that shoould be at the registers
+   logic [4:0]rs1,rs2,rd,store_add;
+   logic update_result=0;
+   //logic v=0; // should be deleted
+   GUVM_TB_SOM SOM = SB_HISTORY_MODE ;//score board operation mode
 
    
    protected function logic [31:0] generate_instruction(opcode target_instruction );
@@ -44,7 +48,8 @@ class GUVM_sequence_item extends uvm_sequence_item;
 
 
   function new (string name = "");
-    super.new(name);
+	super.new(name);
+	
   endfunction
 
   //copied and edited portion of code 
@@ -71,6 +76,16 @@ class GUVM_sequence_item extends uvm_sequence_item;
 	assert($cast(RHS,rhs)) else
 	  $fatal(1,"Faied cast in do_copy");
 	inst = RHS.inst;
+	data = RHS.data ;
+	store_add = RHS.store_add;
+	data2 = RHS.data2 ; 
+	zimm=RHS.zimm; 
+	simm=RHS.simm;
+	current_pc=RHS.current_pc;
+	rs1=RHS.rs1;
+	rs2=RHS.rs2;
+	rd=RHS.rd;
+	SOM = RHS.SOM ; 
  endfunction : do_copy
 
  function string convert2string();// for debugging purposes 

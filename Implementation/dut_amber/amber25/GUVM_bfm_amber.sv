@@ -15,6 +15,9 @@ interface GUVM_interface(input logic i_clk);
     logic i_wb_ack;
     logic i_wb_err;
 
+    logic [127:0] in;
+    logic [127:0] out;
+
     logic [3:0] Rd;
     logic [3:0] indicator;
     logic [31:0] data_in;
@@ -23,24 +26,8 @@ interface GUVM_interface(input logic i_clk);
         data_in = data;
     endfunction
 
-/*    function void send_data(logic [127:0] inst, logic [31:0] data);
-        Rd = inst[15:12];
-        case(Rd)
-            4'b0000: dut.u_execute.u_register_bank.r0 = data;
-            4'b0001: dut.u_execute.u_register_bank.r1 = data;
-            4'b0010: dut.u_execute.u_register_bank.r2 = data;
-            4'b0011: dut.u_execute.u_register_bank.r3 = data;
-            4'b0100: dut.u_execute.u_register_bank.r4 = data;
-            4'b0101: dut.u_execute.u_register_bank.r5 = data;
-            4'b0111: dut.u_execute.u_register_bank.r6 = data;
-            4'b1000: dut.u_execute.u_register_bank.r6 = data;
-            4'b1001: dut.u_execute.u_register_bank.r7 = data;
-            default: $display("Error in SEL");
-        endcase
-    endfunction*/
-
     function void send_inst(logic [127:0] inst);
-        indicator = inst[31:28];
+        /*indicator = inst[31:28];
         Rd = inst[15:12];
         if (indicator == 4'b1111) begin
             i_wb_dat = 128'hF0801003F0801003F0801003F0801003;
@@ -58,12 +45,14 @@ interface GUVM_interface(input logic i_clk);
             endcase
         end else begin
             i_wb_dat = inst;
-        end
+        end*/
+        in = inst[31:0];
     endfunction
 
-    function logic [127:0] receive_data();
-        return o_wb_dat;
-    endfunction
+    /*function logic [31:0] receive_data();
+        // return out[31:0];
+        return dut.u_execute.u_register_bank.r15;
+    endfunction*/
 
     function void set_Up();
         i_irq = 1'b0;
@@ -72,15 +61,5 @@ interface GUVM_interface(input logic i_clk);
         i_wb_ack = 1'b1;
         i_wb_err = 1'b0;
     endfunction: set_Up
-
-    /*
-    task reset_dut(clk);
-        i_system_rdy = 1'b0;
-        repeat (10) begin
-            @(negedge clk);
-        end
-        i_system_rdy = 1'b1;
-    endtask : reset_dut
-    */
 
 endinterface: GUVM_interface

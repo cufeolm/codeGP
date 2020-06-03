@@ -861,7 +861,7 @@ else if ( WAYS == 3 ) begin : check_hit_3ways
     always @( posedge i_clk )
         if ( (data_hit_way[0] + data_hit_way[1] + data_hit_way[2] ) > 4'd1 )
             begin
-            `TB_ERROR_MESSAGE
+          //  `TB_ERROR_MESSAGE
             $display("Hit in more than one cache ways!");                                                  
             end
                            
@@ -872,7 +872,7 @@ else if ( WAYS == 4 ) begin : check_hit_4ways
         if ( (data_hit_way[0] + data_hit_way[1] + 
               data_hit_way[2] + data_hit_way[3] ) > 4'd1 )
             begin
-            `TB_ERROR_MESSAGE
+           // `TB_ERROR_MESSAGE
             $display("Hit in more than one cache ways!");                                                  
             end
                            
@@ -885,7 +885,7 @@ else if ( WAYS == 8 )  begin : check_hit_8ways
               data_hit_way[4] + data_hit_way[5] +
               data_hit_way[6] + data_hit_way[7] ) > 4'd1 )
             begin
-            `TB_ERROR_MESSAGE
+          //  `TB_ERROR_MESSAGE
             $display("Hit in more than one cache ways!");                                                  
             end
                            
@@ -894,7 +894,7 @@ else begin : check_hit_nways
 
     initial
         begin
-        `TB_ERROR_MESSAGE
+     //   `TB_ERROR_MESSAGE
         $display("Unsupported number of ways %0d", WAYS);
         $display("Set A23_CACHE_WAYS in a23_config_defines.v to either 2,3,4 or 8");
         end

@@ -1637,7 +1637,7 @@ assign dabt = dabt_reg || i_dabt;
 
 `include "debug_functions.v"
 
-a23_decompile  u_decompile (
+/*a23_decompile  u_decompile (
     .i_clk                      ( i_clk                            ),
     .i_fetch_stall              ( i_fetch_stall                    ),
     .i_instruction              ( instruction                      ),
@@ -1649,7 +1649,7 @@ a23_decompile  u_decompile (
     .i_instruction_undefined    ( und_request                      ),
     .i_pc_sel                   ( o_pc_sel                         ),
     .i_pc_wen                   ( o_pc_wen                         )
-);
+);*/
 
 
 wire    [(15*8)-1:0]    xCONTROL_STATE;
@@ -1689,7 +1689,7 @@ assign xMODE  = mode_name ( o_status_bits_mode );
 always @( posedge i_clk )
     if (control_state == EXECUTE && ((instruction[0] === 1'bx) || (instruction[31] === 1'bx)))
         begin
-        `TB_ERROR_MESSAGE
+       // `TB_ERROR_MESSAGE
         $display("Instruction with x's =%08h", instruction);
         end
 //synopsys translate_on

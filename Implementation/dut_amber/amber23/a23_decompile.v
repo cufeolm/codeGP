@@ -258,7 +258,7 @@ always @( posedge i_clk )
             // Interrupts override instructions that are just starting
         if ( interrupt_d1 == 3'd0 || interrupt_d1 == 3'd7 )
             begin
-            $fwrite(decompile_file,"%09d  ", `U_TB.clk_count);
+            //$fwrite(decompile_file,"%09d  ", `U_TB.clk_count);
             
             // Right justify the address
             if      ( execute_address < 32'h10)        $fwrite(decompile_file,"       %01x:  ", {execute_address[ 3:1], 1'd0});
@@ -275,8 +275,8 @@ always @( posedge i_clk )
             if (!i_instruction_execute)
                 begin
                 $fwrite(decompile_file,"-");
-                if ( type == SWI )
-                    $display ("Cycle %09d  SWI not taken *************", `U_TB.clk_count);
+                if ( type == SWI );
+    //                $display ("Cycle %09d  SWI not taken *************", `U_TB.clk_count);
                 end
             else     
                 $fwrite(decompile_file," ");
@@ -354,7 +354,7 @@ always @( posedge i_clk )
                 CORTRANS:  cortrans_args; 
                 SWI:       $fwrite(decompile_file,"#0x%06h", execute_instruction[23:0]);
                 default: begin
-                         `TB_ERROR_MESSAGE
+                //         `TB_ERROR_MESSAGE
                          $write("Unknown Instruction Type ERROR\n");
                          end                     
             endcase
@@ -365,7 +365,7 @@ always @( posedge i_clk )
         // Undefined Instruction Interrupts    
         if ( i_instruction_execute && execute_undefined )
             begin
-            $fwrite( decompile_file,"%09d              interrupt undefined instruction", `U_TB.clk_count );
+         //   $fwrite( decompile_file,"%09d              interrupt undefined instruction", `U_TB.clk_count );
             $fwrite( decompile_file,", return addr " );
             $fwrite( decompile_file,"%08x\n",  pcf(get_reg_val(5'd21)-4'd4) );
             end
@@ -373,7 +373,7 @@ always @( posedge i_clk )
         // Software Interrupt  
         if ( i_instruction_execute && type == SWI )    
             begin
-            $fwrite( decompile_file,"%09d              interrupt swi", `U_TB.clk_count );
+         //   $fwrite( decompile_file,"%09d              interrupt swi", `U_TB.clk_count );
             $fwrite( decompile_file,", return addr " );
             $fwrite( decompile_file,"%08x\n",  pcf(get_reg_val(5'd21)-4'd4) );
             end
@@ -388,7 +388,7 @@ always @( posedge i_clk )
         // Asynchronous Interrupts    
         if ( interrupt_d1 != 3'd0 && i_interrupt_state )
             begin
-            $fwrite( decompile_file,"%09d              interrupt ", `U_TB.clk_count );
+        //    $fwrite( decompile_file,"%09d              interrupt ", `U_TB.clk_count );
             case ( interrupt_d1 )
                 3'd1:    $fwrite( decompile_file,"data abort" );
                 3'd2:    $fwrite( decompile_file,"firq" );
@@ -426,7 +426,7 @@ always @( posedge i_clk )
              execute_address != get_32bit_signal(0)  // Don't print jump to same address
              )
             begin
-            $fwrite(decompile_file,"%09d              jump    from ", `U_TB.clk_count);
+         //   $fwrite(decompile_file,"%09d              jump    from ", `U_TB.clk_count);
             fwrite_hex_drop_zeros(decompile_file,  pcf(execute_address));
             $fwrite(decompile_file," to ");
             fwrite_hex_drop_zeros(decompile_file,  pcf(get_32bit_signal(0)) ); // u_execute.pc_nxt
@@ -446,7 +446,7 @@ always @( posedge i_clk )
     if ( get_1bit_signal(0) && !get_1bit_signal(1) )
         begin
         
-        $fwrite(decompile_file, "%09d              write   addr ", `U_TB.clk_count);
+     //   $fwrite(decompile_file, "%09d              write   addr ", `U_TB.clk_count);
         tmp_address = get_32bit_signal(2);
         fwrite_hex_drop_zeros(decompile_file, {tmp_address [31:2], 2'd0} );
                   
@@ -464,7 +464,7 @@ always @( posedge i_clk )
     else if (get_1bit_signal(3) && !get_1bit_signal(0)  && !get_1bit_signal(1))     
         begin
         
-        $fwrite(decompile_file, "%09d              read    addr ", `U_TB.clk_count);
+    //    $fwrite(decompile_file, "%09d              read    addr ", `U_TB.clk_count);
         tmp_address = get_32bit_signal(2);
         fwrite_hex_drop_zeros(decompile_file, {tmp_address[31:2], 2'd0} );    
                      
@@ -791,7 +791,7 @@ endtask
 function [31:0] get_reg_val;
 input [4:0] regnum;
 begin
-    case (regnum)
+    /*case (regnum)
         5'd0   : get_reg_val = `U_REGISTER_BANK.r0_out;
         5'd1   : get_reg_val = `U_REGISTER_BANK.r1_out; 
         5'd2   : get_reg_val = `U_REGISTER_BANK.r2_out; 
@@ -815,7 +815,7 @@ begin
         5'd19  : get_reg_val = `U_REGISTER_BANK.r14_svc;
         5'd20  : get_reg_val = `U_REGISTER_BANK.r14_svc;
         5'd21  : get_reg_val = `U_REGISTER_BANK.r15_out_rn; // the version of pc without status bits 
-    endcase
+    endcase*/
 end
 endfunction
 

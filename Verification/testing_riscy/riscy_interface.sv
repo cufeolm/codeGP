@@ -1,4 +1,4 @@
-interface GUVM_interface;
+interface GUVM_interface(input  clk );
     import target_package::*; // importing leon core package
     
     // core paramerters
@@ -25,7 +25,7 @@ interface GUVM_interface;
 
     // core interface ports
       // Clock and Reset
-    logic       clk_i;
+    logic       clk_pseudo;
     logic       rst_ni;
     logic       clock_en_i;    // enable clock, otherwise it is gated
     logic       test_en_i;    // enable all clock gates for testing
@@ -79,79 +79,87 @@ interface GUVM_interface;
 
     logic [31:0] out;
 
-    GUVM_monitor monitor_h;
+    logic [31:0]next_pc;
 
-    // initializing the clk signal
+    GUVM_result_monitor result_monitor_h;
+
+    command_monitor command_monitor_h;
+
+    bit allow_pseudo_clk;
+
+    // initializing the clk_pseudo signal
     initial begin
-        clk_i = 0;
-    end 
+        clk_pseudo = 0;
+        allow_pseudo_clk = 0 ;
+	  end	
         
+    
+    always @(clk) begin
+        if (allow_pseudo_clk)begin
+            clk_pseudo = clk;
+        end
+    end
+
+    task toggle_clk(integer i);
+      allow_pseudo_clk =1 ;
+      repeat(i)@(posedge clk_pseudo);
+      allow_pseudo_clk =0 ;
+    endtask
+    
+    function void nop();
+        instr_rdata_i = 32'h0000001B;
+    endfunction
+
     // sending data to the core    
     function void send_data(logic [31:0] data);
         data_rdata_i = data;
     endfunction
 
     // sending instructions to the core
-    function void send_inst(logic [31:0] inst);
-        instr_rdata_i = inst; 
+    task send_inst(logic [31:0] inst);
+        if (inst == 32'h0000001B)
+        begin
+          instr_gnt_i           = 1'b0;
+          instr_rvalid_i        = 1'b0;
+          //data_gnt_i            = 1'b1;
+          //data_rvalid_i         = 1'b0;
+        end
+        else
+        begin
+          instr_gnt_i           = 1'b1;
+          toggle_clk(1);
+          instr_rvalid_i        = 1'b1;
+          instr_gnt_i           = 1'b0;
+          //data_gnt_i            = 1'b0;
+          //data_rvalid_i         = 1'b1;
+        end
+        instr_rdata_i = inst;
+    endtask
+    
+    function void update_command_monitor(GUVM_sequence_item cmd);
+      command_monitor_h.write_to_cmd_monitor(cmd);
     endfunction
-    
-    // sending the instruction to be verified
-    task verify_inst(logic [31:0] inst);
-        send_inst(inst); 
-        repeat(2) begin 
-            #10 clk_i=~clk_i;
-        end
-    endtask
-    
-    // reveiving data from the DUT
-    function logic [31:0] receive_data();
-        $display("received result: %b", data_wdata_o);
-        monitor_h.write_to_monitor(data_wdata_o);
-        return data_wdata_o; 
-    endfunction 
-    
-    // dealing with the register file with the following load and store functions
-    task store(logic [31:0] inst);
-        send_inst(inst);
-        repeat(6) begin 
-            #10 clk_i=~clk_i;
-        end
-        $display("result = %0d", receive_data());
-        // out = receive_data();
-        repeat(30) begin 
-            #10 clk_i=~clk_i;
-        end
-    endtask
+    function void update_result_monitor();
+      result_monitor_h.write_to_monitor(data_wdata_o,data_addr_o,data_be_o);
+    endfunction
 
-    task load(logic [31:0] inst, logic [31:0] rd);
-        send_inst(inst);
-        repeat(10) begin 
-            #10 clk_i=~clk_i;
-        end
-        send_data(rd);
-        repeat(30) begin 
-            #10 clk_i=~clk_i;
-        end
-    endtask
-    
-    /*task add(logic [4:0] r1, logic [4:0] r2, logic [4:0] rd);
-        send_inst({7'b0000000, r2, r1, 3'b000, rd, 7'b0110011});
-        repeat(15) begin 
-            #10 clk_i=~clk_i;
-        end
-    endtask*/
+    function logic[31:0] get_cpc();
+      $display("current_pc = %b       %t", instr_addr_o,$time);
+      return instr_addr_o;
+    endfunction
 
     // initializing the core
     task set_Up();
         clock_en_i            = 1'b1;
         test_en_i             = 1'b0;
         fregfile_disable_i    = 1'b1;
+     		boot_addr_i			  = 32'h00000000;
+
 
         core_id_i             = 4'h0;
         cluster_id_i          = 6'h0;
-        instr_gnt_i           = 1'b1;
-        instr_rvalid_i        = 1'b1;
+        //instr_gnt_i           = 1'b0;
+        //instr_rvalid_i        = 1'b1;
 
         data_gnt_i            = 1'b1;
         data_rvalid_i         = 1'b1;
@@ -160,20 +168,14 @@ interface GUVM_interface;
         irq_sec_i             = 1'h0;
         debug_req_i           = 1'h0;
         fetch_enable_i        = 1'h1;
-        repeat(10) begin 
-            #10 clk_i=~clk_i;
-        end
+        toggle_clk(10);
     endtask
 
     task reset_dut();
         rst_ni = 1'b1;
-        repeat(2*1) begin 
-            #10 clk_i=~clk_i;
-        end
+        toggle_clk(1);
         rst_ni = 1'b0;
-        repeat(2*3) begin 
-            #10 clk_i=~clk_i;
-        end
+        toggle_clk(3);
         rst_ni = 1'b1;
     endtask : reset_dut
 

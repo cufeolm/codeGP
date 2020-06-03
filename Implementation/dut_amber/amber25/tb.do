@@ -29,22 +29,6 @@ vlog GUVM_bfm_amber.sv;
 vlog top.sv
 vsim -novopt top
 
-# force -freeze sim:top/dut/u_execute/u_register_bank/r1 32'b00000000000000000000000000000111 0
-add wave -position insertpoint sim:/top/bfm/send_inst/*
-add wave -position insertpoint sim:/top/bfm/receive_data/*
-add wave -position insertpoint  \
-sim:/top/bfm/i_clk \
-sim:/top/bfm/i_firq \
-sim:/top/bfm/i_irq \
-sim:/top/bfm/i_system_rdy \
-sim:/top/bfm/i_wb_ack \
-sim:/top/bfm/i_wb_dat \
-sim:/top/bfm/i_wb_err \
-sim:/top/bfm/o_wb_adr \
-sim:/top/bfm/o_wb_cyc \
-sim:/top/bfm/o_wb_dat \
-sim:/top/bfm/o_wb_sel \
-sim:/top/bfm/o_wb_stb \
-sim:/top/bfm/o_wb_we
-add wave -position insertpoint sim:/top/dut/u_execute/u_register_bank/*
+add wave -position insertpoint sim:/top/bfm/*
+
 

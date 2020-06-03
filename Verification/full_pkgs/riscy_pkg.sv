@@ -7,7 +7,7 @@ package riscy_package;
 								LUB=32'bxxxxxxxxxxxxxxxxx100xxxxx0000011,
 								LUH=32'bxxxxxxxxxxxxxxxxx101xxxxx0000011,
 								LW= 32'bxxxxxxxxxxxxxxxxx010xxxxx0000011,
-								LUW=32'bxxxxxxxxxxxxxxxxx110xxxxx0000011,
+								LUW=32'bxxxxxxxxxxxxxxxxx110xxxxx0000011, // for 64 bit not for us
 								LDW=32'bxxxxxxxxxxxxxxxxx000xxxxx0000011,
 								LSBfAs=32'b0000000xxxxxxxxxx111xxxxx0000011,
 								LSHfAs=32'b0001000xxxxxxxxxx111xxxxx0000011,
@@ -19,7 +19,7 @@ package riscy_package;
 								SB=32'bxxxxxxxxxxxxxxxxx000xxxxx0100011,
 								SH=32'bxxxxxxxxxxxxxxxxx001xxxxx0100011,
 								SW=32'bxxxxxxxxxxxxxxxxx010xxxxx0100011,
-								SD=32'bxxxxxxxxxxxxxxxxx011xxxxx0100011,
+								SD=32'bxxxxxxxxxxxxxxxxx011xxxxx0100011, // for 64 bit only not for our configuration
 								M=32'b0000001xxxxxxxxxx000xxxxx0110011,
 								Mh=32'b0000001xxxxxxxxxx010xxxxx0110011,
 								Mhs=32'b0000001xxxxxxxxxx010xxxxx0110011,
@@ -45,11 +45,11 @@ package riscy_package;
 								Srai=32'b010000xxxxxxxxxxx101xxxxx0010011,
 								JaL=32'bxxxxxxxxxxxxxxxxxxxxxxxxx1101111,
 								JaLr=32'bxxxxxxxxxxxxxxxxx000xxxxx1100111,
-								Bie=32'bxxxxxxxxxxxxxxxxx000xxxxx1100011,
+								Bier=32'bxxxxxxxxxxxxxxxxx000xxxxx1100011,
 								Bigtoe=32'bxxxxxxxxxxxxxxxxx101xxxxx1100011,
-								Biltoe=32'bxxxxxxxxxxxxxxxxx100xxxxx1100011,
+								Biltoe=32'bxxxxxxxxxxxxxxxxx100xxxxx1100011, /// must be just less no equal
 								Bigtoeu=32'bxxxxxxxxxxxxxxxxx111xxxxx1100011,
-								Biltoeu=32'bxxxxxxxxxxxxxxxxx110xxxxx1100011,
+								Biltoeu=32'bxxxxxxxxxxxxxxxxx110xxxxx1100011, /// must be just less no equal
 								Biei=32'bxxxxxxxxxxxxxxxxx010xxxxx1100011,
 								Binei=32'bxxxxxxxxxxxxxxxxx011xxxxx1100011
                             } opcode;

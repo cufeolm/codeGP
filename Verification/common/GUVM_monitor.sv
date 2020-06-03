@@ -22,10 +22,11 @@ class GUVM_monitor extends uvm_component;
 
 
    // function to store the result from interface in result transaction and send transaction to scoreboard 
-   function void write_to_monitor(logic [31:0]r); 
+   function void write_to_monitor(logic [31:0]r,logic [31:0]n_pc); //
       GUVM_result_transaction result_t;
       result_t = new("result_t");
       result_t.result = r;
+      result_t.next_pc = n_pc;
       Mon2Sb_port.write(result_t);
    endfunction : write_to_monitor
    

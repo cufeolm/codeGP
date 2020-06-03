@@ -1,5 +1,4 @@
 
-
 ../../Implementation/dut_leon/amba.vhd
 ../../Implementation/dut_leon/target.vhd
 
@@ -25,6 +24,8 @@
 ../../Implementation/dut_leon/tech_virtex.vhd
 
 ../../Implementation/dut_leon/multlib.vhd
+../../Implementation/dut_leon/mul.vhd
+../../Implementation/dut_leon/div.vhd
 
 ../../Implementation/dut_leon/tech_map.vhd
 ../../Implementation/dut_leon/clkgen.vhd

@@ -2,6 +2,7 @@ package leon_package;
    import uvm_pkg::*;
 `include "uvm_macros.svh"
       typedef enum logic[31:0] {
+								
 								LSB=32'b11xxxxx001001xxxxx1xxxxxxxxxxxxx,
 								LSH=32'b11xxxxx001010xxxxx1xxxxxxxxxxxxx,
 								LUB=32'b11xxxxx000001xxxxx1xxxxxxxxxxxxx,
