@@ -49,7 +49,7 @@ function void verify_addcc(GUVM_sequence_item cmd_trans,GUVM_result_transaction 
 	i2 = hist_trans.get_reg_data(cmd_trans.rs2); 
 	h1 = i1 + i2 ;
 	
-	pipe_length =  5 ;
+	pipe_length = 6 ;
 	q = {};
 	
 	
@@ -85,23 +85,25 @@ function void verify_addcc(GUVM_sequence_item cmd_trans,GUVM_result_transaction 
 		//hc = res_trans.result;
 		success = 1 ; 
 		report = "\n error report:\n";
+		report = {report , $sformatf("queue of results :%p \n",q)};
+		report = {report , $sformatf("first store:%h,second store :%h \n",q[0],q[1])};
 		if (q[0]!=h1[31:0]) begin
 			success = 0 ;
 			report = {report , $sformatf("operation done wrong : Dut calculation=%h,SB calculation = %h \n",q[0],h1)};
 		end
-		if (q[1][23]!=hist_trans.neg) begin
+		if (q[1][LOC_NF]!=hist_trans.neg) begin
 			success = 0 ;
 			report = {report , $sformatf("wrong icc negative flag : dut flag =%d, SB flag =%d \n",q[1][23],hist_trans.neg)};
 		end
-		if (q[1][22]!=hist_trans.zero) begin
+		if (q[1][LOC_ZF]!=hist_trans.zero) begin
 			success = 0 ;
 			report = {report , $sformatf("wrong icc zero flag : dut flag =%d, SB flag =%d \n",q[1][22],hist_trans.zero)};
 		end
-		if (q[1][21]!=hist_trans.overflow) begin
+		if (q[1][LOC_VF]!=hist_trans.overflow) begin
 			success = 0 ;
 			report = {report , $sformatf("wrong icc overflow flag : dut flag =%d, SB flag =%d \n",q[1][21],hist_trans.overflow)};
 		end
-		if (q[1][20]!=hist_trans.carry) begin
+		if (q[1][LOC_CF]!=hist_trans.carry) begin
 			success = 0 ;
 			report = {report , $sformatf("wrong icc carry flag : dut flag =%d, SB flag =%d \n",q[1][21],hist_trans.carry)};
 		end

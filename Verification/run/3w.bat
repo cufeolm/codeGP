@@ -1,0 +1,1 @@
+vsim -view vsim.wlf -do ../testing_amber/wave.do

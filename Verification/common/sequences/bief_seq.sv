@@ -35,7 +35,7 @@ class bief_sequence extends GUVM_sequence;
                 load1.rd=subc.rs1;
             end
             if ($isunknown(subc.rs2))
-                load2.load(0);
+                load2.inst=findOP("NOP");
             else
             begin
                 load2.load(subc.rs2);//specify regx address  

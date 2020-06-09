@@ -73,6 +73,8 @@ load --> load --> change flag --> command --> check flag --> store
 load --> load --> store(2)
 7- mul_test (based on RISC-v ISA, Sparcv8 ISA) -->7
 load --> load --> mul(35) --> store(2)
+8- arithmatic with and without flag arith_flag_amber_test (based on ARM v2a ISA ) -->8
+load --> load --> change flag --> command --> check flag --> store
 any other input wil terminate the simulation
 DUT: """;
 	g = raw_input(s);
@@ -125,6 +127,10 @@ please choose which instruction to simulate:
 17- Load signed byte with misalignment feat. reg-imm (based on RISC-v ISA): enter --> LUBMARR #riscy extension instruction
 18- Load signed half with misalignment feat. word reg-imm (based on RISC-v ISA): enter --> LUHMARR #riscy extension instruction
 19- Load word with misalignment feat. reg-imm (based on RISC-v ISA): enter --> LWMARR #riscy extension instruction
+20- Load word with misalignment feat., zero extending offset and reg-imm (based on ARM-v2a ISA): enter --> LWMAZE
+21- Load word with misalignment feat., zero extending offset and reg-reg (based on ARM-v2a ISA): enter --> LWMAZERR
+22- Load byte with misalignment feat., zero extending offset and reg-imm (based on ARM-v2a ISA): enter --> LBMAZE
+23- Load byte with misalignment feat., zero extending offset and reg-reg (based on ARM-v2a ISA): enter --> LBMAZERR
 any other input will simulate no operation or make an error in the simulation
 DUT: """;
 		z=raw_input(s)
@@ -166,6 +172,14 @@ DUT: """;
 			z=("LUHMARR")
 		elif z == "19":
 			z=("LWMARR")
+		elif z == "20":
+			z=("LWMAZE")
+		elif z == "21":
+			z=("LWMAZERR")
+		elif z == "22":
+			z=("LBMAZE")
+		elif z == "23":
+			z=("LBMAZERR")
 		os.system(x+y+" +ARG_INST="+z+"; log /* -r ; run -all ; quit\"")
 ################################################################################################################
 	elif g == "4":
@@ -273,6 +287,28 @@ DUT: """;
 			z=("MHUR")
 		os.system(x+y+" +ARG_INST="+z+"; log /* -r ; run -all ; quit\"")
 ################################################################################################################
+	elif g == "8":
+		y=("arith_flag_amber_test")
+		s="""
+please choose which instruction to simulate:
+1- ADD  (based on ARM ISA): enter --> add
+2- Add and change ICC flags (based on ARM ISA): enter --> addcc
+3- Add with carry (based on ARM ISA): enter --> addx
+4- Add with carry and change ICC flags(based on ARM ISA): enter --> addxcc
+any other input will simulate no operation or make an error in the simulation
+DUT: """;
+		z=raw_input(s)     
+		if z == "1":
+			z=("A")
+		elif z == "2":
+			z=("ADDCC")
+		elif z == "3":
+			z=("ADDX")
+		elif z == "4":
+			z=("ADDXCC")
+		os.system(x+y+" +ARG_INST="+z+"; log /* -r ; run -all ; quit\"")
+
+#################################################################################################################
 	else:
 		print("please enter a valid number")
 		break

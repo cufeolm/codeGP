@@ -20,10 +20,10 @@ package target_package;
 		SBMA=32'bxxxxxxxxxxxxxxxxx000xxxxx0100011, // store least significant byte reg-imm
 		SHMA=32'bxxxxxxxxxxxxxxxxx001xxxxx0100011, // store least significant half word reg-imm
 		
-		UMULR =32'b0000001xxxxxxxxxx000xxxxx0110011, // multiply 
-		MHS   =32'b0000001xxxxxxxxxx001xxxxx0110011, // multiply signed and get the upper half of result 
-		MHSU  =32'b0000001xxxxxxxxxx010xxxxx0110011, // multiply signed-unsigned and get the upper half of result
-		MHU   =32'b0000001xxxxxxxxxx011xxxxx0110011, // multiply unsigned and get the upper half of result
+		UMULR =32'b0000001xxxxxxxxxx000xxxxx0110011, // multiply reg-reg
+		MHSR  =32'b0000001xxxxxxxxxx001xxxxx0110011, // multiply signed and get the upper half of result 
+		MHSUR =32'b0000001xxxxxxxxxx010xxxxx0110011, // multiply signed-unsigned and get the upper half of result
+		MHUR  =32'b0000001xxxxxxxxxx011xxxxx0110011, // multiply unsigned and get the upper half of result
 
 		NOP=32'h0000001B,
 		Jal=32'bxxxxxxxxxxxxxxxxxxxxxxxxx1101111,
@@ -38,7 +38,13 @@ package target_package;
         Load = 32'b00000000000000000010xxxxx0000011,
 		LWMA= 32'bxxxxxxxxxxxxxxxxx010xxxxx0000011 // load word with misalignment feat. reg-imm
 	} opcode;
-    // mutual instructions between cores have the same name so we can verify all cores using one scoreboard
+	// mutual instructions between cores have the same name so we can verify all cores using one scoreboard
+	
+       //FLAG PLACE DECLARATION
+	parameter LOC_ZF = 0;
+	parameter LOC_CF = 0;
+	parameter LOC_VF = 0;
+	parameter LOC_NF = 0;
 	//INSTRUCTION FORMAT 
     parameter RDU = 11;
     parameter   RDL = 7;

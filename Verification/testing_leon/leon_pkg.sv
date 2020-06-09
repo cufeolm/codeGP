@@ -35,7 +35,7 @@ package target_package;
         S=32'b10xxxxx000100xxxxx000000000xxxxx,
         SUBCC=32'b10xxxxx010100xxxxx000000000xxxxx,
 
-        UMULR=32'b10xxxxx001010xxxxx000000000xxxxx,
+        UMULR=32'b10xxxxx001010xxxxx000000000xxxxx, // multiply reg-reg
         UDIVR=32'b10xxxxx001110xxxxx000000000xxxxx,
 
         BIEF=32'b00x0001010xxxxxxxxxxxxxxxxxxxxxx,
@@ -53,6 +53,12 @@ package target_package;
         LW= 32'b11xxxxx000000xxxxx1xxxxxxxxxxxxx // load word reg-imm
     } opcode;
     
+
+    //FLAG PLACE DECLARATION
+    parameter LOC_ZF = 22;
+    parameter LOC_CF = 20;
+    parameter LOC_VF = 21;
+    parameter LOC_NF = 23;
     //INSTRUCTION FORMAT 
     parameter RDU = 29;
     parameter   RDL = 25;

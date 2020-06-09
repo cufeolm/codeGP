@@ -64,12 +64,10 @@ interface GUVM_interface(input  clk );
     endfunction
 
     function void update_command_monitor(GUVM_sequence_item cmd);
-        //cmd.current_pc=icache_input.rpc;
         command_monitor_h.write_to_cmd_monitor(cmd);
 
     endfunction
     function void update_result_monitor();
-        //result_monitor_h.write_to_monitor(dcache_input.edata,next_pc);
         result_monitor_h.write_to_monitor(dcache_input.edata,dcache_input.maddress,4'd0);
     endfunction
 
@@ -79,94 +77,12 @@ interface GUVM_interface(input  clk );
         x[31:2]=icache_input.fpc;
         return x;
     endfunction
-    /*
-    function void monitor_cmd(GUVM_sequence_item cmd);
-        command_monitor_h.write_to_cmd_monitor(cmd);
-    endfunction
-    */
-    // danger zone *************************
-   // *** ************* *********************
-    // *** ************* *********************
-    // *** ************* *********************
-    // *** ************* *********************
-    // *** ************* *********************
-    // *** ************* *********************
-    // *** ************* *********************
-    // *** ************* *********************
-    // all of the below functions are not used except setup and reset
-    // sending the instruction to be verified
-    /*
-    task verify_inst(logic [31:0] inst,logic [31:0]op1,logic [31:0]op2,logic [31:0]simm);
-        command_monitor_h.write_to_cmd_monitor(inst,op1,op2,simm);
-        send_inst(inst) ; 
-        toggle_clk(1);
-        nop();
-        get_npc();
-    endtask
-    */
-
-
-    task get_npc();
-      toggle_clk(1);
-      $display("next_pc = %b       %t", icache_input.rpc,$time);
-      next_pc = icache_input.rpc;
-    endtask
-
+    
 	// reveiving data from the DUT
     function logic [31:0] receive_data();//should be protected
-        //$display("madd : %b",dcache_input.maddress);
         result_monitor_h.write_to_monitor(dcache_input.edata,dcache_input.maddress,4'd0);
         return dcache_input.edata;
-       // monitor_h.write_to_monitor(dcache_input.maddress);
-		//return dcache_input.maddress;
     endfunction 
-	
-	// dealing with the register file with the following load and store functions 
-    //function logic [31:0] store(logic [4:0] ra);
-    task store(logic [31:0] inst );
-        send_inst(inst);
-        //keemo_karamilla = 1;
-        //allow_pseudo_clk =1 ;
-
-        //repeat(2)@(posedge clk_pseudo);
-        toggle_clk(2);
-        //repeat(2*2)#10 clk=~clk;
-        
-        bfm.nop();
-        toggle_clk(2);
-        //repeat(2)@(posedge clk_pseudo);//repeat onde might cause a problem ???????????
-        //repeat(2*1)#10 clk=~clk;
-		$display("result = %0d",receive_data());
-        //repeat(2*10)#10 clk=~clk;
-        toggle_clk(10);
-        //repeat(10)@(posedge clk_pseudo);
-        //keemo_karamilla = 0 ;
-        //allow_pseudo_clk =0 ;
-    endtask
-
-    //function void load(logic [4:0] ra , logic [31:0] rd);
-    task load(logic [31:0] inst, logic [31:0] rd );
-        send_inst(inst);
-        send_data(rd);
-        //allow_pseudo_clk =1 ;
-        //repeat(2*1)#10 clk=~clk;
-        //repeat(1)@(posedge clk_pseudo);
-        toggle_clk(1);
-        nop();
-        toggle_clk(4);
-        //repeat(4)@(posedge clk_pseudo);
-        //repeat(2*4)#10 clk=~clk;
-        //allow_pseudo_clk =0 ;
-    endtask
-
-    // no operation
-    function void nop();
-        icache_output.data = 32'h01000000;
-    endfunction
-	
-    /*function void add(logic [4:0] r1,logic [4:0] r2,logic [4:0] rd);
-        send_inst({2'b10,rd,6'b0,r1,1'b0,8'b0,r2});
-    endfunction*/
 
     // initializing the core
     task set_Up();
@@ -202,26 +118,14 @@ interface GUVM_interface(input  clk );
         dcache_output_diag.flush = 1'b0;
 
         dcache_output.icdiag=dcache_output_diag;
-        //repeat (2*10)#10 clk=~clk;
-        //$display("we reached this point at set up");
-       // allow_pseudo_clk =1 ;
-        //repeat(10)@(posedge clk_pseudo);
-       // allow_pseudo_clk =0 ;
         toggle_clk(10);
     endtask
 
     task reset_dut();
         rst = 1'b0;
-        //repeat (2*10)#10 clk=~clk;  
-        //allow_pseudo_clk =1 ;
-        //$display("we reached this point at reset");
-       // repeat(10)@(posedge clk_pseudo);
         toggle_clk(10);
 		rst = 1'b1;
-        //repeat (2*1)#10 clk=~clk;
         toggle_clk(1);
-       // repeat(1)@(posedge clk_pseudo);
-        //allow_pseudo_clk =0 ;
     endtask : reset_dut
 
 endinterface: GUVM_interface

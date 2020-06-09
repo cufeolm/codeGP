@@ -1,0 +1,436 @@
+# do ../testing_leon/run_tb.do
+# QuestaSim-64 vlog 10.4e Compiler 2016.04 Apr  9 2016
+# Start time: 16:11:31 on Apr 15,2020
+# vlog "+incdir+../testing_leon+../common+../common/inst_h" ../testing_leon/target_pkg.sv 
+# -- Compiling package target_package
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) Using implicit +incdir+D:/installedPrograms/MentorGraphics/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# 
+# ** Warning: ** while parsing file included at ../testing_leon/target_pkg.sv(1)
+# ** while parsing file included at ../testing_leon/leon_pkg.sv(19)
+# ** while parsing file included at ../common/GUVM.sv(3)
+# ** while parsing file included at ../testing_leon/target_sequence_item.sv(1)
+# ** at ../testing_leon/leon_seq_item.sv(79): (vlog-2643) Unterminated string literal continues onto next line.
+# 
+# 
+# Top level modules:
+# 	--none--
+# End time: 16:11:32 on Apr 15,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
+# QuestaSim-64 vlog 10.4e Compiler 2016.04 Apr  9 2016
+# Start time: 16:11:32 on Apr 15,2020
+# vlog ../testing_leon/leon_interface.sv 
+# -- Compiling interface GUVM_interface
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) Using implicit +incdir+D:/installedPrograms/MentorGraphics/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# 
+# -- Importing package iface__mti__sv__equiv__implct__pack
+# -- Importing package target_package
+# 
+# Top level modules:
+# 	--none--
+# End time: 16:11:32 on Apr 15,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.4e Compiler 2016.04 Apr  9 2016
+# Start time: 16:11:32 on Apr 15,2020
+# vlog ../testing_leon/top.sv 
+# -- Compiling module top
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package target_package
+# -- Importing package iface__mti__sv__equiv__implct__pack
+# ** Note: (vlog-2286) Using implicit +incdir+D:/installedPrograms/MentorGraphics/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# 
+# 
+# Top level modules:
+# 	top
+# End time: 16:11:32 on Apr 15,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim top 
+# Start time: 16:11:32 on Apr 15,2020
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# 
+# ** Warning: ../../Implementation/dut_leon/iu.vhd(2425): (vopt-8617) Possible component instance "/top/dut/iu0/mul0/u0 : mul" is not bound.
+# 
+# ** Warning: ../../Implementation/dut_leon/iu.vhd(2431): (vopt-8617) Possible component instance "/top/dut/iu0/div0/u0 : div" is not bound.
+# 
+# //  Questa Sim-64
+# //  Version 10.4e win64 Apr  9 2016
+# //
+# //  Copyright 1991-2016 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+# Loading sv_std.std
+# Loading work.iface__mti__sv__equiv__implct__pack(fast)
+# Loading mtiUvm.uvm_pkg
+# Loading work.target_package(fast)
+# Loading work.top(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.GUVM_interface(fast)
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.target
+# Loading ieee.std_logic_arith(body)
+# Loading work.device
+# Loading work.config
+# Loading work.sparcv8
+# Loading work.iface
+# Loading work.amba
+# Loading work.fpulib
+# Loading work.tech_map
+# Loading work.proc(rtl)#1
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.macro(body)
+# Loading work.iu(rtl)#1
+# Loading work.tech_atc25
+# Loading work.tech_atc35
+# Loading work.tech_fs90
+# Loading work.tech_umc18
+# Loading work.tech_generic
+# Loading work.tech_virtex
+# Loading work.regfile_iu(rtl)#1
+# Loading work.generic_regfile_iu(rtl)#1
+# Loading work.generic_dpram_ss(behav)#1
+# ** Warning: (vsim-8822) ../testing_leon/top.sv(9): [TFMPC] - Missing Verilog connection for formal VHDL port 'pcirst'.
+#    Time: 0 ns  Iteration: 0  Instance: /top/dut File: ../../Implementation/dut_leon/proc.vhd
+# ** Warning: (vsim-8822) ../testing_leon/top.sv(9): [TFMPC] - Missing Verilog connection for formal VHDL port 'apbi'.
+#    Time: 0 ns  Iteration: 0  Instance: /top/dut File: ../../Implementation/dut_leon/proc.vhd
+# ** Warning: (vsim-8822) ../testing_leon/top.sv(9): [TFMPC] - Missing Verilog connection for formal VHDL port 'apbo'.
+#    Time: 0 ns  Iteration: 0  Instance: /top/dut File: ../../Implementation/dut_leon/proc.vhd
+# ** Warning: (vsim-8822) ../testing_leon/top.sv(9): [TFMPC] - Missing Verilog connection for formal VHDL port 'ahbi'.
+#    Time: 0 ns  Iteration: 0  Instance: /top/dut File: ../../Implementation/dut_leon/proc.vhd
+# ** Warning: (vsim-8822) ../testing_leon/top.sv(9): [TFMPC] - Missing Verilog connection for formal VHDL port 'ahbo'.
+#    Time: 0 ns  Iteration: 0  Instance: /top/dut File: ../../Implementation/dut_leon/proc.vhd
+# Loading D:/installedPrograms/MentorGraphics/questasim64_10.4e/uvm-1.1d\win64\uvm_dpi.dll
+# ** Warning: (vsim-8684) No drivers exist on out port /top/dut/iu0/fpui.FpOp, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /top/dut/fpui.FpOp.
+# ** Warning: (vsim-8684) No drivers exist on out port /top/dut/iu0/fpui.FpLd, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /top/dut/fpui.FpLd.
+# ** Warning: (vsim-8684) No drivers exist on out port /top/dut/iu0/fpui.Reset, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /top/dut/fpui.Reset.
+# ** Warning: (vsim-8684) No drivers exist on out port /top/dut/iu0/fpui.ss_scan_mode, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /top/dut/fpui.ss_scan_mode.
+# ** Warning: (vsim-8684) No drivers exist on out port /top/dut/iu0/fpui.fp_ctl_scan_in, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /top/dut/fpui.fp_ctl_scan_in.
+# ** Warning: (vsim-8684) No drivers exist on out port /top/dut/iu0/iuo.debug.de.annul, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /top/dut/iuol.debug.de.annul.
+# ** Warning: (vsim-8684) No drivers exist on out port /top/dut/iu0/iuo.debug.de.ld, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /top/dut/iuol.debug.de.ld.
+# ** Warning: (vsim-8684) No drivers exist on out port /top/dut/iu0/iuo.debug.de.pv, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /top/dut/iuol.debug.de.pv.
+# ** Warning: (vsim-8684) No drivers exist on out port /top/dut/iu0/iuo.debug.de.rett, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /top/dut/iuol.debug.de.rett.
+# ** Warning: (vsim-8684) No drivers exist on out port /top/dut/iu0/iuo.debug.de.trap, and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /top/dut/iuol.debug.de.trap.
+# ** Warning: (vsim-8684) No drivers exist on out port /top/dut/iu0/iuo.debug.de.inst(31 downto 0), and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /top/dut/iuol.debug.de.inst(31 downto 0).
+# ** Warning: (vsim-8684) No drivers exist on out port /top/dut/iu0/iuo.debug.de.pc(31 downto 2), and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /top/dut/iuol.debug.de.pc(31 downto 2).
+# ** Warning: (vsim-8684) No drivers exist on out port /top/dut/iu0/iuo.debug.de.cnt(1 downto 0), and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /top/dut/iuol.debug.de.cnt(1 downto 0).
+# ** Warning: (vsim-8684) No drivers exist on out port /top/dut/iu0/iuo.debug.de.tt(5 downto 0), and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /top/dut/iuol.debug.de.tt(5 downto 0).
+# ** Warning: (vsim-8684) No drivers exist on out port /top/dut/iu0/iuo.debug.de.rd(7 downto 0), and its initial value is not used.
+# 
+# Therefore, simulation behavior may occur that is not in compliance with
+# 
+# the VHDL standard as the initial values come from the base signal /top/dut/iuol.debug.de.rd(7 downto 0).
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test GUVM_test...
+# UVM_INFO ../common/GUVM_env.sv(20) @ 0: uvm_test_top.env_h [] Called env::connect_phase
+# test have started 
+# Scoreboard started
+# driver has started
+# we reached this point at reset
+# we reached this point at set up
+# driver starting fetching
+# driver first load fetch
+# inst is 1110 1000 0000 0000 0010 0000 0000 0000
+# driver second load fetch
+# inst is 1100 1000 0000 0000 0010 0000 0000 0000
+# driver instruction fetch
+# inst is 1001 0010 0000 0101 0000 0000 0000 0100
+# rs1 address = 20 and rs2 address = 4 and rd address = 9
+# op1= 2985317987 op2= 1189058957
+# driver store fetch
+# inst is 1101 0010 0010 0000 0010 0000 0000 0000
+# result = 4174376944
+# Sb: inst is 1001 0010 0000 0101 0000 0000 0000 0100
+# Sb: op1=2985317987 
+# Sb: op2=1189058957
+# UVM_INFO ../common/inst_h/add.svh(9) @ 830: reporter [ADDITION_PASS] Actual Calculation=4174376944 Expected Calculation=4174376944 
+# Scoreboard started
+# driver has started
+# we reached this point at reset
+# we reached this point at set up
+# driver starting fetching
+# driver first load fetch
+# inst is 1101 1110 0000 0000 0010 0000 0000 0000
+# driver second load fetch
+# inst is 1100 0010 0000 0000 0010 0000 0000 0000
+# driver instruction fetch
+# inst is 1000 0000 0000 0011 1100 0000 0000 0001
+# rs1 address = 15 and rs2 address = 1 and rd address = 0
+# op1= 512609597 op2= 1177417612
+# driver store fetch
+# inst is 1100 0000 0010 0000 0010 0000 0000 0000
+# result = 1690027209
+# Sb: inst is 1000 0000 0000 0011 1100 0000 0000 0001
+# Sb: op1=512609597 
+# Sb: op2=1177417612
+# UVM_INFO ../common/inst_h/add.svh(9) @ 1950: reporter [ADDITION_PASS] Actual Calculation=1690027209 Expected Calculation=1690027209 
+# Scoreboard started
+# driver has started
+# we reached this point at reset
+# we reached this point at set up
+# driver starting fetching
+# driver first load fetch
+# inst is 1111 1100 0000 0000 0010 0000 0000 0000
+# driver second load fetch
+# inst is 1100 1010 0000 0000 0010 0000 0000 0000
+# driver instruction fetch
+# inst is 1010 0010 0000 0111 1000 0000 0000 0101
+# rs1 address = 30 and rs2 address = 5 and rd address = 17
+# op1= 3151131255 op2= 1206705039
+# driver store fetch
+# inst is 1110 0010 0010 0000 0010 0000 0000 0000
+# result = 62868998
+# Sb: inst is 1010 0010 0000 0111 1000 0000 0000 0101
+# Sb: op1=3151131255 
+# Sb: op2=1206705039
+# UVM_INFO ../common/inst_h/add.svh(9) @ 3070: reporter [ADDITION_PASS] Actual Calculation=  62868998 Expected Calculation=  62868998 
+# Scoreboard started
+# driver has started
+# we reached this point at reset
+# we reached this point at set up
+# driver starting fetching
+# driver first load fetch
+# inst is 1100 0010 0000 0000 0010 0000 0000 0000
+# driver second load fetch
+# inst is 1101 0000 0000 0000 0010 0000 0000 0000
+# driver instruction fetch
+# inst is 1011 0100 0000 0000 0100 0000 0000 1000
+# rs1 address = 1 and rs2 address = 8 and rd address = 26
+# op1= 3733858493 op2= 2997298789
+# driver store fetch
+# inst is 1111 0100 0010 0000 0010 0000 0000 0000
+# result = 2436189986
+# Sb: inst is 1011 0100 0000 0000 0100 0000 0000 1000
+# Sb: op1=3733858493 
+# Sb: op2=2997298789
+# UVM_INFO ../common/inst_h/add.svh(9) @ 4190: reporter [ADDITION_PASS] Actual Calculation=2436189986 Expected Calculation=2436189986 
+# Scoreboard started
+# driver has started
+# we reached this point at reset
+# we reached this point at set up
+# driver starting fetching
+# driver first load fetch
+# inst is 1101 1000 0000 0000 0010 0000 0000 0000
+# driver second load fetch
+# inst is 1100 0000 0000 0000 0010 0000 0000 0000
+# driver instruction fetch
+# inst is 1000 0000 0000 0011 0000 0000 0000 0000
+# rs1 address = 12 and rs2 address = 0 and rd address = 0
+# op1= 3469528221 op2= 2307110931
+# driver store fetch
+# inst is 1100 0000 0010 0000 0010 0000 0000 0000
+# result = 3469528221
+# Sb: inst is 1000 0000 0000 0011 0000 0000 0000 0000
+# Sb: op1=3469528221 
+# Sb: op2=2307110931
+# UVM_ERROR ../common/inst_h/add.svh(13) @ 5310: reporter [ADDITION_FAIL] Actual Calculation=3469528221 Expected Calculation=1481671856 
+# Scoreboard started
+# driver has started
+# we reached this point at reset
+# we reached this point at set up
+# driver starting fetching
+# driver first load fetch
+# inst is 1111 1110 0000 0000 0010 0000 0000 0000
+# driver second load fetch
+# inst is 1101 0110 0000 0000 0010 0000 0000 0000
+# driver instruction fetch
+# inst is 1011 0100 0000 0111 1100 0000 0000 1011
+# rs1 address = 31 and rs2 address = 11 and rd address = 26
+# op1= 3612753582 op2= 3888476879
+# driver store fetch
+# inst is 1111 0100 0010 0000 0010 0000 0000 0000
+# result = 3206263165
+# Sb: inst is 1011 0100 0000 0111 1100 0000 0000 1011
+# Sb: op1=3612753582 
+# Sb: op2=3888476879
+# UVM_INFO ../common/inst_h/add.svh(9) @ 6430: reporter [ADDITION_PASS] Actual Calculation=3206263165 Expected Calculation=3206263165 
+# Scoreboard started
+# driver has started
+# we reached this point at reset
+# we reached this point at set up
+# driver starting fetching
+# driver first load fetch
+# inst is 1101 1000 0000 0000 0010 0000 0000 0000
+# driver second load fetch
+# inst is 1101 0100 0000 0000 0010 0000 0000 0000
+# driver instruction fetch
+# inst is 1010 0100 0000 0011 0000 0000 0000 1010
+# rs1 address = 12 and rs2 address = 10 and rd address = 18
+# op1= 1160667530 op2= 3964351704
+# driver store fetch
+# inst is 1110 0100 0010 0000 0010 0000 0000 0000
+# result = 830051938
+# Sb: inst is 1010 0100 0000 0011 0000 0000 0000 1010
+# Sb: op1=1160667530 
+# Sb: op2=3964351704
+# UVM_INFO ../common/inst_h/add.svh(9) @ 7550: reporter [ADDITION_PASS] Actual Calculation= 830051938 Expected Calculation= 830051938 
+# Scoreboard started
+# driver has started
+# we reached this point at reset
+# we reached this point at set up
+# driver starting fetching
+# driver first load fetch
+# inst is 1110 1000 0000 0000 0010 0000 0000 0000
+# driver second load fetch
+# inst is 1101 0110 0000 0000 0010 0000 0000 0000
+# driver instruction fetch
+# inst is 1011 0100 0000 0101 0000 0000 0000 1011
+# rs1 address = 20 and rs2 address = 11 and rd address = 26
+# op1= 1460999086 op2= 353361194
+# driver store fetch
+# inst is 1111 0100 0010 0000 0010 0000 0000 0000
+# result = 1814360280
+# Sb: inst is 1011 0100 0000 0101 0000 0000 0000 1011
+# Sb: op1=1460999086 
+# Sb: op2=353361194
+# UVM_INFO ../common/inst_h/add.svh(9) @ 8670: reporter [ADDITION_PASS] Actual Calculation=1814360280 Expected Calculation=1814360280 
+# Scoreboard started
+# driver has started
+# we reached this point at reset
+# we reached this point at set up
+# driver starting fetching
+# driver first load fetch
+# inst is 1101 0010 0000 0000 0010 0000 0000 0000
+# driver second load fetch
+# inst is 1100 1010 0000 0000 0010 0000 0000 0000
+# driver instruction fetch
+# inst is 1000 0010 0000 0010 0100 0000 0000 0101
+# rs1 address = 9 and rs2 address = 5 and rd address = 1
+# op1= 486945594 op2= 178932501
+# driver store fetch
+# inst is 1100 0010 0010 0000 0010 0000 0000 0000
+# result = 665878095
+# Sb: inst is 1000 0010 0000 0010 0100 0000 0000 0101
+# Sb: op1=486945594 
+# Sb: op2=178932501
+# UVM_INFO ../common/inst_h/add.svh(9) @ 9790: reporter [ADDITION_PASS] Actual Calculation= 665878095 Expected Calculation= 665878095 
+# Scoreboard started
+# driver has started
+# we reached this point at reset
+# we reached this point at set up
+# driver starting fetching
+# driver first load fetch
+# inst is 1101 1000 0000 0000 0010 0000 0000 0000
+# driver second load fetch
+# inst is 1100 0100 0000 0000 0010 0000 0000 0000
+# driver instruction fetch
+# inst is 1011 0000 0000 0011 0000 0000 0000 0010
+# rs1 address = 12 and rs2 address = 2 and rd address = 24
+# op1= 1203347855 op2= 3687669943
+# driver store fetch
+# inst is 1111 0000 0010 0000 0010 0000 0000 0000
+# result = 596050502
+# Sb: inst is 1011 0000 0000 0011 0000 0000 0000 0010
+# Sb: op1=1203347855 
+# Sb: op2=3687669943
+# UVM_INFO ../common/inst_h/add.svh(9) @ 10910: reporter [ADDITION_PASS] Actual Calculation= 596050502 Expected Calculation= 596050502 
+# Scoreboard started
+# driver has started
+# we reached this point at reset
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 11190: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   14
+# UVM_WARNING :    0
+# UVM_ERROR :    1
+# UVM_FATAL :    0
+# ** Report counts by id
+# []     1
+# [ADDITION_FAIL]     1
+# [ADDITION_PASS]     9
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# ** Note: $finish    : D:/installedPrograms/MentorGraphics/questasim64_10.4e/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 11190 ns  Iteration: 66  Instance: /top
+# End time: 16:11:36 on Apr 15,2020, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 22

@@ -77,7 +77,8 @@ class GUVM_scoreboard extends uvm_scoreboard;
  					end
 				end
 			if(valid == 0) begin // if valid still zero then instruction isn't found in opcodes array
-				`uvm_fatal("instruction fail", $sformatf("Sb: instruction not in pkg and its %b %b %b %b %b %b %b %b", verified_inst[31:28], verified_inst[27:24], verified_inst[23:20], verified_inst[19:16], verified_inst[15:12], verified_inst[11:8], verified_inst[7:4], verified_inst[3:0]))
+				if (cmd_trans.inst == cmd_trans.data);
+				else`uvm_fatal("instruction fail", $sformatf("Sb: instruction not in pkg and its %b %b %b %b %b %b %b %b", verified_inst[31:28], verified_inst[27:24], verified_inst[23:20], verified_inst[19:16], verified_inst[15:12], verified_inst[11:8], verified_inst[7:4], verified_inst[3:0]))
 			end
 			//$display("si_a[i] is %s in index %0d",si_a[i].name,i);
 
@@ -115,6 +116,18 @@ class GUVM_scoreboard extends uvm_scoreboard;
 				end
 				"LW":begin 
 					verify_load_word(cmd_trans,res_trans,hist_trans);
+				end
+				"LWMAZE":begin 
+					verify_load_word_misaligned_zero_extend(cmd_trans,res_trans,hist_trans);
+				end
+				"LWMAZERR":begin 
+					verify_load_word_misaligned_zero_extend_reg_reg(cmd_trans,res_trans,hist_trans);
+				end
+				"LBMAZE":begin 
+					verify_load_byte_misaligned_zero_extend(cmd_trans,res_trans,hist_trans);
+				end
+				"LBMAZERR":begin 
+					verify_load_byte_misaligned_zero_extend_reg_reg(cmd_trans,res_trans,hist_trans);
 				end
 				"LWRR":begin 
 					verify_load_word_reg_reg(cmd_trans,res_trans,hist_trans);
@@ -242,10 +255,22 @@ class GUVM_scoreboard extends uvm_scoreboard;
 				"UMULR":begin
 					verify_umulr(cmd_trans,res_trans,hist_trans);
 				end
+				"MHSR":begin
+					verify_multiply_high_signed_reg_reg(cmd_trans,res_trans,hist_trans);
+				end
+				"MHSUR":begin
+					verify_multiply_high_signed_unsigned_reg_reg(cmd_trans,res_trans,hist_trans);
+				end
+				"MHUR":begin
+					verify_multiply_high_unsigned_reg_reg(cmd_trans,res_trans,hist_trans);
+				end
 				"UDIVR":begin
 					verify_umulr(cmd_trans,res_trans,hist_trans);
 				end
-				default:`uvm_fatal("instruction fail", $sformatf("instruction is not found and its %h %s", si_a[i],si_a[i].name))
+				default:begin
+				if (cmd_trans.inst == cmd_trans.data);
+				else `uvm_fatal("instruction fail", $sformatf("instruction is not found and its %h %s", si_a[i],si_a[i].name))
+				end
 			endcase
 			if(cmd_trans.SOM==SB_VERIFICATION_MODE)hist_trans.printItems();
 			$display("-------------------------------");

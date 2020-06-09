@@ -8,4 +8,6 @@
 `include"arith_flag_seq.sv"
 `include"store_seq.sv"
 `include"mul_sequence.sv"
+`include"arith_flag_amber_seq.sv"
+
 

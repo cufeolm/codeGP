@@ -81,6 +81,8 @@ interface GUVM_interface(input  clk );
 
     logic [31:0]next_pc;
 
+    logic [31:0]prev_inst = 32'h00000000;
+
     GUVM_result_monitor result_monitor_h;
 
     command_monitor command_monitor_h;
@@ -105,10 +107,6 @@ interface GUVM_interface(input  clk );
       repeat(i)@(posedge clk_pseudo);
       allow_pseudo_clk =0 ;
     endtask
-    
-    function void nop();
-        instr_rdata_i = 32'h0000001B;
-    endfunction
 
     // sending data to the core    
     function void send_data(logic [31:0] data);
@@ -121,24 +119,23 @@ interface GUVM_interface(input  clk );
         begin
           instr_gnt_i           = 1'b0;
           instr_rvalid_i        = 1'b0;
-          //data_gnt_i            = 1'b1;
-          //data_rvalid_i         = 1'b0;
         end
+        else if(inst == prev_inst);
         else
         begin
           instr_gnt_i           = 1'b1;
           toggle_clk(1);
           instr_rvalid_i        = 1'b1;
           instr_gnt_i           = 1'b0;
-          //data_gnt_i            = 1'b0;
-          //data_rvalid_i         = 1'b1;
         end
+        prev_inst = inst;
         instr_rdata_i = inst;
     endtask
     
     function void update_command_monitor(GUVM_sequence_item cmd);
       command_monitor_h.write_to_cmd_monitor(cmd);
     endfunction
+
     function void update_result_monitor();
       result_monitor_h.write_to_monitor(data_wdata_o,data_addr_o,data_be_o);
     endfunction
@@ -158,8 +155,6 @@ interface GUVM_interface(input  clk );
 
         core_id_i             = 4'h0;
         cluster_id_i          = 6'h0;
-        //instr_gnt_i           = 1'b0;
-        //instr_rvalid_i        = 1'b1;
 
         data_gnt_i            = 1'b1;
         data_rvalid_i         = 1'b1;

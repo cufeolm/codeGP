@@ -1,7 +1,8 @@
 
-function void verify_umulr(GUVM_sequence_item cmd_trans,GUVM_result_transaction res_trans,GUVM_history_transaction hist_trans);
-    bit [32:0]i1,i2,hc ;
-	bit [32:0] h1 ; 
+function void verify_multiply_high_unsigned_reg_reg(GUVM_sequence_item cmd_trans,GUVM_result_transaction res_trans,GUVM_history_transaction hist_trans);
+    bit [31:0]i1,i2 ;
+	bit [31:0] h1 ;
+	bit [63:0] h1_64 ; 
 	logic [31:0] q[$] ; 
 	logic [31:0] result ;
 	
@@ -13,14 +14,15 @@ function void verify_umulr(GUVM_sequence_item cmd_trans,GUVM_result_transaction 
     i1 = hist_trans.get_reg_data(cmd_trans.rs1); 
 	i2 =  hist_trans.get_reg_data(cmd_trans.rs2); 
 	
-	
 	pipe_length =  5 ;
 	q = {};
 	
 	
 	if (cmd_trans.SOM == SB_HISTORY_MODE)
-    begin	
-		h1 = i1 * i2  ;
+    begin			
+		h1_64 = i1 * i2  ;
+		h1 = h1_64[63:32] ;
+		$display("h1_64=%h h1=%h",h1_64,h1);
 		hist_trans.loadreg(h1[31:0],cmd_trans.rd);
     end
     
@@ -42,7 +44,6 @@ function void verify_umulr(GUVM_sequence_item cmd_trans,GUVM_result_transaction 
 			end
 		end
 		// $display("%p",q[0:$]);
-		//hc = res_trans.result;
 		success = 1 ; 
 		report = "\n error report:\n";
 		if (q[0]!=h1[31:0]) begin
@@ -54,11 +55,11 @@ function void verify_umulr(GUVM_sequence_item cmd_trans,GUVM_result_transaction 
 
 		if(success)
 		begin
-			`uvm_info ("UMUL_PASS", report, UVM_LOW)
+			`uvm_info ("multiply_high_unsigned_reg_reg_PASS", report, UVM_LOW)
 		end
 		else
 		begin
-			`uvm_error("UMUL_FAIL", report)
+			`uvm_error("multiply_high_unsigned_reg_reg_FAIL", report)
 		end
 	end
 

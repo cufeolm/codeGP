@@ -1,11 +1,11 @@
 
 //this is an example of how to make a sequence
 
-class arith_flag_sequence extends GUVM_sequence ;
-    `uvm_object_utils(arith_flag_sequence);
+class arith_flag_amber_sequence extends GUVM_sequence ;
+    `uvm_object_utils(arith_flag_amber_sequence);
     target_seq_item addcc,command,load1,load2,load3,load4,store1,store2,rdpsr , temp,reset ;
     target_seq_item c;
-    function new(string name = "arith_flag_sequence");
+    function new(string name = "arith_flag_amber_sequence");
         super.new(name);
     endfunction : new
 
@@ -85,18 +85,9 @@ class arith_flag_sequence extends GUVM_sequence ;
                 load4.rd=command.rs2;
             end 
 
-            if ($isunknown(command.rd))
-               store1.inst=findOP("NOP");
-            else
-            begin
-                store1.store(command.rd);//specify regz address
-            end 
-            if ($isunknown(rdpsr.rd))
-                store2.inst=findOP("NOP");
-            else
-            begin
-                store2.store(rdpsr.rd);//specify regz address
-            end 
+            store1.store(command.rd);//specify regz address
+            store2.store(15);
+
             //forced input
             //$display("am i blind ------------------");
             //load1.data = 1;
@@ -129,18 +120,18 @@ class arith_flag_sequence extends GUVM_sequence ;
             
             genNop(5,0);
 
-            send(rdpsr);
+            // send(rdpsr);
             
-            genNop(5,0);
+            // genNop(5,0);
             
             send(store1);
-            temp = copy(store1);
-            send(temp);
+            // temp = copy(store1);
+            // send(temp);
             genNop(5,0);
 
             send(store2);
-            temp = copy(store2);
-            send(temp);
+            // temp = copy(rdpsr);
+            // send(temp);
             genNop(5,0);
 
 
@@ -158,5 +149,5 @@ class arith_flag_sequence extends GUVM_sequence ;
     endtask : body
 
 
-endclass : arith_flag_sequence
+endclass : arith_flag_amber_sequence
 

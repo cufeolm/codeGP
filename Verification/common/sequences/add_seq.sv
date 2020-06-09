@@ -11,7 +11,7 @@ class add_sequence extends GUVM_sequence ;
 
 
     task body();
-        repeat(1)
+        repeat(100)
         begin
             
             load1 = target_seq_item::type_id::create("load1"); //load register x with data dx
@@ -37,7 +37,7 @@ class add_sequence extends GUVM_sequence ;
                 load1.rd=command.rs1;
             end
             if ($isunknown(command.rs2))
-                load2.load(0);
+                load2.inst=findOP("NOP");
             else
             begin
                 load2.load(command.rs2);//specify regx address  

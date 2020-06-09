@@ -23,12 +23,13 @@ function void verify_store_word_zero_extend(GUVM_sequence_item cmd_trans,GUVM_re
 			end
 		end
 		exp_mem_add = hist_trans.get_reg_data(cmd_trans.rs1)+cmd_trans.zimm;
+		$display("exp_mem_add= %h   exp_mem_add[1:0]=%b",exp_mem_add,exp_mem_add[1:0]);
 		exp_mem_add = (exp_mem_add/4)*4;
 		store_data = hist_trans.get_reg_data(cmd_trans.store_add);
 		exp_res = store_data;
 		$display ("store_data=%0h", store_data);
 		$display("1st load r[%d] 2nd load r[%d] 3rd load r[%d]",cmd_trans.rs1,cmd_trans.rs2,cmd_trans.rd);
-		$display("simm=%h %d",cmd_trans.simm,cmd_trans.simm);
+		$display("zimm=%h %d",cmd_trans.simm,cmd_trans.zimm);
 		$display ("exp_res=%0h", exp_res);
 		c1 = (exp_res == actual_res);
 		c2 = (exp_mem_add == actual_mem_add);
