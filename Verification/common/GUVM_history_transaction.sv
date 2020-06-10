@@ -1,7 +1,7 @@
 class GUVM_history_transaction extends uvm_transaction;
 
     logic [31:0]result; // stores logic and arithmetic instructions results ; why ? 
-    logic overflow,zero,neg,carry=0;
+    logic overflow,zero,neg,carry,borrow=0;
     typedef struct {
         logic [31:0] data;
         logic [4:0] add; // suggestion : logic [31:0] add;
@@ -12,6 +12,8 @@ class GUVM_history_transaction extends uvm_transaction;
     } item ;
     reg_history reg_file [];
     item item_history [] ;
+
+    
 
     function void reset();
         reg_file.delete();

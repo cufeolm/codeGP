@@ -77,8 +77,11 @@ package target_package;
 	endfunction
 
 
-    // function to determine format of verfied instruction and fill its operands
-
+	// function to determine format of verfied instruction and fill its operands
+	
+	function logic update_borrrow_flag(logic carry);
+        return !carry ; 
+    endfunction
 
     // used in if conditions to compare between (x) and (1 or 0)
 	function bit xis1 (logic[31:0] a,logic[31:0] b);

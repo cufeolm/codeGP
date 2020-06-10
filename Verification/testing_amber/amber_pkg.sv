@@ -10,11 +10,13 @@ package target_package;
         ADDCC = 32'b1110000010010xxx0xxx000000000xxx,// ADD and change flags
         ADDXCC=   32'b1110000010110xxx0xxx000000000xxx,//ADD with carry and change flags
          
-        SUBCC = 32'b1110000001010xxx0xxx000000000xxx,// SUB and change flags
-        S=      32'b1110000001000xxx0xxx000000000xxx,// subtract
+        SUBCC =   32'b1110000001010xxx0xxx000000000xxx,// SUB and change flags
+        SUB=      32'b1110000001000xxx0xxx000000000xxx,// subtract
+        SUBX=     32'b1110000011000xxx0xxx000000000xxx,
+        SUBXCC =  32'b1110000011010xxx0xxx000000000xxx,
         
         Rs=     32'b1110000001100xxx0xxx000000000xxx,// reverse subtract
-        Swc=32'b1110000011000xxx0xxx000000000xxx, // sub with carry
+       // Swc=32'b1110000011000xxx0xxx000000000xxx, // sub with carry
 
         C=32'b1110000101010xxx0xxx000000000xxx,
 
@@ -89,6 +91,10 @@ package target_package;
                     si_i = si_i.next();
                 end
         `endif
+    endfunction
+    
+    function logic update_borrrow_flag(logic carry);
+        return !carry ; 
     endfunction
 
 

@@ -28,12 +28,15 @@ package target_package;
         ADDCC=32'b10xxxxx010000xxxxx000000000xxxxx,
         ADDX =32'b10xxxxx001000xxxxx000000000xxxxx,
         ADDXCC=32'b10xxxxx011000xxxxx000000000xxxxx,
+
         Ai=32'b10xxxxx000000xxxxx1xxxxxxxxxxxxx,
         Jalr_cpc=32'b10xxxxx111000xxxxx10000000001100,
         Jalrr=32'b10xxxxx111000xxxxx000000000xxxxx,
         NOP=32'b00000001000000000000000000000000,
-        S=32'b10xxxxx000100xxxxx000000000xxxxx,
+        SUB=32'b10xxxxx000100xxxxx000000000xxxxx,
+        SUBX=32'b10xxxxx001100xxxxx000000000xxxxx,
         SUBCC=32'b10xxxxx010100xxxxx000000000xxxxx,
+        SUBXCC=32'b10xxxxx011100xxxxx000000000xxxxx,
 
         UMULR=32'b10xxxxx001010xxxxx000000000xxxxx, // multiply reg-reg
         UDIVR=32'b10xxxxx001110xxxxx000000000xxxxx,
@@ -72,8 +75,12 @@ package target_package;
     opcode si_a [] ;    // opcodes array to store enums so we can randomize and use them
     integer supported_instructions ;    // number of instructions in the array
     `include "leon_defines.sv"
-	`include"GUVM.sv"   // including GUVM classes 
+    `include"GUVM.sv"   // including GUVM classes 
+    
 
+    function logic update_borrrow_flag(logic carry);
+        return carry ; 
+    endfunction
 
     // fill supported instruction array
     function void fill_si_array();

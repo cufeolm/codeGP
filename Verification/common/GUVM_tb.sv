@@ -1,12 +1,20 @@
-`include "add.svh"
+
 `include "test.svh"
 `include "jal.svh"
 `include "load.svh"
 `include "store.svh"
 `include "nop.svh"
+
+`include "add.svh"
 `include "addcc.svh"
 `include "addx.svh"
 `include "addxcc.svh"
+
+`include "sub.svh"
+`include "subcc.svh"
+`include "subx.svh"
+`include "subxcc.svh"
+
 `include "bief.svh"
 `include "bier.svh"
 `include "bvsf.svh"
@@ -16,7 +24,7 @@
 `include "jalr.svh"
 `include "jalr_cpc.svh"
 `include "jalrr.svh"
-`include "subcc.svh"
+
 `include "bigtoer.svh"
 `include "biltr.svh"
 `include "bigtoeru.svh"

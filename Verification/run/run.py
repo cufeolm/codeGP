@@ -81,7 +81,7 @@ DUT: """;
 	print g;
 	if g == "1":
 		y=("add_test")
-		os.system(x+y+" +ARG_INST=A; log /* -r ; run -all ; quit\"")
+		os.system(x+y+" +ARG_INST=A; log /* -r ; transcript file trans/run.txt;run -all ; quit\"")
 ################################################################################################################
 	elif g == "2":
 		y=("bief_test")
@@ -102,7 +102,7 @@ DUT: """;
 			z=("BCSF")
 		elif z == "4":
 			z=("BVSF")
-		os.system(x+y+" +ARG_INST="+z+"; log /* -r ; run -all ; quit\"")
+		os.system(x+y+" +ARG_INST="+z+"; log /* -r ; transcript file trans/run.txt;run -all ; quit\"")
 ################################################################################################################
 	elif g == "3":
 		y=("A_type_test")
@@ -180,7 +180,7 @@ DUT: """;
 			z=("LBMAZE")
 		elif z == "23":
 			z=("LBMAZERR")
-		os.system(x+y+" +ARG_INST="+z+"; log /* -r ; run -all ; quit\"")
+		os.system(x+y+" +ARG_INST="+z+"; log /* -r ; transcript file trans/run.txt;run -all ; quit\"")
 ################################################################################################################
 	elif g == "4":
 		y=("load_double_test")
@@ -195,7 +195,7 @@ DUT: """
 			z=("LDD")
 		elif z == "2":
 			z=("LDDRR")
-		os.system(x+y+" +ARG_INST="+z+"; log /* -r ; run -all ; quit\"")
+		os.system(x+y+" +ARG_INST="+z+"; log /* -r ; transcript file trans/run.txt;run -all ; quit\"")
 ################################################################################################################
 	elif g == "5":
 		y=("arith_flag_test")
@@ -205,6 +205,10 @@ please choose which instruction to simulate:
 2- Add and change ICC flags (based on sparc-v8 ISA): enter --> addcc
 3- Add with carry (based on sparc-v8 ISA): enter --> addx
 4- Add with carry and change ICC flags(based on sparc-v8 ISA): enter --> addxcc
+5- SUB (based on sparc-v8 ISA): enter --> SUB
+6- SUB and change ICC flags (based on sparc-v8 ISA): enter --> SUBcc
+7- SUB with carry (based on sparc-v8 ISA): enter --> SUBx
+8- SUB with carry and change ICC flags(based on sparc-v8 ISA): enter --> SUBxcc
 any other input will simulate no operation or make an error in the simulation
 DUT: """;
 		z=raw_input(s)     
@@ -216,7 +220,15 @@ DUT: """;
 			z=("ADDX")
 		elif z == "4":
 			z=("ADDXCC")
-		os.system(x+y+" +ARG_INST="+z+"; log /* -r ; run -all ; quit\"")
+		elif z == "5":
+			z=("SUB")
+		elif z == "6":
+			z=("SUBCC")
+		elif z == "7":
+			z=("SUBX")
+		elif z == "8":
+			z=("SUBXCC")
+		os.system(x+y+" +ARG_INST="+z+"; log /* -r ; transcript file trans/run.txt;run -all ; quit\"")
 ################################################################################################################
 	elif g == "6":
 		y=("store_test")
@@ -264,7 +276,7 @@ DUT: """;
 			z=("SBZE")
 		elif z == "13":
 			z=("SBZERR")
-		os.system(x+y+" +ARG_INST="+z+"; log /* -r ; run -all ; quit\"")
+		os.system(x+y+" +ARG_INST="+z+"; log /* -r ; transcript file trans/run.txt;run -all ; quit\"")
 ################################################################################################################
 	elif g == "7":
 		y=("mul_test")
@@ -285,7 +297,7 @@ DUT: """;
 			z=("MHSUR")
 		elif z == "4":
 			z=("MHUR")
-		os.system(x+y+" +ARG_INST="+z+"; log /* -r ; run -all ; quit\"")
+		os.system(x+y+" +ARG_INST="+z+"; log /* -r ; transcript file trans/run.txt;run -all ; quit\"")
 ################################################################################################################
 	elif g == "8":
 		y=("arith_flag_amber_test")
@@ -295,6 +307,10 @@ please choose which instruction to simulate:
 2- Add and change ICC flags (based on ARM ISA): enter --> addcc
 3- Add with carry (based on ARM ISA): enter --> addx
 4- Add with carry and change ICC flags(based on ARM ISA): enter --> addxcc
+5- SUB (based on ARM ISA): enter --> SUB
+6- SUB and change ICC flags (based on ARM ISA): enter --> SUBcc
+7- SUB with carry (based on ARM ISA): enter --> SUBx
+8- SUB with carry and change ICC flags(based on ARM ISA): enter --> SUBxcc
 any other input will simulate no operation or make an error in the simulation
 DUT: """;
 		z=raw_input(s)     
@@ -306,7 +322,15 @@ DUT: """;
 			z=("ADDX")
 		elif z == "4":
 			z=("ADDXCC")
-		os.system(x+y+" +ARG_INST="+z+"; log /* -r ; run -all ; quit\"")
+		elif z == "5":
+			z=("SUB")
+		elif z == "6":
+			z=("SUBCC")
+		elif z == "7":
+			z=("SUBX")
+		elif z == "8":
+			z=("SUBXCC")
+		os.system(x+y+" +ARG_INST="+z+"; log /* -r ; transcript file trans/run.txt;run -all ; quit\"")
 
 #################################################################################################################
 	else:

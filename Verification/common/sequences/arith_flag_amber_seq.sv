@@ -11,7 +11,7 @@ class arith_flag_amber_sequence extends GUVM_sequence ;
 
 
     task body();
-        repeat(100)
+        repeat(10)
         begin
             
             load1 = target_seq_item::type_id::create("load1"); //load register x with data dx
@@ -22,7 +22,7 @@ class arith_flag_amber_sequence extends GUVM_sequence ;
             command = target_seq_item::type_id::create("command");//send add instruction (or any other instruction under test)
             store1 = target_seq_item::type_id::create("store1");//store the result from reg z to memory location (dont care)
             store2 = target_seq_item::type_id::create("store2");
-            rdpsr = target_seq_item::type_id::create("rdpsr");
+            //rdpsr = target_seq_item::type_id::create("rdpsr");
 
             //nop = target_seq_item::type_id::create("nop"); 
             //opcode x=A ;
@@ -32,6 +32,7 @@ class arith_flag_amber_sequence extends GUVM_sequence ;
             //command.ran_constrained(findOP("ADDCC"));
             //command.ran_constrained(findOP("A"));
             addcc.ran_constrained(findOP("ADDCC"));
+            
 
             //command.ran_constrained(findOP("ADDXCC"));
             //command.ran_constrained(findOP("ADDCC"));
@@ -42,18 +43,20 @@ class arith_flag_amber_sequence extends GUVM_sequence ;
             command.setup();//set up the instruction format fields 
             addcc.setup();
             
-            do begin
-                rdpsr.ran_constrained(findOP("RDPSR")); 
-                if (rdpsr.inst==NOP) break ; 
-                rdpsr.setup();
-            end
-            while(command.rd==rdpsr.rd || rdpsr.rd == 0);
+        //    do begin
+        //         rdpsr.ran_constrained(findOP("RDPSR")); 
+        //         if (rdpsr.inst==NOP) break ; 
+        //         rdpsr.setup();
+        //     end
+        //     while(command.rd==rdpsr.rd || rdpsr.rd == 0);
+            
             //$display(rdpsr.rd);
 
             //$display("after the setup %d",command.data);
 
             if ($isunknown(addcc.rs1))
-            load1.load(0);
+            //load1.load(0);
+            load1.inst=findOP("NOP");
             else
             begin
                 load1.load(addcc.rs1);//specify regx address
@@ -70,7 +73,8 @@ class arith_flag_amber_sequence extends GUVM_sequence ;
 
 
             if ($isunknown(command.rs1))
-                load3.load(0);
+                //load3.load(0);
+                load3.inst=findOP("NOP");
             else
             begin
                 load3.load(command.rs1);//specify regx address
@@ -78,7 +82,7 @@ class arith_flag_amber_sequence extends GUVM_sequence ;
             end
 
             if ($isunknown(command.rs2))
-               load2.inst=findOP("NOP");
+               load4.inst=findOP("NOP");
             else
             begin
                 load4.load(command.rs2);//specify regx address  

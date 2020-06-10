@@ -243,6 +243,15 @@ class GUVM_scoreboard extends uvm_scoreboard;
 				"Jalrr":begin
 					verify_JumpAndLinkRegReg(cmd_trans,res_trans,hist_trans);
 				end
+				"SUB":begin
+					verify_sub(cmd_trans,res_trans,hist_trans);
+				end
+				"SUBX":begin
+					verify_subx(cmd_trans,res_trans,hist_trans);
+				end
+				"SUBXCC":begin
+					verify_subxcc(cmd_trans,res_trans,hist_trans);
+				end
 				"SUBCC":begin
 					verify_subcc(cmd_trans,res_trans,hist_trans);
 				end
