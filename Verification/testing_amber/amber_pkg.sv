@@ -18,8 +18,8 @@ package target_package;
         Rs=     32'b1110000001100xxx0xxx000000000xxx,// reverse subtract
        // Swc=32'b1110000011000xxx0xxx000000000xxx, // sub with carry
 
-        C=32'b1110000101010xxx0xxx000000000xxx,
-
+        C=32'b1110000101010xxx0xxx000000000xxx,     // //Compare and update flags
+        CN=32'b1110_0001_0111_0xxx_0xxx_0000_0000_0xxx, //Compare NOT and update flags
         BIEF=32'b00001010xxxxxxxxxxxxxxxxxxxxxxxx,
         BA = 32'b11101010xxxxxxxxxxxxxxxxxxxxxxxx,
         
@@ -31,8 +31,8 @@ package target_package;
         //BR =32'b11101010xxxxxxxxxxxxxxxxxxxxxxxx,
         BRL=32'b11101011xxxxxxxxxxxxxxxxxxxxxxxx,
 
-        Mov=32'b1110000110100xxx0xxx000000000xxx,
-        Mn=32'b1110000111100xxx0xxx000000000xxx,
+        Mov=32'b1110000110100xxx0xxx000000000xxx,  // Move from reg to reg or from imm to reg
+        Mn=32'b1110000111100xxx0xxx000000000xxx,   // Move complement from reg to reg or from imm to reg
 
         M=32'b1110000000000xxx00000xxx10010xxx,
         MA=32'b1110000000100xxx0xxx0xxx10010xxx, // multiply accumlate
@@ -51,7 +51,9 @@ package target_package;
         LWMAZERR= 32'b1110011110010xxx0xxx000000000xxx, // load word with misaligned feat. reg-reg zero extend
         LBMAZE  = 32'b1110010111010xxx0xxxxxxxxxxxxxxx, // load byte with misaligned feat. reg-imm zero extend
         LBMAZERR= 32'b1110011111010xxx0xxx000000000xxx, // load byte with misaligned feat. reg-reg zero extend
-        RDPSR =  32'b11100101100000001111000000000000
+        RDPSR =  32'b11100101100000001111000000000000,
+        SRwMw   =32'b1110000100000xxx0xxx000010010xxx, // SWAP register with memory
+		Sabbram= 32'b1110000101000xxx0xxx000010010xxx  // Swaps a byte between register and memory
     } opcode; 
     // mutual instructions between cores have the same name so we can verify all cores using one scoreboard
 

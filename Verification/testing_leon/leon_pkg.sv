@@ -53,7 +53,10 @@ package target_package;
         Store =32'b11xxxxx0001000000010000000000000,
         SW=32'b11xxxxx000100xxxxx1xxxxxxxxxxxxx, // store word reg-imm
         Load = 32'b11xxxxx0000000000010000000000000,
-        LW= 32'b11xxxxx000000xxxxx1xxxxxxxxxxxxx // load word reg-imm
+        LW= 32'b11xxxxx000000xxxxx1xxxxxxxxxxxxx, // load word reg-imm
+        
+        SRwM=32'b11xxxxx001111xxxxx1xxxxxxxxxxxxx,  // SWAP register with memory
+        SRwMas=32'b11xxxxx011111xxxxx0xxxxxxxxxxxxx // SWAP Register with Memory from (alternate space) instruction
     } opcode;
     
 

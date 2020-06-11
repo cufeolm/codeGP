@@ -131,6 +131,14 @@ please choose which instruction to simulate:
 21- Load word with misalignment feat., zero extending offset and reg-reg (based on ARM-v2a ISA): enter --> LWMAZERR
 22- Load byte with misalignment feat., zero extending offset and reg-imm (based on ARM-v2a ISA): enter --> LBMAZE
 23- Load byte with misalignment feat., zero extending offset and reg-reg (based on ARM-v2a ISA): enter --> LBMAZERR
+24- Swap word. reg-reg (based on SPARC-v8 ISA): enter --> SRwMas
+25- Swap word. reg-imm (based on SPARC-v8 ISA): enter --> SRwM
+26- Swap byte. (based on ARM-v2a ISA): enter --> Sabbram
+27- Swap word. reg-imm (based on ARM-v2a ISA): enter --> SRwMw
+28- move (based on ARM-v2a ISA): enter --> Mov
+29- move not (based on ARM-v2a ISA): enter --> Mn
+30- compare (based on ARM-v2a ISA): enter --> C
+31- compare not (based on ARM-v2a ISA): enter --> CN
 any other input will simulate no operation or make an error in the simulation
 DUT: """;
 		z=raw_input(s)
@@ -180,6 +188,22 @@ DUT: """;
 			z=("LBMAZE")
 		elif z == "23":
 			z=("LBMAZERR")
+		elif z == "24":
+			z=("SRwMas")
+		elif z == "25":
+			z=("SRwM")
+		elif z == "26":
+			z=("Sabbram")	
+		elif z == "27":
+			z=("SRwMw")
+		elif z == "28":
+			z=("Mov")	
+		elif z == "29":
+			z=("Mn")
+		elif z == "30":
+			z=("C")
+		elif z == "31":
+			z=("CN")
 		os.system(x+y+" +ARG_INST="+z+"; log /* -r ; transcript file trans/run.txt;run -all ; quit\"")
 ################################################################################################################
 	elif g == "4":

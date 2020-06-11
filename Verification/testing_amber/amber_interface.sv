@@ -59,8 +59,9 @@ interface GUVM_interface(input clk);
     // sending instructions to the core
     task send_inst(logic [31:0] inst);
         static logic [31:0] load = 32'b1110_01x1_1x01_0xxx_0xxx_xxxx_xxxx_xxxx; // any kind of load in amber core
+        static logic [31:0] swap=  32'b1110_0001_0x00_0xxx_0xxx_0000_1001_0xxx; //swap instruction
         static integer load_cycles = 3; // num of cycles before fetch to put data on wb data bus
-        if(xis1(inst,load)) 
+        if(xis1(inst,load) || xis1(inst,swap)) 
         begin 
             load_cyc_cnt = 0;
            // $display("load found in interface = %h", inst);
@@ -86,6 +87,7 @@ interface GUVM_interface(input clk);
 
     function void update_command_monitor(GUVM_sequence_item cmd);
         cmd.inst = i_wb_dat; 
+        cmd.updated_flags= dut.u_execute.u_register_bank.r15_out_rm;
         command_monitor_h.write_to_cmd_monitor(cmd);
     endfunction
 

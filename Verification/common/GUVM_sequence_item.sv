@@ -8,7 +8,7 @@ class GUVM_sequence_item extends uvm_sequence_item;
    rand logic [31:0] inst;
    rand logic [31:0] data;// the effective data that should be stored inside memory 
    rand logic [31:0] data2;// the effective data that should be stored inside memory in case of double load
-   logic [31:0] zimm,simm,current_pc;// the 2 operands that shoould be at the registers
+   logic [31:0] zimm,simm,current_pc,updated_flags;// the 2 operands that shoould be at the registers
    logic [4:0]rs1,rs2,rd,store_add;
    logic update_result=0;
    //logic v=0; // should be deleted

@@ -276,6 +276,31 @@ class GUVM_scoreboard extends uvm_scoreboard;
 				"UDIVR":begin
 					verify_umulr(cmd_trans,res_trans,hist_trans);
 				end
+					"C":begin
+					verify_compare(cmd_trans,res_trans,hist_trans);
+				end
+				"CN":begin
+					verify_compare_not(cmd_trans,res_trans,hist_trans);
+				end
+				
+				"SRwMas":begin
+					verify_swap_ans(cmd_trans,res_trans,hist_trans);
+				end
+				"SRwM":begin
+					verify_swap(cmd_trans,res_trans,hist_trans);
+				end
+				"Sabbram":begin
+					verify_swap_byte(cmd_trans,res_trans,hist_trans);
+				end
+				"SRwMw":begin
+					verify_swap_word(cmd_trans,res_trans,hist_trans);
+				end
+				"Mov":begin
+					verify_move(cmd_trans,res_trans,hist_trans);
+				end
+				"Mn":begin
+					verify_move_not(cmd_trans,res_trans,hist_trans);
+				end
 				default:begin
 				if (cmd_trans.inst == cmd_trans.data);
 				else `uvm_fatal("instruction fail", $sformatf("instruction is not found and its %h %s", si_a[i],si_a[i].name))
