@@ -139,6 +139,10 @@ please choose which instruction to simulate:
 29- move not (based on ARM-v2a ISA): enter --> Mn
 30- compare (based on ARM-v2a ISA): enter --> C
 31- compare not (based on ARM-v2a ISA): enter --> CN
+32- jump and ink offset (based on RISC-v ISA): enter --> Jal
+33- jump and ink reg-imm (based on RISC-v ISA): enter --> Jalr
+34- jump and link reg-imm 'cpc' (based on Sparcv8 ISA) --> Jalr_cpc
+35- jump and link reg-reg (based on Sparcv8 ISA) --> Jalrr
 any other input will simulate no operation or make an error in the simulation
 DUT: """;
 		z=raw_input(s)
@@ -204,6 +208,14 @@ DUT: """;
 			z=("C")
 		elif z == "31":
 			z=("CN")
+		elif z == "32":
+			z=("Jal")
+		elif z == "33":
+			z=("Jalr")
+		elif z == "34":
+			z=("Jalr_cpc")
+		elif z == "35":
+			z=("Jalrr")
 		os.system(x+y+" +ARG_INST="+z+"; log /* -r ; transcript file trans/run.txt;run -all ; quit\"")
 ################################################################################################################
 	elif g == "4":

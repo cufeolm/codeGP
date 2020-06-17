@@ -60,7 +60,7 @@ function void verify_store_half_word_misaligned(GUVM_sequence_item cmd_trans,GUV
 		c3  = (exp_write_e == actual_write_e);
 		c4 = (exp_mem_add2 == actual_mem_add2);
 		c5  = (exp_write_e2 == actual_write_e2);
-		$sformat(m,"DUT result Calculation=%0d  SB result Calculation=%0d\n",actual_res,exp_res);
+		$sformat(m,"\nDUT result Calculation=%0d  SB result Calculation=%0d\n",actual_res,exp_res);
 		s={s ,m} ;	
 		$sformat(m,"DUT mem_add Calculation=%0d SB mem_add Calculation=%0d\n",actual_mem_add,exp_mem_add);
 		s={s ,m} ;

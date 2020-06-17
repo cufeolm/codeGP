@@ -35,8 +35,6 @@ class GUVM_history_transaction extends uvm_transaction;
         item_history[item_history.size()-1].res_trans=res;
     endfunction
     function void printItems() ; 
-        $display("yay time to print my history");
-
         $display("--- reg_file Values are ---");
         foreach(reg_file[i])   $display("\treg_file[%0d] = %p %h",i, reg_file[i],reg_file[i].data);
         $display("---------------------------------");
@@ -44,7 +42,7 @@ class GUVM_history_transaction extends uvm_transaction;
         foreach(item_history[i])begin
             string m="" ;
             string s = "" ; 
-            $sformat(m,"seq#%d",i);
+            $sformat(m,"seq_item#%d",i);
             s={s ,m} ;
             $sformat(m," pc %d",item_history[i].cmd_trans.current_pc);
             s={s ,m} ;
@@ -54,7 +52,7 @@ class GUVM_history_transaction extends uvm_transaction;
             s={s ,m} ;
             $sformat(m," mem_add:%h",item_history[i].res_trans.mem_add);
             s={s ,m} ;
-            $sformat(m," data_write_e:%b",item_history[i].res_trans.data_write_e);
+            $sformat(m," data_byte_e:%b",item_history[i].res_trans.data_write_e);
             s={s ,m} ;
             //s = {s ,m };"result:%h",item_history[i].res_trans.result
             //$display("seq#",i," pc %d",item_history[i].seq_item.current_pc," inst %h ",item_history[i].seq_item.inst,"result:%h",item_history[i].res_trans.result);

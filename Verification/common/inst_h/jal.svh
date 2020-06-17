@@ -29,13 +29,11 @@ function void verify_JumpAndLink(GUVM_sequence_item cmd_trans,GUVM_result_transa
 		exp_npc = cpc + offset;
 		if((exp_r == actual_r) && (exp_npc == actual_npc))
 		begin
-			`uvm_info ("JumpAndLink_PASS", $sformatf("Actual register result=%d Expected register result=%d ", actual_r, exp_r), UVM_LOW)
-			`uvm_info ("JumpAndLink_PASS", $sformatf("Actual next pc=%d Expected next pc=%d ", actual_npc, exp_npc), UVM_LOW)
+			`uvm_info ("JumpAndLink_PASS", $sformatf("Actual register result=%d Expected register result=%d\n Actual next pc=%d Expected next pc=%d ", actual_r, exp_r, actual_npc, exp_npc), UVM_
 		end
 		else
 		begin
-			`uvm_error ("JumpAndLink_FAIL", $sformatf("Actual register result=%d Expected register result=%d ", actual_r, exp_r))
-			`uvm_error ("JumpAndLink_FAIL", $sformatf("Actual next pc=%d Expected next pc=%d ", actual_npc, exp_npc))	
+			`uvm_error ("JumpAndLink_FAIL", $sformatf("Actual register result=%d Expected register result=%d\n Actual next pc=%d Expected next pc=%d   ", actual_r, exp_r, actual_npc, exp_npc))	
 		end
 	end
 endfunction
