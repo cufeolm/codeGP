@@ -139,8 +139,8 @@ please choose which instruction to simulate:
 29- move not (based on ARM-v2a ISA): enter --> Mn
 30- compare (based on ARM-v2a ISA): enter --> C
 31- compare not (based on ARM-v2a ISA): enter --> CN
-32- jump and ink offset (based on RISC-v ISA): enter --> Jal
-33- jump and ink reg-imm (based on RISC-v ISA): enter --> Jalr
+32- jump and link offset (based on RISC-v ISA): enter --> Jal
+33- jump and link reg-imm (based on RISC-v ISA): enter --> Jalr
 34- jump and link reg-imm 'cpc' (based on Sparcv8 ISA) --> Jalr_cpc
 35- jump and link reg-reg (based on Sparcv8 ISA) --> Jalrr
 any other input will simulate no operation or make an error in the simulation
