@@ -1,3 +1,5 @@
+if [file exists "work"] {vdel -all}
+vlib work
 onerror {quit}
 
 vlog +incdir+../testing_riscy+../common+../common/inst_h+../common/Tests+../common/sequences ../testing_riscy/target_pkg.sv

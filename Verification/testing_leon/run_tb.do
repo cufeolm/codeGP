@@ -1,5 +1,5 @@
-#if [file exists "work"] {vdel -all}
-#vlib work
+if [file exists "work"] {vdel -all}
+vlib work
 transcript file trans/compileTB.txt
 onerror {quit}
 
