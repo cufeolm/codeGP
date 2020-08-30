@@ -1,5 +1,3 @@
-if [file exists "work"] {vdel -all}
-vlib work
 onerror {quit}
 transcript file trans/compileTB.txt
 vlog +incdir+../testing_amber+../common+../common/inst_h+../common/Tests+../common/sequences ../testing_amber/target_pkg.sv
